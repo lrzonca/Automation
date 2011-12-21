@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="build" name="Girls Tests">
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.7.0"/>
+    <property name="source" value="1.7.0"/>
+    <property name="junitReportDir" value="test-output"/>
+    <path id="Girls Tests.classpath">
+        <pathelement location="%javaTestProjectPath%\bin"/>
+        <pathelement location="lib/junit.jar"/>
+        <pathelement location="lib/selenium-2.12.0/selenium-java-2.12.0.jar"/>
+        <pathelement location="lib/selenium-server-standalone-2.12.0.jar"/>
+        <pathelement location="lib/testng-5.14.7.jar"/>
+    	<pathelement location="lib/logging-selenium-1.2.jar"/>
+    </path>
+   
+	<target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src/Webdriver">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+                <exclude name="**/.svn/"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin/Webdriver"/>
+    </target>    	
+    <target depends="init" name="build">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+    	<!--
+    	<javac debug="false" includeantruntime="false" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
+            <src path="src/Webdriver"/>
+            <classpath refid="Webdriver.classpath"/>
+        </javac> -->
+    </target>
+    
+	<target name="openSelenium">
+		<echo message="opening selenium server"/>
+		<java jar="lib/selenium-server-standalone-2.12.0.jar" fork="true" spawn="true">
+		            <arg line="-timeout 30"/>
+		            <jvmarg value="-Dhttp.proxyHost=proxy.corporate.com"/>
+		            <jvmarg vlalue="-Dhttp.proxyPort=3128"/></java>
+	</target>
+	<target name="stopSelenium">
+	        <get taskname="selenium-shutdown"
+	            src="http://localhost:4444/selenium-server/driver/?cmd=shutDownSeleniumServer"
+	            dest="result.txt" ignoreerrors="true" />
+	        <echo taskname="selenium-shutdown" message="DGF Errors during shutdown are expected" />
+	    </target>
+
+</project>

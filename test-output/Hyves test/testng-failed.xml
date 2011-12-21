@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [Hyves test]">
+  <parameter name="xUrl" value="http://www.hyves.nl"/>
+  <parameter name="xBrowser" value="firefox"/>
+  <test name="Hyves(failed)" preserve-order="false">
+    <parameter name="xUrl" value="http://www.hyves.nl"/>
+    <parameter name="xBrowser" value="firefox"/>
+    <classes>
+      <class name="Webdriver.Hyves">
+        <methods>
+          <include name="quitDriver"/>
+          <include name="createDriver"/>
+          <include name="createAndStopService"/>
+          <include name="openGamePage" invocation-numbers="0"/>
+          <include name="createAndStartService"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+</suite>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [SignIn for GirlsGoGames]">
+  <parameter name="xUrl" value="http://www.girlsgogames.com"/>
+  <parameter name="xBrowser" value="ie"/>
+  <test name="SignIn(failed)" preserve-order="false">
+    <parameter name="xUrl" value="http://www.girlsgogames.com"/>
+    <parameter name="xBrowser" value="ie"/>
+    <classes>
+      <class name="Webdriver.SIGN_IN">
+        <methods>
+          <include name="quitDriver"/>
+          <include name="createDriver"/>
+          <include name="createAndStartService"/>
+          <include name="signUp" invocation-numbers="0"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+</suite>

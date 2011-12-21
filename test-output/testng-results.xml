@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Hyves test" duration-ms="35495" started-at="2011-12-21T12:21:02Z" finished-at="2011-12-21T12:21:38Z">
+    <groups>
+    </groups>
+    <test name="Hyves" duration-ms="35495" started-at="2011-12-21T12:21:02Z" finished-at="2011-12-21T12:21:38Z">
+      <class name="Webdriver.Hyves">
+        <test-method status="PASS" signature="createAndStartService(java.lang.String)[pri:0, instance:Webdriver.Hyves@5328f6ee]" name="createAndStartService" is-config="true" duration-ms="1949" started-at="2011-12-21T12:21:02Z" finished-at="2011-12-21T12:21:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="createDriver(java.lang.String)[pri:0, instance:Webdriver.Hyves@5328f6ee]" name="createDriver" is-config="true" duration-ms="5230" started-at="2011-12-21T12:21:04Z" finished-at="2011-12-21T12:21:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="openGamePage(java.lang.String)[pri:0, instance:Webdriver.Hyves@5328f6ee]" name="openGamePage" duration-ms="24104" started-at="2011-12-21T12:21:09Z" finished-at="2011-12-21T12:21:33Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://www.hyves.nl]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="quitDriver(java.lang.String)[pri:0, instance:Webdriver.Hyves@5328f6ee]" name="quitDriver" is-config="true" duration-ms="2655" started-at="2011-12-21T12:21:33Z" finished-at="2011-12-21T12:21:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="createAndStopService(java.lang.String)[pri:0, instance:Webdriver.Hyves@5328f6ee]" name="createAndStopService" is-config="true" duration-ms="1536" started-at="2011-12-21T12:21:36Z" finished-at="2011-12-21T12:21:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+      </class>
+    </test>
+  </suite>
+</testng-results>
