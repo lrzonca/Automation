@@ -2,10 +2,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite verbose="0" name="Failed suite [Hyves test]">
   <parameter name="xUrl" value="http://www.hyves.nl"/>
-  <parameter name="xBrowser" value="firefox"/>
+  <parameter name="xBrowser" value="chrome"/>
   <test name="Hyves(failed)" preserve-order="false">
     <parameter name="xUrl" value="http://www.hyves.nl"/>
-    <parameter name="xBrowser" value="firefox"/>
+    <parameter name="xBrowser" value="chrome"/>
     <classes>
       <class name="Webdriver.Hyves">
         <methods>

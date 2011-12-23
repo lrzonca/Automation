@@ -8,6 +8,8 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import java.util.Date;
 
+import junit.framework.Assert;
+
 
 import org.junit.runners.BlockJUnit4ClassRunner;
 import org.openqa.selenium.By;
@@ -33,9 +35,20 @@ public class Hyves extends SeleniumBase{
 	    GameT.click();
 	    Thread.sleep(2000);
 	    driver.switchTo().frame("remote_iframe_-1");
-	    WebElement SocialT = driver.findElement(By.id("social_link"));
+	    WebElement MultiplayerT = driver.findElement(By.id("multiplayer_link"));
 	    //WebElement SocialT = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.SOCIAL_LINK));
-	    SocialT.click();
-	    Thread.sleep(8000);
+	    MultiplayerT.click();
+	    Thread.sleep(6000);
+	    WebElement GameL = driver.findElement(By.cssSelector("a[title=Crystical]"));
+	    GameL.click();
+	    Thread.sleep(10000);
+	   
+	    assertTrue(driver.findElement(By.id("flashobj_mc")).isDisplayed());
+	    
   }
+
+private void assertTrue(boolean displayed) {
+	// TODO Auto-generated method stub
+	
+}
 }
