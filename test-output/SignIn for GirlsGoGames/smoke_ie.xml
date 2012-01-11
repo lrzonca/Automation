@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite hostname="CodePill-CP27" name="Webdriver.CATEGORY_PAGE" tests="9" failures="1" timestamp="5 Jan 2012 14:12:57 GMT" time="237.15" errors="0">
+  <testcase name="Category1 on instance null(Webdriver.CATEGORY_PAGE)" time="4.368" classname="Webdriver.CATEGORY_PAGE">
+    <failure type="org.openqa.selenium.NoSuchElementException" message="Unable to find element with id == subcatList (WARNING: The server did not provide any stacktrace information); duration or timeout: 340 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &amp;apos;2.12.0&amp;apos;, revision: &amp;apos;14666&amp;apos;, time: &amp;apos;2011-11-10 18:35:23&amp;apos;
+System info: os.name: &amp;apos;Windows 7&amp;apos;, os.arch: &amp;apos;amd64&amp;apos;, os.version: &amp;apos;6.1&amp;apos;, java.version: &amp;apos;1.6.0_26&amp;apos;
+Driver info: driver.version: RemoteWebDriver">
+      <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to find element with id == subcatList (WARNING: The server did not provide any stacktrace information); duration or timeout: 340 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.12.0', revision: '14666', time: '2011-11-10 18:35:23'
+System info: os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.6.0_26'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:147)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:113)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:416)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:205)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:222)
+	at org.openqa.selenium.By$ById.findElement(By.java:210)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:197)
+	at Webdriver.CATEGORY_PAGE.Category1(CATEGORY_PAGE.java:24)
+... Removed 28 stack frames]]>
+    </failure>
+  </testcase>
+  <testcase name="Flat1 on instance null(Webdriver.FLAT_PAGE)" time="5.304" classname="Webdriver.FLAT_PAGE"/>
+  <testcase name="GamePage1 on instance null(Webdriver.GAME_PAGE)" time="35.715" classname="Webdriver.GAME_PAGE"/>
+  <testcase name="GamePage2 on instance null(Webdriver.GAME_PAGE)" time="32.678" classname="Webdriver.GAME_PAGE"/>
+  <testcase name="GamePage3 on instance null(Webdriver.GAME_PAGE)" time="32.362" classname="Webdriver.GAME_PAGE"/>
+  <testcase name="Profile1 on instance null(Webdriver.PROFILE_PAGE)" time="27.881" classname="Webdriver.PROFILE_PAGE"/>
+  <testcase name="SignIn1 on instance null(Webdriver.SIGN_IN)" time="20.755" classname="Webdriver.SIGN_IN"/>
+  <testcase name="Social1 on instance null(Webdriver.SOCIAL)" time="42.352" classname="Webdriver.SOCIAL"/>
+  <testcase name="Subcategory1 on instance null(Webdriver.SUBCATEGORY_PAGE)" time="12.309" classname="Webdriver.SUBCATEGORY_PAGE"/>
+</testsuite>

@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite verbose="0" name="Failed suite [SignIn for GirlsGoGames]">
-  <parameter name="xUrl" value="http://www.girlsgogames.com"/>
-  <parameter name="xBrowser" value="ie"/>
-  <test name="SignIn(failed)" preserve-order="false">
-    <parameter name="xUrl" value="http://www.girlsgogames.com"/>
-    <parameter name="xBrowser" value="ie"/>
+  <parameter name="xUrl" value="http://stg.girlsgogames.com"/>
+  <parameter name="xBrowser" value="chrome"/>
+  <test name="smoke_firefox(failed)" preserve-order="false">
+    <parameter name="xUrl" value="http://stg.girlsgogames.com"/>
+    <parameter name="xBrowser" value="chrome"/>
     <classes>
-      <class name="Webdriver.SIGN_IN">
+      <class name="Webdriver.SIGN_UP">
         <methods>
-          <include name="quitDriver"/>
+          <include name="SignUp4"/>
           <include name="createDriver"/>
+          <include name="SignUp3"/>
+          <include name="SignUp2"/>
+          <include name="SignUp7"/>
+          <include name="SignUp5"/>
+          <include name="SignUp6"/>
+          <include name="SignUp9"/>
+          <include name="quitDriver"/>
+          <include name="SignUp11"/>
+          <include name="SignUp12"/>
+          <include name="SignUp8"/>
+          <include name="SignUp10"/>
           <include name="createAndStartService"/>
-          <include name="signUp" invocation-numbers="0"/>
         </methods>
       </class>
     </classes>

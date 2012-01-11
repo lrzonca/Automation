@@ -3,13 +3,12 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="C:/Users/Mirek/workspace/SPILGAMES/lib/selenium-server-standalone-2.12.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mirek/workspace/SPILGAMES/AUTOMATION/lib/selenium-2.12.0/selenium-java-2.12.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mirek/workspace/SPILGAMES/AUTOMATION/lib/selenium-2.12.0/selenium-java-2.12.0-srcs.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mirek/workspace/SPILGAMES/AUTOMATION/lib/junit.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mirek/workspace/SPILGAMES/AUTOMATION/lib/selenium-server-standalone-2.12.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mirek/workspace/SPILGAMES/AUTOMATION/lib/testng-5.14.7.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mirek/workspace/SPILGAMES/AUTOMATION/lib/xmlrpc-client-3.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mirek/workspace/SPILGAMES/AUTOMATION/lib/xmlrpc-common-3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/CP27/Automation/lib/junit.jar"/>
+	<classpathentry kind="lib" path="C:/Users/CP27/Automation/lib/selenium-server-standalone-2.12.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/CP27/Automation/lib/selenium-2.12.0/selenium-java-2.12.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/CP27/Automation/lib/selenium-2.12.0/selenium-java-2.12.0-srcs.jar"/>
+	<classpathentry kind="lib" path="C:/Users/CP27/Automation/lib/testng-5.14.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/CP27/Automation/lib/xmlrpc-client-3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/CP27/Automation/lib/xmlrpc-common-3.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

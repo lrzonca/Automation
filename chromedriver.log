@@ -1,2 +1,0 @@
-[1221/122136:ERROR:scoped_temp_dir.cc(70)] ScopedTempDir unable to delete C:\Users\Mirek\AppData\Local\Temp\scoped_dir3585
-[1221/122136:WARNING:scoped_temp_dir.cc(15)] Could not delete temp dir in dtor.

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite hostname="CodePill-CP27" name="Webdriver.SIGN_IN" tests="1" failures="0" timestamp="4 Jan 2012 12:39:12 GMT" time="24.213" errors="0">
+  <testcase name="SignIn1 on instance null(Webdriver.SIGN_IN)" time="20.84" classname="Webdriver.SIGN_IN"/>
+</testsuite>
