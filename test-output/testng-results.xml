@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Hyves test" duration-ms="35495" started-at="2011-12-21T12:21:02Z" finished-at="2011-12-21T12:21:38Z">
+  <suite name="SignIn for GirlsGoGames" duration-ms="41234" started-at="2012-01-10T13:13:06Z" finished-at="2012-01-10T13:13:47Z">
     <groups>
     </groups>
-    <test name="Hyves" duration-ms="35495" started-at="2011-12-21T12:21:02Z" finished-at="2011-12-21T12:21:38Z">
-      <class name="Webdriver.Hyves">
-        <test-method status="PASS" signature="createAndStartService(java.lang.String)[pri:0, instance:Webdriver.Hyves@5328f6ee]" name="createAndStartService" is-config="true" duration-ms="1949" started-at="2011-12-21T12:21:02Z" finished-at="2011-12-21T12:21:04Z">
+    <test name="smoke_firefox" duration-ms="41234" started-at="2012-01-10T13:13:06Z" finished-at="2012-01-10T13:13:47Z">
+      <class name="Webdriver.SIGN_UP">
+        <test-method status="PASS" signature="createAndStartService(java.lang.String)[pri:0, instance:null(Webdriver.SIGN_UP)]" name="createAndStartService" is-config="true" duration-ms="1079" started-at="2012-01-10T13:13:06Z" finished-at="2012-01-10T13:13:07Z">
           <params>
             <param index="0">
               <value>
@@ -16,41 +16,116 @@
             </param>
           </params>
         </test-method>
-        <test-method status="PASS" signature="createDriver(java.lang.String)[pri:0, instance:Webdriver.Hyves@5328f6ee]" name="createDriver" is-config="true" duration-ms="5230" started-at="2011-12-21T12:21:04Z" finished-at="2011-12-21T12:21:09Z">
+        <test-method status="PASS" signature="createDriver(java.lang.String, java.lang.reflect.Method)[pri:0, instance:null(Webdriver.SIGN_UP)]" name="createDriver" is-config="true" duration-ms="1542" started-at="2012-01-10T13:13:07Z" finished-at="2012-01-10T13:13:09Z">
           <params>
             <param index="0">
               <value>
                 <![CDATA[chrome]]>
               </value>
             </param>
-          </params>
-        </test-method>
-        <test-method status="PASS" signature="openGamePage(java.lang.String)[pri:0, instance:Webdriver.Hyves@5328f6ee]" name="openGamePage" duration-ms="24104" started-at="2011-12-21T12:21:09Z" finished-at="2011-12-21T12:21:33Z">
-          <params>
-            <param index="0">
+            <param index="1">
               <value>
-                <![CDATA[http://www.hyves.nl]]>
+                <![CDATA[public void Webdriver.SIGN_UP.SignUp1(java.lang.String) throws java.lang.InterruptedException]]>
               </value>
             </param>
           </params>
         </test-method>
-        <test-method status="PASS" signature="quitDriver(java.lang.String)[pri:0, instance:Webdriver.Hyves@5328f6ee]" name="quitDriver" is-config="true" duration-ms="2655" started-at="2011-12-21T12:21:33Z" finished-at="2011-12-21T12:21:36Z">
+        <test-method status="PASS" signature="SignUp1(java.lang.String)[pri:0, instance:null(Webdriver.SIGN_UP)]" name="SignUp1" duration-ms="32101" started-at="2012-01-10T13:13:09Z" finished-at="2012-01-10T13:13:41Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[chrome]]>
+                <![CDATA[http://stg.girlsgogames.com]]>
               </value>
             </param>
           </params>
         </test-method>
-        <test-method status="PASS" signature="createAndStopService(java.lang.String)[pri:0, instance:Webdriver.Hyves@5328f6ee]" name="createAndStopService" is-config="true" duration-ms="1536" started-at="2011-12-21T12:21:36Z" finished-at="2011-12-21T12:21:38Z">
+        <test-method status="FAIL" signature="quitDriver(java.lang.String, org.testng.ITestResult, java.lang.reflect.Method)[pri:0, instance:null(Webdriver.SIGN_UP)]" name="quitDriver" is-config="true" duration-ms="0" started-at="2012-01-10T13:13:41Z" finished-at="2012-01-10T13:13:41Z">
           <params>
             <param index="0">
               <value>
                 <![CDATA[chrome]]>
               </value>
             </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult: SignUp1 on instance null(Webdriver.SIGN_UP) STATUS:SUCCESS METHOD:SIGN_UP.SignUp1(java.lang.String)[pri:0, instance:null(Webdriver.SIGN_UP)]]
+]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[public void Webdriver.SIGN_UP.SignUp1(java.lang.String) throws java.lang.InterruptedException]]>
+              </value>
+            </param>
           </params>
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[Error communicating with the remote browser. It may have died.
+Build info: version: '2.12.0', revision: '14666', time: '2011-11-10 18:35:23'
+System info: os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_02'
+Driver info: driver.version: RemoteWebDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: Error communicating with the remote browser. It may have died.
+Build info: version: '2.12.0', revision: '14666', time: '2011-11-10 18:35:23'
+System info: os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_02'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:412)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:420)
+	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:297)
+	at Webdriver.SeleniumBase.quitDriver(SeleniumBase.java:87)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:537)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:206)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:766)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:877)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:754)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:330)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:292)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:241)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1169)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1094)
+	at org.testng.TestNG.run(TestNG.java:1006)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:107)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:199)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:170)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connection to http://localhost:22814 refused
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:158)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:149)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:121)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:634)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:464)
+	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:820)
+	at org.openqa.selenium.remote.HttpCommandExecutor.fallBackExecute(HttpCommandExecutor.java:391)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:370)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:398)
+	... 29 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:123)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:148)
+	... 37 more
+]]>
+            </full-stacktrace>
+          </exception>
         </test-method>
       </class>
     </test>

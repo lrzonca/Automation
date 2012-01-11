@@ -9,11 +9,11 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 
-import org.junit.After;
-import org.junit.Before;
+//import org.junit.After;
+//import org.junit.Before;
 import org.junit.runners.BlockJUnit4ClassRunner;
 import org.openqa.selenium.chrome.ChromeDriverService;
-import org.openqa.selenium.firefox.FirefoxDriver;
+//import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.By;
@@ -31,7 +31,7 @@ public class example {
 	  @BeforeClass
 	  public static void createAndStartService() throws IOException {
 	    service = new ChromeDriverService.Builder()
-	        .usingChromeDriverExecutable(new File("C:\\Users\\Mirek\\workspace\\SPILGAMES\\lib\\chromedriver.exe"))
+	        .usingChromeDriverExecutable(new File("C:\\Users\\CP27\\Automation\\lib\\chromedriver.exe"))
 	        .usingAnyFreePort()
 	        .build();
 		  	
@@ -113,7 +113,6 @@ public class example {
 	  }
 
 	private void assertTrue(boolean displayed) {
-		// TODO Auto-generated method stub
 		
 	}
 

@@ -1,0 +1,18 @@
+<suite name="SignIn for GirlsGoGames" verbose="2">
+	<parameter name="xUrl" value="http://www.girlsgogames.com"/>	
+	<test name="smoke_ie">
+		<parameter name="xBrowser" value="chrome"/>
+		<classes>
+			<class name="Webdriver.SIGN_IN">
+				<methods>
+					<include name="SignIn1"></include>
+				</methods>
+			</class>			
+			<class name="Webdriver.PROFILE_PAGE">
+				<methods>
+					<include name="Profile1"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>	
+</suite>

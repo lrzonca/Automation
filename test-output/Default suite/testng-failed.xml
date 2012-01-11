@@ -3,9 +3,9 @@
 <suite verbose="0" name="Failed suite [Default suite]">
   <test name="Default test(failed)" preserve-order="false">
     <classes>
-      <class name="Webdriver.Hyves">
+      <class name="Webdriver.SOCIAL">
         <methods>
-          <include name="openGamePage"/>
+          <include name="Social1"/>
         </methods>
       </class>
     </classes>
