@@ -10,5 +10,6 @@
 	<classpathentry kind="lib" path="C:/Users/CP27/Automation/lib/testng-5.14.7.jar"/>
 	<classpathentry kind="lib" path="C:/Users/CP27/Automation/lib/xmlrpc-client-3.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/CP27/Automation/lib/xmlrpc-common-3.1.jar"/>
+	<classpathentry kind="lib" path="C:/selenium/selenium-server-standalone-2.17.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

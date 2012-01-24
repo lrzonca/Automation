@@ -1,13 +1,13 @@
 <suite name="SignIn for GirlsGoGames" verbose="2">
-	<parameter name="xUrl" value="http://stg.girlsgogames.com"/>	
+	<parameter name="xUrl" value="http://www.girlsgogames.com"/>	
 
 	<test name="smoke_firefox">
 		<parameter name="xBrowser" value="chrome"/>
 		<classes>
-			<class name="Webdriver.SIGN_UP">
+			<class name="Webdriver.SIGN_IN">
 				<methods>
-					<include name="SignUp1"></include>
-
+					<include name="SignIn4"></include>
+				
 				</methods>
 			</class>		
 <!--  		<class name="Webdriver.CATEGORY_PAGE">

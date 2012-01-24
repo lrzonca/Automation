@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriverService;
+import org.testng.annotations.Parameters;
 
 import junit.framework.TestCase;
 
@@ -13,6 +14,9 @@ public class Common extends TestCase implements mappings {
 	public WebDriver driver;
 	public static ChromeDriverService service;
 	public String e, u, p, a;
+	public String UN1 = "qwerty_friend_1";
+	public String UP = "123456";
+	public String UN2 = "qwerty_friend_3";	
 	
 	
 	void Wait_For_Object(int Time, Boolean Object) throws InterruptedException{
@@ -29,18 +33,31 @@ public class Common extends TestCase implements mappings {
 	}
 	
 	void Login (String UserName, String Password) throws InterruptedException{
+		System.out.println("Sleep 8 sek");
 		Thread.sleep(8000);
+		System.out.println("Find Element SIGN_IN_LINK");
 		WebElement loginLink = driver.findElement(By.cssSelector(Webdriver.mappings.signIn.SIGN_IN_LINK));
+		System.out.println("Click Element SIGN_IN_LINK");
 		loginLink.click();
+		System.out.println("Find Element USERNAME");
 		WebElement usernameBox = driver.findElement(By.cssSelector(Webdriver.mappings.signIn.USERNAME));
+		System.out.println("Click Element USERNAME");
 		usernameBox.click();
+		System.out.println("Insert data into Element USERNAME");
 	    usernameBox.sendKeys(UserName);
+	    System.out.println("Find Element PASSWORD");
 	    WebElement passwordBox = driver.findElement(By.cssSelector(Webdriver.mappings.signIn.PASSWORD));
+	    System.out.println("Click Element PASSWORD");
 	    passwordBox.click();
+	    System.out.println("Insert data into Element PASSWORD");
 	    passwordBox.sendKeys(Password);
+	    System.out.println("Sleep 2 sek");
 	    Thread.sleep(2000);
-	    WebElement signInButton = driver.findElement(By.cssSelector(Webdriver.mappings.signIn.SIGN_IN_BUTTON));	    
+	    System.out.println("Find Element SIGN_IN_BUTTON");
+	    WebElement signInButton = driver.findElement(By.cssSelector(Webdriver.mappings.signIn.SIGN_IN_BUTTON));
+	    System.out.println("Click Element SIGN_IN_BUTTON");
 	    signInButton.click();
+	    System.out.println("Sleep 5 sek");
 	    Thread.sleep(5000);
 	}
 	
@@ -51,6 +68,7 @@ public class Common extends TestCase implements mappings {
 	    catch (Throwable e)
 	    {
 	    	e.printStackTrace();
+	    	fail();
 	    }		
 	}
 
@@ -134,6 +152,114 @@ public class Common extends TestCase implements mappings {
 		} else {
 		}				
 //		Thread.sleep(5000);
+	}
+	
+	
+	void Open_User_X_Page (String xUrl, String u)throws InterruptedException {
+		driver.get(xUrl + "/user/" + u);
+	}
+	
+	void Friend_Request_Delete_Reject() throws InterruptedException {
+		if (driver.findElement(By.cssSelector(Webdriver.mappings.myProfile.DELETE_FRIEND_BUTTON)).getAttribute("style").equals("display: inline-block;")){
+			WebElement Delete = driver.findElement(By.cssSelector(Webdriver.mappings.myProfile.DELETE_FRIEND_BUTTON));
+			Delete.click();
+			Thread.sleep(5000);
+			WebElement Yes = driver.findElement(By.cssSelector(Webdriver.mappings.myProfile.DELETE_FRIEND_YES_BUTTON));
+			Yes.click();
+			Thread.sleep(2000);
+		}		
+		if (driver.findElement(By.cssSelector(Webdriver.mappings.myProfile.FRIEND_REQUEST_SENT_TEXT)).isDisplayed()){
+			Logout();
+			Login(UN2, UP);
+		    WebElement MyProfile = driver.findElement(By.cssSelector(Webdriver.mappings.topBar.MY_PROFILE_LINK));
+		    MyProfile.click();
+		    Thread.sleep(5000);
+		    WebElement Notification = driver.findElement(By.id(Webdriver.mappings.NOTIFICATIONS.TAB_NOTIFICATIONS));
+		    Notification.click();
+		    Thread.sleep(5000);
+		    WebElement Reject = driver.findElement(By.cssSelector(Webdriver.mappings.NOTIFICATIONS.REJECT_FRIEND_REQUEST_BUTTON));
+		    Reject.click();
+		    Thread.sleep(3000);
+		    AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.NOTIFICATIONS.REJECTED_MESSAGE)).isDisplayed());
+			Logout();
+			Login(UN1, UP);			
+		}
+	}
+	
+	
+	/* Description
+	 */
+	public void Load_Harvesting_Contract(String email, String password) throws InterruptedException {
+		WebElement MyProfile = driver.findElement(By.cssSelector(Webdriver.mappings.topBar.MY_PROFILE_LINK));
+	    MyProfile.click();
+	    Thread.sleep(5000);
+		WebElement TabFriend = driver.findElement(By.id(Webdriver.mappings.FRIENDS.TAB_FRIENDS));
+		TabFriend.click();
+	    Thread.sleep(5000);
+		WebElement HarvGetStart = driver.findElement(By.cssSelector(Webdriver.mappings.FRIENDS.HARVESTING_GET_STARTED_BUTTON));
+		HarvGetStart.click();
+	    Thread.sleep(2000);
+		WebElement HarvGmailBtn = driver.findElement(By.cssSelector(Webdriver.mappings.FRIENDS.HARVESTING_GMAIL_BUTTON));
+		HarvGmailBtn.click();
+		WebElement HarvSignIn = driver.findElement(By.cssSelector(Webdriver.mappings.FRIENDS.HARVESTING_SIGN_IN_BUTTON));
+		HarvSignIn.click();
+	    Thread.sleep(15000);	    
+	    System.out.println(driver.getWindowHandles().toString());
+	    for (String handle : driver.getWindowHandles()) {
+	    	  driver.switchTo().window(handle);
+	    	}	    
+	    WebElement HarvMail = driver.findElement(By.id(Webdriver.mappings.HARVESTING.EMAIL_TEXTBOX));
+	    HarvMail.click();
+	    HarvMail.sendKeys(email);
+	    WebElement HarvPass = driver.findElement(By.id(Webdriver.mappings.HARVESTING.PASSWORD_TEXTBOX));
+	    HarvPass.click();
+	    HarvPass.sendKeys(password);	   
+	    WebElement HarvLogin = driver.findElement(By.id(Webdriver.mappings.HARVESTING.LOGIN_BUTTON));
+	    HarvLogin.click();
+	    WebElement HarvAllow = driver.findElement(By.id(Webdriver.mappings.HARVESTING.ALLOW_BUTTON));
+	    HarvAllow.click();
+	    Thread.sleep(10000);
+	    for (String handle : driver.getWindowHandles()) {
+	    	  driver.switchTo().window(handle);
+	    	}	    
+	}
+	
+	
+	/* Description
+	 */
+	@Parameters({"xUrl"})
+	public void Load_Harvesting_Contract_From_Pet_Party(String xUrl, String email, String password) throws InterruptedException {
+		driver.get(xUrl + "/game/pet_party.html?socialgames");
+		Thread.sleep(5000);
+		driver.switchTo().frame(Webdriver.mappings.social.SOCIAL_GAME_BOX);		
+		WebElement Invite = driver.findElement(By.id(Webdriver.mappings.social.SOCIAL_GAME_INVITE_BUTTON));
+		Invite.click();
+		driver.switchTo().defaultContent();
+		Thread.sleep(5000);
+
+		WebElement EmailTab = driver.findElement(By.id(Webdriver.mappings.social.FROM_EMAIL_TAB));
+		EmailTab.click();
+	    Thread.sleep(2000);
+		WebElement GmailBtn = driver.findElement(By.cssSelector(Webdriver.mappings.social.FROM_EMAIL_GMAIL_BUTTON));
+		GmailBtn.click();		
+	    Thread.sleep(15000);	    
+	    System.out.println(driver.getWindowHandles().toString());
+	    for (String handle : driver.getWindowHandles()) {
+	    	  driver.switchTo().window(handle);
+	    	}	    
+	    WebElement HarvMail = driver.findElement(By.id(Webdriver.mappings.HARVESTING.EMAIL_TEXTBOX));
+	    HarvMail.click();
+	    HarvMail.sendKeys(email);
+	    WebElement HarvPass = driver.findElement(By.id(Webdriver.mappings.HARVESTING.PASSWORD_TEXTBOX));
+	    HarvPass.click();
+	    HarvPass.sendKeys(password);	   
+	    WebElement HarvLogin = driver.findElement(By.id(Webdriver.mappings.HARVESTING.LOGIN_BUTTON));
+	    HarvLogin.click();
+	    WebElement HarvAllow = driver.findElement(By.id(Webdriver.mappings.HARVESTING.ALLOW_BUTTON));
+	    HarvAllow.click();
+	    Thread.sleep(10000);
+	    for (String handle : driver.getWindowHandles()) {
+	    	  driver.switchTo().window(handle);
+	    	}	    
 	}		
 }
-
