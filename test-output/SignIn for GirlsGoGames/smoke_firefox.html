@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>smoke_firefox</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Jan 10 13:13:06 CET 2012</td>
+<td>Started on:</td><td>Tue Jan 24 14:27:03 CET 2012</td>
 </tr>
-<tr><td>Total time:</td><td>41 seconds (41234 ms)</td>
+<tr><td>Total time:</td><td>35 seconds (35905 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -68,63 +68,29 @@ function toggleAllBoxes() {
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
 <table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Webdriver.SIGN_UP.quitDriver on instance null(Webdriver.SIGN_UP)()'><b>quitDriver on instance null(Webdriver.SIGN_UP)</b><br>Test class: Webdriver.SIGN_UP<br>Parameters: chrome, [TestResult: SignUp1 on instance null(Webdriver.SIGN_UP) STATUS:SUCCESS METHOD:SIGN_UP.SignUp1(java.lang.String)[pri:0, instance:null(Webdriver.SIGN_UP)]]
-, public void Webdriver.SIGN_UP.SignUp1(java.lang.String) throws java.lang.InterruptedException</td>
-<td><div><pre>org.openqa.selenium.WebDriverException: Error communicating with the remote browser. It may have died.
-Build info: version: &apos;2.12.0&apos;, revision: &apos;14666&apos;, time: &apos;2011-11-10 18:35:23&apos;
-System info: os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_02&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:412)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:420)
-	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:297)
-	at Webdriver.SeleniumBase.quitDriver(SeleniumBase.java:87)
-Caused by: org.apache.http.conn.HttpHostConnectException: Connection to http://localhost:22814 refused
-	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:158)
-	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:149)
-	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:121)
-	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:634)
-	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:464)
-	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:820)
-	at org.openqa.selenium.remote.HttpCommandExecutor.fallBackExecute(HttpCommandExecutor.java:391)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:370)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:398)
-	... 29 more
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
-	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
-	at java.net.PlainSocketImpl.connect(Unknown Source)
-	at java.net.SocksSocketImpl.connect(Unknown Source)
-	at java.net.Socket.connect(Unknown Source)
-	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:123)
-	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:148)
-	... 37 more
-... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1304285526", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1304285526'><pre>org.openqa.selenium.WebDriverException: Error communicating with the remote browser. It may have died.
-Build info: version: '2.12.0', revision: '14666', time: '2011-11-10 18:35:23'
-System info: os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_02'
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:412)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:420)
-	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:297)
-	at Webdriver.SeleniumBase.quitDriver(SeleniumBase.java:87)
+<td title='Webdriver.SIGN_IN.SignIn4 on instance null(Webdriver.SIGN_IN)()'><b>SignIn4 on instance null(Webdriver.SIGN_IN)</b><br>Test class: Webdriver.SIGN_IN<br>Parameters: chrome, http://www.girlsgogames.com</td>
+<td><div><pre>junit.framework.ComparisonFailure: expected:&lt;cookietest&gt; but was:&lt;&gt;
+	at junit.framework.Assert.assertEquals(Assert.java:81)
+	at junit.framework.Assert.assertEquals(Assert.java:87)
+	at Webdriver.SIGN_IN.SignIn4(SIGN_IN.java:124)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace871962456", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace871962456'><pre>junit.framework.ComparisonFailure: expected:&lt;cookietest&gt; but was:&lt;&gt;
+	at junit.framework.Assert.assertEquals(Assert.java:81)
+	at junit.framework.Assert.assertEquals(Assert.java:87)
+	at Webdriver.SIGN_IN.SignIn4(SIGN_IN.java:124)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
 	at java.lang.reflect.Method.invoke(Unknown Source)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:537)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:206)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:766)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:685)
 	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:877)
 	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
@@ -143,45 +109,9 @@ Driver info: driver.version: RemoteWebDriver
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:107)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:199)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:170)
-Caused by: org.apache.http.conn.HttpHostConnectException: Connection to http://localhost:22814 refused
-	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:158)
-	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:149)
-	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:121)
-	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:634)
-	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:464)
-	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:820)
-	at org.openqa.selenium.remote.HttpCommandExecutor.fallBackExecute(HttpCommandExecutor.java:391)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:370)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:398)
-	... 29 more
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
-	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
-	at java.net.PlainSocketImpl.connect(Unknown Source)
-	at java.net.SocksSocketImpl.connect(Unknown Source)
-	at java.net.Socket.connect(Unknown Source)
-	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:123)
-	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:148)
-	... 37 more
 </pre></div></td>
-<td>0</td>
-<td>null(Webdriver.SIGN_UP)</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='Webdriver.SIGN_UP.SignUp1 on instance null(Webdriver.SIGN_UP)()'><b>SignUp1 on instance null(Webdriver.SIGN_UP)</b><br>Test class: Webdriver.SIGN_UP<br>Parameters: http://stg.girlsgogames.com</td>
-<td></td>
-<td>32</td>
-<td>null(Webdriver.SIGN_UP)</td></tr>
+<td>33</td>
+<td>null(Webdriver.SIGN_IN)</td></tr>
 </table><p>
 </body>
 </html>

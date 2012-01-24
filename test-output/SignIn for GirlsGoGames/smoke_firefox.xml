@@ -1,43 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite hostname="CodePill-CP27" name="Webdriver.SIGN_UP" tests="1" failures="0" timestamp="10 Jan 2012 12:13:47 GMT" time="41.234" errors="0">
-  <testcase name="@AfterMethod quitDriver" time="0.0" classname="Webdriver.SIGN_UP">
-    <failure type="org.openqa.selenium.WebDriverException" message="Error communicating with the remote browser. It may have died.
-Build info: version: &amp;apos;2.12.0&amp;apos;, revision: &amp;apos;14666&amp;apos;, time: &amp;apos;2011-11-10 18:35:23&amp;apos;
-System info: os.name: &amp;apos;Windows 7&amp;apos;, os.arch: &amp;apos;amd64&amp;apos;, os.version: &amp;apos;6.1&amp;apos;, java.version: &amp;apos;1.7.0_02&amp;apos;
-Driver info: driver.version: RemoteWebDriver">
-      <![CDATA[org.openqa.selenium.WebDriverException: Error communicating with the remote browser. It may have died.
-Build info: version: '2.12.0', revision: '14666', time: '2011-11-10 18:35:23'
-System info: os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_02'
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:412)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:420)
-	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:297)
-	at Webdriver.SeleniumBase.quitDriver(SeleniumBase.java:87)
-Caused by: org.apache.http.conn.HttpHostConnectException: Connection to http://localhost:22814 refused
-	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:158)
-	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:149)
-	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:121)
-	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:634)
-	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:464)
-	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:820)
-	at org.openqa.selenium.remote.HttpCommandExecutor.fallBackExecute(HttpCommandExecutor.java:391)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:370)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:398)
-	... 29 more
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
-	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
-	at java.net.PlainSocketImpl.connect(Unknown Source)
-	at java.net.SocksSocketImpl.connect(Unknown Source)
-	at java.net.Socket.connect(Unknown Source)
-	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:123)
-	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:148)
-	... 37 more
-... Removed 26 stack frames]]>
+<testsuite hostname="CodePill-CP27" name="Webdriver.SIGN_IN" tests="1" failures="1" timestamp="24 Jan 2012 13:27:39 GMT" time="35.905" errors="0">
+  <testcase name="SignIn4 on instance null(Webdriver.SIGN_IN)" time="33.274" classname="Webdriver.SIGN_IN">
+    <failure type="junit.framework.ComparisonFailure" message="expected:&amp;lt;cookietest&amp;gt; but was:&amp;lt;&amp;gt;">
+      <![CDATA[junit.framework.ComparisonFailure: expected:<cookietest> but was:<>
+	at junit.framework.Assert.assertEquals(Assert.java:81)
+	at junit.framework.Assert.assertEquals(Assert.java:87)
+	at Webdriver.SIGN_IN.SignIn4(SIGN_IN.java:124)
+... Removed 24 stack frames]]>
     </failure>
   </testcase>
-  <testcase name="SignUp1 on instance null(Webdriver.SIGN_UP)" time="32.101" classname="Webdriver.SIGN_UP"/>
 </testsuite>

@@ -69,6 +69,7 @@ public class SeleniumBase extends Common{
 	  @Parameters({"xBrowser"})
 	  public void quitDriver(String xBrowser, ITestResult _result, Method method) throws IOException {
 		  if (!_result.isSuccess()){
+			  System.out.println("TestCase " + this.getClass().getName() + "__" + method.getName() + " was Failed!!!");
 			  Date date = new Date();
 			  SimpleDateFormat formatter = new SimpleDateFormat("yyyy.MM.dd");
 			  SimpleDateFormat formatter2 = new SimpleDateFormat("HH.mm");
@@ -80,7 +81,9 @@ public class SeleniumBase extends Common{
 			  } catch (Exception e){
 				  e.printStackTrace();
 			  }			  
-		  }
+		  } else {
+			  System.out.println("TestCase " + this.getClass().getName() + "__" + method.getName() + " was Passed!!!");
+		  }		  
           driver.manage().deleteAllCookies();
           driver.quit();
 	  }
