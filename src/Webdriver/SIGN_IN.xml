@@ -1,12 +1,11 @@
 <suite name="SignIn for GirlsGoGames" verbose="2">
-	<parameter name="xUrl" value="http://www.girlsgogames.com"/>
-	<parameter name="xBrowser" value="ie"/>
-	<test name="SignIn">
+	<parameter name="xUrl" value="http://stg.pl.girlsgogames.com"/>	
+	<test name="SignIn_IE">
+		<parameter name="xBrowser" value="ie"/>
 		<classes>
 			<class name="Webdriver.SIGN_IN">
 				<methods>
-					<!-- <include name="SignIn1"></include>  -->
-					<include name="signUp"></include>
+					<include name="SignIn1"></include>
 				</methods>
 			</class>
 		</classes>

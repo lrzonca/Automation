@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite hostname="CodePill-CP27" name="Webdriver.CATEGORY_PAGE" tests="9" failures="1" timestamp="5 Jan 2012 14:17:07 GMT" time="250.289" errors="0">
+  <testcase name="Category1 on instance null(Webdriver.CATEGORY_PAGE)" time="6.736" classname="Webdriver.CATEGORY_PAGE"/>
+  <testcase name="Flat1 on instance null(Webdriver.FLAT_PAGE)" time="6.146" classname="Webdriver.FLAT_PAGE"/>
+  <testcase name="GamePage1 on instance null(Webdriver.GAME_PAGE)" time="33.967" classname="Webdriver.GAME_PAGE"/>
+  <testcase name="GamePage2 on instance null(Webdriver.GAME_PAGE)" time="34.539" classname="Webdriver.GAME_PAGE"/>
+  <testcase name="GamePage3 on instance null(Webdriver.GAME_PAGE)" time="39.276" classname="Webdriver.GAME_PAGE"/>
+  <testcase name="Profile1 on instance null(Webdriver.PROFILE_PAGE)" time="29.076" classname="Webdriver.PROFILE_PAGE">
+    <failure type="org.openqa.selenium.StaleElementReferenceException" message="isDisplayed execution failed;
+ Element is no longer attached to the DOM (WARNING: The server did not provide any stacktrace information); duration or timeout: 57 milliseconds
+Build info: version: &amp;apos;2.12.0&amp;apos;, revision: &amp;apos;14666&amp;apos;, time: &amp;apos;2011-11-10 18:35:23&amp;apos;
+System info: os.name: &amp;apos;Windows 7&amp;apos;, os.arch: &amp;apos;amd64&amp;apos;, os.version: &amp;apos;6.1&amp;apos;, java.version: &amp;apos;1.6.0_26&amp;apos;
+Driver info: driver.version: RemoteWebDriver">
+      <![CDATA[org.openqa.selenium.StaleElementReferenceException: isDisplayed execution failed;
+ Element is no longer attached to the DOM (WARNING: The server did not provide any stacktrace information); duration or timeout: 57 milliseconds
+Build info: version: '2.12.0', revision: '14666', time: '2011-11-10 18:35:23'
+System info: os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.6.0_26'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:147)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:113)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:416)
+	at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:274)
+	at Webdriver.PROFILE_PAGE.Profile1(PROFILE_PAGE.java:39)
+... Removed 28 stack frames]]>
+    </failure>
+  </testcase>
+  <testcase name="SignIn1 on instance null(Webdriver.SIGN_IN)" time="22.97" classname="Webdriver.SIGN_IN"/>
+  <testcase name="Social1 on instance null(Webdriver.SOCIAL)" time="38.969" classname="Webdriver.SOCIAL"/>
+  <testcase name="Subcategory1 on instance null(Webdriver.SUBCATEGORY_PAGE)" time="7.765" classname="Webdriver.SUBCATEGORY_PAGE"/>
+</testsuite>
