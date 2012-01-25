@@ -1,0 +1,13 @@
+<suite name="Hyves test" verbose="2">
+	<parameter name="xUrl" value="http://www.hyves.nl"/>
+	<parameter name="xBrowser" value="chrome"/>
+	<test name="Hyves">
+		<classes>
+			<class name="Webdriver.Hyves">
+				<methods>
+					<include name="openGamePage"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

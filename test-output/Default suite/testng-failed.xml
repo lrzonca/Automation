@@ -5,7 +5,9 @@
     <classes>
       <class name="Webdriver.Hyves">
         <methods>
+          <include name="openGamePage2"/>
           <include name="openGamePage"/>
+          <include name="openGamePage1"/>
         </methods>
       </class>
     </classes>

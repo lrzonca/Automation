@@ -5,7 +5,7 @@
     <property name="target" value="1.7.0"/>
     <property name="source" value="1.7.0"/>
     <property name="junitReportDir" value="test-output"/>
-    <path id="Girls Tests.classpath">
+    <path id="Webdriver.classpath">
         <pathelement location="%javaTestProjectPath%\bin"/>
         <pathelement location="lib/junit.jar"/>
         <pathelement location="lib/selenium-2.12.0/selenium-java-2.12.0.jar"/>
@@ -41,7 +41,7 @@
 		<java jar="lib/selenium-server-standalone-2.12.0.jar" fork="true" spawn="true">
 		            <arg line="-timeout 30"/>
 		            <jvmarg value="-Dhttp.proxyHost=proxy.corporate.com"/>
-		            <jvmarg vlalue="-Dhttp.proxyPort=3128"/></java>
+		            <jvmarg value="-Dhttp.proxyPort=3128"/></java>
 	</target>
 	<target name="stopSelenium">
 	        <get taskname="selenium-shutdown"

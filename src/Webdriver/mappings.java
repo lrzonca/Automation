@@ -28,5 +28,9 @@ public class mappings {
 	  public static final String LOGIN_BUTTON = "#login-btn";
 	  public static final String GAMES_LINK = "li#menu-games a.sub-menu-title";
 	  public static final String SOCIAL_LINK = "a#social_link";
+	  public static final String SEARCH_FIELD = "#searchInput";
+	  public static final String SEARCH_BUTTON = "#searchButton";
+	  public static final String SEARCH_BOX_TITLE = ".box";
+	  public static final String SEARCHED_ELEMENT = ".box";
   }
 }

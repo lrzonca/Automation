@@ -33,6 +33,62 @@ public class Hyves extends SeleniumBase{
 	    Thread.sleep(1000);
 	    WebElement GameT = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.GAMES_LINK));
 	    GameT.click();
+	    Thread.sleep(32000);
+	    driver.switchTo().frame("remote_iframe_-1");
+	    WebElement MultiplayerT = driver.findElement(By.id("multiplayer_link"));
+	    //WebElement SocialT = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.SOCIAL_LINK));
+	    MultiplayerT.click();
+	    Thread.sleep(6000);
+	    WebElement GameL = driver.findElement(By.cssSelector("a[title=Crystical]"));
+	    GameL.click();
+	    Thread.sleep(10000);
+	   
+	    assertTrue(driver.findElement(By.id("flashobj_mc")).isDisplayed());
+	    
+  }
+  
+  @Test
+  @Parameters({"xUrl"})
+  public void openGamePage1(String xUrl) throws InterruptedException {
+	  driver.get(xUrl);
+	    Thread.sleep(3000);
+	    WebElement UsernameF = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.USERNAME_FIELD));
+	    UsernameF.sendKeys("mptest");
+	    WebElement PasswordF = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.PASSWORD_FIELD));
+	    PasswordF.sendKeys("mptest123");
+	    WebElement LoginB = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.LOGIN_BUTTON));
+	    LoginB.click();
+	    Thread.sleep(1000);
+	    WebElement GameT = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.GAMES_LINK));
+	    GameT.click();
+	    Thread.sleep(2000);
+	    driver.switchTo().frame("remote_iframe_-1");
+	    WebElement MultiplayerT = driver.findElement(By.id("multiplayer_link"));
+	    //WebElement SocialT = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.SOCIAL_LINK));
+	    MultiplayerT.click();
+	    Thread.sleep(6000);
+	    WebElement GameL = driver.findElement(By.cssSelector("a[title=Crystical]"));
+	    GameL.click();
+	    Thread.sleep(10000);
+	   
+	    assertTrue(driver.findElement(By.id("flashobj_mc")).isDisplayed());
+	    
+  }
+  
+  @Test
+  @Parameters({"xUrl"})
+  public void openGamePage2(String xUrl) throws InterruptedException {
+	  driver.get(xUrl);
+	    Thread.sleep(3000);
+	    WebElement UsernameF = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.USERNAME_FIELD));
+	    UsernameF.sendKeys("mptest");
+	    WebElement PasswordF = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.PASSWORD_FIELD));
+	    PasswordF.sendKeys("mptest123");
+	    WebElement LoginB = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.LOGIN_BUTTON));
+	    LoginB.click();
+	    Thread.sleep(1000);
+	    WebElement GameT = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.GAMES_LINK));
+	    GameT.click();
 	    Thread.sleep(2000);
 	    driver.switchTo().frame("remote_iframe_-1");
 	    WebElement MultiplayerT = driver.findElement(By.id("multiplayer_link"));

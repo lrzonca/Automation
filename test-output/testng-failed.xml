@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite verbose="0" name="Failed suite [Hyves test]">
-  <parameter name="xUrl" value="http://www.hyves.nl"/>
-  <parameter name="xBrowser" value="chrome"/>
-  <test name="Hyves(failed)" preserve-order="false">
-    <parameter name="xUrl" value="http://www.hyves.nl"/>
-    <parameter name="xBrowser" value="chrome"/>
+<suite thread-count="4" verbose="0" name="Failed suite [Hyves test]" parallel="tests">
+  <parameter name="xUrl" value="http://www.hyves.nl/games"/>
+  <parameter name="xGameTitle" value="woobies"/>
+  <parameter name="xBrowser" value="firefox"/>
+  <test name="Hyves(failed)" parallel="tests" preserve-order="false">
+    <parameter name="xUrl" value="http://www.hyves.nl/games"/>
+    <parameter name="xGameTitle" value="woobies"/>
+    <parameter name="xBrowser" value="firefox"/>
     <classes>
-      <class name="Webdriver.Hyves">
+      <class name="Webdriver.Hy_search">
         <methods>
           <include name="quitDriver"/>
           <include name="createDriver"/>
           <include name="createAndStopService"/>
-          <include name="openGamePage" invocation-numbers="0"/>
+          <include name="gameSearchValid" invocation-numbers="0"/>
           <include name="createAndStartService"/>
         </methods>
       </class>
