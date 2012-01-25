@@ -15,8 +15,11 @@ public class SIGN_UP extends SeleniumBase{
 	@Test
 	@Parameters({"xUrl"})
 	public void SignUp1(String xUrl) throws InterruptedException {		 
+		System.out.println("Open URL");
 		driver.get(xUrl);
+		System.out.println("Sleep 2 sek");
 		Thread.sleep(2000);
+		System.out.println("Sign_Up Common");
 		Sign_Up("", "", "", "", "");  
 	}
 	
@@ -24,9 +27,13 @@ public class SIGN_UP extends SeleniumBase{
 	@Test
 	@Parameters({"xUrl"})
 	public void SignUp2(String xUrl) throws InterruptedException {		 
+		System.out.println("Open URL");
 		driver.get(xUrl);
+		System.out.println("Sleep 2 sek");
 		Thread.sleep(2000);
+		System.out.println("Sign_Up_TEST Common");
 		Sign_Up_TEST("1234567@123", "", "", ""); 
+		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_EMAIL_NOT_VALID)).isDisplayed());
 	}	
 	
@@ -34,9 +41,13 @@ public class SIGN_UP extends SeleniumBase{
 	@Test
 	@Parameters({"xUrl"})
 	public void SignUp3(String xUrl) throws InterruptedException {		 
+		System.out.println("Open URL");
 		driver.get(xUrl);
+		System.out.println("Sleep 2 sek");
 		Thread.sleep(2000);
+		System.out.println("Sign_Up_TEST Common");
 		Sign_Up_TEST("miroslaw.palysiewicz.fb@dev.spilgames.eu", "", "", "");
+		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_EMAIL_NOT_VALID)).isDisplayed());
 	}	
 
@@ -44,10 +55,15 @@ public class SIGN_UP extends SeleniumBase{
 	@Test
 	@Parameters({"xUrl"})
 	public void SignUp4(String xUrl) throws InterruptedException {		 
+		System.out.println("Open URL");
 		driver.get(xUrl);
+		System.out.println("Sleep 2 sek");
 		Thread.sleep(2000);
+		System.out.println("Sign_Up_TEST Common");
 		Sign_Up_TEST("", "none", "", "");
+		System.out.println("Assertion");
 		assertFalse(driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_USERNAME_VALID)).isDisplayed());
+		System.out.println("Assertion");
 		assertFalse(driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_USERNAME_NOT_VALID)).isDisplayed());
 	}
 	
@@ -55,9 +71,13 @@ public class SIGN_UP extends SeleniumBase{
 	@Test
 	@Parameters({"xUrl"})
 	public void SignUp5(String xUrl) throws InterruptedException {		 
+		System.out.println("Open URL");
 		driver.get(xUrl);
+		System.out.println("Sleep 2 sek");
 		Thread.sleep(2000);
+		System.out.println("Sign_Up_TEST Common");
 		Sign_Up_TEST("", "a", "", "");
+		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_USERNAME_NOT_VALID)).isDisplayed());
 	}
 	
@@ -65,9 +85,13 @@ public class SIGN_UP extends SeleniumBase{
 	@Test
 	@Parameters({"xUrl"})
 	public void SignUp6(String xUrl) throws InterruptedException {		 
+		System.out.println("Open URL");
 		driver.get(xUrl);
+		System.out.println("Sleep 2 sek");
 		Thread.sleep(2000);
+		System.out.println("Sign_Up_TEST Common");
 		Sign_Up_TEST("", "mptest", "", "");
+		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_USERNAME_NOT_VALID)).isDisplayed());
 	}	
 	
@@ -75,9 +99,13 @@ public class SIGN_UP extends SeleniumBase{
 	@Test
 	@Parameters({"xUrl"})
 	public void SignUp7(String xUrl) throws InterruptedException {		 
+		System.out.println("Open URL");
 		driver.get(xUrl);
+		System.out.println("Sleep 2 sek");
 		Thread.sleep(2000);
+		System.out.println("Sign_Up_TEST Common");
 		Sign_Up_TEST("", "", "", "2");
+		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_AGE_NOT_VALID)).isDisplayed());
 	}		
 	
@@ -85,9 +113,13 @@ public class SIGN_UP extends SeleniumBase{
 	@Test
 	@Parameters({"xUrl"})
 	public void SignUp8(String xUrl) throws InterruptedException {		 
+		System.out.println("Open URL");
 		driver.get(xUrl);
+		System.out.println("Sleep 2 sek");
 		Thread.sleep(2000);
+		System.out.println("Sign_Up_TEST Common");
 		Sign_Up_TEST("", "", "1", "");
+		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_PASSWORD_NOT_VALID)).isDisplayed());
 	}	
 	
@@ -95,9 +127,13 @@ public class SIGN_UP extends SeleniumBase{
 	@Test
 	@Parameters({"xUrl"})
 	public void SignUp9(String xUrl) throws InterruptedException {		 
+		System.out.println("Open URL");
 		driver.get(xUrl);
+		System.out.println("Sleep 2 sek");
 		Thread.sleep(2000);
+		System.out.println("Sign_Up_TEST Common");
 		Sign_Up_TEST("", "!@#$%^&*()_", "", "");
+		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_USERNAME_NOT_VALID)).isDisplayed());
 	}	
 	
@@ -105,9 +141,13 @@ public class SIGN_UP extends SeleniumBase{
 	@Test
 	@Parameters({"xUrl"})
 	public void SignUp10(String xUrl) throws InterruptedException {		 
+		System.out.println("Open URL");
 		driver.get(xUrl);
+		System.out.println("Sleep 2 sek");
 		Thread.sleep(2000);
+		System.out.println("Sign_Up_TEST Common");
 		Sign_Up_TEST("!@#$%^&*(@123", "", "", ""); 
+		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_EMAIL_NOT_VALID)).isDisplayed());
 	}		
 	
@@ -115,9 +155,13 @@ public class SIGN_UP extends SeleniumBase{
 	@Test
 	@Parameters({"xUrl"})
 	public void SignUp11(String xUrl) throws InterruptedException {		 
+		System.out.println("Open URL");
 		driver.get(xUrl);
+		System.out.println("Sleep 2 sek");
 		Thread.sleep(2000);
+		System.out.println("Sign_Up_TEST Common");
 		Sign_Up_TEST("", "", "", "#@"); 
+		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_AGE_NOT_VALID)).isDisplayed());
 	}		
 	
@@ -125,10 +169,13 @@ public class SIGN_UP extends SeleniumBase{
 	@Test
 	@Parameters({"xUrl"})
 	public void SignUp12(String xUrl) throws InterruptedException {		 
+		System.out.println("Open URL");
 		driver.get(xUrl);
+		System.out.println("Sleep 2 sek");
 		Thread.sleep(2000);
+		System.out.println("Sign_Up_TEST Common");
 		Sign_Up_TEST("", "", "!#@$^&*(", ""); 
+		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_PASSWORD_VALID)).isDisplayed());
 	}			
 }
-
