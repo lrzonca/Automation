@@ -102,9 +102,4 @@ public class Hyves extends SeleniumBase{
 	    assertTrue(driver.findElement(By.id("flashobj_mc")).isDisplayed());
 	    
   }
-
-private void assertTrue(boolean displayed) {
-	// TODO Auto-generated method stub
-	
-}
 }

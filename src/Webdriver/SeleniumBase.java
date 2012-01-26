@@ -2,11 +2,15 @@ package Webdriver;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.net.URL;
 import java.net.MalformedURLException;
+import java.text.SimpleDateFormat;
+import org.apache.commons.io.FileUtils;
+import java.util.Date;
 
 import junit.framework.TestCase;
-
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverBackedSelenium;
 import org.openqa.selenium.chrome.ChromeDriverService;
@@ -15,6 +19,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.ITestResult;
 import org.openqa.selenium.server.commands.CaptureNetworkTrafficCommand;
 import org.openqa.selenium.server.commands.CaptureNetworkTrafficCommand.Entry;
 import org.testng.annotations.AfterClass;
@@ -22,12 +27,11 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
+import org.openqa.selenium.TakesScreenshot;
 
 
-public class SeleniumBase extends mappings{
+public class SeleniumBase extends Common{
 	private static final Entry TrafficResult = null;
-	public WebDriver driver;
-	private static ChromeDriverService service;
 	DesiredCapabilities capability=null;
 	
 	 @BeforeClass
@@ -35,7 +39,7 @@ public class SeleniumBase extends mappings{
 	  public static void createAndStartService(String xBrowser) throws IOException {
 		 if (xBrowser.contains("chrome")) {
 			 service = new ChromeDriverService.Builder()
-		        .usingChromeDriverExecutable(new File("C:\\Users\\Mirek\\workspace\\SPILGAMES\\lib\\chromedriver.exe"))
+		        .usingChromeDriverExecutable(new File("\\lib\\chromedriver.exe"))
 		        .usingAnyFreePort()
 		        .build();
 			  	
@@ -53,10 +57,9 @@ public class SeleniumBase extends mappings{
 	
 	@BeforeMethod
 	@Parameters({ "xBrowser"})
-	  public void createDriver(String xBrowser) throws MalformedURLException {
+	  public void createDriver(String xBrowser, Method method) throws IOException {
 		if (xBrowser.contains("firefox")) {
-			// old version
-			// driver = new FirefoxDriver();
+			
 			System.out.println("firefox");
 			capability= DesiredCapabilities.firefox();
 			capability.setBrowserName("firefox");
@@ -66,8 +69,6 @@ public class SeleniumBase extends mappings{
 			
 			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
 		} else if (xBrowser.contains("chrome")) {
-//			driver = new RemoteWebDriver(service.getUrl(),
-//			        DesiredCapabilities.chrome());
 			capability= DesiredCapabilities.chrome();
 			driver = new RemoteWebDriver(service.getUrl(), capability);
 			        
@@ -80,20 +81,32 @@ public class SeleniumBase extends mappings{
 			capability.setBrowserName("iexplore");
 			capability.setPlatform(org.openqa.selenium.Platform.WINDOWS);
 			capability.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+			capability.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
 			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
 		}
+		driver.manage().deleteAllCookies();
 	  }
-
-	  private void WebDriverBackedSelenium(Object capture) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
 
 	@AfterMethod
 	  @Parameters({ "xBrowser"})
-	  public void quitDriver(String xBrowser) {
+	  public void quitDriver(String xBrowser, ITestResult _result, Method method) throws IOException {
+		if (!_result.isSuccess()){
+			System.out.println("TestCase " + this.getClass().getName() + "__" + method.getName() + " was Failed!!!");
+			Date date = new Date();
+			SimpleDateFormat formatter = new SimpleDateFormat("yyyy.MM.dd");
+			SimpleDateFormat formatter2 = new SimpleDateFormat("HH.mm");
+			String sDate = formatter.format(date);
+			String sTime = formatter2.format(date);
+			try{
+			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(scrFile, new File("C:\\tmp\\WebDriverLog\\FAILED_" + xBrowser + "_TC_" + this.getClass().getName() + "__" + method.getName() + "__" + sDate + "_" + sTime + "__" + ".png"));
+			} catch (Exception e){
+			e.printStackTrace();
+			}
+			} else {
+			System.out.println("TestCase " + this.getClass().getName() + "__" + method.getName() + " was Passed!!!");
+			}
+			  driver.manage().deleteAllCookies();
 			  driver.quit();
 	  }
 }
