@@ -10,5 +10,8 @@
 	<classpathentry kind="lib" path="C:/Users/Mirek/workspace/WebDriver/lib/testng-5.14.7.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Mirek/workspace/WebDriver/lib/xmlrpc-client-3.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Mirek/workspace/WebDriver/lib/xmlrpc-common-3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mirek/workspace/WebDriver/lib/selenium-server-standalone-2.12.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mirek/workspace/WebDriver/lib/selenium-2.12.0/selenium-java-2.12.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mirek/workspace/WebDriver/lib/selenium-2.12.0/selenium-java-2.12.0-srcs.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

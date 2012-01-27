@@ -1,8 +1,10 @@
-<suite name="Hyves test" verbose="3" parallel="tests" thread-count="4">
+<suite name="Hyves test" verbose="3" parallel="methods" thread-count="4">
 	<parameter name="xUrl" value="http://www.hyves.nl/games"/>
-	<parameter name="xGameTitle" value="woobies"/>
+	<parameter name="xGameTitle" value="WooBIes"/>
+	<parameter name="xUsername" value="mptest"/>
+	<parameter name="xPass" value="mptest123"/>
 	<test name="Hyves">
-	<parameter name="xBrowser" value="firefox"/>
+	<parameter name="xBrowser" value="chrome"/>
 		<classes>
 			<class name="Webdriver.Hy_search">
 				<methods>

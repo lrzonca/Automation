@@ -39,7 +39,7 @@ public class SeleniumBase extends Common{
 	  public static void createAndStartService(String xBrowser) throws IOException {
 		 if (xBrowser.contains("chrome")) {
 			 service = new ChromeDriverService.Builder()
-		        .usingChromeDriverExecutable(new File("\\lib\\chromedriver.exe"))
+		        .usingChromeDriverExecutable(new File("C:\\Users\\Mirek\\workspace\\SPILGAMES\\lib\\chromedriver.exe"))
 		        .usingAnyFreePort()
 		        .build();
 			  	
@@ -64,8 +64,7 @@ public class SeleniumBase extends Common{
 			capability= DesiredCapabilities.firefox();
 			capability.setBrowserName("firefox");
 			capability.setPlatform(org.openqa.selenium.Platform.ANY);
-			
-	//		WebDriverBackedSelenium(CaptureNetworkTrafficCommand.capture(TrafficResult));
+			//WebDriverBackedSelenium(CaptureNetworkTrafficCommand.capture(TrafficResult));
 			
 			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
 		} else if (xBrowser.contains("chrome")) {
@@ -73,9 +72,6 @@ public class SeleniumBase extends Common{
 			driver = new RemoteWebDriver(service.getUrl(), capability);
 			        
 		} else if (xBrowser.contains("iexplore")) {
-//			DesiredCapabilities ieCapabilities = DesiredCapabilities.internetExplorer();
-//            ieCapabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
-//            driver = new InternetExplorerDriver(ieCapabilities);
 			System.out.println("iexplore");
 			capability= DesiredCapabilities.internetExplorer();
 			capability.setBrowserName("iexplore");
@@ -84,8 +80,9 @@ public class SeleniumBase extends Common{
 			capability.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
 			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
 		}
-		driver.manage().deleteAllCookies();
+		//driver.manage().deleteAllCookies();
 	  }
+
 
 	@AfterMethod
 	  @Parameters({ "xBrowser"})
@@ -106,7 +103,7 @@ public class SeleniumBase extends Common{
 			} else {
 			System.out.println("TestCase " + this.getClass().getName() + "__" + method.getName() + " was Passed!!!");
 			}
-			  driver.manage().deleteAllCookies();
+			  //driver.manage().deleteAllCookies();
 			  driver.quit();
 	  }
 }
