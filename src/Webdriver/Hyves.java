@@ -35,8 +35,8 @@ public class Hyves extends SeleniumBase{
 	    GameT.click();
 	    Thread.sleep(32000);
 	    driver.switchTo().frame("remote_iframe_-1");
-	    WebElement MultiplayerT = driver.findElement(By.id("multiplayer_link"));
-	    //WebElement SocialT = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.SOCIAL_LINK));
+	    //WebElement MultiplayerT = driver.findElement(By.id("multiplayer_link"));
+	    WebElement MultiplayerT = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.MULTIPLAYER_LINK));
 	    MultiplayerT.click();
 	    Thread.sleep(6000);
 	    WebElement GameL = driver.findElement(By.cssSelector("a[title=Crystical]"));
