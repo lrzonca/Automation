@@ -10,8 +10,8 @@
 					<include name="SignIn4"></include>
 					<include name="SignIn5"></include>
 				</methods>
-			</class>		
-<!--  		<class name="Webdriver.CATEGORY_PAGE">
+			</class>
+<!-- 	  		<class name="Webdriver.CATEGORY_PAGE">
 				<methods>
 					<include name="Category1"></include>
 				</methods>
@@ -52,7 +52,8 @@
 					<include name="GamePage2"></include>
 					<include name="GamePage3"></include>
 				</methods>
-			</class> -->					
-		</classes>
+			</class>
+			 -->					
+		</classes>		
 	</test>		
 </suite>
