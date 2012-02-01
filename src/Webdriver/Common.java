@@ -18,6 +18,9 @@ public class Common extends TestCase implements mappings {
 	public String UP = "123456";
 	public String UN2 = "qwerty_friend_3";	
 	
+	void assertEqualsCaseInsensitive(String expected, String actual) {
+		  assertEquals(expected.toLowerCase(), actual.toLowerCase());
+	  }
 	
 	void Wait_For_Object(int Time, Boolean Object) throws InterruptedException{
 		System.out.println(Object);
@@ -261,5 +264,25 @@ public class Common extends TestCase implements mappings {
 	    for (String handle : driver.getWindowHandles()) {
 	    	  driver.switchTo().window(handle);
 	    	}	    
-	}		
+	}
+	// =====================================
+	// ===== HYVES SECTION =================
+	//======================================
+	
+	@Parameters({"xUrl", "xUsername", "xPass"})
+	public void NavigateToGamePage(String xUrl, String xUsername, String xPass) throws Exception{
+		driver.get(xUrl);
+	    Thread.sleep(3000);
+	    WebElement UsernameF = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.USERNAME_FIELD));
+	    UsernameF.sendKeys(xUsername);
+	    WebElement PasswordF = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.PASSWORD_FIELD));
+	    PasswordF.sendKeys(xPass);
+	    WebElement LoginB = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.LOGIN_BUTTON));
+	    LoginB.click();
+	    Thread.sleep(5000);
+	    if (xUrl.contains("dev")){
+	    	driver.get(xUrl);
+	    }
+	    driver.switchTo().frame("remote_iframe_-1");
+	}
 }
