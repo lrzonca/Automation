@@ -1,14 +1,19 @@
 <suite name="Hyves test" verbose="3" parallel="methods" thread-count="4">
 	<parameter name="xUrl" value="http://www.hyves.nl/games"/>
-	<parameter name="xGameTitle" value="WooBIes"/>
+	<parameter name="xGameTitle" value="Sevens"/>
 	<parameter name="xUsername" value="mptest"/>
 	<parameter name="xPass" value="mptest123"/>
 	<test name="Hyves">
-	<parameter name="xBrowser" value="chrome"/>
+	<parameter name="xBrowser" value="iexplore"/>
 		<classes>
 			<class name="Webdriver.Hy_search">
 				<methods>
 					<include name="gameSearchValid"></include>
+				</methods>
+			</class>
+			<class name="Webdriver.Hyves">
+				<methods>
+					<include name="openGamePage"></include>
 				</methods>
 			</class>
 		</classes>
@@ -19,9 +24,8 @@
 			<class name="Webdriver.Hyves">
 				<methods>
 					<include name="openGamePage"></include>
-					<include name="openGamePage1"></include>
 				</methods>
 			</class>
 		</classes>
-	</test> -->
+	</test>  -->
 </suite>

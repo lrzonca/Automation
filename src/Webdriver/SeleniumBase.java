@@ -4,23 +4,17 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.net.URL;
-import java.net.MalformedURLException;
 import java.text.SimpleDateFormat;
 import org.apache.commons.io.FileUtils;
 import java.util.Date;
 
-import junit.framework.TestCase;
 import org.openqa.selenium.OutputType;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebDriverBackedSelenium;
 import org.openqa.selenium.chrome.ChromeDriverService;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
-import org.openqa.selenium.server.commands.CaptureNetworkTrafficCommand;
 import org.openqa.selenium.server.commands.CaptureNetworkTrafficCommand.Entry;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -31,7 +25,7 @@ import org.openqa.selenium.TakesScreenshot;
 
 
 public class SeleniumBase extends Common{
-	private static final Entry TrafficResult = null;
+//	private static final Entry TrafficResult = null;
 	DesiredCapabilities capability=null;
 	
 	 @BeforeClass
@@ -59,7 +53,6 @@ public class SeleniumBase extends Common{
 	@Parameters({ "xBrowser"})
 	  public void createDriver(String xBrowser, Method method) throws IOException {
 		if (xBrowser.contains("firefox")) {
-			
 			System.out.println("firefox");
 			capability= DesiredCapabilities.firefox();
 			capability.setBrowserName("firefox");
