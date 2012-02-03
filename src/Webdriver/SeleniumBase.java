@@ -33,7 +33,7 @@ public class SeleniumBase extends Common{
 	  public static void createAndStartService(String xBrowser) throws IOException {
 		 if (xBrowser.contains("chrome")) {
 			 service = new ChromeDriverService.Builder()
-		        .usingChromeDriverExecutable(new File("C:\\Users\\Mirek\\workspace\\SPILGAMES\\lib\\chromedriver.exe"))
+		        .usingChromeDriverExecutable(new File(".\\lib\\chromedriver.exe"))
 		        .usingAnyFreePort()
 		        .build();
 			  	
