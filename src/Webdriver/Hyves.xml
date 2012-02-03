@@ -3,7 +3,7 @@
 	<parameter name="xGameTitle" value="Sevens"/>
 	<parameter name="xUsername" value="mptest"/>
 	<parameter name="xPass" value="mptest123"/>
-	<!-- <test name="Hyves">
+	<test name="Hyves">
 		<parameter name="xBrowser" value="firefox"/>
 		<classes>
 			<class name="Webdriver.Hy_search">	
@@ -22,7 +22,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test>  --> 
+	</test>
 	<test name="Hyves_Chrome">
 	<parameter name="xBrowser" value="chrome"/>
 		<classes>

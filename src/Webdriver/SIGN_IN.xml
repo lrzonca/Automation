@@ -1,7 +1,7 @@
 <suite name="SignIn for GirlsGoGames" verbose="2">
 	<parameter name="xUrl" value="http://stg.pl.girlsgogames.com"/>	
 	<test name="SignIn_IE">
-		<parameter name="xBrowser" value="ie"/>
+		<parameter name="xBrowser" value="iexplore"/>
 		<classes>
 			<class name="Webdriver.SIGN_IN">
 				<methods>
