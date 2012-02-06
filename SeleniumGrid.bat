@@ -1,4 +1,6 @@
-set seleniumGrid=C:\Users\Mirek\workspace\WebDriver\lib
+PUSHD .
+
+set seleniumGrid=%CD%\lib
 
 ECHO Load GitHub
 
@@ -13,3 +15,4 @@ START java -jar selenium-server-standalone-2.12.0.jar -role webdriver -hub http:
 ECHO Type something
 
 PAUSE
+POPD
