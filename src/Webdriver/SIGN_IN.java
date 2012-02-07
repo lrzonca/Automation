@@ -21,6 +21,7 @@ public class SIGN_IN extends SeleniumBase{
 	@Test
 	@Parameters({"xUrl"})
 	public void SignIn1(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
 		driver.get(xUrl);
 		System.out.println("Sleep 2 sek");
 		Thread.sleep(2000);
@@ -54,9 +55,9 @@ public class SIGN_IN extends SeleniumBase{
 		Thread.sleep(2000);
 		System.out.println("Login Common");
 		Login("", "");	
-		System.out.println("Find if Element WHOLE_POPUP is visible");
+		System.out.println("Find Element WHOLE_POPUP");
 		driver.findElement(By.id(Webdriver.mappings.signIn.WHOLE_POPUP)).isDisplayed();
-		System.out.println("Find if Element ERROR_MESSAGE is visible");
+		System.out.println("Find Element ERROR_MESSAGE");
 		driver.findElement(By.cssSelector(Webdriver.mappings.signIn.ERROR_MESSAGE)).isDisplayed();
 	}		
 	

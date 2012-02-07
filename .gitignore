@@ -4,3 +4,4 @@
 *.log
 /bin
 /test-output
+*.log

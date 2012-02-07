@@ -1,0 +1,71 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Test suite Selenium RC" verbose="2">
+	<parameter name="T_u" value="http://stg.pl.girlsgogames.com"/>
+	<parameter name="T_sH" value="localhost"/>
+	<parameter name="T_sP" value="4444"/>
+	<parameter name="T_b" value="*firefox"/>
+	<test name="Service">
+		<classes>
+			<class name="WEBSERVICE.ALERTAR">
+				<methods>
+					<include name="TC_01"></include>
+				</methods>
+			</class>
+			<class name="WEBSERVICE.BABBLAR">
+				<methods>
+					<include name="TC_01"></include>
+				</methods>
+			</class>
+			<class name="WEBSERVICE.CONFIGAR">
+				<methods>
+					<include name="TC_01"></include>
+				</methods>
+			</class>
+			<class name="WEBSERVICE.CONTENTAR">
+				<methods>
+					<include name="TC_01"></include>
+				</methods>
+			</class>			
+			<class name="WEBSERVICE.FILTAR">
+				<methods>
+					<include name="TC_01"></include>
+				</methods>
+			</class>
+			<class name="WEBSERVICE.HYSCOR">
+				<methods>
+					<include name="TC_01"></include>
+				</methods>
+			</class>
+			<class name="WEBSERVICE.LOCATAR">
+				<methods>
+					<include name="TC_01"></include>
+				</methods>
+			</class>
+			<class name="WEBSERVICE.PROFILAR">
+				<methods>
+					<include name="TC_01"></include>
+				</methods>
+			</class>
+			<class name="WEBSERVICE.RATOR">
+				<methods>
+					<include name="TC_01"></include>
+				</methods>
+			</class>
+			<class name="WEBSERVICE.SOCIAL_GATEWAY">
+				<methods>
+					<include name="TC_01"></include>
+				</methods>
+			</class>			
+			<class name="WEBSERVICE.REPORTAR">
+				<methods>
+					<include name="TC_01"></include>
+				</methods>
+			</class>	
+			<class name="WEBSERVICE.VIEWAR">
+				<methods>
+					<include name="TC_01"></include>
+				</methods>
+			</class>																													
+		</classes>
+	</test>													
+</suite>

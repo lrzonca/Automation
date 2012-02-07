@@ -1,8 +1,6 @@
-<suite name="SignIn for GirlsGoGames" verbose="2">
-	<parameter name="xUrl" value="http://www.girlsgogames.com"/>	
-
-	<test name="smoke_firefox">
-		<parameter name="xBrowser" value="chrome"/>
+<suite name="SignIn for GirlsGoGames" verbose="3" parallel="tests" thread-count="4">
+	<parameter name="xUrl" value="http://stg.girlsgogames.com"/>	
+	<test name="smoke_firefox">		
 		<classes>
 	  		<class name="Webdriver.CATEGORY_PAGE">
 				<methods>
@@ -25,27 +23,21 @@
 				</methods>
 			</class>
 			<class name="Webdriver.SIGN_UP">
-				<methods>
+				<methods>					
 					<include name="SignUp1"></include>
-				</methods>
-			</class>			
-			<class name="Webdriver.PROFILE_PAGE">
-				<methods>
-					<include name="Profile1"></include>
+					<include name="SignUp2"></include>
+					<include name="SignUp3"></include>
+					<include name="SignUp4"></include>
+					<include name="SignUp5"></include>
+					<include name="SignUp6"></include>
+					<include name="SignUp7"></include>
+					<include name="SignUp8"></include>
+					<include name="SignUp9"></include>
+					<include name="SignUp10"></include>
+					<include name="SignUp11"></include>
+					<include name="SignUp12"></include>					
 				</methods>
 			</class>
-			<class name="Webdriver.FLAT_PAGE">
-				<methods>
-					<include name="Flat1"></include>
-				</methods>
-			</class>
-			<class name="Webdriver.GAME_PAGE">
-				<methods>
-					<include name="GamePage1"></include>
-					<include name="GamePage2"></include>
-					<include name="GamePage3"></include>
-				</methods>
-			</class> -->					
-		</classes>
-	</test>		
+		</classes>		
+	</test>	
 </suite>

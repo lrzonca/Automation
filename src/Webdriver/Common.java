@@ -1,5 +1,10 @@
 package Webdriver;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Date;
 
 import org.openqa.selenium.By;
@@ -17,6 +22,7 @@ public class Common extends TestCase implements mappings {
 	public String UN1 = "qwerty_friend_1";
 	public String UP = "123456";
 	public String UN2 = "qwerty_friend_3";	
+	public Connection c, c_stg, c_event;	
 	
 	void assertEqualsCaseInsensitive(String expected, String actual) {
 		  assertEquals(expected.toLowerCase(), actual.toLowerCase());
@@ -265,6 +271,195 @@ public class Common extends TestCase implements mappings {
 	    	  driver.switchTo().window(handle);
 	    	}	    
 	}
+	
+	void Connect_DB(){
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			c=DriverManager.getConnection("jdbc:mysql://192.168.95.51:3306/automation", "automation", "siatkoweczka");
+			} catch (ClassNotFoundException e) {
+				System.out.println("ClassNotFoundException");
+			} catch (SQLException e) {
+				System.out.println("SQLException");
+			} catch (Exception e) {
+				System.out.println("Exception");
+		}		
+	}		
+
+	/* Description
+	 */
+	void Disconnect_DB(){	 
+		if (c != null) {
+			try {
+				c.close();
+			} catch (Exception e) {
+				System.out.println("Exception during closing DB connection");
+			}
+		}
+	}	
+	
+	
+
+	/* Description
+	 */
+	@Parameters({"xUrl"})
+	public void GA_check(String xUrl, String siteName, int gaTimeout) throws Throwable {
+		Connect_DB();
+		try{
+			Statement s=c.createStatement();
+			ResultSet r=s.executeQuery("SELECT `site_url`, site_id FROM sites WHERE `concept` = 'GIRLS'");			
+			while (r.next()) {
+				String site_url =  r.getString(1);
+				int site_id =  r.getInt(2);				
+				String url_change = xUrl;
+//				selenium.setContext(url_change);			
+//				selenium.deleteAllVisibleCookies();
+				if (siteName.equals("homepage")){
+					System.out.println("Open URL");
+					driver.get(xUrl);
+					System.out.println("Sleep 2 sek");
+					Thread.sleep(2000);
+				}
+				if (siteName.equals("categories")){
+					System.out.println("Open URL");
+					driver.get(xUrl);
+					System.out.println("Sleep 2 sek");
+					Thread.sleep(2000);
+					System.out.println("Find Element ADVENTURE_GAMES");
+					WebElement AdventureGame = driver.findElement(By.cssSelector(Webdriver.mappings.leftNavi.ADVENTURE_GAMES));
+					System.out.println("Click Element ADVENTURE_GAMES");
+					AdventureGame.click();	
+				}			
+				if (siteName.equals("subcategories")){
+					System.out.println("Open URL");
+					driver.get(xUrl);
+					System.out.println("Sleep 2 sek");
+					Thread.sleep(2000);
+					System.out.println("Find Element ADVENTURE_GAMES");
+					WebElement AdventureGame = driver.findElement(By.cssSelector(Webdriver.mappings.leftNavi.ADVENTURE_GAMES));
+					System.out.println("Click Element ADVENTURE_GAMES");
+					AdventureGame.click();	
+					System.out.println("Find Element FIRST_AVAILABLE_SUBCATEGORY_LINK");
+					WebElement SubCategory = driver.findElement(By.cssSelector(Webdriver.mappings.categoryPage.FIRST_AVAILABLE_SUBCATEGORY_LINK));
+					System.out.println("Click Element FIRST_AVAILABLE_SUBCATEGORY_LINK");
+					SubCategory.click();	
+				}
+				if (siteName.equals("search")){
+					System.out.println("Open URL");
+					driver.get(xUrl + "/search.html?search=");
+					System.out.println("Sleep 2 sek");
+					Thread.sleep(2000);					
+				}	
+				if (siteName.equals("staticsites")){
+					System.out.println("Open URL");
+					driver.get(xUrl);
+					System.out.println("Sleep 2 sek");
+					Thread.sleep(2000);
+					System.out.println("Find Element TERMS_OF_USE");
+					WebElement TermsOfUse = driver.findElement(By.cssSelector(Webdriver.mappings.footer.TERMS_OF_USE));
+					System.out.println("Click Element TERMS_OF_USE");
+					TermsOfUse.click();	
+				}
+				if (siteName.equals("highscoregames")){
+					System.out.println("Open URL");
+					driver.get(xUrl);
+					System.out.println("Sleep 2 sek");
+					Thread.sleep(2000);
+					System.out.println("Find Element HIGHSCORE_LEFT_NAVI_LINK");
+					WebElement Highscore = driver.findElement(By.cssSelector(Webdriver.mappings.leftNavi.HIGHSCORE_LEFT_NAVI_LINK));
+					System.out.println("Click Element HIGHSCORE_LEFT_NAVI_LINK");
+					Highscore.click();						
+				}	
+				if (siteName.equals("newgames")){
+					System.out.println("Open URL");
+					driver.get(xUrl);
+					System.out.println("Sleep 2 sek");
+					Thread.sleep(2000);
+					System.out.println("Find Element GAMES_FOR_GIRLS_NAVI_LINK");
+					WebElement NewGame = driver.findElement(By.cssSelector(Webdriver.mappings.leftNavi.GAMES_FOR_GIRLS_NAVI_LINK));
+					System.out.println("Click Element GAMES_FOR_GIRLS_NAVI_LINK");
+					NewGame.click();						
+				}
+				if (siteName.equals("awardgames")){
+					Open_Award_Games_Page(environment, site_url);					
+				}				
+				if (siteName.equals("flatpages")){
+					Open_Flat_Pages(environment, site_url);
+				}
+				if (siteName.equals("tags")){
+					Open_Tags_Page(environment, site_url);
+				}				
+				if (siteName.equals("userprofile-registrationform")){
+					Open_User_Profile_Registration_Page(environment, site_url);
+				}		
+				if (siteName.equals("userprofile")){
+					Open_User_Profile_Page(environment, site_url);
+				}
+				if (siteName.equals("seosites")){
+					Open_Popular_Games_Page(environment, site_url);
+				}				
+				if (siteName.startsWith("games-")){
+					Open_Games_Page(environment, site_url);
+					siteName = "games-";
+					siteName = siteName + gameID;
+				}	
+				Wait(2000);
+//				open correct page here		
+				String html = selenium.getHtmlSource();
+				Statement st=c.createStatement();
+				ResultSet rs=st.executeQuery("SELECT g.`inclusion_value` FROM `sites` s INNER JOIN `google_analytics` g ON s.`site_id` = g.`site_id` WHERE s.`site_id` = " + site_id + " AND g.`inclusion_name` LIKE 'google_analytics_ua_code%'");
+				while (rs.next()) { // process results one row at a time
+					UA = rs.getString(1);
+//					if (environment.equals("stg.pl")){
+//						String spilTrackerHeader = "window._gaPageType = '" + siteName + "';";
+//						String spilTrackerHeader2 = "window._ttIdle = " + gaTimeout +";";
+//						selenium.setContext(spilTrackerHeader);
+//						selenium.setContext(spilTrackerHeader2);
+//						selenium.setContext("current URL:"+ selenium.getLocation());
+//						assertTrue(html.contains(spilTrackerHeader.trim()));
+//						assertTrue(html.contains(spilTrackerHeader2.trim()));						
+//						String spilTracker = "spilTracker('','" + UA.trim() + "','" + site_url + "');";
+//						String spilTracker2 = "spilTracker('aggregated', 'UA-8223336-1', 'spilgames.com');";
+//						selenium.setContext("Value: " + spilTracker);
+//						selenium.setContext("Value: " + spilTracker2);
+//						assertTrue(html.contains(spilTracker.trim()));
+//						assertTrue(html.contains(spilTracker2.trim()));
+//					} else {
+					
+						//delete
+//						String spilTrackerHeader = "window._gaPageType = '" + siteName + "';window._ttIdle = " + gaTimeout +";";
+//						selenium.setContext(spilTrackerHeader);
+//						selenium.setContext("current URL:"+ selenium.getLocation());
+//						assertTrue(html.contains(spilTrackerHeader.trim()));
+//						String spilTracker = "{spilTracker('','" + UA.trim() + "','" + site_url + "');spilTracker('aggregated','UA-8223336-1','spilgames.com');}";
+//						selenium.setContext("Value: " + spilTracker);
+//						assertTrue(html.contains(spilTracker.trim()));
+						//end delete
+					
+						String spilTrackerHeader = "window._gaPageType='" + siteName + "';";
+						String spilTrackerHeader2 = "window._ttIdle=" + gaTimeout +";";
+						selenium.setContext(spilTrackerHeader);
+						selenium.setContext(spilTrackerHeader2);
+						selenium.setContext("current URL:"+ selenium.getLocation());
+						assertTrue(html.contains(spilTrackerHeader.trim()));
+						assertTrue(html.contains(spilTrackerHeader2.trim()));						
+						String spilTracker = "spilTracker('','" + UA.trim() + "','" + site_url + "');";
+						String spilTracker2 = "spilTracker('aggregated','UA-8223336-1','spilgames.com');";
+						selenium.setContext("Value: " + spilTracker);
+						selenium.setContext("Value: " + spilTracker2);
+						assertTrue(html.contains(spilTracker.trim()));
+						assertTrue(html.contains(spilTracker2.trim()));
+//					}					
+				}										
+			}
+			} catch (Exception e) {
+				selenium.setContext("SQL query execution or GA failed");
+				assertEquals("1", "2");
+		}				
+		Disconnect_DB();			
+	}	
+	
+	
+	
 	// =====================================
 	// ===== HYVES SECTION =================
 	//======================================

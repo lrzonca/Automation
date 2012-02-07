@@ -15,13 +15,19 @@ public class FLAT_PAGE extends SeleniumBase{
 	@Test
 	@Parameters({"xUrl"})
 	public void Flat1(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
 		driver.get(xUrl);
+		System.out.println("Sleep 2 sek");
 		Thread.sleep(2000);
+		System.out.println("Find Element TERMS_OF_USE");
 		WebElement TermsOfUse = driver.findElement(By.cssSelector(Webdriver.mappings.footer.TERMS_OF_USE));
+		System.out.println("Click Element TERMS_OF_USE");
 		TermsOfUse.click();
+		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.flatPage.FLAT_PAGE_HEADER)).isDisplayed());
+		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.id(Webdriver.mappings.flatPage.FLAT_PAGE_CONTAINER)).isDisplayed());
+		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.flatPage.FLAT_PAGE_ADVERT)).isDisplayed());
 	}
 }
-

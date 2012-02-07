@@ -15,24 +15,39 @@ public class PROFILE_PAGE extends SeleniumBase{
 	@Test
 	@Parameters({"xUrl"})
 	public void Profile1(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
 		driver.get(xUrl);
+		System.out.println("Sleep 2 sek");
 		Thread.sleep(2000);
-		Login("marlacom103", "123456");		
+		System.out.println("Login Common");
+		if (xUrl.contains("www")){
+			Login("cookietest", "123456");	
+		} else {
+			Login("marlacom103", "123456");	
+		}		
+		System.out.println("Find Element MY_PROFILE_LINK");
 	    WebElement MyProfile = driver.findElement(By.cssSelector(Webdriver.mappings.topBar.MY_PROFILE_LINK));
+	    System.out.println("Click Element MY_PROFILE_LINK");
 	    MyProfile.click();
-	    Thread.sleep(5000);
+	    System.out.println("Sleep 10 sek");
+	    Thread.sleep(10000);
+	    System.out.println("Find Element LATEST_ACTIVITIES_BUTTONS_FIRST_BUTTON");
 	    WebElement AllActivities = driver.findElement(By.cssSelector(Webdriver.mappings.myProfile.LATEST_ACTIVITIES_BUTTONS_FIRST_BUTTON));
+	    System.out.println("Click Element LATEST_ACTIVITIES_BUTTONS_FIRST_BUTTON");
 	    AllActivities.click();
-	    WebElement Container = driver.findElement(By.cssSelector(Webdriver.mappings.myProfile.LAST_MESSAGE_CONTAINER));
-	    Container.isDisplayed();
+	    System.out.println("Assertion");
+	    AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.myProfile.LAST_MESSAGE_CONTAINER)).isDisplayed());
+	    System.out.println("Find Element LATEST_ACTIVITIES_BUTTONS_SECOND_BUTTON");
 	    WebElement MyActivities = driver.findElement(By.cssSelector(Webdriver.mappings.myProfile.LATEST_ACTIVITIES_BUTTONS_SECOND_BUTTON));
+	    System.out.println("Click Element LATEST_ACTIVITIES_BUTTONS_SECOND_BUTTON");
 	    MyActivities.click();
-	    WebElement Container2 = driver.findElement(By.cssSelector(Webdriver.mappings.myProfile.LAST_MESSAGE_CONTAINER));
-	    Container2.isDisplayed();
+	    System.out.println("Assertion");
+	    AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.myProfile.LAST_MESSAGE_CONTAINER)).isDisplayed());
+	    System.out.println("Find Element LATEST_ACTIVITIES_BUTTONS_THIRD_BUTTON");
 	    WebElement Messages = driver.findElement(By.cssSelector(Webdriver.mappings.myProfile.LATEST_ACTIVITIES_BUTTONS_THIRD_BUTTON));
+	    System.out.println("Click Element LATEST_ACTIVITIES_BUTTONS_THIRD_BUTTON");
 	    Messages.click();
-	    WebElement Container3 = driver.findElement(By.cssSelector(Webdriver.mappings.myProfile.LAST_MESSAGE_CONTAINER));
-	    Container3.isDisplayed();
+	    System.out.println("Assertion");
+	    AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.myProfile.LAST_MESSAGE_CONTAINER)).isDisplayed());
 	}
 }
-

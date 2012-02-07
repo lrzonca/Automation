@@ -1,5 +1,4 @@
 package Webdriver;
-import org.testng.annotations.Test;
 
 public interface mappings {
   
@@ -39,6 +38,8 @@ public interface mappings {
 		public static final String ADVENTURE_GAMES = ".tc_ln_category_458";
 		public static final String FIRST_AVAILABLE_GAME_CATEGORY_LEFT_NAVI_LINK = ".leftNavigation ul:nth-child(3) li:nth-child(6) a";
 		public static final String SECOND_AVAILABLE_GAME_CATEGORY_LEFT_NAVI_LINK = ".leftNavigation ul:nth-child(3) li:nth-child(8) a";
+		public static final String HIGHSCORE_LEFT_NAVI_LINK = ".leftNavigation ul:nth-child(3) li:nth-child(3) a"; // should be added a unique class
+		public static final String GAMES_FOR_GIRLS_NAVI_LINK = ".leftNavigation ul:nth-child(1) li:nth-child(2) a"; // should be added a unique class
 		  }
 		  
 		  public interface categoryPage {
