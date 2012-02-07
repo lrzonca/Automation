@@ -137,7 +137,7 @@ public class SOCIAL extends SeleniumBase{
 	@Test
 	@Parameters({"xUrl"})
 	public void Social03(String xUrl) throws InterruptedException {//NOT OK
-		int friends_number, current_selected_friends, i = 0, j = 0;
+		int friends_number, current_selected_friends, i = 0;
 		System.out.println("Open URL");
 		driver.get(xUrl + "/game/pet_party.html?socialgames");
 		System.out.println("Sleep 5 sek");

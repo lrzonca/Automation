@@ -1,5 +1,6 @@
 # Compiled source #
 ###################
 *.class
-/bin16:04 2012-01-25
+/bin
 /test-output
+*.log

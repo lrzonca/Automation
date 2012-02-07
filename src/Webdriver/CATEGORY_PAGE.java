@@ -86,6 +86,7 @@ public class CATEGORY_PAGE extends SeleniumBase{
 	
 	@Test
 	@Parameters({"xUrl"})
+	// still not working
 	public void Category3(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
 		driver.get(xUrl);

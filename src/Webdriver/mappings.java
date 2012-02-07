@@ -1,5 +1,4 @@
 package Webdriver;
-import org.testng.annotations.Test;
 
 public interface mappings {
   

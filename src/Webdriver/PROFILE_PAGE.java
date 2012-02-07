@@ -20,13 +20,17 @@ public class PROFILE_PAGE extends SeleniumBase{
 		System.out.println("Sleep 2 sek");
 		Thread.sleep(2000);
 		System.out.println("Login Common");
-		Login("marlacom103", "123456");		
+		if (xUrl.contains("www")){
+			Login("cookietest", "123456");	
+		} else {
+			Login("marlacom103", "123456");	
+		}		
 		System.out.println("Find Element MY_PROFILE_LINK");
 	    WebElement MyProfile = driver.findElement(By.cssSelector(Webdriver.mappings.topBar.MY_PROFILE_LINK));
 	    System.out.println("Click Element MY_PROFILE_LINK");
 	    MyProfile.click();
-	    System.out.println("Sleep 5 sek");
-	    Thread.sleep(5000);
+	    System.out.println("Sleep 10 sek");
+	    Thread.sleep(10000);
 	    System.out.println("Find Element LATEST_ACTIVITIES_BUTTONS_FIRST_BUTTON");
 	    WebElement AllActivities = driver.findElement(By.cssSelector(Webdriver.mappings.myProfile.LATEST_ACTIVITIES_BUTTONS_FIRST_BUTTON));
 	    System.out.println("Click Element LATEST_ACTIVITIES_BUTTONS_FIRST_BUTTON");
