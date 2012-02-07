@@ -1,15 +1,15 @@
-set seleniumGrid=C:\Users\Mirek\workspace\WebDriver\lib
+PUSHD .
+set seleniumVersion=2.18.0
+set seleniumGrid=%CD%\lib\selenium-%seleniumVersion%
 
 ECHO Load GitHub
 
-
 cd %seleniumGrid%
-START java -jar selenium-server-standalone-2.12.0.jar -role hub
-START java -jar selenium-server-standalone-2.12.0.jar -role webdriver -hub http://localhost:4444/grid/register -browser browserName=iexplore,platform=WINDOWS -port 4448
-START java -jar selenium-server-standalone-2.12.0.jar -role webdriver -hub http://localhost:4444/grid/register -browser browserName=firefox,platform=WINDOWS
-START java -jar selenium-server-standalone-2.12.0.jar -role webdriver -hub http://localhost:4444/grid/register -browser browserName=firefox,platform=WINDOWS -port 4445
-START java -jar selenium-server-standalone-2.12.0.jar -role webdriver -hub http://localhost:4444/grid/register -browser browserName=chrome,platform=WINDOWS
+START java -jar selenium-server-standalone-%seleniumVersion%.jar -role hub
 
-ECHO Type something
+echo Registering browsers
+START java -jar selenium-server-standalone-%seleniumVersion%.jar -role webdriver -hub http://localhost:4444/grid/register -browser browserName=iexplore,platform=WINDOWS -port 4447
+START java -jar selenium-server-standalone-%seleniumVersion%.jar -role webdriver -hub http://localhost:4444/grid/register -browser browserName=firefox,platform=WINDOWS -port 4446
+START java -jar selenium-server-standalone-%seleniumVersion%.jar -role webdriver -hub http://localhost:4444/grid/register -browser browserName=chrome,platform=WINDOWS -port 4448
 
-PAUSE
+POPD
