@@ -2,7 +2,26 @@
 	<parameter name="xUrl" value="http://stg.girlsgogames.com"/>	
 	<test name="smoke_firefox">		
 		<classes>
-			<parameter name="xBrowser" value="firefox"/>
+	  		<class name="Webdriver.CATEGORY_PAGE">
+				<methods>
+					<include name="Category1"></include>
+				</methods>
+			</class>
+			<class name="Webdriver.SUBCATEGORY_PAGE">
+				<methods>
+					<include name="Subcategory1"></include>
+				</methods>
+			</class>
+			<class name="Webdriver.SOCIAL">
+				<methods>
+					<include name="Social1"></include>
+				</methods>
+			</class>
+			<class name="Webdriver.SIGN_IN">
+				<methods>
+					<include name="SignIn1"></include>
+				</methods>
+			</class>
 			<class name="Webdriver.SIGN_UP">
 				<methods>					
 					<include name="SignUp1"></include>
