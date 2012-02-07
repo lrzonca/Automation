@@ -314,27 +314,70 @@ public class Common extends TestCase implements mappings {
 //				selenium.setContext(url_change);			
 //				selenium.deleteAllVisibleCookies();
 				if (siteName.equals("homepage")){
-					Open_Home_Page(environment, site_url);
+					System.out.println("Open URL");
+					driver.get(xUrl);
+					System.out.println("Sleep 2 sek");
+					Thread.sleep(2000);
 				}
 				if (siteName.equals("categories")){
-					Open_Category_Page(environment, site_url);
+					System.out.println("Open URL");
+					driver.get(xUrl);
+					System.out.println("Sleep 2 sek");
+					Thread.sleep(2000);
+					System.out.println("Find Element ADVENTURE_GAMES");
+					WebElement AdventureGame = driver.findElement(By.cssSelector(Webdriver.mappings.leftNavi.ADVENTURE_GAMES));
+					System.out.println("Click Element ADVENTURE_GAMES");
+					AdventureGame.click();	
 				}			
 				if (siteName.equals("subcategories")){
-					//ensure that the opened subcategory is not 'Highscore games' because there's another expected _gaPageType
-//					Open_Random_Subcategory_Page(environment, site_url);	
-					Open_Subcategory_Page(environment, site_url);
+					System.out.println("Open URL");
+					driver.get(xUrl);
+					System.out.println("Sleep 2 sek");
+					Thread.sleep(2000);
+					System.out.println("Find Element ADVENTURE_GAMES");
+					WebElement AdventureGame = driver.findElement(By.cssSelector(Webdriver.mappings.leftNavi.ADVENTURE_GAMES));
+					System.out.println("Click Element ADVENTURE_GAMES");
+					AdventureGame.click();	
+					System.out.println("Find Element FIRST_AVAILABLE_SUBCATEGORY_LINK");
+					WebElement SubCategory = driver.findElement(By.cssSelector(Webdriver.mappings.categoryPage.FIRST_AVAILABLE_SUBCATEGORY_LINK));
+					System.out.println("Click Element FIRST_AVAILABLE_SUBCATEGORY_LINK");
+					SubCategory.click();	
 				}
 				if (siteName.equals("search")){
-					Open_Search_Page(environment, site_url, "");					
+					System.out.println("Open URL");
+					driver.get(xUrl + "/search.html?search=");
+					System.out.println("Sleep 2 sek");
+					Thread.sleep(2000);					
 				}	
 				if (siteName.equals("staticsites")){
-					Open_Staticsites_Page(environment, site_url);
+					System.out.println("Open URL");
+					driver.get(xUrl);
+					System.out.println("Sleep 2 sek");
+					Thread.sleep(2000);
+					System.out.println("Find Element TERMS_OF_USE");
+					WebElement TermsOfUse = driver.findElement(By.cssSelector(Webdriver.mappings.footer.TERMS_OF_USE));
+					System.out.println("Click Element TERMS_OF_USE");
+					TermsOfUse.click();	
 				}
 				if (siteName.equals("highscoregames")){
-					Open_High_Score_Games_Page(environment, site_url);					
+					System.out.println("Open URL");
+					driver.get(xUrl);
+					System.out.println("Sleep 2 sek");
+					Thread.sleep(2000);
+					System.out.println("Find Element HIGHSCORE_LEFT_NAVI_LINK");
+					WebElement Highscore = driver.findElement(By.cssSelector(Webdriver.mappings.leftNavi.HIGHSCORE_LEFT_NAVI_LINK));
+					System.out.println("Click Element HIGHSCORE_LEFT_NAVI_LINK");
+					Highscore.click();						
 				}	
 				if (siteName.equals("newgames")){
-					Open_New_Games_Page(environment, site_url);
+					System.out.println("Open URL");
+					driver.get(xUrl);
+					System.out.println("Sleep 2 sek");
+					Thread.sleep(2000);
+					System.out.println("Find Element GAMES_FOR_GIRLS_NAVI_LINK");
+					WebElement NewGame = driver.findElement(By.cssSelector(Webdriver.mappings.leftNavi.GAMES_FOR_GIRLS_NAVI_LINK));
+					System.out.println("Click Element GAMES_FOR_GIRLS_NAVI_LINK");
+					NewGame.click();						
 				}
 				if (siteName.equals("awardgames")){
 					Open_Award_Games_Page(environment, site_url);					
