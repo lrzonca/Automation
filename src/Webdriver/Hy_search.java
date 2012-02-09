@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import static org.testng.AssertJUnit.assertEquals;
+import static Webdriver.mappings.*;
 
 
 public class Hy_search extends SeleniumBase{
@@ -14,7 +15,7 @@ public class Hy_search extends SeleniumBase{
   @Parameters({"xUrl", "xGameTitle", "xUsername", "xPass"})
   public void gameSearchValid(String xUrl, String xGameTitle, String xUsername, String xPass)throws Exception {
 	  	NavigateToGamePage(xUrl, xUsername, xPass);
-	    WebElement SearchF = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.SEARCH_FIELD));
+	    WebElement SearchF = findElement(hyves.SEARCH_FIELD);
 	    Thread.sleep(7000); 
 	    SearchF.click();
 	    SearchF.clear();

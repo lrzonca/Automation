@@ -8,7 +8,9 @@ import java.text.SimpleDateFormat;
 import org.apache.commons.io.FileUtils;
 import java.util.Date;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
