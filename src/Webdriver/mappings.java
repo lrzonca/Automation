@@ -1,9 +1,23 @@
 package Webdriver;
+class CssSelector {
+    private String selector;
+    public String toString() {
+        return selector;
+    }
+    CssSelector(String s) {
+        selector = s;
+    }
+}
 
+class SelectorFactory {
+    public static CssSelector createCssSelector(String s) {
+        return new CssSelector(s);
+    }
+}
 public interface mappings {
-  
+
 	public interface signUp {
-		public static final String JOIN_NOW_LINK = ".tc-register-url";
+		public static final CssSelector JOIN_NOW_LINK = SelectorFactory.createCssSelector(".tc-register-url");
 		public static final String REGISTER_EMAIL = "sgRegMail";
 		public static final String REGISTER_EMAIL_VALID = "email_validationCorrectImage";
 		public static final String REGISTER_EMAIL_NOT_VALID= "email_validationErrorImage";

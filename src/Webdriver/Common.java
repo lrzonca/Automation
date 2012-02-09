@@ -24,6 +24,15 @@ public class Common extends TestCase implements mappings {
 	public String UN2 = "qwerty_friend_3";	
 	public Connection c, c_stg, c_event;	
 	
+   public WebElement findElement(String selector) {
+        return driver.findElement(By.id(selector));
+    }
+    
+    public WebElement findElement(CssSelector selector) {
+        return driver.findElement(By.cssSelector(selector.toString()));
+        
+    }
+
 	void assertEqualsCaseInsensitive(String expected, String actual) {
 		  assertEquals(expected.toLowerCase(), actual.toLowerCase());
 	  }
@@ -135,7 +144,7 @@ public class Common extends TestCase implements mappings {
 		} else {
 			a = a_1;
 		}
-		WebElement JoinNow = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.JOIN_NOW_LINK));
+		WebElement JoinNow = findElement(Webdriver.mappings.signUp.JOIN_NOW_LINK);
 		JoinNow.click();
 		WebElement email = driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_EMAIL));
 		email.sendKeys(e);
