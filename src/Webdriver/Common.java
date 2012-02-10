@@ -124,14 +124,14 @@ public class Common extends TestCase implements mappings {
 	}
 	
 	void AssertTrue(Boolean Object) throws InterruptedException{
-//	    try{
+	    try{
 	    	assertTrue(Object);
-//	    }
-//	    catch (Throwable e)
-//	    {
-//	    	e.printStackTrace();
-//	    	fail();
-//	    }		
+	    }
+	    catch (Throwable e)
+	    {
+	    	e.printStackTrace();
+	    	fail();
+	    }		
 	}
 
 	
