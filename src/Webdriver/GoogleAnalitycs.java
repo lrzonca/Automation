@@ -17,6 +17,7 @@ import org.testng.annotations.Test;
 
 public class GoogleAnalitycs {
 	
+	public WebDriver driver;
 	String xBrowser = "firefox";
 	
 	@Test
