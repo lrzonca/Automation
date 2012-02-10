@@ -1,43 +1,33 @@
-<suite name="SignIn for GirlsGoGames" verbose="3" parallel="tests" thread-count="4">
-	<parameter name="xUrl" value="http://stg.girlsgogames.com"/>	
-	<test name="smoke_firefox">		
+<suite name="Smoke_Live_GirlsGoGames" verbose="3" parallel="tests" thread-count="4">
+	<parameter name="xUrl" value="http://www.girlsgogames.com"/>	
+	<test name="smoke_ff">		
 		<classes>
-	  		<class name="Webdriver.CATEGORY_PAGE">
-				<methods>
-					<include name="Category1"></include>
-				</methods>
-			</class>
-			<class name="Webdriver.SUBCATEGORY_PAGE">
-				<methods>
-					<include name="Subcategory1"></include>
-				</methods>
-			</class>
-			<class name="Webdriver.SOCIAL">
-				<methods>
-					<include name="Social1"></include>
-				</methods>
-			</class>
+			<parameter name="xBrowser" value="firefox"/>
 			<class name="Webdriver.SIGN_IN">
-				<methods>
+				<methods>					
 					<include name="SignIn1"></include>
 				</methods>
-			</class>
-			<class name="Webdriver.SIGN_UP">
-				<methods>					
-					<include name="SignUp1"></include>
-					<include name="SignUp2"></include>
-					<include name="SignUp3"></include>
-					<include name="SignUp4"></include>
-					<include name="SignUp5"></include>
-					<include name="SignUp6"></include>
-					<include name="SignUp7"></include>
-					<include name="SignUp8"></include>
-					<include name="SignUp9"></include>
-					<include name="SignUp10"></include>
-					<include name="SignUp11"></include>
-					<include name="SignUp12"></include>					
-				</methods>
-			</class>
+			</class>	
 		</classes>		
-	</test>	
+	</test>		
+	<test name="smoke_ie">		
+		<classes>
+			<parameter name="xBrowser" value="iexplore"/>
+			<class name="Webdriver.SIGN_IN">
+				<methods>					
+					<include name="SignIn1"></include>
+				</methods>
+			</class>	
+		</classes>		
+	</test>				
+	<test name="smoke_chrome">		
+		<classes>
+			<parameter name="xBrowser" value="chrome"/>
+			<class name="Webdriver.SIGN_IN">
+				<methods>					
+					<include name="SignIn1"></include>
+				</methods>
+			</class>	
+		</classes>		
+	</test>								
 </suite>

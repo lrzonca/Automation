@@ -8,7 +8,9 @@ import java.text.SimpleDateFormat;
 import org.apache.commons.io.FileUtils;
 import java.util.Date;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
@@ -90,14 +92,14 @@ public class SeleniumBase extends Common{
 			try{
 			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(scrFile, new File("C:\\tmp\\WebDriverLog\\FAILED_" + xBrowser + "_TC_" + this.getClass().getName() + "__" + method.getName() + "__" + sDate + "_" + sTime + "__" + ".png"));
-			} catch (Exception e){
+		} catch (Exception e){
 			e.printStackTrace();
-			}
-			} else {
+		}
+		} else {
 			System.out.println("TestCase " + this.getClass().getName() + "__" + method.getName() + " was Passed!!!");
-			}
-			  //driver.manage().deleteAllCookies();
-			  driver.quit();
+		}
+		  //driver.manage().deleteAllCookies();
+		  driver.quit();
 	  }
 }
 
