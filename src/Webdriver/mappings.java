@@ -394,7 +394,9 @@ public interface mappings {
 	  public static final String MULTIPLAYER_LINK = "a#multiplayer_link";
 	  public static final String SEARCH_FIELD = "#searchInput";
 	  public static final String SEARCH_BUTTON = "#searchButton";
-	  public static final String SEARCH_BOX_TITLE = ".box";
+	  public static final String SEARCH_BOX_TITLE = "#catbox h1 span";
+	  public static final String SEARCH_BOX_RESULTS_FOUND = "#catbox div .search-results-list-header";
+	  public static final String SEARCH_BOX_NO_RESULTS = "#catbox div .search-results-noresults-header";
 	  public static final String SEARCHED_ELEMENT = ".box";
   }
 }

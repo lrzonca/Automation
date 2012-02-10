@@ -8,5 +8,6 @@
 	<classpathentry kind="lib" path="lib/testng-5.14.7.jar"/>
 	<classpathentry kind="lib" path="lib/selenium-2.18.0/selenium-server-standalone-2.18.0.jar"/>
 	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.17-bin.jar"/>
+	<classpathentry kind="lib" path="/browsermob-proxy-2.0-beta-3/lib/browsermob-proxy-2.0-beta-3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

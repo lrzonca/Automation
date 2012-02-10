@@ -15,38 +15,59 @@ public class Hy_search extends SeleniumBase{
   @Parameters({"xUrl", "xGameTitle", "xUsername", "xPass"})
   public void gameSearchValid(String xUrl, String xGameTitle, String xUsername, String xPass)throws Exception {
 	  	NavigateToGamePage(xUrl, xUsername, xPass);
-	    WebElement SearchF = findElement(hyves.SEARCH_FIELD);
+	    WebElement SearchF = driver.findElement(By.cssSelector(hyves.SEARCH_FIELD));
 	    Thread.sleep(7000); 
 	    SearchF.click();
 	    SearchF.clear();
 	    SearchF.sendKeys(xGameTitle);
 	    SearchF.sendKeys(Keys.ENTER);
-//	    WebElement SearchB = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.SEARCH_BUTTON));
-//	    WebElement SearchB = driver.findElement(By.id("searchButton"));
-//	    SearchB.click();
 	    Thread.sleep(5000); 
 	   assertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.hyves.SEARCH_BOX_TITLE)).isDisplayed());
-	   //assertTrue(driver.findElement(By.cssSelector("a[title='woobies']")).isDisplayed());
 	   assertEqualsCaseInsensitive(xGameTitle, driver.findElement(By.cssSelector(".game-title")).getText());
   }
   
   @Test
-  @Parameters({"xUrl", "xGameTitle", "xUsername", "xPass"})
-  public void gameSearchValid1(String xUrl, String xGameTitle, String xUsername, String xPass)throws Exception {
+  @Parameters({"xUrl", "xUsername", "xPass"})
+  public void gameSearchManyResults(String xUrl, String xUsername, String xPass)throws Exception {
+	  	String GameTitle = "land";
+	  	String GamesFound = "6";
+	  
 	  	NavigateToGamePage(xUrl, xUsername, xPass);
 	    WebElement SearchF = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.SEARCH_FIELD));
 	    Thread.sleep(7000); 
 	    SearchF.click();
 	    SearchF.clear();
-	    SearchF.sendKeys(xGameTitle);
+	    SearchF.sendKeys(GameTitle);
 	    SearchF.sendKeys(Keys.ENTER);
-//	    WebElement SearchB = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.SEARCH_BUTTON));
-//	    WebElement SearchB = driver.findElement(By.id("searchButton"));
-//	    SearchB.click();
 	    Thread.sleep(5000); 
-	   assertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.hyves.SEARCH_BOX_TITLE)).isDisplayed());
-	   //assertTrue(driver.findElement(By.cssSelector("a[title='woobies']")).isDisplayed());
-	   assertEqualsCaseInsensitive(xGameTitle, driver.findElement(By.cssSelector(".game-title")).getText());
+	    assertEquals("Games met \"" + GameTitle + "\"", driver.findElement(By.cssSelector(Webdriver.mappings.hyves.SEARCH_BOX_TITLE)).getText());
+	    assertEquals(GamesFound + " resultaten gevonden voor \"" + GameTitle + "\"", driver.findElement(By.cssSelector(Webdriver.mappings.hyves.SEARCH_BOX_RESULTS_FOUND)).getText());
+	    assertTrue(driver.findElement(By.cssSelector("a[title='Klaverjassen']")).isDisplayed());
+	    assertTrue(driver.findElement(By.cssSelector("a[title='Landleven']")).isDisplayed());
+	    assertTrue(driver.findElement(By.cssSelector("a[title='Minigolf Tropical Island']")).isDisplayed());
+	    assertTrue(driver.findElement(By.cssSelector("a[title='Koets Racer']")).isDisplayed());
+	    assertTrue(driver.findElement(By.cssSelector("a[title='Smulboerderij']")).isDisplayed());
+	    assertTrue(driver.findElement(By.cssSelector("a[title='World of Zombies']")).isDisplayed());
+  }
+  
+  @Test
+  @Parameters({"xUrl", "xUsername", "xPass"})
+  public void gameSearchNoResults(String xUrl, String xUsername, String xPass)throws Exception {
+	  	String GameTitle = "nothinghasbeenfound";
+	  	String GamesFound = "0";
+	  
+	  	NavigateToGamePage(xUrl, xUsername, xPass);
+	    WebElement SearchF = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.SEARCH_FIELD));
+	    Thread.sleep(7000); 
+	    SearchF.click();
+	    SearchF.clear();
+	    SearchF.sendKeys(GameTitle);
+	    SearchF.sendKeys(Keys.ENTER);
+	    Thread.sleep(5000); 
+	    assertEquals("Games met \"" + GameTitle + "\"", driver.findElement(By.cssSelector(Webdriver.mappings.hyves.SEARCH_BOX_TITLE)).getText());
+	    assertEquals(GamesFound + " resultaten gevonden voor \"" + GameTitle + "\"", driver.findElement(By.cssSelector(Webdriver.mappings.hyves.SEARCH_BOX_RESULTS_FOUND)).getText());
+	    assertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.hyves.SEARCH_BOX_NO_RESULTS)).isDisplayed());
+
   }
   
 }

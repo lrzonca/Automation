@@ -707,7 +707,7 @@ public class Common extends TestCase implements mappings {
 	    PasswordF.sendKeys(xPass);
 	    WebElement LoginB = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.LOGIN_BUTTON));
 	    LoginB.click();
-	    Thread.sleep(5000);
+	    Thread.sleep(7000);
 	    if (xUrl.contains("dev")){
 	    	driver.get(xUrl);
 	    }
