@@ -37,14 +37,14 @@ public interface mappings {
 		  }
 		  
 		  public interface signIn {
-		public static final String SIGN_IN_LINK = ".tc-login-url";
-		public static final String USERNAME = ".tc-username-text";
-		public static final String PASSWORD = ".tc-password-text";
-		public static final String SIGN_IN_BUTTON = ".login_button a";
-		public static final String LOGGED_USERNAME = ".tc-username-cnt";
+		public static final CssSelector SIGN_IN_LINK = SelectorFactory.createCssSelector(".tc-login-url");
+		public static final CssSelector USERNAME = SelectorFactory.createCssSelector(".tc-username-text");
+		public static final CssSelector PASSWORD = SelectorFactory.createCssSelector(".tc-password-text");
+		public static final CssSelector SIGN_IN_BUTTON = SelectorFactory.createCssSelector(".login_button a");
+		public static final CssSelector LOGGED_USERNAME = SelectorFactory.createCssSelector(".tc-username-cnt");
 		public static final String WHOLE_POPUP = "fb_loginbox_main";
 		public static final String ERROR_MESSAGE = ".tc-error-message-notauth";
-		public static final String REMEMBER_CHECKBOX = ".tc-remember-check";
+		public static final CssSelector REMEMBER_CHECKBOX = SelectorFactory.createCssSelector(".tc-remember-check");
 		public static final String LOGOUT_LINK = ".tc-logout-url";
 		  }
 		  
@@ -54,6 +54,8 @@ public interface mappings {
 		public static final String SECOND_AVAILABLE_GAME_CATEGORY_LEFT_NAVI_LINK = ".leftNavigation ul:nth-child(3) li:nth-child(8) a";
 		public static final String HIGHSCORE_LEFT_NAVI_LINK = ".leftNavigation ul:nth-child(3) li:nth-child(3) a"; // should be added a unique class
 		public static final String GAMES_FOR_GIRLS_NAVI_LINK = ".leftNavigation ul:nth-child(1) li:nth-child(2) a"; // should be added a unique class
+		public static final String POPULAR_GAMES_NAVI_LINK = ".leftNavigation ul:nth-child(1) li:nth-child(3) a"; // should be added a unique class
+		public static final String AWARD_GAMES_LEFT_NAVI_LINK = ".leftNavigation ul:nth-child(3) li:nth-child(1) a"; // should be added a unique class
 		  }
 		  
 		  public interface categoryPage {
@@ -208,6 +210,12 @@ public interface mappings {
 		public static final String GAME_CONTAINTER_SHOCKWAVE = "flashobj_mc";
 		public static final String GAME_CONTAINTER_IFRAME = "gameiframe_js";
 		public static final String ALL_COMMENTS_BOX = "commentsHolder";
+		
+			public static final String ZOOM_SCALABLE_BAR = "zoom";
+			public static final CssSelector ZOOM_OUT_LINK = SelectorFactory.createCssSelector(".zoom-out");
+			public static final String ZOOM_SLIDER = "zoomSlider";
+			public static final CssSelector ZOOM_IN_LINK = SelectorFactory.createCssSelector(".zoom-in");
+			public static final CssSelector ZOOM_RESET_LINK = SelectorFactory.createCssSelector(".zoom-reset");
 		  }
 		  
 		  public interface topBar {

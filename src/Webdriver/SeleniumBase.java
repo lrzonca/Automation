@@ -92,14 +92,14 @@ public class SeleniumBase extends Common{
 			try{
 			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(scrFile, new File("C:\\tmp\\WebDriverLog\\FAILED_" + xBrowser + "_TC_" + this.getClass().getName() + "__" + method.getName() + "__" + sDate + "_" + sTime + "__" + ".png"));
-			} catch (Exception e){
+		} catch (Exception e){
 			e.printStackTrace();
-			}
-			} else {
+		}
+		} else {
 			System.out.println("TestCase " + this.getClass().getName() + "__" + method.getName() + " was Passed!!!");
-			}
-			  //driver.manage().deleteAllCookies();
-			  driver.quit();
+		}
+		  //driver.manage().deleteAllCookies();
+		  driver.quit();
 	  }
 }
 

@@ -6,6 +6,10 @@
 			<class name="Webdriver.SIGN_IN">
 				<methods>
 					<include name="SignIn1"></include>
+					<include name="SignIn2"></include>
+					<include name="SignIn3"></include>
+					<include name="SignIn4"></include>
+					<include name="SignIn5"></include>
 				</methods>
 			</class>
 		</classes>
