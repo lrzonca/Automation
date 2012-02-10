@@ -16,7 +16,9 @@ import org.testng.annotations.Test;
 
 
 public class GoogleAnalitycs {
-
+	
+	String xBrowser = "firefox";
+	
 	@Test
     public void testSetPropertyTrackingLabel() throws Exception {
         // start the proxy		
@@ -28,10 +30,11 @@ public class GoogleAnalitycs {
         Proxy proxy = server.seleniumProxy();
 
         // configure it as a desired capability
+        if(xBrowser.contains("firefox")){
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(CapabilityType.PROXY, proxy);
         WebDriver driver = new FirefoxDriver(capabilities);
-        
+        } 
         // create a new HAR with the label "yahoo.com"sco
         server.addRequestInterceptor(new HttpRequestInterceptor() {
 
