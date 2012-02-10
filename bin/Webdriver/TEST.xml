@@ -1,51 +1,33 @@
-<suite name="SignIn for GirlsGoGames" verbose="2">
+<suite name="Smoke_Live_GirlsGoGames" verbose="3" parallel="tests" thread-count="4">
 	<parameter name="xUrl" value="http://www.girlsgogames.com"/>	
-
-	<test name="smoke_firefox">
-		<parameter name="xBrowser" value="chrome"/>
+	<test name="smoke_ff">		
 		<classes>
-	  		<class name="Webdriver.CATEGORY_PAGE">
-				<methods>
-					<include name="Category1"></include>
-				</methods>
-			</class>
-			<class name="Webdriver.SUBCATEGORY_PAGE">
-				<methods>
-					<include name="Subcategory1"></include>
-				</methods>
-			</class>
-			<class name="Webdriver.SOCIAL">
-				<methods>
-					<include name="Social1"></include>
-				</methods>
-			</class>
+			<parameter name="xBrowser" value="firefox"/>
 			<class name="Webdriver.SIGN_IN">
-				<methods>
+				<methods>					
 					<include name="SignIn1"></include>
 				</methods>
-			</class>
-			<class name="Webdriver.SIGN_UP">
-				<methods>
-					<include name="SignUp1"></include>
-				</methods>
-			</class>			
-			<class name="Webdriver.PROFILE_PAGE">
-				<methods>
-					<include name="Profile1"></include>
-				</methods>
-			</class>
-			<class name="Webdriver.FLAT_PAGE">
-				<methods>
-					<include name="Flat1"></include>
-				</methods>
-			</class>
-			<class name="Webdriver.GAME_PAGE">
-				<methods>
-					<include name="GamePage1"></include>
-					<include name="GamePage2"></include>
-					<include name="GamePage3"></include>
-				</methods>
-			</class> -->					
-		</classes>
+			</class>	
+		</classes>		
 	</test>		
+	<test name="smoke_ie">		
+		<classes>
+			<parameter name="xBrowser" value="iexplore"/>
+			<class name="Webdriver.SIGN_IN">
+				<methods>					
+					<include name="SignIn1"></include>
+				</methods>
+			</class>	
+		</classes>		
+	</test>				
+	<test name="smoke_chrome">		
+		<classes>
+			<parameter name="xBrowser" value="chrome"/>
+			<class name="Webdriver.SIGN_IN">
+				<methods>					
+					<include name="SignIn1"></include>
+				</methods>
+			</class>	
+		</classes>		
+	</test>								
 </suite>

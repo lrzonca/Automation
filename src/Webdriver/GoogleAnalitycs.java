@@ -16,39 +16,43 @@ import org.testng.annotations.Test;
 
 
 public class GoogleAnalitycs {
-
-	@Test
-    public void testSetPropertyTrackingLabel() throws Exception {
-        // start the proxy		
-		
-        ProxyServer server = new ProxyServer(9090);
-        server.start();
-
-        // get the Selenium proxy object
-        Proxy proxy = server.seleniumProxy();
-
-        // configure it as a desired capability
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability(CapabilityType.PROXY, proxy);
-        WebDriver driver = new FirefoxDriver(capabilities);
-        
-        // create a new HAR with the label "yahoo.com"sco
-        server.addRequestInterceptor(new HttpRequestInterceptor() {
-
-            public void process(
-                    HttpRequest request,
-                    HttpContext context) throws HttpException, IOException {
-                
-                String req = request.getRequestLine().getUri();
-            
-                System.out.println(req);
-            } 
-
-        });
-
-        server.newHar("hyves.nl");
-        driver.get("http://www.hyves.nl");
-    }
-
 	
+//	public WebDriver driver;
+//	String xBrowser = "firefox";
+//	
+//	@Test
+//    public void testSetPropertyTrackingLabel() throws Exception {
+//        // start the proxy		
+//		
+//        ProxyServer server = new ProxyServer(9090);
+//        server.start();
+//
+//        // get the Selenium proxy object
+//        Proxy proxy = server.seleniumProxy();
+//
+//        // configure it as a desired capability
+//        if(xBrowser.contains("firefox")){
+//        DesiredCapabilities capabilities = new DesiredCapabilities();
+//        capabilities.setCapability(CapabilityType.PROXY, proxy);
+//        WebDriver driver = new FirefoxDriver(capabilities);
+//        } 
+//        // create a new HAR with the label "yahoo.com"sco
+//        server.addRequestInterceptor(new HttpRequestInterceptor() {
+//
+//            public void process(
+//                    HttpRequest request,
+//                    HttpContext context) throws HttpException, IOException {
+//                
+//                String req = request.getRequestLine().getUri();
+//            
+//                System.out.println(req);
+//            } 
+//
+//        });
+//
+//        server.newHar("hyves.nl");
+//        driver.get("http://www.hyves.nl");
+//    }
+//
+//	
 }
