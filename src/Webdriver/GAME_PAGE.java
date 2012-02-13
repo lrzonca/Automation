@@ -30,7 +30,7 @@ public class GAME_PAGE extends SeleniumBase{
 	@Parameters({"xUrl"})
 	public void GamePage2(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
-		driver.get(xUrl + "/game/bomberpengu.html");
+		driver.get(xUrl + "/game/bubble_machine.html");
 		System.out.println("Sleep 30 sek");
 		Thread.sleep(30000);
 		System.out.println("Switch to GAME_CONTAINTER_IFRAME");

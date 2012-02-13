@@ -17,8 +17,7 @@ public class SOCIAL extends SeleniumBase{
 	public void Social01(String xUrl) throws InterruptedException {//ok
 		System.out.println("Open URL");
 		driver.get(xUrl + "/game/pet_party.html?socialgames");
-		System.out.println("Sleep 5 sek");
-		Thread.sleep(5000);
+		sleep(5);
 		driver.switchTo().frame(Webdriver.mappings.social.SOCIAL_GAME_BOX);		
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.id(Webdriver.mappings.social.SOCIAL_GAME)).isDisplayed());

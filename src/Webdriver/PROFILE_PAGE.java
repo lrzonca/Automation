@@ -17,8 +17,7 @@ public class PROFILE_PAGE extends SeleniumBase{
 	public void Profile1(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
 		driver.get(xUrl);
-		System.out.println("Sleep 2 sek");
-		Thread.sleep(2000);
+		sleep(5);
 		System.out.println("Login Common");
 		if (xUrl.contains("www")){
 			Login("cookietest", "123456");	

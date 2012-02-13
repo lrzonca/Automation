@@ -17,8 +17,7 @@ public class FLAT_PAGE extends SeleniumBase{
 	public void Flat1(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
 		driver.get(xUrl);
-		System.out.println("Sleep 2 sek");
-		Thread.sleep(2000);
+		sleep(5);
 		System.out.println("Find Element TERMS_OF_USE");
 		WebElement TermsOfUse = driver.findElement(By.cssSelector(Webdriver.mappings.footer.TERMS_OF_USE));
 		System.out.println("Click Element TERMS_OF_USE");
