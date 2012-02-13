@@ -20,6 +20,7 @@ public class SUBCATEGORY_PAGE extends SeleniumBase{
 		WebElement AdventureGame = driver.findElement(By.cssSelector(Webdriver.mappings.leftNavi.ADVENTURE_GAMES));
 		System.out.println("Click Element ADVENTURE_GAMES");
 		AdventureGame.click();
+		sleep(5);
 		System.out.println("Find Element FIRST_AVAILABLE_SUBCATEGORY_LINK");
 		WebElement SubCategory = driver.findElement(By.cssSelector(Webdriver.mappings.categoryPage.FIRST_AVAILABLE_SUBCATEGORY_LINK));
 		System.out.println("Click Element FIRST_AVAILABLE_SUBCATEGORY_LINK");
