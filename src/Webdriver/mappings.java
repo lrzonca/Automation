@@ -59,7 +59,7 @@ public interface mappings {
 		  }
 		  
 		  public interface categoryPage {
-		public static final String SUBCATEGORY_GAME_LIST = "subcatList";
+		public static final String SUBCATEGORY_GAME_LIST = "#subcatList";
 		public static final String FIRST_AVAILABLE_SUBCATEGORY_LINK = ".gameStack:nth-child(1) a";
 		public static final String TOP_HOME_PAGE_LINK = ".categoryBreadcrumb a:nth-child(1)";
 		public static final String TOP_CATEGORY_LINK = ".categoryBreadcrumb a:nth-child(2)";
@@ -265,7 +265,7 @@ public interface mappings {
 		}
 		  
 		  public interface footer {
-		public static final String TERMS_OF_USE = ".middleWaveLinks a:nth-child(1)";
+		public static final CssSelector TERMS_OF_USE = SelectorFactory.createCssSelector(".middleWaveLinks a:nth-child(1)");
 		  }
 		  
 		  public interface myProfile {
@@ -356,9 +356,9 @@ public interface mappings {
 		  }
 		  
 		  public interface flatPage {
-		public static final String FLAT_PAGE_CONTAINER = "staticContainer";
-		public static final String FLAT_PAGE_HEADER = ".categoryHeader";
-		public static final String FLAT_PAGE_ADVERT = ".newSkyContainer";
+		public static final CssSelector FLAT_PAGE_CONTAINER = SelectorFactory.createCssSelector("#staticContainer");
+		public static final CssSelector FLAT_PAGE_HEADER = SelectorFactory.createCssSelector(".categoryHeader");
+		public static final CssSelector FLAT_PAGE_ADVERT = SelectorFactory.createCssSelector(".newSkyContainer");
 		  }
 		  public interface HARVESTING{
 			  public static final String EMAIL_TEXTBOX = "Email";

@@ -18,15 +18,10 @@ public class FLAT_PAGE extends SeleniumBase{
 		System.out.println("Open URL");
 		driver.get(xUrl);
 		sleep(5);
-		System.out.println("Find Element TERMS_OF_USE");
-		WebElement TermsOfUse = driver.findElement(By.cssSelector(Webdriver.mappings.footer.TERMS_OF_USE));
-		System.out.println("Click Element TERMS_OF_USE");
-		TermsOfUse.click();
-		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.flatPage.FLAT_PAGE_HEADER)).isDisplayed());
-		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.id(Webdriver.mappings.flatPage.FLAT_PAGE_CONTAINER)).isDisplayed());
-		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.flatPage.FLAT_PAGE_ADVERT)).isDisplayed());
+		clickElement(footer.TERMS_OF_USE);
+		sleep(5);
+		assertIsDisplayed(flatPage.FLAT_PAGE_HEADER);
+		assertIsDisplayed(flatPage.FLAT_PAGE_CONTAINER);
+		assertIsDisplayed(flatPage.FLAT_PAGE_ADVERT);
 	}
 }

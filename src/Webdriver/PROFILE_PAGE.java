@@ -20,7 +20,7 @@ public class PROFILE_PAGE extends SeleniumBase{
 		sleep(5);
 		System.out.println("Login Common");
 		if (xUrl.contains("www")){
-			Login("cookietest", "123456");	
+			Login("mptest", "123456");	
 		} else {
 			Login("marlacom103", "123456");	
 		}		

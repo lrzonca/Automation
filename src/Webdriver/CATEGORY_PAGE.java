@@ -21,7 +21,7 @@ public class CATEGORY_PAGE extends SeleniumBase{
 		System.out.println("Click Element ADVENTURE_GAMES");
 		AdventureGame.click();	
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.id(Webdriver.mappings.categoryPage.SUBCATEGORY_GAME_LIST)).isDisplayed());
+		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.categoryPage.SUBCATEGORY_GAME_LIST)).isDisplayed());
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.categoryPage.FIRST_AVAILABLE_SUBCATEGORY_LINK)).isDisplayed());
 		System.out.println("Assertion");

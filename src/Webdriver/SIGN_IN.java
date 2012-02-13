@@ -24,6 +24,7 @@ public class SIGN_IN extends SeleniumBase{
 	@Parameters({"xUrl"})
 	public void SignIn1(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
+		driver.get(xUrl);
 		sleep(5);
 		Login("cookietest", "123456");		
 		System.out.println("Assertion");
