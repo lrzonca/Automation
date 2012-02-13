@@ -17,11 +17,11 @@ public class GAME_PAGE extends SeleniumBase{
 	@Parameters({"xUrl"})
 	public void GamePage1(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
-		driver.get(xUrl + "/game/casinojigsaw.html");
+		driver.get(xUrl + "/game/unicorn_universe.html");
 		System.out.println("Sleep 30 sek");
 		Thread.sleep(30000);
 		System.out.println("Assertion");
-		assertTrue(driver.findElement(By.id(Webdriver.mappings.gamepage.GAME_CONTAINTER_SHOCKWAVE)).isDisplayed());
+		assertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.gamepage.GAME_CONTAINTER_SHOCKWAVE)).isDisplayed());
 	}
 	
 	@Test
@@ -36,7 +36,7 @@ public class GAME_PAGE extends SeleniumBase{
 		System.out.println("Switch to GAME_CONTAINTER_IFRAME");
 		driver.switchTo().frame("socialgame");
 		System.out.println("Assertion");
-		assertTrue(driver.findElement(By.id("flashobj")).isDisplayed());
+		assertTrue(driver.findElement(By.cssSelector("#flashobj")).isDisplayed());
 	}
 	
 	@Test
@@ -51,7 +51,7 @@ public class GAME_PAGE extends SeleniumBase{
 		System.out.println("Switch to GAME_CONTAINTER_IFRAME");
 		driver.switchTo().frame(Webdriver.mappings.gamepage.GAME_CONTAINTER_IFRAME);
 		System.out.println("Assertion");
-		assertTrue(driver.findElement(By.id("test")).isDisplayed());
+		assertTrue(driver.findElement(By.cssSelector("#test")).isDisplayed());
 	}
 		
 	@Test

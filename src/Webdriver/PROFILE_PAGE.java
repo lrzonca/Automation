@@ -34,18 +34,21 @@ public class PROFILE_PAGE extends SeleniumBase{
 	    WebElement AllActivities = driver.findElement(By.cssSelector(Webdriver.mappings.myProfile.LATEST_ACTIVITIES_BUTTONS_FIRST_BUTTON));
 	    System.out.println("Click Element LATEST_ACTIVITIES_BUTTONS_FIRST_BUTTON");
 	    AllActivities.click();
+	    sleep(2);
 	    System.out.println("Assertion");
 	    AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.myProfile.LAST_MESSAGE_CONTAINER)).isDisplayed());
 	    System.out.println("Find Element LATEST_ACTIVITIES_BUTTONS_SECOND_BUTTON");
 	    WebElement MyActivities = driver.findElement(By.cssSelector(Webdriver.mappings.myProfile.LATEST_ACTIVITIES_BUTTONS_SECOND_BUTTON));
 	    System.out.println("Click Element LATEST_ACTIVITIES_BUTTONS_SECOND_BUTTON");
 	    MyActivities.click();
+	    sleep(2);
 	    System.out.println("Assertion");
 	    AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.myProfile.LAST_MESSAGE_CONTAINER)).isDisplayed());
 	    System.out.println("Find Element LATEST_ACTIVITIES_BUTTONS_THIRD_BUTTON");
 	    WebElement Messages = driver.findElement(By.cssSelector(Webdriver.mappings.myProfile.LATEST_ACTIVITIES_BUTTONS_THIRD_BUTTON));
 	    System.out.println("Click Element LATEST_ACTIVITIES_BUTTONS_THIRD_BUTTON");
 	    Messages.click();
+	    sleep(2);
 	    System.out.println("Assertion");
 	    AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.myProfile.LAST_MESSAGE_CONTAINER)).isDisplayed());
 	}

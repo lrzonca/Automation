@@ -91,34 +91,34 @@ public interface mappings {
 		  
 		  public interface social {
 		public static final String SOCIAL_GAME_BOX = "socialgame";
-		public static final String SOCIAL_GAME_GS_BOX = "easyXDM_default2487_provider";
-		public static final String SOCIAL_GAME = "container";
-		public static final String SOCIAL_GAME_HEADER_TEXT = "promobar";
-		public static final String SOCIAL_GAME_PLAY_BUTTON = "button1";
-		public static final String SOCIAL_GAME_INVITE_BUTTON = "button2";
-		public static final String SOCIAL_GAME_GET_SAPPHIRES_BUTTON = "button5";
-		public static final String SOCIAL_GAME_HELP_BUTTON = "button6";
-		public static final String SOCIAL_GAME_USER_ID_TEXT = "useridtext";
-		public static final String SIGN_UP_BOX = "socialgameRegister";
+		public static final String SOCIAL_GAME_GS_BOX = "#easyXDM_default2487_provider";
+		public static final String SOCIAL_GAME = "#container";
+		public static final String SOCIAL_GAME_HEADER_TEXT = "#promobar";
+		public static final String SOCIAL_GAME_PLAY_BUTTON = "#button1";
+		public static final String SOCIAL_GAME_INVITE_BUTTON = "#button2";
+		public static final String SOCIAL_GAME_GET_SAPPHIRES_BUTTON = "#button5";
+		public static final String SOCIAL_GAME_HELP_BUTTON = "#button6";
+		public static final String SOCIAL_GAME_USER_ID_TEXT = "#useridtext";
+		public static final String SIGN_UP_BOX = "#socialgameRegister";
 		public static final String HEADER_CLOSE_BUTTON = "div.sg-register a.socialClose p.socialCloseButton";
 		public static final String HEADER_CLOSE_BUTTON2 = ".socialCloseButton";
 		public static final String HEADER_GS_CLOSE_BUTTON = ".cancel";
-		public static final String HARVESTING_POPUP = "sg_harvesting_popup";
+		public static final String HARVESTING_POPUP = "#sg_harvesting_popup";
 		public static final String HEADER_TITLE_TEXT = ".socialTop h1 div.text";
 		public static final String ON_SITE_TAB = "onsite";
 		public static final String ON_SITE_FIRST_FRIEND_AVATAR_BOX = "li:nth-child(1) .avatar a";
 		public static final String ON_SITE_FIRST_FRIEND_AVATAR_IMG = "li:nth-child(1) .avatar a img";
-		public static final String ON_SITE_FIRST_FRIEND_BOX = "myfr_0";
+		public static final String ON_SITE_FIRST_FRIEND_BOX = "#myfr_0";
 		public static final String ON_SITE_FIRST_FRIEND_CHECKBOX = "li:nth-child(1) .check-invite input";
 		public static final String ON_SITE_FIRST_FRIEND_INFO_NAME_TEXT = "li:nth-child(1) .givenname";
 		public static final String ON_SITE_FIRST_FRIEND_INFO_USERNAME_LINK = "li:nth-child(1) .usernameHolder a";
 		public static final String ON_SITE_HEADER_TEXT = ".onsite-top";
 		public static final String ON_SITE_INVITE_BUTTON = ".popup_blue_button";
 		public static final String ON_SITE_SEARCH_YOUR_FRIEND_BUTTON = ".search-icon";
-		public static final String ON_SITE_SEARCH_YOUR_FRIEND_TEXTFIELD = "friends_search_social";
-		public static final String ON_SITE_SELECT_ALL_CHECKBOX = "onsite_selectall";
-		public static final String ON_SITE_SELECT_ALL_LINK = "onsite_selectall_a";
-		public static final String FROM_EMAIL_TAB = "fromemail";
+		public static final String ON_SITE_SEARCH_YOUR_FRIEND_TEXTFIELD = "#friends_search_social";
+		public static final String ON_SITE_SELECT_ALL_CHECKBOX = "#onsite_selectall";
+		public static final String ON_SITE_SELECT_ALL_LINK = "#onsite_selectall_a";
+		public static final String FROM_EMAIL_TAB = "#fromemail";
 		public static final String FROM_EMAIL_BOTTOM_DESCRIPTION_TEXT = ".harvestFirstStepProvacy";
 		public static final String FROM_EMAIL_GMAIL_BUTTON = ".gmail div";
 		public static final String FROM_EMAIL_SELECT_PROVIDER_TEXT = ".harvestFirstAccounts p";
@@ -207,7 +207,7 @@ public interface mappings {
 		  }
 		  
 		  public interface gamepage {
-		public static final String GAME_CONTAINTER_SHOCKWAVE = "flashobj_mc";
+		public static final String GAME_CONTAINTER_SHOCKWAVE = "#flashobj_mc";
 		public static final String GAME_CONTAINTER_IFRAME = "gameiframe_js";
 		public static final String ALL_COMMENTS_BOX = "commentsHolder";
 		
