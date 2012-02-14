@@ -116,6 +116,7 @@ public class Common extends TestCase implements mappings {
 	}
 	
 	void Login (String UserName, String Password) throws InterruptedException{
+		Logout();
 		sleep(2);
 		clickElement(signIn.SIGN_IN_LINK);
 		insertData(signIn.USERNAME, UserName);
