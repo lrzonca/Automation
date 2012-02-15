@@ -15,7 +15,7 @@
 			</class>
 		</classes>
 	</test>
-	<!-- <test name="Hyves_IE">
+	<!--  <test name="Hyves_IE">
 	<parameter name="xBrowser" value="iexplore"/>
 		<classes>
 			<class name="Webdriver.Hy_search">
@@ -26,7 +26,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test> -->
+	</test>  -->
 	<test name="Hyves_Chrome">
 	<parameter name="xBrowser" value="chrome"/>
 		<classes>
