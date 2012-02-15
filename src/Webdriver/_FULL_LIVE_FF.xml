@@ -1,0 +1,208 @@
+<suite name="Smoke_Live_GirlsGoGames" verbose="3" parallel="tests" thread-count="4">
+	<parameter name="xUrl" value="http://www.girlsgogames.com"/>	
+	<test name="Service">
+		<classes>
+			<class name="WEBSERVICE.ALERTAR">
+				<methods>
+					<include name="TC_01"></include>
+				</methods>
+			</class>
+			<class name="WEBSERVICE.BABBLAR">
+				<methods>
+					<include name="TC_01"></include>
+				</methods>
+			</class>
+			<class name="WEBSERVICE.CONFIGAR">
+				<methods>
+					<include name="TC_01"></include>
+				</methods>
+			</class>
+			<class name="WEBSERVICE.CONTENTAR">
+				<methods>
+					<include name="TC_01"></include>
+				</methods>
+			</class>			
+			<class name="WEBSERVICE.FILTAR">
+				<methods>
+					<include name="TC_01"></include>
+				</methods>
+			</class>
+			<class name="WEBSERVICE.HYSCOR">
+				<methods>
+					<include name="TC_01"></include>
+				</methods>
+			</class>
+			<class name="WEBSERVICE.LOCATAR">
+				<methods>
+					<include name="TC_01"></include>
+				</methods>
+			</class>
+			<class name="WEBSERVICE.PROFILAR">
+				<methods>
+					<include name="TC_01"></include>
+				</methods>
+			</class>
+			<class name="WEBSERVICE.RATOR">
+				<methods>
+					<include name="TC_01"></include>
+				</methods>
+			</class>
+			<class name="WEBSERVICE.SOCIAL_GATEWAY">
+				<methods>
+					<include name="TC_01"></include>
+				</methods>
+			</class>			
+			<class name="WEBSERVICE.REPORTAR">
+				<methods>
+					<include name="TC_01"></include>
+				</methods>
+			</class>	
+			<class name="WEBSERVICE.VIEWAR">
+				<methods>
+					<include name="TC_01"></include>
+				</methods>
+			</class>																													
+		</classes>
+	</test>		
+	<test name="live_ff">		
+		<classes>
+			<parameter name="xBrowser" value="firefox"/>
+			<class name="Webdriver.AVATAR">
+				<methods>					
+					<include name="Avatar1"></include>
+					<include name="Avatar2"></include>
+				</methods>
+			</class>
+			<class name="Webdriver.CATEGORY_PAGE">
+				<methods>					
+					<include name="Category1"></include>
+					<include name="Category2"></include>
+					<include name="Category4"></include>
+				</methods>
+			</class>
+			<class name="Webdriver.FLAT_PAGE">
+				<methods>					
+					<include name="Flat1"></include>
+				</methods>
+			</class>
+			<class name="Webdriver.FRIENDS_NEW_REQUEST">
+				<methods>					
+					<include name="Friend01"></include>
+					<include name="Friend02"></include>
+					<include name="Friend03"></include>
+					<include name="Friend04"></include>
+					<include name="Friend05"></include>
+					<include name="Friend06"></include>
+					<include name="Friend07"></include>
+					<include name="Friend08"></include>
+					<include name="Friend09"></include>
+					<include name="Friend10"></include>
+					<include name="Friend11"></include>
+					<include name="Friend12"></include>
+					<include name="Friend13"></include>
+					<include name="Friend14"></include>
+					<include name="Friend15"></include>
+					<include name="Friend16"></include>
+					<include name="Friend17"></include>
+					<include name="Friend18"></include>
+					<include name="Friend19"></include>
+					<include name="Friend20"></include>
+					<include name="Friend21"></include>
+					<include name="Friend22"></include>
+					<include name="Friend23"></include>
+					<include name="Friend24"></include>
+					<include name="Friend25"></include>
+					<include name="Friend26"></include>
+					<include name="Friend27"></include>
+					<include name="Friend28"></include>
+				</methods>
+			</class>			
+			<class name="Webdriver.GAME_PAGE">
+				<methods>					
+					<include name="GamePage1"></include>
+					<include name="GamePage2"></include>
+					<include name="GamePage3"></include>
+					<include name="GamePage4"></include>
+					<include name="GamePage5"></include>
+					<include name="GamePage6"></include>
+					<include name="GamePage7"></include>
+				</methods>
+			</class>	
+			<class name="Webdriver.GOOGLE_ANALYTICS">
+				<methods>					
+					<include name="Google01"></include>
+					<include name="Google02"></include>
+					<include name="Google03"></include>
+					<include name="Google04"></include>
+					<include name="Google05"></include>
+					<include name="Google06"></include>
+					<include name="Google07"></include>
+					<include name="Google08"></include>
+					<include name="Google09"></include>
+					<include name="Google10"></include>
+					<include name="Google11"></include>
+					<include name="Google12"></include>
+					<include name="Google13"></include>					
+				</methods>
+			</class>
+			<class name="Webdriver.PROFILE_PAGE">
+				<methods>					
+					<include name="Profile1"></include>
+				</methods>
+			</class>
+			<class name="Webdriver.SIGN_IN">
+				<methods>					
+					<include name="SignIn1"></include>
+					<include name="SignIn2"></include>
+					<include name="SignIn3"></include>
+					<include name="SignIn4"></include>
+					<include name="SignIn5"></include>					
+				</methods>
+			</class>
+			<class name="Webdriver.SIGN_UP">
+				<methods>					
+					<include name="SignUp2"></include>
+					<include name="SignUp3"></include>
+					<include name="SignUp4"></include>
+					<include name="SignUp5"></include>
+					<include name="SignUp6"></include>
+					<include name="SignUp7"></include>
+					<include name="SignUp8"></include>
+					<include name="SignUp9"></include>
+					<include name="SignUp10"></include>
+					<include name="SignUp11"></include>
+					<include name="SignUp12"></include>
+				</methods>
+			</class>
+			<class name="Webdriver.SOCIAL">
+				<methods>					
+					<include name="Social01"></include>
+					<include name="Social02"></include>
+					<include name="Social03"></include>
+					<include name="Social04"></include>
+					<include name="Social05"></include>
+					<include name="Social06"></include>
+					<include name="Social07"></include>
+					<include name="Social08"></include>
+					<include name="Social09"></include>
+					<include name="Social10"></include>
+					<include name="Social11"></include>
+					<include name="Social12"></include>
+					<include name="Social13"></include>
+					<include name="Social14"></include>
+					<include name="Social15"></include>
+					<include name="Social16"></include>
+					<include name="Social17"></include>
+					<include name="Social18"></include>
+				</methods>
+			</class>																
+			<class name="Webdriver.SUBCATEGORY_PAGE">
+				<methods>					
+					<include name="Subcategory1"></include>
+					<include name="Subcategory3"></include>
+					<include name="Subcategory4"></include>
+				</methods>
+			</class>			
+		</classes>		
+	</test>		
+</suite>

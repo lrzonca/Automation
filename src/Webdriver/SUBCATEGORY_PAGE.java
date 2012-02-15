@@ -27,7 +27,7 @@ public class SUBCATEGORY_PAGE extends SeleniumBase{
 		SubCategory.click();	
 		sleep(5);
 		System.out.println("Assertion");
-		assertTrue(driver.findElements(By.id(Webdriver.mappings.categoryPage.SUBCATEGORY_GAME_LIST)).size() == 0);
+		assertTrue(driver.findElements(By.cssSelector(Webdriver.mappings.categoryPage.SUBCATEGORY_GAME_LIST)).size() == 0);
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.subcategoryPage.FIRST_AVAILABLE_GAME_LINK)).isDisplayed());
 		System.out.println("Assertion");
