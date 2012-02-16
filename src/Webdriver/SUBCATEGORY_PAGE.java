@@ -20,12 +20,12 @@ public class SUBCATEGORY_PAGE extends SeleniumBase{
 		WebElement AdventureGame = driver.findElement(By.cssSelector(Webdriver.mappings.leftNavi.ADVENTURE_GAMES));
 		System.out.println("Click Element ADVENTURE_GAMES");
 		AdventureGame.click();
-		sleep(5);
+		sleep(3);
 		System.out.println("Find Element FIRST_AVAILABLE_SUBCATEGORY_LINK");
 		WebElement SubCategory = driver.findElement(By.cssSelector(Webdriver.mappings.categoryPage.FIRST_AVAILABLE_SUBCATEGORY_LINK));
 		System.out.println("Click Element FIRST_AVAILABLE_SUBCATEGORY_LINK");
 		SubCategory.click();	
-		sleep(5);
+		sleep(3);
 		System.out.println("Assertion");
 		assertTrue(driver.findElements(By.cssSelector(Webdriver.mappings.categoryPage.SUBCATEGORY_GAME_LIST)).size() == 0);
 		System.out.println("Assertion");
@@ -54,12 +54,12 @@ public class SUBCATEGORY_PAGE extends SeleniumBase{
 		WebElement AdventureGame = driver.findElement(By.cssSelector(Webdriver.mappings.leftNavi.ADVENTURE_GAMES));
 		System.out.println("Click Element ADVENTURE_GAMES");
 		AdventureGame.click();
+		sleep(3);
 		System.out.println("Find Element FIRST_AVAILABLE_SUBCATEGORY_LINK");
 		WebElement SubCategory = driver.findElement(By.cssSelector(Webdriver.mappings.categoryPage.FIRST_AVAILABLE_SUBCATEGORY_LINK));
 		System.out.println("Click Element FIRST_AVAILABLE_SUBCATEGORY_LINK");
 		SubCategory.click();
-		System.out.println("Sleep 2 sek");
-		Thread.sleep(2000);			
+		sleep(3);			
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.subcategoryPage.FIRST_AVAILABLE_GAME_LINK)).isDisplayed());
 		System.out.println("Assertion");
@@ -93,6 +93,7 @@ public class SUBCATEGORY_PAGE extends SeleniumBase{
 				WebElement NextBtn = driver.findElement(By.cssSelector(Webdriver.mappings.subcategoryPage.SUBCATEGORY_PAGING_TOP_NEXT_ACTIVE_BUTTON));
 				System.out.println("Click Element SUBCATEGORY_PAGING_TOP_NEXT_ACTIVE_BUTTON");
 				NextBtn.click();
+				sleep(3);
 				System.out.println("Assertion");
 				assertNotSame(GameTitle, driver.findElement(By.cssSelector(Webdriver.mappings.subcategoryPage.SUBCATEGORY_GAMES_FIRST_GAME_NAME_TEXT)).getText());
 				System.out.println("Assertion");
@@ -105,6 +106,7 @@ public class SUBCATEGORY_PAGE extends SeleniumBase{
 				WebElement PrevBtn = driver.findElement(By.cssSelector(Webdriver.mappings.subcategoryPage.SUBCATEGORY_PAGING_TOP_PREVIOUS_ACTIVE_BUTTON));
 				System.out.println("Click Element SUBCATEGORY_PAGING_TOP_PREVIOUS_ACTIVE_BUTTON");
 				PrevBtn.click();
+				sleep(3);
 				System.out.println("Assertion");
 				assertNotSame(GameTitle, driver.findElement(By.cssSelector(Webdriver.mappings.subcategoryPage.SUBCATEGORY_GAMES_FIRST_GAME_NAME_TEXT)).getText());
 				System.out.println("Assertion");
@@ -138,6 +140,7 @@ public class SUBCATEGORY_PAGE extends SeleniumBase{
 				WebElement NextBtn = driver.findElement(By.cssSelector(Webdriver.mappings.subcategoryPage.SUBCATEGORY_PAGING_TOP_NEXT_ACTIVE_BUTTON));
 				System.out.println("Click Element SUBCATEGORY_PAGING_TOP_NEXT_ACTIVE_BUTTON");
 				NextBtn.click();
+				sleep(3);
 				assertNotSame(GameTitle, driver.findElement(By.cssSelector(Webdriver.mappings.subcategoryPage.SUBCATEGORY_GAMES_FIRST_GAME_NAME_DETAIL_VIEW_TEXT)).getText());
 				System.out.println("Assertion");
 				AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.subcategoryPage.SUBCATEGORY_PAGING_TOP_PREVIOUS_ACTIVE_BUTTON)).isDisplayed());
@@ -149,6 +152,7 @@ public class SUBCATEGORY_PAGE extends SeleniumBase{
 				WebElement PrevBtn = driver.findElement(By.cssSelector(Webdriver.mappings.subcategoryPage.SUBCATEGORY_PAGING_TOP_PREVIOUS_ACTIVE_BUTTON));
 				System.out.println("Click Element SUBCATEGORY_PAGING_TOP_PREVIOUS_ACTIVE_BUTTON");
 				PrevBtn.click();
+				sleep(3);
 				assertNotSame(GameTitle, driver.findElement(By.cssSelector(Webdriver.mappings.subcategoryPage.SUBCATEGORY_GAMES_FIRST_GAME_NAME_DETAIL_VIEW_TEXT)).getText());
 				System.out.println("Assertion");
 				AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.subcategoryPage.SUBCATEGORY_PAGING_TOP_NEXT_ACTIVE_BUTTON)).isDisplayed());
@@ -168,12 +172,12 @@ public class SUBCATEGORY_PAGE extends SeleniumBase{
 		WebElement AdventureGame = driver.findElement(By.cssSelector(Webdriver.mappings.leftNavi.ADVENTURE_GAMES));
 		System.out.println("Click Element ADVENTURE_GAMES");
 		AdventureGame.click();
+		sleep(3);
 		System.out.println("Find Element FIRST_AVAILABLE_SUBCATEGORY_LINK");
 		WebElement SubCategory = driver.findElement(By.cssSelector(Webdriver.mappings.categoryPage.FIRST_AVAILABLE_SUBCATEGORY_LINK));
 		System.out.println("Click Element FIRST_AVAILABLE_SUBCATEGORY_LINK");
 		SubCategory.click();
-		System.out.println("Sleep 2 sek");
-		Thread.sleep(2000);			
+		sleep(3);		
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.id(Webdriver.mappings.categoryPage.CATEGORY_TAG_BOX)).isDisplayed());
 		System.out.println("Assertion");

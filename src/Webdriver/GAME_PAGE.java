@@ -18,10 +18,8 @@ public class GAME_PAGE extends SeleniumBase{
 	public void GamePage1(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
 		driver.get(xUrl + "/game/unicorn_universe.html");
-		System.out.println("Sleep 30 sek");
-		Thread.sleep(30000);
-		System.out.println("Assertion");
-		assertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.gamepage.GAME_CONTAINTER_SHOCKWAVE)).isDisplayed());
+		sleep(30);
+		assertIsDisplayed(gamepage.GAME_CONTAINTER_SHOCKWAVE);
 	}
 	
 	@Test
@@ -31,8 +29,7 @@ public class GAME_PAGE extends SeleniumBase{
 	public void GamePage2(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
 		driver.get(xUrl + "/game/bubble_machine.html");
-		System.out.println("Sleep 30 sek");
-		Thread.sleep(30000);
+		sleep(30);
 		System.out.println("Switch to GAME_CONTAINTER_IFRAME");
 		driver.switchTo().frame("socialgame");
 		System.out.println("Assertion");
@@ -46,8 +43,7 @@ public class GAME_PAGE extends SeleniumBase{
 	public void GamePage3(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
 		driver.get(xUrl + "/game/kindergarten.html");
-		System.out.println("Sleep 30 sek");
-		Thread.sleep(30000);
+		sleep(30);
 		System.out.println("Switch to GAME_CONTAINTER_IFRAME");
 		driver.switchTo().frame(Webdriver.mappings.gamepage.GAME_CONTAINTER_IFRAME);
 		System.out.println("Assertion");
@@ -62,7 +58,7 @@ public class GAME_PAGE extends SeleniumBase{
 		String SQL_select = "SELECT * FROM `games` g INNER JOIN `biglinks` b ON g.`id` = b.`game_id` WHERE g.`language_id` LIKE 'en-US' AND g.`active` = 1 LIMIT 1";
 		Get_Games_Parameter_From_DB(SQL_select);
 		driver.get(xUrl + "/game/" + Game_nice_name + ".html");
-		sleep(5);
+		sleep(30);
 		String pageTitle = driver.getTitle();
 		assertTrue(pageTitle.contains(Game_game_name));
 	}		
@@ -75,7 +71,7 @@ public class GAME_PAGE extends SeleniumBase{
 		String SQL_select = "SELECT * FROM games WHERE active = 0 AND language_id LIKE 'en-US' LIMIT 1";
 		Get_Games_Parameter_From_DB(SQL_select);
 		driver.get(xUrl + "/game/" + Game_nice_name + ".html");
-		sleep(5);
+		sleep(30);
 		String pageTitle = driver.getTitle();
 		assertFalse(pageTitle.contains(Game_game_name));
 	}		

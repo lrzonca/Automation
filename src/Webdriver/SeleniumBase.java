@@ -73,7 +73,7 @@ public class SeleniumBase extends Common{
 			capability.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
 			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
 		}
-		//driver.manage().deleteAllCookies();
+		driver.manage().deleteAllCookies();
 	  }
 
 
@@ -96,7 +96,7 @@ public class SeleniumBase extends Common{
 		} else {
 			System.out.println("TestCase " + this.getClass().getName() + "__" + method.getName() + " was Passed!!!");
 		}
-		  //driver.manage().deleteAllCookies();
+		  driver.manage().deleteAllCookies();
 		  driver.quit();
 	  }
 }

@@ -48,13 +48,13 @@ public class AVATAR extends SeleniumBase{
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.avatar.FIRST_AVATAR_ICO)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.avatar.FIRST_AVATAR_WANT_IT_BUTTON)).isDisplayed());
+		AssertTrue(driver.findElements(By.cssSelector(Webdriver.mappings.avatar.FIRST_AVATAR_WANT_IT_BUTTON)).size() == 1);
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.avatar.SECOND_AVATAR_BOX)).isDisplayed());
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.avatar.SECOND_AVATAR_ICO)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.avatar.SECOND_AVATAR_WANT_IT_BUTTON)).isDisplayed());
+		AssertTrue(driver.findElements(By.cssSelector(Webdriver.mappings.avatar.SECOND_AVATAR_WANT_IT_BUTTON)).size() == 1);
 	}
 	
 	

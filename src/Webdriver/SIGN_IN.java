@@ -4,7 +4,6 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import java.util.Date;
 import org.junit.runners.BlockJUnit4ClassRunner;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -12,8 +11,6 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.junit.runner.RunWith;
-
-import Webdriver.mappings.signIn;
 
 @RunWith(BlockJUnit4ClassRunner.class)
 public class SIGN_IN extends SeleniumBase{
@@ -39,8 +36,10 @@ public class SIGN_IN extends SeleniumBase{
 		driver.get(xUrl);
 		sleep(2);
 		Login("cookietest", "123456" + "wrong");	
-		assertTrue(findElement(signIn.WHOLE_POPUP).isDisplayed());		
-		assertTrue(findElement(signIn.ERROR_MESSAGE).isDisplayed());
+//		assertTrue(findElement(signIn.WHOLE_POPUP).isDisplayed());
+//		assertTrue(findElement(signIn.ERROR_MESSAGE).isDisplayed());
+		assertIsDisplayed(signIn.WHOLE_POPUP);
+		assertIsDisplayed(signIn.ERROR_MESSAGE);
 	}	
 	
 //	Sign in unsuccessfully (empty values)
@@ -51,10 +50,12 @@ public class SIGN_IN extends SeleniumBase{
 		driver.get(xUrl);
 		sleep(2);
 		Login("", "");	
-		System.out.println("Find Element WHOLE_POPUP");
-		driver.findElement(By.id(Webdriver.mappings.signIn.WHOLE_POPUP)).isDisplayed();
-		System.out.println("Find Element ERROR_MESSAGE");
-		assertTrue(findElement(signIn.ERROR_MESSAGE).isDisplayed());
+//		System.out.println("Find Element WHOLE_POPUP");
+//		driver.findElement(By.id(Webdriver.mappings.signIn.WHOLE_POPUP)).isDisplayed();
+//		System.out.println("Find Element ERROR_MESSAGE");
+//		assertTrue(findElement(signIn.ERROR_MESSAGE).isDisplayed());
+		assertIsDisplayed(signIn.WHOLE_POPUP);
+		assertIsDisplayed(signIn.ERROR_MESSAGE);
 	}		
 	
 //	Sign in successfully (keep me signed in on)
@@ -84,9 +85,8 @@ public class SIGN_IN extends SeleniumBase{
 		if (xBrowser.contains("firefox")) {
 			driver = new FirefoxDriver();
 		} else if (xBrowser.contains("chrome")) {
-			driver = new RemoteWebDriver(service.getUrl(),
-			DesiredCapabilities.chrome());
-		} else if (xBrowser.contains("ie")) {
+			driver = new RemoteWebDriver(service.getUrl(), DesiredCapabilities.chrome());
+		} else if (xBrowser.contains("iexplore")) {
 			DesiredCapabilities ieCapabilities = DesiredCapabilities.internetExplorer();
             ieCapabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
             ieCapabilities.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
@@ -143,4 +143,3 @@ public class SIGN_IN extends SeleniumBase{
 		assertFalse(findElement(signIn.LOGGED_USERNAME).isDisplayed());
 	}				
 }
-

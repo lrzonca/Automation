@@ -43,7 +43,7 @@ public interface mappings {
 		public static final CssSelector SIGN_IN_BUTTON = SelectorFactory.createCssSelector(".login_button a");
 		public static final CssSelector LOGGED_USERNAME = SelectorFactory.createCssSelector(".tc-username-cnt");
 		public static final String WHOLE_POPUP = "fb_loginbox_main";
-		public static final String ERROR_MESSAGE = ".tc-error-message-notauth";
+		public static final CssSelector ERROR_MESSAGE = SelectorFactory.createCssSelector(".tc-error-message-notauth");
 		public static final CssSelector REMEMBER_CHECKBOX = SelectorFactory.createCssSelector(".tc-remember-check");
 		public static final String LOGOUT_LINK = ".tc-logout-url";
 		  }
@@ -102,10 +102,11 @@ public interface mappings {
 		public static final String SIGN_UP_BOX = "#socialgameRegister";
 		public static final String HEADER_CLOSE_BUTTON = "div.sg-register a.socialClose p.socialCloseButton";
 		public static final String HEADER_CLOSE_BUTTON2 = ".socialCloseButton";
-		public static final String HEADER_GS_CLOSE_BUTTON = ".cancel";
+		public static final String HEADER_CLOSE_BUTTON3 = "#sg_harvesting_popup div div a.socialClose p.socialCloseButton";
+		public static final String HEADER_GS_CLOSE_BUTTON = "#pss_close a";
 		public static final String HARVESTING_POPUP = "#sg_harvesting_popup";
 		public static final String HEADER_TITLE_TEXT = ".socialTop h1 div.text";
-		public static final String ON_SITE_TAB = "onsite";
+		public static final String ON_SITE_TAB = "#onsite";
 		public static final String ON_SITE_FIRST_FRIEND_AVATAR_BOX = "li:nth-child(1) .avatar a";
 		public static final String ON_SITE_FIRST_FRIEND_AVATAR_IMG = "li:nth-child(1) .avatar a img";
 		public static final String ON_SITE_FIRST_FRIEND_BOX = "#myfr_0";
@@ -128,7 +129,7 @@ public interface mappings {
 		public static final String FROM_EMAIL_YAHOO_BUTTON = ".yahoo div";
 		public static final String ON_SITE_TOTAL_FRIENDS_NUMBER_TEXT = ".my_friends_total_extern";
 		public static final String ON_SITE_SELECTED_FRIENDS_TEXT = ".selected";
-		public static final String harvesting_onsite_container = "harvesting_onsite_container";
+		public static final String harvesting_onsite_container = "#harvesting_onsite_container";
 		public static final String SIGN_UP_CLOSE_BUTTON = ".socialCloseButton";
 		public static final String SIGN_UP_CLOSE_LINK = "a.socialClose";
 		public static final String SIGN_UP_WHITE_BOX = ".whitebox-main";
@@ -145,42 +146,42 @@ public interface mappings {
 		public static final String SIGN_UP_PB_EMAIL_TITLE_TEXT = ".sg-registration-step1 div:nth-child(1) div.sg-reg-form-caption";
 		public static final String SIGN_UP_PB_EMAIL_WHATS_THIS_FOR_TEXT = ".sg-registration-step1 div:nth-child(1) div.sg-reg-form-help a";
 		public static final String SIGN_UP_PB_EMAIL_WHATS_THIS_FOR_TOOLTIP_TEXT = ".sg-registration-step1 div:nth-child(1) div.sg-reg-form-help span";
-		public static final String SIGN_UP_PB_EMAIL_TEXTFIELD = "sgRegMail";
-		public static final String SIGN_UP_PB_EMAIL_CORRECT_ICON = "email_validationCorrectImage";
-		public static final String SIGN_UP_PB_EMAIL_ERROR_ICON = "email_validationErrorImage";
-		public static final String SIGN_UP_PB_EMAIL_ERROR_EMAIL_TAKEN_TEXT = "error_email_already_taken";
-		public static final String SIGN_UP_PB_EMAIL_ERROR_EMAIL_WRONG_TEXT = "error_incorrect_email";
+		public static final String SIGN_UP_PB_EMAIL_TEXTFIELD = "#sgRegMail";
+		public static final String SIGN_UP_PB_EMAIL_CORRECT_ICON = "#email_validationCorrectImage";
+		public static final String SIGN_UP_PB_EMAIL_ERROR_ICON = "#email_validationErrorImage";
+		public static final String SIGN_UP_PB_EMAIL_ERROR_EMAIL_TAKEN_TEXT = "#error_email_already_taken";
+		public static final String SIGN_UP_PB_EMAIL_ERROR_EMAIL_WRONG_TEXT = "#error_incorrect_email";
 		public static final String SIGN_UP_PB_USERNAME_TITLE_TEXT = ".sg-registration-step1 div:nth-child(2) div.sg-reg-form-caption";
 		public static final String SIGN_UP_PB_USERNAME_WHATS_THIS_FOR_TEXT = ".sg-registration-step1 div:nth-child(2) div.sg-reg-form-help a";
 		public static final String SIGN_UP_PB_USERNAME_WHATS_THIS_FOR_TOOLTIP_TEXT = ".sg-registration-step1 div:nth-child(2) div.sg-reg-form-help span";
-		public static final String SIGN_UP_PB_USERNAME_TEXTFIELD = "sgRegUsername";
-		public static final String SIGN_UP_PB_USERNAME_CORRECT_ICON = "username_validationCorrectImage";
-		public static final String SIGN_UP_PB_USERNAME_ERROR_ICON = "username_validationErrorImage";
-		public static final String SIGN_UP_PB_USERNAME_ERROR_USERNAME_TAKEN_TEXT = "error_username_taken";
-		public static final String SIGN_UP_PB_USERNAME_ERROR_USERNAME_TOO_SHORT_TEXT = "error_username_too_short";
-		public static final String SIGN_UP_PB_USERNAME_ERROR_USERNAME_INCORECT_TEXT = "error_incorrect_username";
-		public static final String SIGN_UP_PB_USERNAME_ERROR_USERNAME_PROFANITY_TEXT = "error_profanity_username";
+		public static final String SIGN_UP_PB_USERNAME_TEXTFIELD = "#sgRegUsername";
+		public static final String SIGN_UP_PB_USERNAME_CORRECT_ICON = "#username_validationCorrectImage";
+		public static final String SIGN_UP_PB_USERNAME_ERROR_ICON = "#username_validationErrorImage";
+		public static final String SIGN_UP_PB_USERNAME_ERROR_USERNAME_TAKEN_TEXT = "#error_username_taken";
+		public static final String SIGN_UP_PB_USERNAME_ERROR_USERNAME_TOO_SHORT_TEXT = "#error_username_too_short";
+		public static final String SIGN_UP_PB_USERNAME_ERROR_USERNAME_INCORECT_TEXT = "#error_incorrect_username";
+		public static final String SIGN_UP_PB_USERNAME_ERROR_USERNAME_PROFANITY_TEXT = "#error_profanity_username";
 		public static final String SIGN_UP_PB_PASSWORD_TITLE_TEXT = ".sg-registration-step1 div:nth-child(3) div.sg-reg-form-caption";
-		public static final String SIGN_UP_PB_PASSWORD_TEXTFIELD = "sgRegPassword";
-		public static final String SIGN_UP_PB_PASSWORD_CORRECT_ICON = "password_validationCorrectImage";
-		public static final String SIGN_UP_PB_PASSWORD_ERROR_ICON = "password_validationErrorImage";
-		public static final String SIGN_UP_PB_PASSWORD_ERROR_PASSWORD_TOO_SHORT_TEXT = "error_password_too_short";
+		public static final String SIGN_UP_PB_PASSWORD_TEXTFIELD = "#sgRegPassword";
+		public static final String SIGN_UP_PB_PASSWORD_CORRECT_ICON = "#password_validationCorrectImage";
+		public static final String SIGN_UP_PB_PASSWORD_ERROR_ICON = "#password_validationErrorImage";
+		public static final String SIGN_UP_PB_PASSWORD_ERROR_PASSWORD_TOO_SHORT_TEXT = "#error_password_too_short";
 		public static final String SIGN_UP_PB_HOW_OLD_ARE_YOU_TITLE_TEXT = ".sg-registration-step1 div.sg-reg-howold-line span";
-		public static final String SIGN_UP_PB_HOW_OLD_ARE_YOU_TEXTFIELD = "sgRegAge";
-		public static final String SIGN_UP_PB_HOW_OLD_ARE_YOU_CORRECT_ICON = "age_validationCorrectImage";
-		public static final String SIGN_UP_PB_HOW_OLD_ARE_YOU_ERROR_ICON = "age_validationErrorImage";
-		public static final String SIGN_UP_PB_HOW_OLD_ARE_YOU_ERROR_NOT_NUMBER_TEXT = "error_age_not_numeric";
-		public static final String SIGN_UP_PB_HOW_OLD_ARE_YOU_ERROR_TOO_YOUNG_TEXT = "error_too_young";
+		public static final String SIGN_UP_PB_HOW_OLD_ARE_YOU_TEXTFIELD = "#sgRegAge";
+		public static final String SIGN_UP_PB_HOW_OLD_ARE_YOU_CORRECT_ICON = "#age_validationCorrectImage";
+		public static final String SIGN_UP_PB_HOW_OLD_ARE_YOU_ERROR_ICON = "#age_validationErrorImage";
+		public static final String SIGN_UP_PB_HOW_OLD_ARE_YOU_ERROR_NOT_NUMBER_TEXT = "#error_age_not_numeric";
+		public static final String SIGN_UP_PB_HOW_OLD_ARE_YOU_ERROR_TOO_YOUNG_TEXT = "#error_too_young";
 		public static final String SIGN_UP_PB_LINE = ".sg-registration-step1 .hsep";
 		public static final String SIGN_UP_PB_PARENTS_EMAIL_TITLE_TEXT = ".sg-registration-step1 div:nth-child(6) div.sg-reg-form-caption";
 		public static final String SIGN_UP_PB_PARENTS_EMAIL_WHATS_THIS_FOR_TEXT = ".sg-registration-step1 div:nth-child(6) div.sg-reg-form-help a";
 		public static final String SIGN_UP_PB_PARENTS_EMAIL_WHATS_THIS_FOR_TOOLTIP_TEXT = ".sg-registration-step1 div:nth-child(6) div.sg-reg-form-help span";
-		public static final String SIGN_UP_PB_PARENTS_EMAIL_TEXTFIELD = "sgRegParentsMail";
-		public static final String SIGN_UP_PB_PARENTS_EMAIL_CORRECT_ICON = "parents_validationCorrectImage";
-		public static final String SIGN_UP_PB_PARENTS_EMAIL_ERROR_ICON = "parents_validationErrorImage";
-		public static final String SIGN_UP_PB_PARENTS_EMAIL_ERROR_PARENTS_EMAIL_WRONG_TEXT = "parent_error_incorrect_email";
+		public static final String SIGN_UP_PB_PARENTS_EMAIL_TEXTFIELD = "#sgRegParentsMail";
+		public static final String SIGN_UP_PB_PARENTS_EMAIL_CORRECT_ICON = "#parents_validationCorrectImage";
+		public static final String SIGN_UP_PB_PARENTS_EMAIL_ERROR_ICON = "#parents_validationErrorImage";
+		public static final String SIGN_UP_PB_PARENTS_EMAIL_ERROR_PARENTS_EMAIL_WRONG_TEXT = "#parent_error_incorrect_email";
 		public static final String SIGN_UP_PB_TERMS_OF_USE_TEXT = ".sg-reg-terms";
-		public static final String SIGN_UP_PB_NEWSLETTER = "sgRegNewsletterAuto";
+		public static final String SIGN_UP_PB_NEWSLETTER = "#sgRegNewsletterAuto";
 		public static final String SIGN_UP_PB_SIGN_ME_UP_BUTTON = ".sg-reg-save-btn";
 		public static final String SIGN_UP_PB_SIGN_IN_BOTTOM_TEXT = ".sg-reg-bottom-text";
 		public static final String SIGN_UP_PB_SIGN_IN_BOTTOM_LINK = ".sg-reg-bottom-text a";
@@ -190,7 +191,7 @@ public interface mappings {
 		public static final String SIGN_UP_PB_SIGN_IN_SUCCESS_CHILD_TITLE_TEXT = ".sg-registration-step2-normal h2.txt-child";
 		public static final String SIGN_UP_PB_SIGN_IN_SUCCESS_TEXT = ".sg-registration-step2-normal div.txt-normal";
 		public static final String SIGN_UP_PB_SIGN_IN_SUCCESS_CHILD_TEXT = ".sg-registration-step2-normal div.txt-child";
-		public static final String SIGN_UP_PB_SIGN_IN_SUCCESS_CONTINUE_PLAYING_BUTTON = "sgRegContinueBtn";
+		public static final String SIGN_UP_PB_SIGN_IN_SUCCESS_CONTINUE_PLAYING_BUTTON = "#sgRegContinueBtn";
 		// public static final String SIGN_UP_PB_SIGN_IN_SUCCESS_CHILD_CONTINUE_PLAYING_BUTTON = "css=sgRegChildContinueBtn";
 		public static final String SIGN_UP_WB_SIGN_IN_SUCCESS_CHILD_HEADER_TEXT = ".parents-girl-text";
 		public static final String SIGN_UP_WB_SIGN_IN_SUCCESS_CHILD_GIRL_ICON = ".parents-girl";
@@ -207,7 +208,7 @@ public interface mappings {
 		  }
 		  
 		  public interface gamepage {
-		public static final String GAME_CONTAINTER_SHOCKWAVE = "#flashobj_mc";
+		public static final CssSelector GAME_CONTAINTER_SHOCKWAVE = SelectorFactory.createCssSelector("#flashobj_mc");
 		public static final String GAME_CONTAINTER_IFRAME = "gameiframe_js";
 		public static final String ALL_COMMENTS_BOX = "commentsHolder";
 		
@@ -251,12 +252,12 @@ public interface mappings {
 		// public static final String LATEST_ACTIVITIES_BUTTONS_FIRST_BUTTON = "css=.menu a:nth-child(1) span";
 		// public static final String LATEST_ACTIVITIES_BUTTONS_SECOND_BUTTON = "css=.menu a:nth-child(2) span";
 		// public static final String LATEST_ACTIVITIES_BUTTONS_THIRD_BUTTON = "css=.menu a:nth-child(3) span";
-		public static final String LATEST_ACTIVITIES_BUTTONS_FIRST_BUTTON = "css=.tc_all_activities";
-		public static final String LATEST_ACTIVITIES_BUTTONS_SECOND_BUTTON = "css=.tc_my_activities";
-		public static final String LATEST_ACTIVITIES_BUTTONS_THIRD_BUTTON = "css=.tc_wall_messages";
-		public static final String NEW_EMAIL_TEXT = "css=#f_email";
-		public static final String SAVE_EMAIL_BUTTON = "css=#saveEmail div a";
-		public static final String CONFIRM_PASSWORD_TEXT = "css=#changeemailconfirm table tbody tr td input#confirmPass";
+		public static final String LATEST_ACTIVITIES_BUTTONS_FIRST_BUTTON = ".tc_all_activities";
+		public static final String LATEST_ACTIVITIES_BUTTONS_SECOND_BUTTON = ".tc_my_activities";
+		public static final String LATEST_ACTIVITIES_BUTTONS_THIRD_BUTTON = ".tc_wall_messages";
+		public static final String NEW_EMAIL_TEXT = "#f_email";
+		public static final String SAVE_EMAIL_BUTTON = "#saveEmail div a";
+		public static final String CONFIRM_PASSWORD_TEXT = "#changeemailconfirm table tbody tr td input#confirmPass";
 		public static final String SAVE_CONFIRM_PASSWORD_BUTTON = "css=#changeemailconfirm div#saveEmailConfirm div a";
 		public static final String EDIT_SETTINGS_PRIVATE_RADIO = "UserPrivacyPrivate";
 		public static final String EDIT_SETTINGS_PUBLIC_RADIO = "UserPrivacyPublic";
@@ -280,7 +281,7 @@ public interface mappings {
 		  }
 		  
 		public interface NOTIFICATIONS{
-		public static final String TAB_NOTIFICATIONS = "tab_inbox";
+		public static final String TAB_NOTIFICATIONS = "#tab_inbox";
 		public static final String ACCEPT_FRIEND_REQUEST_BUTTON = ".accept";
 		public static final String REJECT_FRIEND_REQUEST_BUTTON = ".reject";
 		public static final String REJECTED_MESSAGE = ".rejected";
@@ -289,7 +290,7 @@ public interface mappings {
 		}
 
 		public interface FRIENDS{
-		public static final String TAB_FRIENDS = "tab_friends";
+		public static final String TAB_FRIENDS = "#tab_friends";
 		public static final String SEARCH_FRIEND_TEXTBOX = ".friends_search_username";
 		public static final String SEARCH_BUTTON = ".friends_search_bottom_holder tbody tr td div a.submit";
 		public static final String FIRST_SEARCHED_FRIEND_NAME_TEXT = ".friends_search_item_holder p.usernameHolder a";
@@ -343,12 +344,12 @@ public interface mappings {
 		  public interface avatar {
 		public static final String TAB_AVATAR = "tab_avatar";
 		public static final String ANY_AVATAR_BOX = "avatar_"; // add parameter on end
-		public static final String FIRST_AVATAR_BOX = ".ul_container ul liavatar_0";
-		public static final String SECOND_AVATAR_BOX = ".ul_container ul liavatar_1";
-		public static final String FIRST_AVATAR_ICO = ".ul_container ul liavatar_0 a.avatar img";
-		public static final String SECOND_AVATAR_ICO = ".ul_container ul liavatar_1 a.avatar img";
-		public static final String FIRST_AVATAR_WANT_IT_BUTTON = ".ul_container ul liavatar_0 a.avatar div.button_group";
-		public static final String SECOND_AVATAR_WANT_IT_BUTTON = ".ul_container ul liavatar_1 a.avatar div.button_group";
+		public static final String FIRST_AVATAR_BOX = "#avatar_0";
+		public static final String SECOND_AVATAR_BOX = "#avatar_1";
+		public static final String FIRST_AVATAR_ICO = "#avatar_0 a.avatar img";
+		public static final String SECOND_AVATAR_ICO = "#avatar_1 a.avatar img";
+		public static final String FIRST_AVATAR_WANT_IT_BUTTON = "#avatar_0 a.avatar div.button_group";
+		public static final String SECOND_AVATAR_WANT_IT_BUTTON = "#avatar_1 a.avatar div.button_group";
 		public static final String AVATAR_TITLE_TEXT = "picker_top_left";
 		public static final String CREATE_AVATAR_GIRL_ICO = "picker_girl";
 		public static final String CREATE_AVATAR_HEADER_TEXT = "picker_more_fun";

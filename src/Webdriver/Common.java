@@ -232,22 +232,23 @@ public class Common extends TestCase implements mappings {
 			WebElement Yes = driver.findElement(By.cssSelector(Webdriver.mappings.myProfile.DELETE_FRIEND_YES_BUTTON));
 			Yes.click();
 			Thread.sleep(2000);
-		}		
-		if (driver.findElement(By.cssSelector(Webdriver.mappings.myProfile.FRIEND_REQUEST_SENT_TEXT)).isDisplayed()){
-			Logout();
-			Login(UN2, UP);
-		    WebElement MyProfile = driver.findElement(By.cssSelector(Webdriver.mappings.topBar.MY_PROFILE_LINK));
-		    MyProfile.click();
-		    Thread.sleep(5000);
-		    WebElement Notification = driver.findElement(By.id(Webdriver.mappings.NOTIFICATIONS.TAB_NOTIFICATIONS));
-		    Notification.click();
-		    Thread.sleep(5000);
-		    WebElement Reject = driver.findElement(By.cssSelector(Webdriver.mappings.NOTIFICATIONS.REJECT_FRIEND_REQUEST_BUTTON));
-		    Reject.click();
-		    Thread.sleep(3000);
-		    AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.NOTIFICATIONS.REJECTED_MESSAGE)).isDisplayed());
-			Logout();
-			Login(UN1, UP);			
+		} else {
+			if (driver.findElement(By.cssSelector(Webdriver.mappings.myProfile.FRIEND_REQUEST_SENT_TEXT)).isDisplayed()){
+				Logout();
+				Login(UN2, UP);
+			    WebElement MyProfile = driver.findElement(By.cssSelector(Webdriver.mappings.topBar.MY_PROFILE_LINK));
+			    MyProfile.click();
+			    Thread.sleep(5000);
+			    WebElement Notification = driver.findElement(By.cssSelector(Webdriver.mappings.NOTIFICATIONS.TAB_NOTIFICATIONS));
+			    Notification.click();
+			    Thread.sleep(5000);
+			    WebElement Reject = driver.findElement(By.cssSelector(Webdriver.mappings.NOTIFICATIONS.REJECT_FRIEND_REQUEST_BUTTON));
+			    Reject.click();
+			    Thread.sleep(3000);
+			    AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.NOTIFICATIONS.REJECTED_MESSAGE)).isDisplayed());
+				Logout();
+				Login(UN1, UP);			
+			}
 		}
 	}
 	

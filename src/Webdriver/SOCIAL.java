@@ -75,6 +75,7 @@ public class SOCIAL extends SeleniumBase{
 		AssertTrue(b.contains("mptest"));
 		WebElement Invite2 = driver.findElement(By.cssSelector(Webdriver.mappings.social.SOCIAL_GAME_INVITE_BUTTON));
 		Invite2.click();
+		sleep(5);
 		driver.switchTo().defaultContent();	
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.HEADER_TITLE_TEXT)).isDisplayed());
@@ -109,6 +110,7 @@ public class SOCIAL extends SeleniumBase{
 		
 		WebElement EmailTab = driver.findElement(By.cssSelector(Webdriver.mappings.social.FROM_EMAIL_TAB));
 		EmailTab.click();
+		sleep(5);
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.FROM_EMAIL_BOTTOM_DESCRIPTION_TEXT)).isDisplayed());
 		System.out.println("Assertion");
@@ -123,8 +125,9 @@ public class SOCIAL extends SeleniumBase{
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.FROM_EMAIL_WINDOWS_LIVE_BUTTON)).isDisplayed());
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.FROM_EMAIL_YAHOO_BUTTON)).isDisplayed());
-		WebElement Close3 = driver.findElement(By.cssSelector(Webdriver.mappings.social.HEADER_CLOSE_BUTTON2));
+		WebElement Close3 = driver.findElement(By.cssSelector(Webdriver.mappings.social.HEADER_CLOSE_BUTTON3));
 		Close3.click();
+		sleep(5);
 		driver.switchTo().frame(Webdriver.mappings.social.SOCIAL_GAME_BOX);		
 		WebElement Invite3 = driver.findElement(By.cssSelector(Webdriver.mappings.social.SOCIAL_GAME_INVITE_BUTTON));
 		Invite3.click();
@@ -136,7 +139,7 @@ public class SOCIAL extends SeleniumBase{
 	@Test
 	@Parameters({"xUrl"})
 	public void Social03(String xUrl) throws InterruptedException {//NOT OK
-		int friends_number, current_selected_friends, i = 0;
+		int friends_number = 0, current_selected_friends = 0, i = 0;
 		System.out.println("Open URL");
 		driver.get(xUrl + "/game/pet_party.html?socialgames");
 		System.out.println("Sleep 5 sek");
@@ -150,24 +153,24 @@ public class SOCIAL extends SeleniumBase{
 		Thread.sleep(5000);
 		WebElement try1 = driver.findElement(By.cssSelector(Webdriver.mappings.social.harvesting_onsite_container));
 		try1.click();
-		Thread.sleep(5000);	
-		friends_number = Integer.parseInt(driver.findElement(By.cssSelector(Webdriver.mappings.social.ON_SITE_TOTAL_FRIENDS_NUMBER_TEXT)).getText());
-		current_selected_friends = Integer.parseInt(driver.findElement(By.cssSelector(Webdriver.mappings.social.ON_SITE_SELECTED_FRIENDS_TEXT)).getText());
+		Thread.sleep(5000);		
+		friends_number = Integer.parseInt(driver.findElement(By.cssSelector(Webdriver.mappings.social.ON_SITE_TOTAL_FRIENDS_NUMBER_TEXT)).getAttribute("innerHTML"));
+		current_selected_friends = Integer.parseInt(driver.findElement(By.cssSelector(Webdriver.mappings.social.ON_SITE_SELECTED_FRIENDS_TEXT)).getAttribute("innerHTML"));
 		System.out.println("Assertion");
 		assertEquals(friends_number, current_selected_friends);
 		WebElement SelectAllCheck = driver.findElement(By.cssSelector(Webdriver.mappings.social.ON_SITE_SELECT_ALL_CHECKBOX));
 		SelectAllCheck.click();
-		current_selected_friends = Integer.parseInt(driver.findElement(By.cssSelector(Webdriver.mappings.social.ON_SITE_SELECTED_FRIENDS_TEXT)).getText());
+		current_selected_friends = Integer.parseInt(driver.findElement(By.cssSelector(Webdriver.mappings.social.ON_SITE_SELECTED_FRIENDS_TEXT)).getAttribute("innerHTML"));
 		assertEquals(0, current_selected_friends);
 		WebElement SelectAllLink = driver.findElement(By.cssSelector(Webdriver.mappings.social.ON_SITE_SELECT_ALL_LINK));
 		SelectAllLink.click();
-		current_selected_friends = Integer.parseInt(driver.findElement(By.cssSelector(Webdriver.mappings.social.ON_SITE_SELECTED_FRIENDS_TEXT)).getText());
+		current_selected_friends = Integer.parseInt(driver.findElement(By.cssSelector(Webdriver.mappings.social.ON_SITE_SELECTED_FRIENDS_TEXT)).getAttribute("innerHTML"));
 		System.out.println("Assertion");
 		assertEquals(friends_number, current_selected_friends);
 		while (i < friends_number){
 			WebElement InviteFrie = driver.findElement(By.cssSelector("#myfr_" + i + " div.check-invite input"));
 			InviteFrie.click();
-			current_selected_friends = Integer.parseInt(driver.findElement(By.cssSelector(Webdriver.mappings.social.ON_SITE_SELECTED_FRIENDS_TEXT)).getText());
+			current_selected_friends = Integer.parseInt(driver.findElement(By.cssSelector(Webdriver.mappings.social.ON_SITE_SELECTED_FRIENDS_TEXT)).getAttribute("innerHTML"));
 			System.out.println("Assertion");
 			assertEquals(friends_number - i - 1, current_selected_friends);
 			i++;
@@ -414,9 +417,11 @@ public class SOCIAL extends SeleniumBase{
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_TEXTFIELD)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
+//		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
+		assertFalse(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_TOO_SHORT_TEXT)).isDisplayed());
+//		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_TOO_SHORT_TEXT)).isDisplayed());
+		assertFalse(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_TOO_SHORT_TEXT)).isDisplayed());
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_PASSWORD_TITLE_TEXT)).isDisplayed());
 		System.out.println("Assertion");
@@ -573,9 +578,11 @@ public class SOCIAL extends SeleniumBase{
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_TEXTFIELD)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
+//		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
+		assertFalse(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_TOO_SHORT_TEXT)).isDisplayed());
+//		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_TOO_SHORT_TEXT)).isDisplayed());
+		assertFalse(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_TOO_SHORT_TEXT)).isDisplayed());
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_PASSWORD_TITLE_TEXT)).isDisplayed());
 		System.out.println("Assertion");
@@ -733,9 +740,11 @@ public class SOCIAL extends SeleniumBase{
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_TEXTFIELD)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
+//		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
+		assertFalse(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_TOO_SHORT_TEXT)).isDisplayed());
+//		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_TOO_SHORT_TEXT)).isDisplayed());
+		assertFalse(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_TOO_SHORT_TEXT)).isDisplayed());
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_PASSWORD_TITLE_TEXT)).isDisplayed());
 		System.out.println("Assertion");
@@ -893,9 +902,11 @@ public class SOCIAL extends SeleniumBase{
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_TEXTFIELD)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
+//		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
+		assertFalse(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_TOO_SHORT_TEXT)).isDisplayed());
+//		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_TOO_SHORT_TEXT)).isDisplayed());
+		assertFalse(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_TOO_SHORT_TEXT)).isDisplayed());
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_PASSWORD_TITLE_TEXT)).isDisplayed());
 		System.out.println("Assertion");
@@ -1053,9 +1064,11 @@ public class SOCIAL extends SeleniumBase{
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_TEXTFIELD)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
+//		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
+		assertFalse(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_TAKEN_TEXT)).isDisplayed());
+//		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_TAKEN_TEXT)).isDisplayed());
+		assertFalse(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_TAKEN_TEXT)).isDisplayed());
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_PASSWORD_TITLE_TEXT)).isDisplayed());
 		System.out.println("Assertion");
@@ -1213,9 +1226,11 @@ public class SOCIAL extends SeleniumBase{
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_TEXTFIELD)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
+//		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
+		assertFalse(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_INCORECT_TEXT)).isDisplayed());
+//		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_INCORECT_TEXT)).isDisplayed());
+		assertFalse(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_INCORECT_TEXT)).isDisplayed());
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_PASSWORD_TITLE_TEXT)).isDisplayed());
 		System.out.println("Assertion");
@@ -1373,9 +1388,11 @@ public class SOCIAL extends SeleniumBase{
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_TEXTFIELD)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
+//		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
+		assertFalse(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_PROFANITY_TEXT)).isDisplayed());
+//		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_PROFANITY_TEXT)).isDisplayed());
+		assertFalse(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_PROFANITY_TEXT)).isDisplayed());
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_PASSWORD_TITLE_TEXT)).isDisplayed());
 		System.out.println("Assertion");
@@ -1533,9 +1550,11 @@ public class SOCIAL extends SeleniumBase{
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_TEXTFIELD)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
+//		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
+		assertFalse(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_TOO_SHORT_TEXT)).isDisplayed());
+//		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_TOO_SHORT_TEXT)).isDisplayed());
+		assertFalse(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_TOO_SHORT_TEXT)).isDisplayed());
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_PASSWORD_TITLE_TEXT)).isDisplayed());
 		System.out.println("Assertion");
@@ -1693,9 +1712,11 @@ public class SOCIAL extends SeleniumBase{
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_TEXTFIELD)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
+//		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
+		assertFalse(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_TOO_SHORT_TEXT)).isDisplayed());
+//		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_TOO_SHORT_TEXT)).isDisplayed());
+		assertFalse(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_TOO_SHORT_TEXT)).isDisplayed());
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_PASSWORD_TITLE_TEXT)).isDisplayed());
 		System.out.println("Assertion");
@@ -1853,9 +1874,11 @@ public class SOCIAL extends SeleniumBase{
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_TEXTFIELD)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
+//		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
+		assertFalse(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_TOO_SHORT_TEXT)).isDisplayed());
+//		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_TOO_SHORT_TEXT)).isDisplayed());
+		assertFalse(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_TOO_SHORT_TEXT)).isDisplayed());
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_PASSWORD_TITLE_TEXT)).isDisplayed());
 		System.out.println("Assertion");
@@ -2021,9 +2044,11 @@ public class SOCIAL extends SeleniumBase{
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_TEXTFIELD)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
+//		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
+		assertFalse(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_TOO_SHORT_TEXT)).isDisplayed());
+//		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_TOO_SHORT_TEXT)).isDisplayed());
+		assertFalse(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_TOO_SHORT_TEXT)).isDisplayed());
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_PASSWORD_TITLE_TEXT)).isDisplayed());
 		System.out.println("Assertion");
@@ -2205,9 +2230,11 @@ public class SOCIAL extends SeleniumBase{
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_TEXTFIELD)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
+//		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
+		assertFalse(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_ICON)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_TOO_SHORT_TEXT)).isDisplayed());
+//		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_TOO_SHORT_TEXT)).isDisplayed());
+		assertFalse(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_USERNAME_ERROR_USERNAME_TOO_SHORT_TEXT)).isDisplayed());
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.social.SIGN_UP_PB_PASSWORD_TITLE_TEXT)).isDisplayed());
 		System.out.println("Assertion");
@@ -2247,7 +2274,10 @@ public class SOCIAL extends SeleniumBase{
 	
 	/* Pet Party - Sign Up - user is not logged in, click invite next click SIGN me Up button after writing correct data (user age e.g. 20)
 	 * check all controls old and all correct icons 
-	 * after reopen check again all controls with icons and errors 
+	 * after reopen check again all controls with icons and errors
+	 * 
+	 *  
+	 * STG only
 	 */
 	@Test
 	@Parameters({"xUrl"})
