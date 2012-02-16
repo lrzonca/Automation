@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="GA test" verbose="3" parallel="tests" thread-count="4">
+    <parameter name="xUrl" value="http://www.hyves.nl/games_dev_06"/>
+    <parameter name="xUsername" value="mptest"/>
+    <parameter name="xPass" value="mptest123"/>
+
+    <test name="GA">
+        <parameter name="xBrowser" value="firefox"/>
+        <parameter name="xCategorySelector" value="#puzzle_link" />
+        <classes>
+            <class name="Webdriver.GoogleAnalitycs">  
+                <methods>
+                    <include name="thereShouldBeAnalitycsRequestsOnCategories"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
