@@ -21,6 +21,7 @@ public class SIGN_UP extends SeleniumBase{
 		Thread.sleep(2000);
 		System.out.println("Sign_Up Common");
 		Sign_Up("", "", "", "", "");  
+//		Sign_Up2("", "", "", "", "", "", "");
 	}
 	
 //	Sign up (non-working email address)

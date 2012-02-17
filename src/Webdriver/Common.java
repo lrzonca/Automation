@@ -18,7 +18,7 @@ import junit.framework.TestCase;
 public class Common extends TestCase implements mappings {
 	public WebDriver driver;
 	public static ChromeDriverService service;
-	public String e, u, p, a;
+	public String e, u, p, a, d, m, y;
 	public String UN1 = "qwerty_friend_1";
 	public String UP = "123456";
 	public String UN2 = "qwerty_friend_3";	
@@ -152,7 +152,24 @@ public class Common extends TestCase implements mappings {
 		welcomeClose.click();
 		Thread.sleep(10000);
 		assertEquals(this.u, driver.findElement(By.cssSelector(Webdriver.mappings.topBar.USERNAME_LINK)).getText());
+	}
+
+	public void Sign_Up2(String e_1, String u_1, String p_1, String p2_1, String a_1, String a_2, String a_3) throws InterruptedException {
+		Sign_Up_TEST2(e_1, u_1, p_1, a_1, a_2, a_3);
+		AssertTrue(driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_EMAIL_VALID)).isDisplayed());
+		AssertTrue(driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_USERNAME_VALID)).isDisplayed());
+		AssertTrue(driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_PASSWORD_VALID)).isDisplayed());
+		AssertTrue(driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_AGE_VALID)).isDisplayed());
+		WebElement signMeIn = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_SIGNMEUP));
+		signMeIn.click();
+		Thread.sleep(5000);
+		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_WELCOME_TEXT)).isDisplayed());
+		WebElement welcomeClose = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_WELCOME_CLOSE_BTN));
+		welcomeClose.click();
+		Thread.sleep(10000);
+		assertEquals(this.u, driver.findElement(By.cssSelector(Webdriver.mappings.topBar.USERNAME_LINK)).getText());
 	}	
+	
 	
 	/* Description
 	 * this sequence is filling data for user creation, user can be created with parameter e_1 - email, u_1 - username, p_1 - password, p2_1 - retype password, 
@@ -203,7 +220,77 @@ public class Common extends TestCase implements mappings {
 		age.sendKeys(a);
 		WebElement AgeText = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.HOW_OLD_ARE_YOU));
 		AgeText.click();
-	}		
+	}
+	
+	
+	public void Sign_Up_TEST2(String e_1, String u_1, String p_1, String a_1, String a_2, String a_3) throws InterruptedException {
+		Thread.sleep(8000);
+		Logout();
+		long timestamp = new Date().getTime();		
+		if (e_1.isEmpty()){
+			e = timestamp + "@google.com";
+		} else {;
+			if (e_1.contains("@")){
+				e = e_1;
+			} else {
+				e = e_1 + timestamp + "@google.com";
+			}
+		}
+		if (u_1.isEmpty()){
+			u = "User" + timestamp;
+		} else {
+			if (u_1.equals("none")){
+				u = "";
+			} else {
+				u = u_1;
+			}			
+		}	
+		if (p_1.isEmpty()){
+			p = "123456";
+		} else { 
+			p = p_1;
+		}
+		if (a_1.isEmpty()){
+			m = "1";
+		} else {
+			m = a_1;
+		}
+		if (a_2.isEmpty()){
+			d = "20";
+		} else {
+			d = a_2;
+		}
+		if (a_3.isEmpty()){
+			y = "1950";
+		} else {
+			y = a_3;
+		}			
+		WebElement JoinNow = findElement(Webdriver.mappings.signUp.JOIN_NOW_LINK);
+		JoinNow.click();
+		WebElement email = driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_EMAIL));
+		email.sendKeys(e);
+		WebElement name = driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_USERNAME));
+		name.sendKeys(u);
+		WebElement password = driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_PASSWORD));
+		password.sendKeys(p);
+		WebElement month = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_DOB_MONTH));
+//		month.click();
+		month.sendKeys(m);
+		WebElement day = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_DOB_DAY));
+//		day.click();
+		day.sendKeys(d);
+		WebElement year = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_DOB_YEAR));
+//		year.click();
+		year.sendKeys(y);
+		
+		sleep(10);
+		
+		
+//		WebElement age = driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_AGE)); 
+//		age.sendKeys(a);
+//		WebElement AgeText = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.HOW_OLD_ARE_YOU));
+//		AgeText.click();
+	}	
 
 	
 	/* Description

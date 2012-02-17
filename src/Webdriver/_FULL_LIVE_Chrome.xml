@@ -64,7 +64,7 @@
 			</class>																													
 		</classes>
 	</test>		
-	<test name="live_ff">		
+	<test name="live_chrome">		
 		<classes>
 			<parameter name="xBrowser" value="chrome"/>
 			<class name="Webdriver.AVATAR">

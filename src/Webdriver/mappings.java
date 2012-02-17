@@ -28,6 +28,9 @@ public interface mappings {
 		public static final String REGISTER_PASSWORD_VALID = "password_validationCorrectImage";
 		public static final String REGISTER_PASSWORD_NOT_VALID = "password_validationErrorImage";
 		public static final String REGISTER_AGE = "sgRegAge";
+		public static final String REGISTER_DOB_MONTH = "#f_dob_month";
+		public static final String REGISTER_DOB_DAY = "#f_dob_day";
+		public static final String REGISTER_DOB_YEAR = "#f_dob_year";
 		public static final String HOW_OLD_ARE_YOU = ".sg-reg-form-caption";
 		public static final String REGISTER_AGE_VALID = "age_validationCorrectImage";
 		public static final String REGISTER_AGE_NOT_VALID = "age_validationErrorImage";
