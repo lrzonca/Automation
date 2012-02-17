@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -24,6 +25,7 @@ public class HyvesNavigator implements WebDriver {
         insertData(hyves.USERNAME_FIELD, username);
         clickElement(hyves.PASSWORD_FIELD);
         insertData(hyves.PASSWORD_FIELD, password);
+        
         clickElement(hyves.LOGIN_BUTTON);
 
     }
@@ -45,7 +47,10 @@ public class HyvesNavigator implements WebDriver {
     public void insertData(String selector, String data) {
         clickElement(selector);
         findElement(selector).sendKeys(data);
-    } 
+    }
+    public void sendEnter(String selector) {
+        findElement(selector).sendKeys(Keys.ENTER);
+    }
     
     public WebElement findElement(String selector) {
         return driver.findElement(By.cssSelector(selector));
