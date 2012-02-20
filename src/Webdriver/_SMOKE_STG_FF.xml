@@ -1,5 +1,5 @@
 <suite name="Smoke_Live_GirlsGoGames" verbose="3" parallel="tests" thread-count="4">
-	<parameter name="xUrl" value="http://www.girlsgogames.com"/>	
+	<parameter name="xUrl" value="http://stg.girlsgogames.com"/>	
 	<test name="Service">
 		<classes>
 			<class name="WEBSERVICE.ALERTAR">
