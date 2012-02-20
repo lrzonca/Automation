@@ -288,6 +288,7 @@ class SelectorFactory {
 		}
 		  
 		public interface myProfile {
+			public static final String TOP_TITLE = ".topTitle";
 			public static final String LATEST_ACTIVITIES_BUTTONS_FIRST_BUTTON = ".tc_all_activities";
 			public static final String LATEST_ACTIVITIES_BUTTONS_SECOND_BUTTON = ".tc_my_activities";
 			public static final String LATEST_ACTIVITIES_BUTTONS_THIRD_BUTTON = ".tc_wall_messages";
@@ -298,14 +299,20 @@ class SelectorFactory {
 			public static final String FRIEND_REQUEST_SENT_TEXT = ".dbtnRequestPending";
 		}
 		  
-		public interface NOTIFICATIONS{
+		public interface notifications{
 			public static final String TAB_NOTIFICATIONS = "#tab_inbox";
 			public static final String ACCEPT_FRIEND_REQUEST_BUTTON = ".accept";
 			public static final String REJECT_FRIEND_REQUEST_BUTTON = ".reject";
 			public static final String REJECTED_MESSAGE = ".rejected";
 			public static final String REMOVE_MESSAGE = ".links div:nth-child(2) div a";
 			public static final String CLOUD_BOX = ".cloud";
+			public static final String NOTIFICATIONS_TOP_LINK = "#un_mynotifications";
 		}
+		
+		public interface favoriteGames{
+			public static final String TAB_FAVORITE_GAMES = "#tab_favorites";
+			public static final String FAVORITE_GAMES_TOP_LINK = "#un_mygames";
+		}		
 
 		public interface FRIENDS{
 			public static final String TAB_FRIENDS = "#tab_friends";
@@ -410,10 +417,9 @@ class SelectorFactory {
 		}
 		
 		public interface homepage {
-			public static final String GAME_LIST = ".gameList";
-		}
+			public static final String GAME_LIST = ".gameList";			 
+		}		
 		
-		  
 		  
   
   public interface hyves {
