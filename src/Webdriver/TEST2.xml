@@ -1,0 +1,59 @@
+<suite name="Smoke_Live_GirlsGoGames" verbose="3" parallel="tests" thread-count="4">
+	<parameter name="xUrl" value="http://www.girlsgogames.com"/>	
+	<test name="smoke_ff">		
+		<classes>
+			<parameter name="xBrowser" value="iexplore"/>
+			<class name="Webdriver.SIGN_UP">
+				<methods>					
+					<include name="SignUp13"></include>
+					<include name="SignUp14"></include>
+					<include name="SignUp15"></include>
+					<include name="SignUp16"></include>
+				</methods>
+			</class>	
+			<class name="Webdriver.SIGN_IN">
+				<methods>					
+					<include name="SignOut1"></include>
+					<include name="SignIn6"></include>
+					<include name="SignIn7"></include>
+					<include name="SignIn8"></include>
+				</methods>
+			</class>	
+			<class name="Webdriver.HOME_PAGE">
+				<methods>					
+					<include name="Header1"></include>
+					<include name="Header2"></include>
+					<include name="Header3"></include>
+				</methods>
+			</class>	
+		</classes>		
+	</test>			
+	<test name="smoke_ff">		
+		<classes>
+			<parameter name="xBrowser" value="iexplore"/>
+			<class name="Webdriver.SIGN_UP">
+				<methods>					
+					<include name="SignUp13"></include>
+					<include name="SignUp14"></include>
+					<include name="SignUp15"></include>
+					<include name="SignUp16"></include>
+				</methods>
+			</class>	
+			<class name="Webdriver.SIGN_IN">
+				<methods>					
+					<include name="SignOut1"></include>
+					<include name="SignIn6"></include>
+					<include name="SignIn7"></include>
+					<include name="SignIn8"></include>
+				</methods>
+			</class>	
+			<class name="Webdriver.HOME_PAGE">
+				<methods>					
+					<include name="Header1"></include>
+					<include name="Header2"></include>
+					<include name="Header3"></include>
+				</methods>
+			</class>	
+		</classes>		
+	</test>				
+</suite>

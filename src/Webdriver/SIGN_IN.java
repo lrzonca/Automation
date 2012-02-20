@@ -141,5 +141,76 @@ public class SIGN_IN extends SeleniumBase{
 		Thread.sleep(10000);
 		System.out.println("Assertion");
 		assertFalse(findElement(signIn.LOGGED_USERNAME).isDisplayed());
-	}				
+	}
+	
+	
+//	Forgot your password link - click "sign in" button , click "forgot your password" link, check url and controls if are present
+	@Test
+	@Parameters({"xUrl"})
+	public void SignIn6(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		clickElement(signIn.SIGN_IN_LINK);
+		sleep(2);
+		clickElement(signIn.FORGOT_YOUR_PASSWORD_LINK);
+		sleep(5);
+		assertTrue(driver.getCurrentUrl().contains("forgotten_password.html"));
+		assertIsDisplayed(forgotPassword.FORGOT_EMAIL_BOX);
+		assertIsDisplayed(forgotPassword.FORGOT_EMAIL_GIRL);
+		assertIsDisplayed(forgotPassword.FORGOT_EMAIL_SEND_BUTTON);
+		assertIsDisplayed(forgotPassword.FORGOT_EMAIL_TEXT);
+		assertIsDisplayed(forgotPassword.FORGOT_EMAIL_TEXTFIELD);
+		assertIsDisplayed(forgotPassword.FORGOT_EMAIL_TITLE_TEXT);
+	}	
+	
+	
+//	Forgot your password link - click "sign in" button , click "become a member" link, check url and controls if are present
+	@Test
+	@Parameters({"xUrl"})
+	public void SignIn7(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		clickElement(signIn.SIGN_IN_LINK);
+		sleep(2);
+		clickElement(signIn.BECOME_A_MEMBER_LINK);
+		sleep(5);
+		assertTrue(driver.getCurrentUrl().contains("become_a_member.html"));
+		assertIsDisplayed(flatPage.FLAT_PAGE);
+		assertIsDisplayed(flatPage.FLAT_PAGE_CONTAINER);
+	}	
+	
+	
+//	Sign Up for free link - click "sign in" button , click "sign up for free" link, check controls if are present
+	@Test
+	@Parameters({"xUrl"})
+	public void SignIn8(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		clickElement(signIn.SIGN_IN_LINK);
+		sleep(2);
+		clickElement(signIn.REGISTER_LINK);
+		sleep(5);
+		assertTrue(driver.getCurrentUrl().equals(xUrl + "/"));
+		assertIsDisplayed(signUp.SIGN_UP_POPUP);
+	}
+	
+	
+//	Sign Out link - login a user, click "sign out" link, check controls if are present
+	@Test
+	@Parameters({"xUrl"})
+	public void SignOut1(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		Login("cookietest", "123456");		
+		System.out.println("Assertion");
+	    assertEquals("cookietest", findElement(signIn.LOGGED_USERNAME).getText());		
+		assertIsDisplayed(signIn.LOGOUT_LINK);
+		clickElement(signIn.LOGOUT_LINK);
+		sleep(5);
+		assertIsDisplayed(signIn.SIGN_IN_LINK);		
+	}	
 }

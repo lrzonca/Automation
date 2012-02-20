@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -25,14 +26,20 @@ public class Common extends TestCase implements mappings {
 	public Connection c, c_stg, c_event;	
 	public String Game_id, Game_gid, Game_gamename_lid, Game_language_id, Game_url, Game_game_name, Game_game_description, Game_game_manual, Game_thumbnaill, Game_thumbnail2, Game_thumbnail3, Game_thumbnail_login, Game_gametype_id, Game_developer_id, Game_width, Game_height, Game_direct_on_frontpage, Game_direct_on_catpage, Game_direct_on_subcatpage, Game_downloadable, Game_highscore, Game_embedded, Game_overlay_add, Game_initial_rating, Game_active, Game_created, Game_modified, Game_onsite, Game_nice_name, Game_require_translation, Game_promotext, Game_translated_by, Game_translated_date, Game_achievements, Game_gallery, Game_using_service, Game_payments_enabled, Game_allow_links, Game_excluded, Game_scalable, Game_game_login_welcome_title, Game_login_welcome_description, Game_thumbnail_coins, Game_thumbnail_coins_show, Game_similar_box, Game_sign_in_popup_interval;
 	
-	public WebElement findElement(String selector) throws InterruptedException {
-		return driver.findElement(By.id(selector));
-    }
+//	public WebElement findElement(String selector) throws InterruptedException {
+//		return driver.findElement(By.id(selector));
+//    }
     
-    public WebElement findElement(CssSelector selector) throws InterruptedException {
+    public WebElement findElement(String selector) throws InterruptedException {
     	return driver.findElement(By.cssSelector(selector.toString()));        
     }
      
+    
+//    public void clickElement(String selector) throws InterruptedException {
+//    	System.out.println("Find and Click Element " + selector.toString());
+//		findElement(selector).click();
+//		sleep(2);
+//    } 
     
     public void clickElement(String selector) throws InterruptedException {
     	System.out.println("Find and Click Element " + selector.toString());
@@ -40,45 +47,39 @@ public class Common extends TestCase implements mappings {
 		sleep(2);
     } 
     
-    public void clickElement(CssSelector selector) throws InterruptedException {
-    	System.out.println("Find and Click Element " + selector.toString());
-		findElement(selector).click();
-		sleep(2);
-    } 
+//    public void insertData(String selector, String data) throws InterruptedException{
+//    	clickElement(selector);
+//    	System.out.println("Insert data into Element " + selector.toString());
+//    	findElement(selector).sendKeys(data);
+//    } 
     
-    public void insertData(String selector, String data) throws InterruptedException{
-    	clickElement(selector);
-    	System.out.println("Insert data into Element " + selector.toString());
-    	findElement(selector).sendKeys(data);
-    } 
-    
-    public void insertData(CssSelector selector, String data) throws InterruptedException {
+    public void insertData(String selector, String data) throws InterruptedException {
     	clickElement(selector);
     	System.out.println("Insert data into Element " + selector.toString());
     	findElement(selector).sendKeys(data);
     }     
     
-    public void assertIsDisplayed(CssSelector selector) throws InterruptedException {
-    	System.out.println("Assert if " + selector.toString() + " is Displayed");
-    	assertTrue(findElement(selector).isDisplayed());
-    }   
+//    public void assertIsDisplayed(CssSelector selector) throws InterruptedException {
+//    	System.out.println("Assert if " + selector.toString() + " is Displayed");
+//    	assertTrue(findElement(selector).isDisplayed());
+//    }   
     
     public void assertIsDisplayed(String selector) throws InterruptedException {
     	System.out.println("Assert if " + selector.toString() + " is Displayed");
     	assertTrue(findElement(selector).isDisplayed());
     }   
     
-    public void assertIsNotDisplayed(CssSelector selector) throws InterruptedException {
-    	System.out.println("Assert if " + selector.toString() + " is Not Displayed");
-    	boolean check;
-    	try {
-    		findElement(selector).isDisplayed();
-    	    	check = true;
-    	} catch (Throwable e) {
-    		check = false;
-    	}    	    	
-    	assertFalse(check);
-    }   
+//    public void assertIsNotDisplayed(CssSelector selector) throws InterruptedException {
+//    	System.out.println("Assert if " + selector.toString() + " is Not Displayed");
+//    	boolean check;
+//    	try {
+//    		findElement(selector).isDisplayed();
+//    	    	check = true;
+//    	} catch (Throwable e) {
+//    		check = false;
+//    	}    	    	
+//    	assertFalse(check);
+//    }   
     
     public void assertIsNotDisplayed(String selector) throws InterruptedException {
     	System.out.println("Assert if " + selector.toString() + " is Not Displayed");
@@ -140,10 +141,10 @@ public class Common extends TestCase implements mappings {
 	
 	public void Sign_Up(String e_1, String u_1, String p_1, String p2_1, String a_1) throws InterruptedException {
 		Sign_Up_TEST(e_1, u_1, p_1, a_1);
-		AssertTrue(driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_EMAIL_VALID)).isDisplayed());
-		AssertTrue(driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_USERNAME_VALID)).isDisplayed());
-		AssertTrue(driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_PASSWORD_VALID)).isDisplayed());
-		AssertTrue(driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_AGE_VALID)).isDisplayed());
+		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_EMAIL_VALID)).isDisplayed());
+		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_USERNAME_VALID)).isDisplayed());
+		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_PASSWORD_VALID)).isDisplayed());
+		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_AGE_VALID)).isDisplayed());
 		WebElement signMeIn = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_SIGNMEUP));
 		signMeIn.click();
 		Thread.sleep(5000);
@@ -156,10 +157,10 @@ public class Common extends TestCase implements mappings {
 
 	public void Sign_Up2(String e_1, String u_1, String p_1, String p2_1, String a_1, String a_2, String a_3) throws InterruptedException {
 		Sign_Up_TEST2(e_1, u_1, p_1, a_1, a_2, a_3);
-		AssertTrue(driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_EMAIL_VALID)).isDisplayed());
-		AssertTrue(driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_USERNAME_VALID)).isDisplayed());
-		AssertTrue(driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_PASSWORD_VALID)).isDisplayed());
-		AssertTrue(driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_AGE_VALID)).isDisplayed());
+		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_EMAIL_VALID)).isDisplayed());
+		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_USERNAME_VALID)).isDisplayed());
+		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_PASSWORD_VALID)).isDisplayed());
+		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_DOB_VALID)).isDisplayed());
 		WebElement signMeIn = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_SIGNMEUP));
 		signMeIn.click();
 		Thread.sleep(5000);
@@ -267,22 +268,25 @@ public class Common extends TestCase implements mappings {
 		}			
 		WebElement JoinNow = findElement(Webdriver.mappings.signUp.JOIN_NOW_LINK);
 		JoinNow.click();
-		WebElement email = driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_EMAIL));
+		WebElement email = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_EMAIL));
 		email.sendKeys(e);
-		WebElement name = driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_USERNAME));
+		WebElement name = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_USERNAME));
 		name.sendKeys(u);
-		WebElement password = driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_PASSWORD));
+		WebElement password = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_PASSWORD));
 		password.sendKeys(p);
 		WebElement month = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_DOB_MONTH));
-//		month.click();
-		month.sendKeys(m);
-		WebElement day = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_DOB_DAY));
-//		day.click();
-		day.sendKeys(d);
-		WebElement year = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_DOB_YEAR));
-//		year.click();
-		year.sendKeys(y);
+		month.findElement(By.cssSelector("option[value='"+ m + "']")).click();
 		
+//		month.click();
+//		month.sendKeys(m);
+		WebElement day = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_DOB_DAY));
+		day.findElement(By.cssSelector("option[value='"+ d + "']")).click();
+//		day.click();
+//		day.sendKeys(d);
+		WebElement year = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_DOB_YEAR));
+		year.findElement(By.cssSelector("option[value='"+ y + "']")).click();
+//		year.click();
+//		year.sendKeys(y);		
 		sleep(10);
 		
 		
