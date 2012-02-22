@@ -38,7 +38,7 @@ public class SIGN_IN extends SeleniumBase{
 		Login("cookietest", "123456" + "wrong");	
 //		assertTrue(findElement(signIn.WHOLE_POPUP).isDisplayed());
 //		assertTrue(findElement(signIn.ERROR_MESSAGE).isDisplayed());
-		assertIsDisplayed(signIn.WHOLE_POPUP);
+		assertIsDisplayed(signIn.SIGN_IN_POPUP);
 		assertIsDisplayed(signIn.ERROR_MESSAGE);
 	}	
 	
@@ -54,11 +54,12 @@ public class SIGN_IN extends SeleniumBase{
 //		driver.findElement(By.id(Webdriver.mappings.signIn.WHOLE_POPUP)).isDisplayed();
 //		System.out.println("Find Element ERROR_MESSAGE");
 //		assertTrue(findElement(signIn.ERROR_MESSAGE).isDisplayed());
-		assertIsDisplayed(signIn.WHOLE_POPUP);
+		assertIsDisplayed(signIn.SIGN_IN_POPUP);
 		assertIsDisplayed(signIn.ERROR_MESSAGE);
 	}		
 	
 //	Sign in successfully (keep me signed in on)
+//	not working, problem with removing cookies 
 	@Test
 	@Parameters({"xBrowser", "xUrl"})
 	public void SignIn4(String xBrowser, String xUrl) throws InterruptedException {

@@ -81,7 +81,7 @@ public class CATEGORY_PAGE extends SeleniumBase{
 			System.out.println("Assertion");
 			AssertTrue(driver.findElements(By.cssSelector(Webdriver.mappings.categoryPage.FIRST_AVAILABLE_GAME_LINK)).size() == 0);
 			System.out.println("Assertion");
-			AssertTrue(driver.findElement(By.id(Webdriver.mappings.gamepage.ALL_COMMENTS_BOX)).isDisplayed());
+			AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.gamepage.ALL_COMMENTS_BOX)).isDisplayed());
 		   }			
 	}	
 	
@@ -139,9 +139,9 @@ public class CATEGORY_PAGE extends SeleniumBase{
 		AdventureGame.click();
 		sleep(3);
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.id(Webdriver.mappings.categoryPage.CATEGORY_TAG_BOX)).isDisplayed());
+		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.categoryPage.CATEGORY_TAG_BOX)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.id(Webdriver.mappings.categoryPage.CATEGORY_TAG_GIRLS_IMG)).isDisplayed());
+		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.categoryPage.CATEGORY_TAG_GIRLS_IMG)).isDisplayed());
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.categoryPage.CATEGORY_TAG_TITLE)).isDisplayed());
 		System.out.println("Assertion");

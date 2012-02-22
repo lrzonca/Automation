@@ -101,14 +101,12 @@
 					<include name="Google01"></include>
 					<include name="Google02"></include>
 					<include name="Google03"></include>
-					<include name="Google04"></include>
 					<include name="Google05"></include>
 					<include name="Google06"></include>
 					<include name="Google07"></include>
 					<include name="Google08"></include>
 					<include name="Google09"></include>
 					<include name="Google10"></include>
-					<include name="Google11"></include>
 					<include name="Google12"></include>
 					<include name="Google13"></include>					
 				</methods>
@@ -123,7 +121,6 @@
 					<include name="SignIn1"></include>
 					<include name="SignIn2"></include>
 					<include name="SignIn3"></include>
-					<include name="SignIn4"></include>
 					<include name="SignIn5"></include>	
 					<include name="SignIn6"></include>
 					<include name="SignIn7"></include>
@@ -141,8 +138,7 @@
 					<include name="SignUp7"></include>
 					<include name="SignUp8"></include>
 					<include name="SignUp9"></include>
-					<include name="SignUp10"></include>
-					<include name="SignUp11"></include>
+					<include name="SignUp10"></include>					
 					<include name="SignUp12"></include>
 					<include name="SignUp13"></include>
 					<include name="SignUp14"></include>

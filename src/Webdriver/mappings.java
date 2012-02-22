@@ -49,11 +49,11 @@ class SelectorFactory {
 		  
 		public interface signIn {
 			public static final String SIGN_IN_LINK = ".tc-login-url";
+			public static final String SIGN_IN_POPUP = "#fb_loginbox_main";
 			public static final String USERNAME = ".tc-username-text";
 			public static final String PASSWORD = ".tc-password-text";
 			public static final String SIGN_IN_BUTTON = ".login_button a";
 			public static final String LOGGED_USERNAME = ".tc-username-cnt";
-			public static final String WHOLE_POPUP = "#fb_loginbox_main";
 			public static final String ERROR_MESSAGE = ".tc-error-message-notauth";
 			public static final String REMEMBER_CHECKBOX = ".tc-remember-check";
 			public static final String LOGOUT_LINK = ".tc-logout-url";
@@ -459,6 +459,48 @@ class SelectorFactory {
 			public static final String POPULAR_GAMES_SHOW_TOOLTIP_IMG = "#dtooltip div div img.dtooltip2";
 			public static final String POPULAR_GAMES_SHOW_TOOLTIP_TITLE = "#dtooltip div div span.tooltipOverflow span";
 			public static final String POPULAR_GAMES_FIRST_GAME_LINK = ".popularbox ul li:nth-child(1) div.overflowElement a";
+		}	
+		
+		public interface recommendedgames {
+			public static final String RECOMMENDED_GAMES_TITLE = ".tipsbox h3.topTitle";
+			public static final String RECOMMENDED_GAMES_SHOW_TOOLTIP = "#dtooltip";
+			public static final String RECOMMENDED_GAMES_SHOW_TOOLTIP_IMG = "#dtooltip div div img.dtooltip2";
+			public static final String RECOMMENDED_GAMES_SHOW_TOOLTIP_TITLE = "#dtooltip div div span.tooltipOverflow span";
+			public static final String RECOMMENDED_GAMES_FIRST_GAME_LINK = ".tipsbox ul li:nth-child(1) div.overflowElement a";
+		}	
+		
+		public interface virtualbox {
+			public static final String VIRTUAL_BOX_TITLE = ".virtualbox h2.virtualgamestitle";
+			public static final String VIRTUAL_BOX_FIRST_GAME_BOX = ".virtualbox ul li:nth-child(1) div a";
+			public static final String VIRTUAL_BOX_SECOND_GAME_BOX = ".virtualbox ul li:nth-child(2) div a";
+			public static final String VIRTUAL_BOX_FIRST_GAME_IMG = ".virtualbox ul li:nth-child(1) div a img.thumb";
+			public static final String VIRTUAL_BOX_SECOND_GAME_TEXT_LINK = ".virtualbox ul li:nth-child(2) div a span.overflowElement span";
+			public static final String VIRTUAL_BOX_LEFT_TOOLTIP_BOX = "#tltleft";
+			public static final String VIRTUAL_BOX_LEFT_TOOLTIP_TEXT = "#tltleft div.tltcenter div span.dtooltipDescription";
+			public static final String VIRTUAL_BOX_RIGHT_TOOLTIP_BOX = "#tltright";
+			public static final String VIRTUAL_BOX_RIGHT_TOOLTIP_TEXT = "#tltright div.tltcenter div span.dtooltipDescription";
+		}		
+		
+		public interface activebox {
+			public static final String ACTIVE_BOX_BOX = ".latestActivitiesBox";
+			public static final String ACTIVE_BOX_TITLE = ".latestActivitiesBox h3.topTitle a";
+			public static final String ACTIVE_BOX_EVERYONE_TAB_BOX = "#act_everyone";
+			public static final String ACTIVE_BOX_EVERYONE_TAB_TEXT = "#act_everyone span";
+			public static final String ACTIVE_BOX_FRIENDS_TAB_BOX = "#act_friends";
+			public static final String ACTIVE_BOX_FRIENDS_TAB_TEXT = "#act_friends span";
+			public static final String ACTIVE_BOX_UNLOGGED_CONTENT_BOX = "#mcs_container";			
+			public static final String ACTIVE_BOX_UNLOGGED_USER_BOX = "#activitiesBox-login";
+			public static final String ACTIVE_BOX_UNLOGGED_USER_TILTE = "#activitiesBox-login div.activities-join";
+			public static final String ACTIVE_BOX_UNLOGGED_SIGNUP_BTN = "#activitiesBox-login div.login-row-outer div div.sign-in-button";
+			public static final String ACTIVE_BOX_UNLOGGED_LOGIN_LINK = "#activitiesBox-login div.login-row-outer div div.or-login";
+			public static final String ACTIVE_BOX_UNLOGGED_JOIN_US_BOX = ".latestActivitiesBox span.not-logged";
+			public static final String ACTIVE_BOX_UNLOGGED_JOIN_US_LINK = ".latestActivitiesBox span.not-logged a";
+			
+			public static final String ACTIVE_BOX_LOGGED_CONTENT_BOX = "#mcs_container_logged";
+			public static final String ACTIVE_BOX_LOGGED_NO_FRIENDS_BOX = "#mcs_container_logged div div.activity-no-friends";
+			public static final String ACTIVE_BOX_LOGGED_NO_FRIENDS_INVITE_BTN = "#mcs_container_logged div div.activity-no-friends div.link a";
+			public static final String ACTIVE_BOX_LOGGED_JOIN_US_BOX = ".latestActivitiesBox span.logged";
+			public static final String ACTIVE_BOX_LOGGED_VISIT_YOUR_PROFILE_LINK = ".latestActivitiesBox span.logged a";			
 		}			
 		  
   

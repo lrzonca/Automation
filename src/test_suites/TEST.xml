@@ -1,11 +1,11 @@
 <suite name="Smoke_Live_GirlsGoGames" verbose="3" parallel="tests" thread-count="4">
-	<parameter name="xUrl" value="http://www.girlsgogames.com"/>	
+	<parameter name="xUrl" value="http://www.girlsgogames.co.uk"/>	
 	<test name="smoke_ie">		
 		<classes>
-			<parameter name="xBrowser" value="iexplore"/>
-			<class name="Webdriver.POPULAR_GAMES">
+			<parameter name="xBrowser" value="firefox"/>
+			<class name="Webdriver.ACTIVE_BOX">
 				<methods>					
-					<include name="Popular2"></include>
+					<include name="Active10"></include>
 				</methods>
 			</class>		
 		</classes>		

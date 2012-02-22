@@ -83,12 +83,11 @@ public class Common extends TestCase implements mappings {
     public void assertIsNotDisplayed(String selector) throws InterruptedException {
     	System.out.println("Assert if " + selector.toString() + " is Not Displayed");
     	boolean check;
-    	try {
-    		findElement(selector).isDisplayed();
-    		check = true;
-    	} catch (Throwable e) {
-    		check = false;
-    	}    	
+    	if(findElement(selector).isDisplayed()){
+    		check = true;	
+    	} else {
+    		check = false;	
+		}    		    	
     	assertFalse(check);
     }    
     

@@ -14,7 +14,6 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
-import org.openqa.selenium.server.commands.CaptureNetworkTrafficCommand.Entry;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -24,7 +23,6 @@ import org.openqa.selenium.TakesScreenshot;
 
 
 public class SeleniumBase extends Common{
-//	private static final Entry TrafficResult = null;
 	DesiredCapabilities capability=null;
 	
 	 @BeforeClass
@@ -34,8 +32,7 @@ public class SeleniumBase extends Common{
 			 service = new ChromeDriverService.Builder()
 		        .usingChromeDriverExecutable(new File(".\\lib\\chromedriver.exe"))
 		        .usingAnyFreePort()
-		        .build();
-			  	
+		        .build();			  	
 		    service.start();
 		 }
 	  }
@@ -55,8 +52,7 @@ public class SeleniumBase extends Common{
 			System.out.println("firefox");
 			capability= DesiredCapabilities.firefox();
 			capability.setBrowserName("firefox");
-			capability.setPlatform(org.openqa.selenium.Platform.ANY);
-			//WebDriverBackedSelenium(CaptureNetworkTrafficCommand.capture(TrafficResult));			
+			capability.setPlatform(org.openqa.selenium.Platform.ANY);	
 			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
 		} else if (xBrowser.contains("chrome")) {
 			capability= DesiredCapabilities.chrome();

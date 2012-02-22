@@ -113,7 +113,8 @@ public class SIGN_UP extends SeleniumBase{
 //		Sign_Up_TEST("", "", "", "2");
 		Sign_Up_TEST2("", "", "", "", "", "2010");
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_AGE_NOT_VALID)).isDisplayed());
+//		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_AGE_NOT_VALID)).isDisplayed());
+		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_DOB_NOT_VALID)).isDisplayed());
 	}		
 	
 //	Sign up (with too short password)
@@ -162,7 +163,7 @@ public class SIGN_UP extends SeleniumBase{
 	}		
 	
 //	Sign up (with wrong email - special chars)
-//	not valid in current version of DOB
+//	not valid in DOB version, valid only for Age version
 	@Test
 	@Parameters({"xUrl"})	
 	public void SignUp11(String xUrl) throws InterruptedException {		 
