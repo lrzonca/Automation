@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
-import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -275,25 +274,11 @@ public class Common extends TestCase implements mappings {
 		WebElement password = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_PASSWORD));
 		password.sendKeys(p);
 		WebElement month = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_DOB_MONTH));
-		month.findElement(By.cssSelector("option[value='"+ m + "']")).click();
-		
-//		month.click();
-//		month.sendKeys(m);
+		month.findElement(By.cssSelector("option[value='"+ m + "']")).click();		
 		WebElement day = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_DOB_DAY));
 		day.findElement(By.cssSelector("option[value='"+ d + "']")).click();
-//		day.click();
-//		day.sendKeys(d);
 		WebElement year = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_DOB_YEAR));
-		year.findElement(By.cssSelector("option[value='"+ y + "']")).click();
-//		year.click();
-//		year.sendKeys(y);		
-		sleep(10);
-		
-		
-//		WebElement age = driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_AGE)); 
-//		age.sendKeys(a);
-//		WebElement AgeText = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.HOW_OLD_ARE_YOU));
-//		AgeText.click();
+		year.findElement(By.cssSelector("option[value='"+ y + "']")).click();	
 	}	
 
 	
@@ -605,7 +590,7 @@ public class Common extends TestCase implements mappings {
 			System.out.println("Sleep 2 sek");
 			Thread.sleep(2000);
 			System.out.println("Find Element POPULAR_GAMES_NAVI_LINK");
-			WebElement PopularGames = driver.findElement(By.cssSelector(Webdriver.mappings.leftNavi.POPULAR_GAMES_NAVI_LINK));
+			WebElement PopularGames = driver.findElement(By.cssSelector(Webdriver.mappings.leftNavi.POPULAR_GAMES));
 			System.out.println("Click Element POPULAR_GAMES_NAVI_LINK");
 			PopularGames.click();	
 			System.out.println("Sleep 2 sek");

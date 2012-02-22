@@ -65,11 +65,11 @@ class SelectorFactory {
 		  
 		public interface leftNavi {
 			public static final String ADVENTURE_GAMES = ".tc_ln_category_458";
+			public static final String POPULAR_GAMES = ".tc_ln_popular";
 			public static final String FIRST_AVAILABLE_GAME_CATEGORY_LEFT_NAVI_LINK = ".leftNavigation ul:nth-child(3) li:nth-child(6) a";
 			public static final String SECOND_AVAILABLE_GAME_CATEGORY_LEFT_NAVI_LINK = ".leftNavigation ul:nth-child(3) li:nth-child(8) a";
 			public static final String HIGHSCORE_LEFT_NAVI_LINK = ".leftNavigation ul:nth-child(3) li:nth-child(3) a"; // should be added a unique class
 			public static final String GAMES_FOR_GIRLS_NAVI_LINK = ".leftNavigation ul:nth-child(1) li:nth-child(2) a"; // should be added a unique class
-			public static final String POPULAR_GAMES_NAVI_LINK = ".leftNavigation ul:nth-child(1) li:nth-child(3) a"; // should be added a unique class
 			public static final String AWARD_GAMES_LEFT_NAVI_LINK = ".leftNavigation ul:nth-child(3) li:nth-child(1) a"; // should be added a unique class
 		}
 		  
@@ -194,6 +194,14 @@ class SelectorFactory {
 			public static final String SIGN_UP_PB_HOW_OLD_ARE_YOU_ERROR_ICON = "#age_validationErrorImage";
 			public static final String SIGN_UP_PB_HOW_OLD_ARE_YOU_ERROR_NOT_NUMBER_TEXT = "#error_age_not_numeric";
 			public static final String SIGN_UP_PB_HOW_OLD_ARE_YOU_ERROR_TOO_YOUNG_TEXT = "#error_too_young";
+			
+			public static final String SIGN_UP_PB_DOB_MONTH = "#f_dob_month";
+			public static final String SIGN_UP_PB_DOB_DAY = "#f_dob_day";
+			public static final String SIGN_UP_PB_DOB_YEAR = "#f_dob_year";
+			public static final String SIGN_UP_DOB_VALID = "#dob_validationCorrectImage";
+			public static final String SIGN_UP_DOB_NOT_VALID = "#dob_validationErrorImage";
+			public static final String SIGN_UP_PB_DOB_NOT_VALID = "#error_dob_not_valid";
+			
 			public static final String SIGN_UP_PB_LINE = ".sg-registration-step1 .hsep";
 			public static final String SIGN_UP_PB_PARENTS_EMAIL_TITLE_TEXT = ".sg-registration-step1 div:nth-child(6) div.sg-reg-form-caption";
 			public static final String SIGN_UP_PB_PARENTS_EMAIL_WHATS_THIS_FOR_TEXT = ".sg-registration-step1 div:nth-child(6) div.sg-reg-form-help a";
@@ -221,10 +229,6 @@ class SelectorFactory {
 			public static final String SIGN_UP_PB_SIGN_IN_SUCCESS_CHILD_ERROR_TEXT = ".finish-child-info";
 			public static final String SIGN_UP_PB_SIGN_IN_SUCCESS_CHILD_FINISH_TEXT = ".finish-text";
 			public static final String SIGN_UP_PB_SIGN_IN_SUCCESS_CHILD_CONTINUE_PLAYING_BUTTON = ".sg-reg-parent-continue-btn span.label";
-		}
-		  
-		public interface popularGames {
-			public static final String POPULAR_GAMES_TITLE_CATEGORY_PAGE = ".categorySubcategoryTitleHolder h3";
 		}
 		  
 		public interface gamepage {
@@ -414,12 +418,48 @@ class SelectorFactory {
 			public static final String LOGO = "#logo-img-90";
 			public static final String SLOGAN = ".slogan h1 a";
 			public static final String GGG_TAB = ".tabtext";
+			public static final String SEARCH_TEXTFIELD = "#searchtext";
+			public static final String SEARCH_BUTTON = ".tc_search_button";
 		}
 		
 		public interface homepage {
-			public static final String GAME_LIST = ".gameList";			 
+			public static final String GAME_LIST = ".gameList";				
 		}		
 		
+		public interface searchpage {
+			public static final String WHOLE_SEARCH_LIST = "#nsearch_results_container_1";
+			public static final String SEARCH_LIST = "ul#gl";
+			public static final String PREVIOUS_BUTTON = ".paginationtop span.paginationButtonPreviousPage";
+			public static final String NEXT_BUTTON = ".paginationtop span.paginationButtonNextPage";
+			public static final String FIRST_GAME_NAME = "ul#gl li:nth-child(1) div.gameThumb a span.overflowElement span.gameTitle";
+			public static final String NO_RESULTS_TEXT = ".no-results";
+			public static final String NO_RESULTS_SEARCH_TEXTBOX = "#search3";
+			public static final String NO_RESULTS_SUGGESTION = ".suggestions";
+			public static final String NO_RESULTS_BOX = "#nsearch_results_container_1";
+			public static final String NO_RESULTS_TITLE = "#nsearch_results_container_1 .topTitle";
+			public static final String NO_RESULTS_GAMELIST = "#nsearch_results_container_1 .gameList";
+		}	
+		
+		public interface hotbox {
+			public static final String HOTBOX_BOX = ".newhotbox ";
+			public static final String HOTBOX_ROTATOR = "#hotboxRotator";
+			public static final String HOTBOX_ROTATOR_FIRST_GAME = "#hotboxRotator li:nth-child(1)";
+			public static final String HOTBOX_ROTATOR_SECOND_GAME = "#hotboxRotator li:nth-child(2)";
+			public static final String HOTBOX_ROTATOR_THIRD_GAME = "#hotboxRotator li:nth-child(3)";
+			public static final String HOTBOX_FIRST_BUTTON = ".rotatorButtons li:nth-child(1)";
+			public static final String HOTBOX_SECOND_BUTTON = ".rotatorButtons li:nth-child(2)";
+			public static final String HOTBOX_THIRD_BUTTON = ".rotatorButtons li:nth-child(3)";
+			public static final String HOTBOX_PLAYNOW_BUTTON = ".rotatorButtonsHolder a.hbplayleft";
+		}		
+		
+		public interface populargames {
+			public static final String POPULAR_GAMES_TITLE_CATEGORY_PAGE = ".categorySubcategoryTitleHolder h3";
+			public static final String POPULAR_GAMES_TITLE = ".popularbox h3.topTitle a";
+			public static final String POPULAR_GAMES_SHOW_TOOLTIP = "#dtooltip";
+			public static final String POPULAR_GAMES_SHOW_TOOLTIP_IMG = "#dtooltip div div img.dtooltip2";
+			public static final String POPULAR_GAMES_SHOW_TOOLTIP_TITLE = "#dtooltip div div span.tooltipOverflow span";
+			public static final String POPULAR_GAMES_FIRST_GAME_LINK = ".popularbox ul li:nth-child(1) div.overflowElement a";
+		}			
 		  
   
   public interface hyves {

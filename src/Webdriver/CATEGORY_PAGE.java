@@ -98,7 +98,7 @@ public class CATEGORY_PAGE extends SeleniumBase{
 		System.out.println("Click Element ADVENTURE_GAMES");
 		AdventureGame.click();
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.popularGames.POPULAR_GAMES_TITLE_CATEGORY_PAGE)).isDisplayed());  		   
+		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.populargames.POPULAR_GAMES_TITLE_CATEGORY_PAGE)).isDisplayed());  		   
 		int iterTry = 1;
 		while (driver.findElement(By.cssSelector(".BoxList li:nth-child(" + iterTry + ")")).isDisplayed()){			
 			if (iterTry % 2 == 1){

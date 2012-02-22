@@ -185,7 +185,28 @@
 					<include name="Header2"></include>
 					<include name="Header3"></include>
 				</methods>
-			</class>						
+			</class>
+			<class name="Webdriver.SEARCH">
+				<methods>					
+					<include name="Search1"></include>
+					<include name="Search2"></include>
+					<include name="Search3"></include>
+				</methods>
+			</class>
+			<class name="Webdriver.POPULAR_GAMES">
+				<methods>					
+					<include name="Popular1"></include>
+					<include name="Popular2"></include>
+					<include name="Popular3"></include>
+				</methods>
+			</class>			
+			<class name="Webdriver.HOTBOX">
+				<methods>					
+					<include name="HotBox1"></include>
+					<include name="HotBox2"></include>
+					<include name="HotBox3"></include>
+				</methods>
+			</class>												
 		</classes>		
 	</test>
 </suite>

@@ -1,33 +1,13 @@
 <suite name="Smoke_Live_GirlsGoGames" verbose="3" parallel="tests" thread-count="4">
 	<parameter name="xUrl" value="http://www.girlsgogames.com"/>	
-	<test name="smoke_ff">		
-		<classes>
-			<parameter name="xBrowser" value="firefox"/>
-			<class name="Webdriver.SIGN_IN">
-				<methods>					
-					<include name="SignIn1"></include>
-				</methods>
-			</class>	
-		</classes>		
-	</test>		
 	<test name="smoke_ie">		
 		<classes>
 			<parameter name="xBrowser" value="iexplore"/>
-			<class name="Webdriver.SIGN_IN">
+			<class name="Webdriver.POPULAR_GAMES">
 				<methods>					
-					<include name="SignIn1"></include>
+					<include name="Popular2"></include>
 				</methods>
-			</class>	
+			</class>		
 		</classes>		
-	</test>				
-	<test name="smoke_chrome">		
-		<classes>
-			<parameter name="xBrowser" value="chrome"/>
-			<class name="Webdriver.SIGN_IN">
-				<methods>					
-					<include name="SignIn1"></include>
-				</methods>
-			</class>	
-		</classes>		
-	</test>								
+	</test>												
 </suite>

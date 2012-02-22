@@ -7,9 +7,6 @@ import org.junit.runners.BlockJUnit4ClassRunner;
 import org.openqa.selenium.By;
 import org.junit.runner.RunWith;
 
-import Webdriver.mappings.flatPage;
-import Webdriver.mappings.signUp;
-
 @RunWith(BlockJUnit4ClassRunner.class)
 public class SIGN_UP extends SeleniumBase{
 	long timestamp = new Date().getTime();
