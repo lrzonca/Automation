@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="GA test" verbose="3" parallel="tests" thread-count="4">
-    <parameter name="xUrl" value="http://www.hyves.nl/games_dev_06"/>
+    <parameter name="xUrl" value="http://www.hyves.nl/games"/>
     <parameter name="xUsername" value="mptest"/>
     <parameter name="xPass" value="mptest123"/>
 <!-- 

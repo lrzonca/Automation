@@ -6,8 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import static org.testng.AssertJUnit.assertEquals;
-import static Webdriver.mappings.*;
+
+
 
 
 public class Hy_search extends SeleniumBase{
@@ -15,12 +15,13 @@ public class Hy_search extends SeleniumBase{
   @Parameters({"xUrl", "xGameTitle", "xUsername", "xPass"})
   public void gameSearchValid(String xUrl, String xGameTitle, String xUsername, String xPass)throws Exception {
 	  	NavigateToGamePage(xUrl, xUsername, xPass);
-	    WebElement SearchF = driver.findElement(By.cssSelector(hyves.SEARCH_FIELD));
-	    Thread.sleep(7000); 
+	    WebElement SearchF = driver.findElement(By.cssSelector(hyves.SEARCH_FIELD)); 
+	    SearchF.sendKeys("");
 	    SearchF.click();
 	    SearchF.clear();
 	    SearchF.sendKeys(xGameTitle);
 	    SearchF.sendKeys(Keys.ENTER);
+	    //driver.findElement(By.cssSelector(hyves.SEARCH_BUTTON)).click();
 	    Thread.sleep(5000); 
 	   assertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.hyves.SEARCH_BOX_TITLE)).isDisplayed());
 	   assertEqualsCaseInsensitive(xGameTitle, driver.findElement(By.cssSelector(".game-title")).getText());
@@ -34,7 +35,8 @@ public class Hy_search extends SeleniumBase{
 	  
 	  	NavigateToGamePage(xUrl, xUsername, xPass);
 	    WebElement SearchF = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.SEARCH_FIELD));
-	    Thread.sleep(7000); 
+	    Thread.sleep(2000); 
+	    SearchF.sendKeys("");
 	    SearchF.click();
 	    SearchF.clear();
 	    SearchF.sendKeys(GameTitle);
@@ -58,8 +60,10 @@ public class Hy_search extends SeleniumBase{
 	  
 	  	NavigateToGamePage(xUrl, xUsername, xPass);
 	    WebElement SearchF = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.SEARCH_FIELD));
-	    Thread.sleep(7000); 
+	    Thread.sleep(2000); 
+	    SearchF.sendKeys("");
 	    SearchF.click();
+	    System.out.println("SearchF.click()");
 	    SearchF.clear();
 	    SearchF.sendKeys(GameTitle);
 	    SearchF.sendKeys(Keys.ENTER);

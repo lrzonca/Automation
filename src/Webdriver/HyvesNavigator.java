@@ -10,6 +10,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.gargoylesoftware.htmlunit.WebWindowEvent;
+
 import Webdriver.mappings.hyves;
 
 public class HyvesNavigator implements WebDriver {

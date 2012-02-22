@@ -9,6 +9,7 @@ import org.apache.commons.io.FileUtils;
 import java.util.Date;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriverService;
@@ -76,6 +77,7 @@ public class SeleniumBase extends Common{
 			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
 		}
 		//driver.manage().deleteAllCookies();
+		//driver.manage().window().setSize(new Dimension(1024, 768));
 	  }
 
 

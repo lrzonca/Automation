@@ -710,6 +710,8 @@ public class Common extends TestCase implements mappings {
 	    Thread.sleep(7000);
 	    if (xUrl.contains("dev")){
 	    	driver.get(xUrl);
+	    	Thread.sleep(7000);
+	    	System.out.println("enter url again");
 	    }
 	    driver.switchTo().frame("remote_iframe_-1");
 	}

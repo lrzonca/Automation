@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 //import static org.testng.AssertJUnit.assertEquals;
 
 import org.testng.annotations.Parameters;
+import com.thoughtworks.selenium.Selenium;
 //import org.testng.annotations.Test;
 //import java.util.Date;
 
@@ -32,17 +33,28 @@ public class Hyves extends SeleniumBase{
 	    Thread.sleep(1000);
 	    WebElement GameT = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.GAMES_LINK));
 	    GameT.click();
-	    Thread.sleep(32000);
+	    Thread.sleep(8000);
 	    driver.switchTo().frame("remote_iframe_-1");
 	    //WebElement MultiplayerT = driver.findElement(By.id("multiplayer_link"));
-	    WebElement MultiplayerT = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.MULTIPLAYER_LINK));
+	    //WebElement SocialT = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.SOCIAL_LINK));
+	    WebElement SocialT = driver.findElement(By.cssSelector("#social_link"));
+	    SocialT.sendKeys("");
+	    SocialT.click();
+	    Thread.sleep(6000);
+	    
+	    //WebElement MultiplayerT = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.MULTIPLAYER_LINK));
+	    WebElement MultiplayerT = driver.findElement(By.cssSelector("#multiplayer_link"));
+	    MultiplayerT.sendKeys("");
 	    MultiplayerT.click();
 	    Thread.sleep(6000);
-	    WebElement GameL = driver.findElement(By.cssSelector("a[title=Crystical]"));
-	    GameL.click();
-	    Thread.sleep(10000);
-	   
-	    assertTrue(driver.findElement(By.id("flashobj_mc")).isDisplayed());
+	    
+	    
+
+//	    WebElement GameL = driver.findElement(By.cssSelector("a[title=Crystical]"));
+//	    GameL.click();
+//	    Thread.sleep(10000);
+//	   
+//	    assertTrue(driver.findElement(By.id("flashobj_mc")).isDisplayed());
 	    
   }
   
