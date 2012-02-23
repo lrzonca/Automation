@@ -53,7 +53,7 @@ public class POPULAR_GAMES extends SeleniumBase{
 			builder.moveToElement(findElement(".popularbox ul li:nth-child("+ i +") div.overflowElement a")).build().perform();
 			assertTrue(findElement(populargames.POPULAR_GAMES_SHOW_TOOLTIP).getAttribute("style").contains("block"));
 			assertTrue(findElement(".popularbox ul.BoxList li:nth-child(" + i + ") img").getAttribute("src").equals(findElement(populargames.POPULAR_GAMES_SHOW_TOOLTIP_IMG).getAttribute("src")));
-			assertTrue(findElement(".popularbox ul.BoxList li:nth-child(" + i + ") a.tooltipHidden").getText().equals(findElement(populargames.POPULAR_GAMES_SHOW_TOOLTIP_TITLE).getText()));
+			assertTrue(findElement(".popularbox ul.BoxList li:nth-child(" + i + ") a.tooltipHidden").getAttribute("innerHTML").equals(findElement(populargames.POPULAR_GAMES_SHOW_TOOLTIP_TITLE).getAttribute("innerHTML")));
 		}	
 	}					
 }

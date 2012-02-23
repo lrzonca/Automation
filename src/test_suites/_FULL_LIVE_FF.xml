@@ -79,11 +79,6 @@
 					<include name="Category2"></include>
 					<include name="Category4"></include>
 				</methods>
-			</class>
-			<class name="Webdriver.FLAT_PAGE">
-				<methods>					
-					<include name="Flat1"></include>
-				</methods>
 			</class>		
 			<class name="Webdriver.GAME_PAGE">
 				<methods>					
@@ -214,7 +209,29 @@
 					<include name="VirtualBox1"></include>
 					<include name="VirtualBox2"></include>
 				</methods>
-			</class>																				
+			</class>	
+			<class name="Webdriver.GAME_LIST">
+				<methods>					
+					<include name="GameList1"></include>
+					<include name="GameList2"></include>
+					<include name="GameList3"></include>
+				</methods>
+			</class>	
+			<class name="Webdriver.FOOTER">
+				<methods>					
+					<include name="Footer1"></include>
+					<include name="Footer2"></include>
+					<include name="Footer3"></include>
+					<include name="Footer4"></include>
+					<include name="Footer5"></include>
+					<include name="Footer6"></include>
+					<include name="Footer7"></include>
+					<include name="Footer8"></include>
+					<include name="Footer9"></include>
+					<include name="Footer10"></include>
+					<include name="Footer11"></include>															
+				</methods>
+			</class>																					
 		</classes>		
 	</test>
 </suite>

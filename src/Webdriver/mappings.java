@@ -289,6 +289,15 @@ class SelectorFactory {
 		  
 		public interface footer {
 			public static final String TERMS_OF_USE = ".middleWaveLinks a:nth-child(1)";
+			public static final String PRIVACY_POLICY = ".middleWaveLinks a:nth-child(2)";
+			public static final String PRIVACY_POLICY_KIDS_PARENTS = ".middleWaveLinks a:nth-child(3)";
+			public static final String INFORMATION_FOR_PARRENTS = ".middleWaveLinks a:nth-child(4)";
+			public static final String SITEMAP = ".middleWaveLinks a:nth-child(5)";
+			public static final String ABOUT_US = ".middleWaveLinks a:nth-child(7)";
+			public static final String ADVERTISE = ".middleWaveLinks a:nth-child(8)";
+			public static final String SUBMIT_A_GAME = ".middleWaveLinks a:nth-child(9)";
+			public static final String GET_FREE_GAMES = ".middleWaveLinks a:nth-child(10)";
+			public static final String HELP_AND_CONTENT = ".middleWaveLinks a:nth-child(11)";
 		}
 		  
 		public interface myProfile {
@@ -505,6 +514,19 @@ class SelectorFactory {
 			public static final String ACTIVE_BOX_LOGGED_NO_FRIENDS_INVITE_BTN = "#mcs_container_logged div div.activity-no-friends div.link a";
 			public static final String ACTIVE_BOX_LOGGED_JOIN_US_BOX = ".latestActivitiesBox span.logged";
 			public static final String ACTIVE_BOX_LOGGED_VISIT_YOUR_PROFILE_LINK = ".latestActivitiesBox span.logged a";			
+		}		
+		
+		public interface gamelist {
+			public static final String GAME_LIST_TITLE = ".indexFirstColumn h2.topTitle";
+			public static final String GAME_LIST_BOX = ".indexFirstColumn ul.gameList";
+			public static final String GAME_LIST_FIRST_GAME_BOX = ".indexFirstColumn ul li:nth-child(1) div.gameThumb";
+			public static final String GAME_LIST_MORE_NEW_GAMES_LINK = ".indexFirstColumn span.more-link a";
+			public static final String GAME_LIST_LEFT_TOOLTIP_BOX = "#tltleft";
+			public static final String GAME_LIST_LEFT_TOOLTIP_TEXT = "#tltleft div.tltcenter div span.dtooltipDescription";
+			public static final String GAME_LIST_LEFT_TOOLTIP_CATEGORY_TEXT = "#tltleft div.tltcenter div span.dtooltip";
+			public static final String GAME_LIST_RIGHT_TOOLTIP_BOX = "#tltright";
+			public static final String GAME_LIST_RIGHT_TOOLTIP_TEXT = "#tltright div.tltcenter div span.dtooltipDescription";
+			public static final String GAME_LIST_RIGHT_TOOLTIP_CATEGORY_TEXT = "#tltright div.tltcenter div span.dtooltip";
 		}			
 		  
   

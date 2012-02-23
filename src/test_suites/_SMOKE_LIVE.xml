@@ -92,11 +92,11 @@
 					<include name="Profile1"></include>
 				</methods>
 			</class>
-			<class name="Webdriver.FLAT_PAGE">
+			<class name="Webdriver.FOOTER">
 				<methods>					
-					<include name="Flat1"></include>
+					<include name="Footer1"></include>
 				</methods>
-			</class>	
+			</class>
 			<class name="Webdriver.GAME_PAGE">
 				<methods>					
 					<include name="GamePage1"></include>
@@ -134,9 +134,9 @@
 					<include name="Profile1"></include>
 				</methods>
 			</class>
-			<class name="Webdriver.FLAT_PAGE">
+			<class name="Webdriver.FOOTER">
 				<methods>					
-					<include name="Flat1"></include>
+					<include name="Footer1"></include>
 				</methods>
 			</class>	
 			<class name="Webdriver.GAME_PAGE">

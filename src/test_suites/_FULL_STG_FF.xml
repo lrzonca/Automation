@@ -80,9 +80,9 @@
 					<include name="Category4"></include>
 				</methods>
 			</class>
-			<class name="Webdriver.FLAT_PAGE">
+			<class name="Webdriver.FOOTER">
 				<methods>					
-					<include name="Flat1"></include>
+					<include name="Footer1"></include>
 				</methods>
 			</class>			
 			<class name="Webdriver.GAME_PAGE">
