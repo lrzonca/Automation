@@ -2,10 +2,7 @@ package Webdriver;
 
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import org.junit.runners.BlockJUnit4ClassRunner;
-import org.junit.runner.RunWith;
 
-@RunWith(BlockJUnit4ClassRunner.class)
 public class ACTIVE_BOX extends SeleniumBase{
 	  
 //	Active Box - user not logged in - check controls and if Everyone tab is selected 	
@@ -162,5 +159,41 @@ public class ACTIVE_BOX extends SeleniumBase{
 		clickElement(activebox.ACTIVE_BOX_LOGGED_NO_FRIENDS_INVITE_BTN);
 		sleep(5);
 		assertTrue(driver.getCurrentUrl().contains("myfriends.html"));
-	}		
+	}	
+	
+//	Active Box - user logged in without friends - click "Everyone" tab and check if messages are visible
+	@Test
+	@Parameters({"xUrl"})
+	public void Active11(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(3);
+		Login("cookietest", "123456");	
+		sleep(5);		
+		clickElement(activebox.ACTIVE_BOX_EVERYONE_TAB_BOX);
+		sleep(5);
+		assertIsDisplayed(activebox.ACTIVE_BOX_LOGGED_EVERYONE_MOVING_MSG_BOX);
+		assertIsDisplayed(activebox.ACTIVE_BOX_LOGGED_EVERYONE_MOVING_FIRST_MSG_BOX);
+	}
+	
+//	Active Box - user logged in with friends - check if on "Friends" tab messages are visible,
+//	click "Everyone" tab and check if messages are visible and are different than on "Friends" tab  
+	@Test
+	@Parameters({"xUrl"})
+	public void Active12(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(3);
+		Login("mptest", "123456");	
+		assertIsDisplayed(activebox.ACTIVE_BOX_LOGGED_FRIENDS_MOVING_MSG_BOX);
+		assertIsDisplayed(activebox.ACTIVE_BOX_LOGGED_FRIENDS_MOVING_FIRST_MSG_BOX);
+		String FriendsMsg = findElement(activebox.ACTIVE_BOX_LOGGED_FRIENDS_MOVING_FIRST_MSG_BOX).getAttribute("innerHTML");
+		clickElement(activebox.ACTIVE_BOX_EVERYONE_TAB_BOX);
+		assertIsDisplayed(activebox.ACTIVE_BOX_LOGGED_EVERYONE_MOVING_MSG_BOX);
+		assertIsDisplayed(activebox.ACTIVE_BOX_LOGGED_EVERYONE_MOVING_FIRST_MSG_BOX);
+		String FriendsMsg1 = findElement(activebox.ACTIVE_BOX_LOGGED_EVERYONE_MOVING_FIRST_MSG_BOX).getAttribute("innerHTML");
+		System.out.println("1 " + FriendsMsg);
+		System.out.println("2 " + FriendsMsg1);
+		assertFalse(findElement(activebox.ACTIVE_BOX_LOGGED_EVERYONE_MOVING_FIRST_MSG_BOX).getAttribute("innerHTML").equals(FriendsMsg));
+	}	
 }

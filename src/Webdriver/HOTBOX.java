@@ -2,10 +2,7 @@ package Webdriver;
 
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import org.junit.runners.BlockJUnit4ClassRunner;
-import org.junit.runner.RunWith;
 
-@RunWith(BlockJUnit4ClassRunner.class)
 public class HOTBOX extends SeleniumBase{
 	  
 //	Hotbox - check if after 5 sek game was changed, next click button 1,2,3 and check if games are changed	

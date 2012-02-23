@@ -203,19 +203,20 @@
 					<include name="HotBox3"></include>
 				</methods>
 			</class>		
-			<class name="Webdriver.ACTIVE_BOX">
-				<parameter name="xUrl" value="http://www.girlsgogames.co.uk"/>
+			<class name="Webdriver.ACTIVE_BOX">				
 				<methods>					
-					<include name="Active01"></include>
-					<!--include name="Active02"></include>-->
-					<include name="Active03"></include>
-					<include name="Active04"></include>
-					<include name="Active05"></include>
-					<include name="Active06"></include>
-					<include name="Active07"></include>
-					<!--include name="Active08"></include>-->
-					<include name="Active09"></include>
-					<include name="Active10"></include>					
+					<include name="Active01"><parameter name="xUrl" value="http://www.girlsgogames.co.uk"/></include>
+					<!--include name="Active02"><parameter name="xUrl" value="http://www.girlsgogames.co.uk"/></include>-->
+					<include name="Active03"><parameter name="xUrl" value="http://www.girlsgogames.co.uk"/></include>
+					<include name="Active04"><parameter name="xUrl" value="http://www.girlsgogames.co.uk"/></include>
+					<include name="Active05"><parameter name="xUrl" value="http://www.girlsgogames.co.uk"/></include>
+					<include name="Active06"><parameter name="xUrl" value="http://www.girlsgogames.co.uk"/></include>
+					<include name="Active07"><parameter name="xUrl" value="http://www.girlsgogames.co.uk"/></include>
+					<!--include name="Active08"><parameter name="xUrl" value="http://www.girlsgogames.co.uk"/></include>-->
+					<include name="Active09"><parameter name="xUrl" value="http://www.girlsgogames.co.uk"/></include>
+					<include name="Active10"><parameter name="xUrl" value="http://www.girlsgogames.co.uk"/></include>					
+					<include name="Active11"><parameter name="xUrl" value="http://www.girlsgogames.co.uk"/></include>
+					<include name="Active12"><parameter name="xUrl" value="http://www.girlsgogames.co.uk"/></include>
 				</methods>
 			</class>	
 			<class name="Webdriver.RECOMMENDED_GAMES">

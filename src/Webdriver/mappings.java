@@ -497,6 +497,10 @@ class SelectorFactory {
 			public static final String ACTIVE_BOX_UNLOGGED_JOIN_US_LINK = ".latestActivitiesBox span.not-logged a";
 			
 			public static final String ACTIVE_BOX_LOGGED_CONTENT_BOX = "#mcs_container_logged";
+			public static final String ACTIVE_BOX_LOGGED_FRIENDS_MOVING_MSG_BOX = "#mcs_container_logged div.customScrollBox div.hpActivityContainer div ul";
+			public static final String ACTIVE_BOX_LOGGED_FRIENDS_MOVING_FIRST_MSG_BOX = "#mcs_container_logged div.customScrollBox div.hpActivityContainer div ul li:nth-child(1) div.liContent";
+			public static final String ACTIVE_BOX_LOGGED_EVERYONE_MOVING_MSG_BOX = "#mcs_container div.customScrollBox div.hpActivityContainer div ul";
+			public static final String ACTIVE_BOX_LOGGED_EVERYONE_MOVING_FIRST_MSG_BOX = "#mcs_container div.customScrollBox div.hpActivityContainer div ul li:nth-child(1) div.liContent";
 			public static final String ACTIVE_BOX_LOGGED_NO_FRIENDS_BOX = "#mcs_container_logged div div.activity-no-friends";
 			public static final String ACTIVE_BOX_LOGGED_NO_FRIENDS_INVITE_BTN = "#mcs_container_logged div div.activity-no-friends div.link a";
 			public static final String ACTIVE_BOX_LOGGED_JOIN_US_BOX = ".latestActivitiesBox span.logged";
