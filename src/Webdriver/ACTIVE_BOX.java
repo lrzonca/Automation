@@ -88,7 +88,7 @@ public class ACTIVE_BOX extends SeleniumBase{
 		assertIsDisplayed(signUp.SIGN_UP_POPUP);
 	}		
 
-//	Active Box - user logged in - check controls and if Everyone tab is selected 	
+//	Active Box - user logged in - check controls and if Friends tab is selected 	
 	@Test
 	@Parameters({"xUrl"})
 	public void Active07(String xUrl) throws InterruptedException {

@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 
 
 @RunWith(BlockJUnit4ClassRunner.class)
-public class HOME_PAGE extends SeleniumBase{
+public class HEADER extends SeleniumBase{
 
 //	Site logo - click on any link in left navi, click header logo, check url and controls if page return to home page
 	@Test

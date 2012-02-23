@@ -175,7 +175,7 @@
 					<include name="Subcategory4"></include>
 				</methods>
 			</class>
-			<class name="Webdriver.HOME_PAGE">
+			<class name="Webdriver.HEADER">
 				<methods>					
 					<include name="Header1"></include>
 					<include name="Header2"></include>
@@ -203,22 +203,22 @@
 					<include name="HotBox3"></include>
 				</methods>
 			</class>		
-			<class name="Webdriver.ACTIVE_BOX">				
+			<!--<class name="Webdriver.ACTIVE_BOX">				
 				<methods>					
 					<include name="Active01"><parameter name="xUrl" value="http://www.girlsgogames.co.uk"/></include>
-					<!--include name="Active02"><parameter name="xUrl" value="http://www.girlsgogames.co.uk"/></include>-->
+					<!--include name="Active02"><parameter name="xUrl" value="http://www.girlsgogames.co.uk"/></include>
 					<include name="Active03"><parameter name="xUrl" value="http://www.girlsgogames.co.uk"/></include>
 					<include name="Active04"><parameter name="xUrl" value="http://www.girlsgogames.co.uk"/></include>
 					<include name="Active05"><parameter name="xUrl" value="http://www.girlsgogames.co.uk"/></include>
 					<include name="Active06"><parameter name="xUrl" value="http://www.girlsgogames.co.uk"/></include>
 					<include name="Active07"><parameter name="xUrl" value="http://www.girlsgogames.co.uk"/></include>
-					<!--include name="Active08"><parameter name="xUrl" value="http://www.girlsgogames.co.uk"/></include>-->
+					<!--include name="Active08"><parameter name="xUrl" value="http://www.girlsgogames.co.uk"/></include>
 					<include name="Active09"><parameter name="xUrl" value="http://www.girlsgogames.co.uk"/></include>
 					<include name="Active10"><parameter name="xUrl" value="http://www.girlsgogames.co.uk"/></include>					
 					<include name="Active11"><parameter name="xUrl" value="http://www.girlsgogames.co.uk"/></include>
 					<include name="Active12"><parameter name="xUrl" value="http://www.girlsgogames.co.uk"/></include>
 				</methods>
-			</class>	
+			</class>-->	
 			<class name="Webdriver.RECOMMENDED_GAMES">
 				<methods>					
 					<include name="Recommended1"></include>
