@@ -146,7 +146,7 @@
 					<include name="SignUp16"></include>
 				</methods>
 			</class>
-			<class name="Webdriver.SOCIAL">
+			<!--<class name="Webdriver.SOCIAL">
 				<methods>					
 					<include name="Social01"></include>
 					<include name="Social02"></include>
@@ -167,7 +167,7 @@
 					<include name="Social17"></include>
 					<include name="Social18"></include>
 				</methods>
-			</class>																
+			</class>-->																			
 			<class name="Webdriver.SUBCATEGORY_PAGE">
 				<methods>					
 					<include name="Subcategory1"></include>
@@ -202,7 +202,33 @@
 					<include name="HotBox2"></include>
 					<include name="HotBox3"></include>
 				</methods>
-			</class>												
+			</class>		
+			<class name="Webdriver.ACTIVE_BOX">
+				<methods>					
+					<include name="Active01"></include>
+					<!--include name="Active02"></include>-->
+					<include name="Active03"></include>
+					<include name="Active04"></include>
+					<include name="Active05"></include>
+					<include name="Active06"></include>
+					<include name="Active07"></include>
+					<!--include name="Active08"></include>-->
+					<include name="Active09"></include>
+					<include name="Active10"></include>					
+				</methods>
+			</class>	
+			<class name="Webdriver.RECOMMENDED_GAMES">
+				<methods>					
+					<include name="Recommended1"></include>
+					<include name="Recommended2"></include>
+				</methods>
+			</class>	
+			<class name="Webdriver.VIRTUAL_BOX">
+				<methods>					
+					<include name="VirtualBox1"></include>
+					<include name="VirtualBox2"></include>
+				</methods>
+			</class>																				
 		</classes>		
 	</test>
 </suite>
