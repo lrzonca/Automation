@@ -204,6 +204,7 @@
 				</methods>
 			</class>		
 			<class name="Webdriver.ACTIVE_BOX">
+				<parameter name="xUrl" value="http://www.girlsgogames.co.uk"/>
 				<methods>					
 					<include name="Active01"></include>
 					<!--include name="Active02"></include>-->
