@@ -154,4 +154,333 @@ public class FOOTER extends SeleniumBase{
 	    }
 		assertTrue(driver.getCurrentUrl().equals("http://www.spilgames.com/help_and_contact"));
 	}	
+	
+//	Footer - popular games - check all controls and check if all links and titles of links are not the same, click first link and check url
+	@Test
+	@Parameters({"xUrl"})
+	public void Footer11(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		assertIsDisplayed(footer.POPULAR_GAMES_BOX);
+		assertIsDisplayed(footer.POPULAR_GAMES_TITLE);
+		assertIsDisplayed(footer.POPULAR_GAMES_EMPTY_LINE);
+		assertIsDisplayed(footer.POPULAR_GAMES_LINKS_BOX);
+		for (int i = 1; i <= 5; i++){
+			for (int j = i + 1; j <= 5; j++){				
+				assertFalse(findElement(".footer-top div.bottomLinks:nth-child(1) ul li:nth-child(" + i + ") a").getAttribute("href").equals(findElement(".footer-top div.bottomLinks:nth-child(1) ul li:nth-child(" + j + ") a").getAttribute("href")));
+				assertFalse(findElement(".footer-top div.bottomLinks:nth-child(1) ul li:nth-child(" + i + ") a").getAttribute("innerHTML").equals(findElement(".footer-top div.bottomLinks:nth-child(1) ul li:nth-child(" + j + ") a").getAttribute("innerHTML")));
+			}
+		}
+		String url = findElement(footer.POPULAR_GAMES_FIRST_LINK_LINK).getAttribute("href");
+		clickElement(footer.POPULAR_GAMES_FIRST_LINK_LINK);
+		sleep(5);
+		assertTrue(driver.getCurrentUrl().equals(url));		
+	}
+	
+//	Footer - other sites - check all controls and check if all links and titles of links are not the same, click first link and check url
+	@Test
+	@Parameters({"xUrl"})
+	public void Footer12(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		assertIsDisplayed(footer.OTHER_SITES_BOX);
+		assertIsDisplayed(footer.OTHER_SITES_TITLE);
+		assertIsDisplayed(footer.OTHER_SITES_EMPTY_LINE);
+		assertIsDisplayed(footer.OTHER_SITES_LINKS_BOX);
+		for (int i = 1; i <= 5; i++){
+			for (int j = i + 1; j <= 5; j++){				
+				assertFalse(findElement(".footer-top div.bottomLinks:nth-child(2) ul li:nth-child(" + i + ") a").getAttribute("href").equals(findElement(".footer-top div.bottomLinks:nth-child(2) ul li:nth-child(" + j + ") a").getAttribute("href")));
+				assertFalse(findElement(".footer-top div.bottomLinks:nth-child(2) ul li:nth-child(" + i + ") a").getAttribute("innerHTML").equals(findElement(".footer-top div.bottomLinks:nth-child(2) ul li:nth-child(" + j + ") a").getAttribute("innerHTML")));
+			}
+		}
+		String url = findElement(footer.OTHER_SITES_FIRST_LINK_LINK).getAttribute("href");
+		clickElement(footer.OTHER_SITES_FIRST_LINK_LINK);
+		sleep(5);
+		assertTrue(driver.getCurrentUrl().equals(url));
+	}		
+	
+//	Footer - partners - check all controls and check if all links and titles of links are not the same, click first link and check url
+	@Test
+	@Parameters({"xUrl"})
+	public void Footer13(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		assertIsDisplayed(footer.PARTNERS_BOX);
+		assertIsDisplayed(footer.PARTNERS_TITLE);
+		assertIsDisplayed(footer.PARTNERS_EMPTY_LINE);
+		assertIsDisplayed(footer.PARTNERS_LINKS_BOX);
+		for (int i = 1; i <= 5; i++){
+			for (int j = i + 1; j <= 5; j++){				
+				assertFalse(findElement(".footer-top div.bottomLinks:nth-child(3) ul li:nth-child(" + i + ") a").getAttribute("href").equals(findElement(".footer-top div.bottomLinks:nth-child(3) ul li:nth-child(" + j + ") a").getAttribute("href")));
+				assertFalse(findElement(".footer-top div.bottomLinks:nth-child(3) ul li:nth-child(" + i + ") a").getAttribute("innerHTML").equals(findElement(".footer-top div.bottomLinks:nth-child(3) ul li:nth-child(" + j + ") a").getAttribute("innerHTML")));
+			}
+		}
+		String url = findElement(footer.PARTNERS_LINKS_FIRST_LINK_LINK).getAttribute("href");
+		clickElement(footer.PARTNERS_LINKS_FIRST_LINK_LINK);
+		sleep(5);
+		assertTrue(driver.getCurrentUrl().equals(url));		
+	}
+	
+//	Footer Country - 
+	@Test
+	@Parameters({"xUrl"})
+	public void Country01(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		assertIsDisplayed(footer.LANGUAGES_BOX);
+		assertIsDisplayed(footer.LANGUAGES_TITLE);
+		assertIsDisplayed(footer.LANGUAGES_EMPTY_LINE);
+		assertIsDisplayed(footer.LANGUAGES_LINKS_LEFT_BOX);
+		assertIsDisplayed(footer.LANGUAGES_LINKS_RIGHT_BOX);
+		for (int i = 1; i <= 9; i++){
+			for (int j = i + 1; j <= 9; j++){				
+				assertFalse(findElement(".footer-top div.bottomLanguages ul:nth-child(1) li:nth-child(" + i + ") a").getAttribute("href").equals(findElement(".footer-top div.bottomLanguages ul:nth-child(1) li:nth-child(" + j + ") a").getAttribute("href")));
+				assertFalse(findElement(".footer-top div.bottomLanguages ul:nth-child(1) li:nth-child(" + i + ") a").getText().equals(findElement(".footer-top div.bottomLanguages ul:nth-child(1) li:nth-child(" + i + ") a").getText()));
+			}
+		}
+		for (int i = 1; i <= 9; i++){
+			for (int j = i + 1; j <= 9; j++){				
+				assertFalse(findElement(".footer-top div.bottomLanguages ul:nth-child(2) li:nth-child(" + i + ") a").getAttribute("href").equals(findElement(".footer-top div.bottomLanguages ul:nth-child(2) li:nth-child(" + j + ") a").getAttribute("href")));
+				assertFalse(findElement(".footer-top div.bottomLanguages ul:nth-child(2) li:nth-child(" + i + ") a").getText().equals(findElement(".footer-top div.bottomLanguages ul:nth-child(2) li:nth-child(" + i + ") a").getText()));
+			}
+		}				
+	}	
+	
+//	Footer Country - Argentina
+	@Test
+	@Parameters({"xUrl"})
+	public void Country02(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		SitesUrl(findElement(footer.LANGUAGES_ARGENTINA_LINK + " span").getAttribute("class"));
+		clickElement(footer.LANGUAGES_ARGENTINA_LINK);
+		sleep(5);		
+		assertTrue(driver.getCurrentUrl().equals(siteUrl));
+	}
+	
+//	Footer Country - Brasil
+	@Test
+	@Parameters({"xUrl"})
+	public void Country03(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		SitesUrl(findElement(footer.LANGUAGES_BRASIL_LINK + " span").getAttribute("class"));
+		clickElement(footer.LANGUAGES_BRASIL_LINK);
+		sleep(5);		
+		assertTrue(driver.getCurrentUrl().equals(siteUrl));
+	}	
+	
+//	Footer Country - Chile
+	@Test
+	@Parameters({"xUrl"})
+	public void Country04(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		SitesUrl(findElement(footer.LANGUAGES_CHILE_LINK + " span").getAttribute("class"));
+		clickElement(footer.LANGUAGES_CHILE_LINK);
+		sleep(5);		
+		assertTrue(driver.getCurrentUrl().equals(siteUrl));
+	}	
+	
+//	Footer Country - Colombia
+	@Test
+	@Parameters({"xUrl"})
+	public void Country05(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		SitesUrl(findElement(footer.LANGUAGES_COLOMBIA_LINK + " span").getAttribute("class"));
+		clickElement(footer.LANGUAGES_COLOMBIA_LINK);
+		sleep(5);		
+		assertTrue(driver.getCurrentUrl().equals(siteUrl));
+	}	
+	
+//	Footer Country - Deutschland
+	@Test
+	@Parameters({"xUrl"})
+	public void Country06(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		SitesUrl(findElement(footer.LANGUAGES_DEUTSCHLAND_LINK + " span").getAttribute("class"));
+		clickElement(footer.LANGUAGES_DEUTSCHLAND_LINK);
+		sleep(5);		
+		assertTrue(driver.getCurrentUrl().equals(siteUrl));
+	}	
+	
+//	Footer Country - Espana
+	@Test
+	@Parameters({"xUrl"})
+	public void Country07(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		SitesUrl(findElement(footer.LANGUAGES_ESPANA_LINK + " span").getAttribute("class"));
+		clickElement(footer.LANGUAGES_ESPANA_LINK);
+		sleep(5);		
+		assertTrue(driver.getCurrentUrl().equals(siteUrl));
+	}	
+	
+//	Footer Country - France
+	@Test
+	@Parameters({"xUrl"})
+	public void Country08(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		SitesUrl(findElement(footer.LANGUAGES_FRANCE_LINK + " span").getAttribute("class"));
+		clickElement(footer.LANGUAGES_FRANCE_LINK);
+		sleep(5);		
+		assertTrue(driver.getCurrentUrl().equals(siteUrl));
+	}	
+	
+//	Footer Country - Indonesia
+	@Test
+	@Parameters({"xUrl"})
+	public void Country09(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		SitesUrl(findElement(footer.LANGUAGES_INDONESIA_LINK + " span").getAttribute("class"));
+		clickElement(footer.LANGUAGES_INDONESIA_LINK);
+		sleep(5);		
+		assertTrue(driver.getCurrentUrl().equals(siteUrl));
+	}	
+	
+//	Footer Country - Italia
+	@Test
+	@Parameters({"xUrl"})
+	public void Country10(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		SitesUrl(findElement(footer.LANGUAGES_ITALIA_LINK + " span").getAttribute("class"));
+		clickElement(footer.LANGUAGES_ITALIA_LINK);
+		sleep(5);		
+		assertTrue(driver.getCurrentUrl().equals(siteUrl));
+	}	
+	
+//	Footer Country - Mexico
+	@Test
+	@Parameters({"xUrl"})
+	public void Country11(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		SitesUrl(findElement(footer.LANGUAGES_MEXICO_LINK + " span").getAttribute("class"));
+		clickElement(footer.LANGUAGES_MEXICO_LINK);
+		sleep(5);		
+		assertTrue(driver.getCurrentUrl().equals(siteUrl));
+	}	
+	
+//	Footer Country - Nederland
+	@Test
+	@Parameters({"xUrl"})
+	public void Country12(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		SitesUrl(findElement(footer.LANGUAGES_NEDERLAND_LINK + " span").getAttribute("class"));
+		clickElement(footer.LANGUAGES_NEDERLAND_LINK);
+		sleep(5);		
+		assertTrue(driver.getCurrentUrl().equals(siteUrl));
+	}	
+	
+//	Footer Country - Polska
+	@Test
+	@Parameters({"xUrl"})
+	public void Country13(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		SitesUrl(findElement(footer.LANGUAGES_POLSKA_LINK + " span").getAttribute("class"));
+		clickElement(footer.LANGUAGES_POLSKA_LINK);
+		sleep(5);		
+		assertTrue(driver.getCurrentUrl().equals(siteUrl));
+	}	
+	
+//	Footer Country - Russia
+	@Test
+	@Parameters({"xUrl"})
+	public void Country14(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		SitesUrl(findElement(footer.LANGUAGES_RUSSIA_LINK + " span").getAttribute("class"));
+		clickElement(footer.LANGUAGES_RUSSIA_LINK);
+		sleep(5);		
+		assertTrue(driver.getCurrentUrl().equals(siteUrl));
+	}	
+	
+//	Footer Country - Sverige
+	@Test
+	@Parameters({"xUrl"})
+	public void Country15(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		SitesUrl(findElement(footer.LANGUAGES_SVERIGE_LINK + " span").getAttribute("class"));
+		clickElement(footer.LANGUAGES_SVERIGE_LINK);
+		sleep(5);		
+		assertTrue(driver.getCurrentUrl().equals(siteUrl));
+	}	
+	
+//	Footer Country - Turkiye
+	@Test
+	@Parameters({"xUrl"})
+	public void Country16(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		SitesUrl(findElement(footer.LANGUAGES_TURKIYE_LINK + " span").getAttribute("class"));
+		clickElement(footer.LANGUAGES_TURKIYE_LINK);
+		sleep(5);		
+		assertTrue(driver.getCurrentUrl().equals(siteUrl));
+	}	
+	
+//	Footer Country - UK
+	@Test
+	@Parameters({"xUrl"})
+	public void Country17(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		SitesUrl(findElement(footer.LANGUAGES_UK_LINK + " span").getAttribute("class"));
+		clickElement(footer.LANGUAGES_UK_LINK);
+		sleep(5);		
+		assertTrue(driver.getCurrentUrl().equals(siteUrl));
+	}	
+	
+//	Footer Country - USA
+	@Test
+	@Parameters({"xUrl"})
+	public void Country18(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		SitesUrl(findElement(footer.LANGUAGES_USA_LINK + " span").getAttribute("class"));
+		clickElement(footer.LANGUAGES_USA_LINK);
+		sleep(5);		
+		assertTrue(driver.getCurrentUrl().equals(siteUrl));
+	}	
+	
+//	Footer Country - Venezuela
+	@Test
+	@Parameters({"xUrl"})
+	public void Country19(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		SitesUrl(findElement(footer.LANGUAGES_VENEZUELA_LINK + " span").getAttribute("class"));
+		clickElement(footer.LANGUAGES_VENEZUELA_LINK);
+		sleep(5);		
+		assertTrue(driver.getCurrentUrl().equals(siteUrl));
+	}		
 }

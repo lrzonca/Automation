@@ -229,7 +229,28 @@
 					<include name="Footer8"></include>
 					<include name="Footer9"></include>
 					<include name="Footer10"></include>
-					<include name="Footer11"></include>															
+					<include name="Footer11"></include>
+					<include name="Footer12"></include>	
+					<include name="Footer13"></include>		
+					<include name="Country01"></include>						
+					<include name="Country02"></include>
+					<include name="Country03"></include>	
+					<include name="Country04"></include>
+					<include name="Country05"></include>	
+					<include name="Country06"></include>
+					<include name="Country07"></include>	
+					<include name="Country08"></include>
+					<include name="Country09"></include>	
+					<include name="Country10"></include>
+					<include name="Country11"></include>	
+					<include name="Country12"></include>
+					<include name="Country13"></include>	
+					<include name="Country14"></include>
+					<include name="Country15"></include>	
+					<include name="Country16"></include>
+					<include name="Country17"></include>	
+					<include name="Country18"></include>
+					<include name="Country19"></include>															
 				</methods>
 			</class>																					
 		</classes>		

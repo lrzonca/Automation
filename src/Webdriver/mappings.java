@@ -298,6 +298,45 @@ class SelectorFactory {
 			public static final String SUBMIT_A_GAME = ".middleWaveLinks a:nth-child(9)";
 			public static final String GET_FREE_GAMES = ".middleWaveLinks a:nth-child(10)";
 			public static final String HELP_AND_CONTENT = ".middleWaveLinks a:nth-child(11)";
+			public static final String POPULAR_GAMES_BOX = ".footer-top div.bottomLinks:nth-child(1)";
+			public static final String POPULAR_GAMES_TITLE = ".footer-top div.bottomLinks:nth-child(1) h4";
+			public static final String POPULAR_GAMES_EMPTY_LINE = ".footer-top div.bottomLinks:nth-child(1) hr";
+			public static final String POPULAR_GAMES_LINKS_BOX = ".footer-top div.bottomLinks:nth-child(1) ul";
+			public static final String POPULAR_GAMES_FIRST_LINK_LINK = ".footer-top div.bottomLinks:nth-child(1) ul li:nth-child(1) a";			
+			public static final String OTHER_SITES_BOX = ".footer-top div.bottomLinks:nth-child(2)";
+			public static final String OTHER_SITES_TITLE = ".footer-top div.bottomLinks:nth-child(2) h4";
+			public static final String OTHER_SITES_EMPTY_LINE = ".footer-top div.bottomLinks:nth-child(2) hr";
+			public static final String OTHER_SITES_LINKS_BOX = ".footer-top div.bottomLinks:nth-child(2) ul";
+			public static final String OTHER_SITES_FIRST_LINK_LINK = ".footer-top div.bottomLinks:nth-child(2) ul li:nth-child(1) a";			
+			public static final String PARTNERS_BOX = ".footer-top div.bottomLinks:nth-child(3)";
+			public static final String PARTNERS_TITLE = ".footer-top div.bottomLinks:nth-child(3) h4";
+			public static final String PARTNERS_EMPTY_LINE = ".footer-top div.bottomLinks:nth-child(3) hr";
+			public static final String PARTNERS_LINKS_BOX = ".footer-top div.bottomLinks:nth-child(3) ul";
+			public static final String PARTNERS_LINKS_FIRST_LINK_LINK = ".footer-top div.bottomLinks:nth-child(3) ul li:nth-child(1) a";					
+			public static final String LANGUAGES_BOX = ".footer-top div.bottomLanguages";
+			public static final String LANGUAGES_TITLE = ".footer-top div.bottomLanguages h4";
+			public static final String LANGUAGES_EMPTY_LINE = ".footer-top div.bottomLanguages hr";
+			public static final String LANGUAGES_LINKS_LEFT_BOX = ".footer-top div.bottomLanguages ul:nth-child(1)";
+			public static final String LANGUAGES_LINKS_RIGHT_BOX = ".footer-top div.bottomLanguages ul:nth-child(2)";
+			
+			public static final String LANGUAGES_ARGENTINA_LINK = ".footer-top div.bottomLanguages ul:nth-child(3) li:nth-child(1) a";
+			public static final String LANGUAGES_BRASIL_LINK = ".footer-top div.bottomLanguages ul:nth-child(3) li:nth-child(2) a";
+			public static final String LANGUAGES_CHILE_LINK = ".footer-top div.bottomLanguages ul:nth-child(3) li:nth-child(3) a";
+			public static final String LANGUAGES_COLOMBIA_LINK = ".footer-top div.bottomLanguages ul:nth-child(3) li:nth-child(4) a";
+			public static final String LANGUAGES_DEUTSCHLAND_LINK = ".footer-top div.bottomLanguages ul:nth-child(3) li:nth-child(5) a";
+			public static final String LANGUAGES_ESPANA_LINK = ".footer-top div.bottomLanguages ul:nth-child(3) li:nth-child(6) a";
+			public static final String LANGUAGES_FRANCE_LINK = ".footer-top div.bottomLanguages ul:nth-child(3) li:nth-child(7) a";
+			public static final String LANGUAGES_INDONESIA_LINK = ".footer-top div.bottomLanguages ul:nth-child(3) li:nth-child(8) a";
+			public static final String LANGUAGES_ITALIA_LINK = ".footer-top div.bottomLanguages ul:nth-child(3) li:nth-child(9) a";
+			public static final String LANGUAGES_MEXICO_LINK = ".footer-top div.bottomLanguages ul:nth-child(4) li:nth-child(1) a";
+			public static final String LANGUAGES_NEDERLAND_LINK = ".footer-top div.bottomLanguages ul:nth-child(4) li:nth-child(2) a";
+			public static final String LANGUAGES_POLSKA_LINK = ".footer-top div.bottomLanguages ul:nth-child(4) li:nth-child(3) a";
+			public static final String LANGUAGES_RUSSIA_LINK = ".footer-top div.bottomLanguages ul:nth-child(4) li:nth-child(4) a";
+			public static final String LANGUAGES_SVERIGE_LINK = ".footer-top div.bottomLanguages ul:nth-child(4) li:nth-child(5) a";
+			public static final String LANGUAGES_TURKIYE_LINK = ".footer-top div.bottomLanguages ul:nth-child(4) li:nth-child(6) a";
+			public static final String LANGUAGES_UK_LINK = ".footer-top div.bottomLanguages ul:nth-child(4) li:nth-child(7) a";
+			public static final String LANGUAGES_USA_LINK = ".footer-top div.bottomLanguages ul:nth-child(4) li:nth-child(8) a";
+			public static final String LANGUAGES_VENEZUELA_LINK = ".footer-top div.bottomLanguages ul:nth-child(4) li:nth-child(9) a";
 		}
 		  
 		public interface myProfile {

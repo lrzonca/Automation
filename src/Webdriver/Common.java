@@ -23,7 +23,7 @@ public class Common extends TestCase implements mappings {
 	public String UP = "123456";
 	public String UN2 = "qwerty_friend_3";	
 	public Connection c, c_stg, c_event;	
-	public String Game_id, Game_gid, Game_gamename_lid, Game_language_id, Game_url, Game_game_name, Game_game_description, Game_game_manual, Game_thumbnaill, Game_thumbnail2, Game_thumbnail3, Game_thumbnail_login, Game_gametype_id, Game_developer_id, Game_width, Game_height, Game_direct_on_frontpage, Game_direct_on_catpage, Game_direct_on_subcatpage, Game_downloadable, Game_highscore, Game_embedded, Game_overlay_add, Game_initial_rating, Game_active, Game_created, Game_modified, Game_onsite, Game_nice_name, Game_require_translation, Game_promotext, Game_translated_by, Game_translated_date, Game_achievements, Game_gallery, Game_using_service, Game_payments_enabled, Game_allow_links, Game_excluded, Game_scalable, Game_game_login_welcome_title, Game_login_welcome_description, Game_thumbnail_coins, Game_thumbnail_coins_show, Game_similar_box, Game_sign_in_popup_interval;
+	public String Game_id, Game_gid, Game_gamename_lid, Game_language_id, Game_url, Game_game_name, Game_game_description, Game_game_manual, Game_thumbnaill, Game_thumbnail2, Game_thumbnail3, Game_thumbnail_login, Game_gametype_id, Game_developer_id, Game_width, Game_height, Game_direct_on_frontpage, Game_direct_on_catpage, Game_direct_on_subcatpage, Game_downloadable, Game_highscore, Game_embedded, Game_overlay_add, Game_initial_rating, Game_active, Game_created, Game_modified, Game_onsite, Game_nice_name, Game_require_translation, Game_promotext, Game_translated_by, Game_translated_date, Game_achievements, Game_gallery, Game_using_service, Game_payments_enabled, Game_allow_links, Game_excluded, Game_scalable, Game_game_login_welcome_title, Game_login_welcome_description, Game_thumbnail_coins, Game_thumbnail_coins_show, Game_similar_box, Game_sign_in_popup_interval, siteUrl;
 	
 //	public WebElement findElement(String selector) throws InterruptedException {
 //		return driver.findElement(By.id(selector));
@@ -770,6 +770,65 @@ public class Common extends TestCase implements mappings {
 			}
 		}
 	}	
+	
+	/* Description
+	 */
+	void SitesUrl(String site_id) throws InterruptedException {	 
+		if (site_id.equals("es-ar")){
+			siteUrl = "http://www.juegosdechicas.com/";
+		}
+		if (site_id.equals("pt-br")){
+			siteUrl = "http://www.girlsgogames.com.br/";
+		}
+		if (site_id.equals("es-cl")){
+			siteUrl = "http://www.juegosdechicas.com/";
+		}
+		if (site_id.equals("es-co")){
+			siteUrl = "http://www.juegosdechicas.com/";
+		}
+		if (site_id.equals("de-de")){
+			siteUrl = "http://www.girlsgogames.de/";
+		}
+		if (site_id.equals("es-es")){
+			siteUrl = "http://www.juegosdechicas.com/";
+		}
+		if (site_id.equals("fr-fr")){
+			siteUrl = "http://www.girlsgogames.fr/";
+		}
+		if (site_id.equals("en-id")){
+			siteUrl = "http://www.girlsgogames.co.id/";
+		}
+		if (site_id.equals("it-it")){
+			siteUrl = "http://www.girlsgogames.it/";
+		}
+		if (site_id.equals("es-mx")){
+			siteUrl = "http://www.juegosdechicas.com/";
+		}
+		if (site_id.equals("nl-nl")){
+			siteUrl = "http://www.girlsgogames.nl/";
+		}
+		if (site_id.equals("pl-pl")){
+			siteUrl = "http://www.girlsgogames.pl/";
+		}
+		if (site_id.equals("ru-ru")){
+			siteUrl = "http://www.girlsgogames.ru/";
+		}
+		if (site_id.equals("sv-se")){
+			siteUrl = "http://www.girlsgogames.se/";
+		}
+		if (site_id.equals("tr-tr")){
+			siteUrl = "http://www.girlsgogames.com.tr/";
+		}
+		if (site_id.equals("en-gb")){
+			siteUrl = "http://www.girlsgogames.co.uk/";
+		}
+		if (site_id.equals("en-us")){
+			siteUrl = "http://www.girlsgogames.com/";
+		}
+		if (site_id.equals("es-ve")){
+			siteUrl = "http://www.juegosdechicas.com/";
+		}		
+	}		
 	
 	
 	// =====================================

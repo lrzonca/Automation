@@ -5,17 +5,7 @@
 			<parameter name="xBrowser" value="firefox"/>			
 			<class name="Webdriver.FOOTER">			
 				<methods>					
-					<include name="Footer01"></include>
-					<include name="Footer02"></include>
-					<include name="Footer03"></include>
-					<include name="Footer04"></include>
-					<include name="Footer05"></include>
-					<include name="Footer06"></include>
-					<include name="Footer07"></include>
-					<include name="Footer08"></include>
-					<include name="Footer09"></include>
-					<include name="Footer10"></include>
-					<include name="Footer11"></include>
+					<include name="Country2"></include>
 				</methods>
 			</class>				
 		</classes>		
