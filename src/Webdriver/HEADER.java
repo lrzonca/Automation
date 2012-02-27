@@ -54,7 +54,8 @@ public class HEADER extends SeleniumBase{
 		sleep(5);
 		System.out.println(driver.getCurrentUrl());
 		System.out.println(xUrl);
-		assertTrue(driver.getCurrentUrl().equals(xUrl + "/"));
+//		assertTrue(driver.getCurrentUrl().equals(xUrl + "/"));//homepage
+		assertTrue(driver.getCurrentUrl().equals(xUrl + "/movie_awards_2012/movie_awards_2012.html"));
 		assertIsDisplayed(homepage.GAME_LIST);
 	}	
 	
