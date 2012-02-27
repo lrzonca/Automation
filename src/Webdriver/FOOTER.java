@@ -152,7 +152,7 @@ public class FOOTER extends SeleniumBase{
 	    for (String handle : driver.getWindowHandles()) {
 	    	driver.switchTo().window(handle);
 	    }
-		assertTrue(driver.getCurrentUrl().equals("http://www.spilgames.com/help_and_contact"));
+		assertTrue(driver.getCurrentUrl().equals("http://www.spilgames.com/help-contact/faqs#consumers"));
 	}	
 	
 //	Footer - popular games - check all controls and check if all links and titles of links are not the same, click first link and check url
@@ -237,15 +237,15 @@ public class FOOTER extends SeleniumBase{
 		assertIsDisplayed(footer.LANGUAGES_LINKS_LEFT_BOX);
 		assertIsDisplayed(footer.LANGUAGES_LINKS_RIGHT_BOX);
 		for (int i = 1; i <= 9; i++){
-			for (int j = i + 1; j <= 9; j++){				
-				assertFalse(findElement(".footer-top div.bottomLanguages ul:nth-child(1) li:nth-child(" + i + ") a").getAttribute("href").equals(findElement(".footer-top div.bottomLanguages ul:nth-child(1) li:nth-child(" + j + ") a").getAttribute("href")));
-				assertFalse(findElement(".footer-top div.bottomLanguages ul:nth-child(1) li:nth-child(" + i + ") a").getText().equals(findElement(".footer-top div.bottomLanguages ul:nth-child(1) li:nth-child(" + i + ") a").getText()));
+			for (int j = i + 1; j <= 9; j++){	
+				assertFalse(findElement(".footer-top div.bottomLanguages ul:nth-child(3) li:nth-child(" + i + ") a span").getAttribute("class").equals(findElement(".footer-top div.bottomLanguages ul:nth-child(3) li:nth-child(" + j + ") a span").getAttribute("class")));
+				assertFalse(findElement(".footer-top div.bottomLanguages ul:nth-child(3) li:nth-child(" + i + ") a").getText().equals(findElement(".footer-top div.bottomLanguages ul:nth-child(3) li:nth-child(" + j + ") a").getText()));
 			}
 		}
 		for (int i = 1; i <= 9; i++){
 			for (int j = i + 1; j <= 9; j++){				
-				assertFalse(findElement(".footer-top div.bottomLanguages ul:nth-child(2) li:nth-child(" + i + ") a").getAttribute("href").equals(findElement(".footer-top div.bottomLanguages ul:nth-child(2) li:nth-child(" + j + ") a").getAttribute("href")));
-				assertFalse(findElement(".footer-top div.bottomLanguages ul:nth-child(2) li:nth-child(" + i + ") a").getText().equals(findElement(".footer-top div.bottomLanguages ul:nth-child(2) li:nth-child(" + i + ") a").getText()));
+				assertFalse(findElement(".footer-top div.bottomLanguages ul:nth-child(4) li:nth-child(" + i + ") a span").getAttribute("class").equals(findElement(".footer-top div.bottomLanguages ul:nth-child(4) li:nth-child(" + j + ") a span").getAttribute("class")));
+				assertFalse(findElement(".footer-top div.bottomLanguages ul:nth-child(4) li:nth-child(" + i + ") a").getText().equals(findElement(".footer-top div.bottomLanguages ul:nth-child(4) li:nth-child(" + j + ") a").getText()));
 			}
 		}				
 	}	

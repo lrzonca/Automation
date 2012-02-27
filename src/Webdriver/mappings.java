@@ -316,8 +316,8 @@ class SelectorFactory {
 			public static final String LANGUAGES_BOX = ".footer-top div.bottomLanguages";
 			public static final String LANGUAGES_TITLE = ".footer-top div.bottomLanguages h4";
 			public static final String LANGUAGES_EMPTY_LINE = ".footer-top div.bottomLanguages hr";
-			public static final String LANGUAGES_LINKS_LEFT_BOX = ".footer-top div.bottomLanguages ul:nth-child(1)";
-			public static final String LANGUAGES_LINKS_RIGHT_BOX = ".footer-top div.bottomLanguages ul:nth-child(2)";
+			public static final String LANGUAGES_LINKS_LEFT_BOX = ".footer-top div.bottomLanguages ul:nth-child(3)";
+			public static final String LANGUAGES_LINKS_RIGHT_BOX = ".footer-top div.bottomLanguages ul:nth-child(4)";
 			
 			public static final String LANGUAGES_ARGENTINA_LINK = ".footer-top div.bottomLanguages ul:nth-child(3) li:nth-child(1) a";
 			public static final String LANGUAGES_BRASIL_LINK = ".footer-top div.bottomLanguages ul:nth-child(3) li:nth-child(2) a";
