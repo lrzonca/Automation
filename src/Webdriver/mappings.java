@@ -195,6 +195,7 @@ class SelectorFactory {
 			public static final String SIGN_UP_PB_HOW_OLD_ARE_YOU_ERROR_NOT_NUMBER_TEXT = "#error_age_not_numeric";
 			public static final String SIGN_UP_PB_HOW_OLD_ARE_YOU_ERROR_TOO_YOUNG_TEXT = "#error_too_young";
 			
+			public static final String SIGN_UP_PB_DOB_BOX = ".sg-reg-form-input";
 			public static final String SIGN_UP_PB_DOB_MONTH = "#f_dob_month";
 			public static final String SIGN_UP_PB_DOB_DAY = "#f_dob_day";
 			public static final String SIGN_UP_PB_DOB_YEAR = "#f_dob_year";
@@ -203,9 +204,9 @@ class SelectorFactory {
 			public static final String SIGN_UP_PB_DOB_NOT_VALID = "#error_dob_not_valid";
 			
 			public static final String SIGN_UP_PB_LINE = ".sg-registration-step1 .hsep";
-			public static final String SIGN_UP_PB_PARENTS_EMAIL_TITLE_TEXT = ".sg-registration-step1 div:nth-child(6) div.sg-reg-form-caption";
-			public static final String SIGN_UP_PB_PARENTS_EMAIL_WHATS_THIS_FOR_TEXT = ".sg-registration-step1 div:nth-child(6) div.sg-reg-form-help a";
-			public static final String SIGN_UP_PB_PARENTS_EMAIL_WHATS_THIS_FOR_TOOLTIP_TEXT = ".sg-registration-step1 div:nth-child(6) div.sg-reg-form-help span";
+			public static final String SIGN_UP_PB_PARENTS_EMAIL_TITLE_TEXT = ".sg-registration-step1 div:nth-child(5) div.sg-reg-form-caption";
+			public static final String SIGN_UP_PB_PARENTS_EMAIL_WHATS_THIS_FOR_TEXT = ".sg-registration-step1 div:nth-child(5) div.sg-reg-form-help a";
+			public static final String SIGN_UP_PB_PARENTS_EMAIL_WHATS_THIS_FOR_TOOLTIP_TEXT = ".sg-registration-step1 div:nth-child(5) div.sg-reg-form-help a";
 			public static final String SIGN_UP_PB_PARENTS_EMAIL_TEXTFIELD = "#sgRegParentsMail";
 			public static final String SIGN_UP_PB_PARENTS_EMAIL_CORRECT_ICON = "#parents_validationCorrectImage";
 			public static final String SIGN_UP_PB_PARENTS_EMAIL_ERROR_ICON = "#parents_validationErrorImage";
