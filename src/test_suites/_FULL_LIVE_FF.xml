@@ -140,29 +140,7 @@
 					<include name="SignUp15"></include>
 					<include name="SignUp16"></include>
 				</methods>
-			</class>
-			<!--<class name="Webdriver.SOCIAL">
-				<methods>					
-					<include name="Social01"></include>
-					<include name="Social02"></include>
-					<include name="Social03"></include>
-					<include name="Social04"></include>
-					<include name="Social05"></include>
-					<include name="Social06"></include>
-					<include name="Social07"></include>
-					<include name="Social08"></include>
-					<include name="Social09"></include>
-					<include name="Social10"></include>
-					<include name="Social11"></include>
-					<include name="Social12"></include>
-					<include name="Social13"></include>
-					<include name="Social14"></include>
-					<include name="Social15"></include>
-					<include name="Social16"></include>
-					<include name="Social17"></include>
-					<include name="Social18"></include>
-				</methods>
-			</class>-->																			
+			</class>																	
 			<class name="Webdriver.SUBCATEGORY_PAGE">
 				<methods>					
 					<include name="Subcategory1"></include>
