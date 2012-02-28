@@ -73,5 +73,4 @@ public class Hy_search extends SeleniumBase{
 	    assertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.hyves.SEARCH_BOX_NO_RESULTS)).isDisplayed());
 
   }
-  
 }

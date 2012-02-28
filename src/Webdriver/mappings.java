@@ -390,7 +390,7 @@ public interface mappings {
 	  public static final String PASSWORD_FIELD = "#auth_password";
 	  public static final String LOGIN_BUTTON = "#login-btn";
 	  public static final String GAMES_LINK = "li#menu-games a.sub-menu-title";
-	  public static final String SOCIAL_LINK = "a#social_link";
+	  public static final String SOCIAL_LINK = "#social_link";
 	  public static final String MULTIPLAYER_LINK = "#tabs li a#multiplayer_link";
 	  public static final String SEARCH_FIELD = "#searchInput";
 	  public static final String SEARCH_BUTTON = "#searchButton";
