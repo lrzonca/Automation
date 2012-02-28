@@ -18,7 +18,6 @@ public class Hy_Search extends SeleniumBase{
 	    SearchF.clear();
 	    SearchF.sendKeys(xGameTitle);
 	    SearchF.sendKeys(Keys.ENTER);
-	    //driver.findElement(By.cssSelector(hyves.SEARCH_BUTTON)).click();
 	    Thread.sleep(5000); 
 	   assertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.hyves.SEARCH_BOX_TITLE)).isDisplayed());
 	   assertEqualsCaseInsensitive(xGameTitle, driver.findElement(By.cssSelector(".game-title")).getText());
