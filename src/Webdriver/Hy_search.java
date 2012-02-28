@@ -3,18 +3,15 @@ package Webdriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 
-
-
-public class Hy_search extends SeleniumBase{
+public class Hy_Search extends SeleniumBase{
   @Test
   @Parameters({"xUrl", "xGameTitle", "xUsername", "xPass"})
   public void gameSearchValid(String xUrl, String xGameTitle, String xUsername, String xPass)throws Exception {
-	  	NavigateToGamePage(xUrl, xUsername, xPass);
+	  	LoginAndNavigateToGamePage(xUrl, xUsername, xPass);
 	    WebElement SearchF = driver.findElement(By.cssSelector(hyves.SEARCH_FIELD)); 
 	    SearchF.sendKeys("");
 	    SearchF.click();
@@ -33,7 +30,7 @@ public class Hy_search extends SeleniumBase{
 	  	String GameTitle = "land";
 	  	String GamesFound = "6";
 	  
-	  	NavigateToGamePage(xUrl, xUsername, xPass);
+	  	LoginAndNavigateToGamePage(xUrl, xUsername, xPass);
 	    WebElement SearchF = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.SEARCH_FIELD));
 	    Thread.sleep(2000); 
 	    SearchF.sendKeys("");
@@ -58,7 +55,7 @@ public class Hy_search extends SeleniumBase{
 	  	String GameTitle = "nothinghasbeenfound";
 	  	String GamesFound = "0";
 	  
-	  	NavigateToGamePage(xUrl, xUsername, xPass);
+	  	LoginAndNavigateToGamePage(xUrl, xUsername, xPass);
 	    WebElement SearchF = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.SEARCH_FIELD));
 	    Thread.sleep(2000); 
 	    SearchF.sendKeys("");

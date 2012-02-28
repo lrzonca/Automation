@@ -386,17 +386,29 @@ public interface mappings {
 			  }
   
   public interface hyves {
+	  //Login
 	  public static final String USERNAME_FIELD = "#auth_username";
 	  public static final String PASSWORD_FIELD = "#auth_password";
 	  public static final String LOGIN_BUTTON = "#login-btn";
+	  //Game tab in Hyves
 	  public static final String GAMES_LINK = "li#menu-games a.sub-menu-title";
+	  //Tabs in top meny
+	  public static final String HOME_PAGE_LINK = "#tabs li a#home_link";
 	  public static final String SOCIAL_LINK = "a#social_link";
 	  public static final String MULTIPLAYER_LINK = "#tabs li a#multiplayer_link";
+	  public static final String FAVURITES_LINK = "#tabs li a#menu-favourites-link"; 
+	  //Search
 	  public static final String SEARCH_FIELD = "#searchInput";
 	  public static final String SEARCH_BUTTON = "#searchButton";
 	  public static final String SEARCH_BOX_TITLE = "#catbox h1 span";
 	  public static final String SEARCH_BOX_RESULTS_FOUND = "#catbox div .search-results-list-header";
 	  public static final String SEARCH_BOX_NO_RESULTS = "#catbox div .search-results-noresults-header";
 	  public static final String SEARCHED_ELEMENT = ".box";
+	  public static final String SEARCH_GAME_LINK = "a[title=";
+	  public static final String GAME_PAGE_FAV_LINK = "a.favourite-controls";
+	  public static final String GAME_PAGE_FAV_POPUP_BODY = ".HyvesPopupBody";
+//	  public static final String GAME_PAGE_FAV_POPUP_OK = ".rte_submit_button favourites_ok";
+	  public static final String GAME_PAGE_FAV_POPUP_OK = "#closeInContent";
+	  public static final String FAV_COUNTER_HP = "#myFavouritesListBoxCounter";
   }
 }

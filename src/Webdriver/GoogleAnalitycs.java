@@ -53,14 +53,14 @@ public class GoogleAnalitycs {
 
 
     private void setupProxyServer() throws Exception {
-        //server = new ProxyServer(proxyPort);
-        //server.start();
+        server = new ProxyServer(proxyPort);
+        server.start();
     }
     
     
     private void setupNavigator(String browser) throws UnknownHostException, MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        //capabilities.setCapability(CapabilityType.PROXY, server.seleniumProxy());
+        capabilities.setCapability(CapabilityType.PROXY, server.seleniumProxy());
         navigator = new HyvesNavigator(getBrowserDriver(browser, capabilities));
     }
     private WebDriver getBrowserDriver(String browser, DesiredCapabilities caps) throws UnknownHostException, MalformedURLException {
@@ -102,7 +102,7 @@ public class GoogleAnalitycs {
 	@Test(dataProvider =  "tabLinks")
     public void thereShouldBeAnalitycsRequestsOnCategories(String xCategorySelector) throws Exception {
         
-        //server.newHar("hyves.nl");
+        server.newHar("hyves.nl");
         navigator.waitFor(xCategorySelector, 10);
         navigator.wait(5);
         //navigator.clickElement("#searchInput");
@@ -124,7 +124,7 @@ public class GoogleAnalitycs {
     }
 	@AfterClass
 	public void afterClass() throws Exception {
-	    //server.stop();
+	    server.stop();
 	    navigator.quit();
 	}
 }
