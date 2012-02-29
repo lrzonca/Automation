@@ -2,13 +2,7 @@ package Webdriver;
 
 import org.testng.annotations.Test;
 
-//import static org.testng.AssertJUnit.assertEquals;
-
 import org.testng.annotations.Parameters;
-import com.thoughtworks.selenium.Selenium;
-//import org.testng.annotations.Test;
-//import java.util.Date;
-
 
 
 import org.junit.runners.BlockJUnit4ClassRunner;
