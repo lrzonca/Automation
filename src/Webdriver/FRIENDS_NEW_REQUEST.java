@@ -432,23 +432,14 @@ public class FRIENDS_NEW_REQUEST extends SeleniumBase{
 		String harvesting_mail = "spilautomationplayedcontacts@gmail.com", harvesting_password = "Spil1234";		
 		Login("cookietest", "123456");
 		Load_Harvesting_Contract(harvesting_mail, harvesting_password);
-		System.out.println("1");
 		WebElement SeleckAll = driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_SELECT_ALL_CHECKBOX));
-		System.out.println("2");
 		SeleckAll.click();
-		System.out.println("3");
 		Thread.sleep(3000);
-		System.out.println("4");
 		WebElement SelectFirst = driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_FIRST_FRINED_CHECKBOX));
-		System.out.println("5");
 		SelectFirst.click();
-		System.out.println("6");
 		WebElement SendInv = driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_SEND_INVITE_BUTTON));
-		System.out.println("7");
 		SendInv.click();
-		System.out.println("8");
 		Thread.sleep(10000);
-		System.out.println("9");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_GET_STARTED_BUTTON)).isDisplayed());		
 	}	
 	
@@ -463,25 +454,16 @@ public class FRIENDS_NEW_REQUEST extends SeleniumBase{
 		String harvesting_mail = "spilautomationplayedcontacts@gmail.com", harvesting_password = "Spil1234";		
 		Login("cookietest", "123456");
 		Load_Harvesting_Contract(harvesting_mail, harvesting_password);
-		System.out.println("1");
 		WebElement SeleckAll = driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_SELECT_ALL_CHECKBOX));
-		System.out.println("2");
 		if (SeleckAll.isSelected()){
 			SeleckAll.click();
-			System.out.println("3");
 		}
 		Thread.sleep(3000);
-		System.out.println("4");
 		WebElement SelectFirst = driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_FIRST_FRINED_CHECKBOX));
-		System.out.println("5");
 		SelectFirst.click();
-		System.out.println("6");
 		WebElement SendInv = driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_SEND_INVITE_BUTTON));
-		System.out.println("7");
 		SendInv.click();
-		System.out.println("8");
 		Thread.sleep(10000);
-		System.out.println("9");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_GET_STARTED_BUTTON)).isDisplayed());		
 	}
 	
@@ -496,25 +478,16 @@ public class FRIENDS_NEW_REQUEST extends SeleniumBase{
 		String harvesting_mail = "spilautomationplayedcontacts@gmail.com", harvesting_password = "Spil1234";		
 		Login("cookietest", "123456");
 		Load_Harvesting_Contract(harvesting_mail, harvesting_password);
-		System.out.println("1");
 		WebElement SeleckAll = driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_SELECT_ALL_CHECKBOX));
-		System.out.println("2");
 		if (!SeleckAll.isSelected()){
 			SeleckAll.click();
-			System.out.println("3");
 		}
 		Thread.sleep(3000);
-		System.out.println("4");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_NUMBER_OF_CONTRACTS_TEXT)).getText().equals("2"));
-		System.out.println("5");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_NO_PLAYING_CONTRACTS_TEXT)).isDisplayed());
-		System.out.println("6");
 		WebElement SendInv = driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_SEND_INVITE_BUTTON));
-		System.out.println("7");
 		SendInv.click();
-		System.out.println("8");
 		Thread.sleep(10000);
-		System.out.println("9");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_GET_STARTED_BUTTON)).isDisplayed());		
 	}	
 	
@@ -529,38 +502,23 @@ public class FRIENDS_NEW_REQUEST extends SeleniumBase{
 		String harvesting_mail = "spilautomationbignumber@gmail.com", harvesting_password = "Spil1234";		
 		Login("cookietest", "123456");
 		Load_Harvesting_Contract(harvesting_mail, harvesting_password);
-		System.out.println("1");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_SKIP_REGISTERED_FRIEND_LINK)).isDisplayed());
-		System.out.println("2");
 		WebElement Skip = driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_SKIP_REGISTERED_FRIEND_LINK));
-		System.out.println("3");
 		Skip.click();
-		System.out.println("4");
 		Thread.sleep(5000);	
-		System.out.println("5");
 		WebElement SeleckAll = driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_SELECT_ALL_CHECKBOX));
-		System.out.println("6");
 		if (!SeleckAll.isSelected()){
-			System.out.println("7");
 			SeleckAll.click();
-			System.out.println("8");
 		}
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_NUMBER_OF_CONTRACTS_TEXT)).getText().equals("24"));
-		System.out.println("9");
 		int loop = 1, max_loop = Integer.parseInt(driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_NUMBER_OF_CONTRACTS_TEXT)).getText());	
 		while(loop <= max_loop){
-			System.out.println("10");
 			AssertTrue(driver.findElement(By.cssSelector(".harvestNewList table tbody tr:nth-child(" + loop + ") .harvestEmail")).isDisplayed());
-			System.out.println("11");
 			loop++;
 		}
-		System.out.println("12");
 		WebElement SendInv = driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_SEND_INVITE_BUTTON));
-		System.out.println("13");
 		SendInv.click();
-		System.out.println("14");
 		Thread.sleep(10000);
-		System.out.println("15");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_GET_STARTED_BUTTON)).isDisplayed());		
 	}		
 	
@@ -574,35 +532,20 @@ public class FRIENDS_NEW_REQUEST extends SeleniumBase{
 		Thread.sleep(2000);
 		String harvesting_mail = "invalid.mail.com";		
 		Login("cookietest", "123456");
-		System.out.println("1");
 		WebElement MyProfile = driver.findElement(By.cssSelector(Webdriver.mappings.topBar.MY_PROFILE_LINK));
-		System.out.println("2");
 	    MyProfile.click();
-	    System.out.println("3");
 	    Thread.sleep(5000);
-	    System.out.println("4");
 		WebElement TabFriend = driver.findElement(By.cssSelector(Webdriver.mappings.FRIENDS.TAB_FRIENDS));
-		System.out.println("5");
 		TabFriend.click();
-		System.out.println("6");
 	    Thread.sleep(5000);
-	    System.out.println("7");
 		WebElement HarvGetStart = driver.findElement(By.cssSelector(Webdriver.mappings.FRIENDS.HARVESTING_GET_STARTED_BUTTON));
-		System.out.println("8");
 		HarvGetStart.click();
-		System.out.println("9");
 	    Thread.sleep(2000);
-	    System.out.println("10");
 	    WebElement HarvMail = driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_MORE_EMAIL_TEXTBOX));
-	    System.out.println("11");
 	    HarvMail.click();
-	    System.out.println("11");
 	    HarvMail.sendKeys(harvesting_mail);
-	    System.out.println("12");
 	    WebElement SendInv = driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_MORE_SEND_INVITE_BUTTON));
-	    System.out.println("13");
 	    SendInv.click();	  	    
-	    System.out.println("14");
 	    Thread.sleep(2000);
 	    AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_MORE_EMAIL_WRONG_TEXT)).isDisplayed());	    
 	}
@@ -617,35 +560,20 @@ public class FRIENDS_NEW_REQUEST extends SeleniumBase{
 		Thread.sleep(2000);
 		String harvesting_mail = "valid.mail@test.com";		
 		Login("cookietest", "123456");
-		System.out.println("1");
 		WebElement MyProfile = driver.findElement(By.cssSelector(Webdriver.mappings.topBar.MY_PROFILE_LINK));
-		System.out.println("2");
 	    MyProfile.click();
-	    System.out.println("3");
 	    Thread.sleep(5000);
-	    System.out.println("4");
 		WebElement TabFriend = driver.findElement(By.cssSelector(Webdriver.mappings.FRIENDS.TAB_FRIENDS));
-		System.out.println("5");
 		TabFriend.click();
-		System.out.println("6");
 	    Thread.sleep(5000);
-	    System.out.println("7");
 		WebElement HarvGetStart = driver.findElement(By.cssSelector(Webdriver.mappings.FRIENDS.HARVESTING_GET_STARTED_BUTTON));
-		System.out.println("8");
 		HarvGetStart.click();
-		System.out.println("9");
 	    Thread.sleep(2000);
-	    System.out.println("10");
 	    WebElement HarvMail = driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_MORE_EMAIL_TEXTBOX));
-	    System.out.println("11");
 	    HarvMail.click();
-	    System.out.println("11");
 	    HarvMail.sendKeys(harvesting_mail);
-	    System.out.println("12");
 	    WebElement SendInv = driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_MORE_SEND_INVITE_BUTTON));
-	    System.out.println("13");
 	    SendInv.click();	  	    
-	    System.out.println("14");
 	    Thread.sleep(5000);
 	    AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_MORE_EMAIL_CONFIRM_TEXT)).isDisplayed());	    
 	}			
@@ -660,44 +588,25 @@ public class FRIENDS_NEW_REQUEST extends SeleniumBase{
 		Thread.sleep(2000);
 		String harvesting_mail1 = "valid.mail@test.com", harvesting_mail2 = "valid.mail2@test.com";		
 		Login("cookietest", "123456");
-		System.out.println("1");
 		WebElement MyProfile = driver.findElement(By.cssSelector(Webdriver.mappings.topBar.MY_PROFILE_LINK));
-		System.out.println("2");
 	    MyProfile.click();
-	    System.out.println("3");
 	    Thread.sleep(5000);
-	    System.out.println("4");
 		WebElement TabFriend = driver.findElement(By.cssSelector(Webdriver.mappings.FRIENDS.TAB_FRIENDS));
-		System.out.println("5");
-		TabFriend.click();
-		System.out.println("6");
+		TabFriend.click();		
 	    Thread.sleep(5000);
-	    System.out.println("7");
 		WebElement HarvGetStart = driver.findElement(By.cssSelector(Webdriver.mappings.FRIENDS.HARVESTING_GET_STARTED_BUTTON));
-		System.out.println("8");
 		HarvGetStart.click();
-		System.out.println("9");
 	    Thread.sleep(2000);
-	    System.out.println("10");
 	    WebElement HarvMail = driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_MORE_EMAIL_TEXTBOX));
-	    System.out.println("11");
 	    HarvMail.click();
-	    System.out.println("12");
 	    HarvMail.sendKeys(harvesting_mail1);
-	    System.out.println("13");
 	    WebElement AddMoreMail = driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_MORE_ADD_MORE_EMAIL_LINK));
-	    System.out.println("14");
 	    AddMoreMail.click();	    	    
 	    WebElement HarvMail2 = driver.findElement(By.cssSelector(".emailList li:nth-child(2) input"));
-	    System.out.println("15");
 	    HarvMail2.click();
-	    System.out.println("16");
 	    HarvMail2.sendKeys(harvesting_mail2);
-	    System.out.println("17");	    
 	    WebElement SendInv = driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_MORE_SEND_INVITE_BUTTON));
-	    System.out.println("18");
 	    SendInv.click();	  	    
-	    System.out.println("19");
 	    Thread.sleep(2000);
 	    AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_MORE_EMAIL_CONFIRM_TEXT)).isDisplayed());	    
 	}
