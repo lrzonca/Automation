@@ -2,11 +2,7 @@ package Webdriver;
 
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import org.junit.runners.BlockJUnit4ClassRunner;
-import org.junit.runner.RunWith;
 
-
-@RunWith(BlockJUnit4ClassRunner.class)
 public class HEADER extends SeleniumBase{
 
 //	Site logo - click on any link in left navi, click header logo, check url and controls if page return to home page
@@ -55,7 +51,7 @@ public class HEADER extends SeleniumBase{
 		System.out.println(driver.getCurrentUrl());
 		System.out.println(xUrl);
 //		assertTrue(driver.getCurrentUrl().equals(xUrl + "/"));//homepage
-		assertTrue(driver.getCurrentUrl().equals(xUrl + "/movie_awards_2012/movie_awards_2012.html"));
+		assertTrue(driver.getCurrentUrl().equals(xUrl + "/games/movie_awards_2012/movie_awards_2012.html"));
 		assertIsDisplayed(homepage.GAME_LIST);
 	}	
 	

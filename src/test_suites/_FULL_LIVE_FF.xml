@@ -82,13 +82,7 @@
 			</class>		
 			<class name="Webdriver.GAME_PAGE">
 				<methods>					
-					<include name="GamePage1"></include>
 					<include name="GamePage2"></include>
-					<include name="GamePage3"></include>
-					<include name="GamePage4"></include>
-					<include name="GamePage5"></include>
-					<include name="GamePage6"></include>
-					<include name="GamePage7"></include>
 				</methods>
 			</class>	
 			<class name="Webdriver.GOOGLE_ANALYTICS">
@@ -107,8 +101,24 @@
 				</methods>
 			</class>
 			<class name="Webdriver.PROFILE_PAGE">
-				<methods>					
-					<include name="Profile1"></include>
+				<methods>				
+					<include name="Profile1"></include>	
+					<include name="Overview1"></include>
+					<include name="Overview2"></include>
+					<include name="Overview3"></include>
+					<include name="Overview4"></include>
+					<include name="Overview5"></include>
+					<include name="Overview6"></include>
+					<include name="Overview7"></include>
+					<include name="Overview8"></include>
+					<include name="Overview9"></include>
+					<include name="Overview10"></include>
+					<include name="Overview11"></include>
+					<include name="Overview12"></include>
+					<include name="Overview13"></include>
+					<include name="Overview14"></include>
+					<include name="Overview15"></include>
+					<include name="Overview16"></include>
 				</methods>
 			</class>
 			<class name="Webdriver.SIGN_IN">

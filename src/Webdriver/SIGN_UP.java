@@ -3,11 +3,8 @@ package Webdriver;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import java.util.Date;
-import org.junit.runners.BlockJUnit4ClassRunner;
 import org.openqa.selenium.By;
-import org.junit.runner.RunWith;
 
-@RunWith(BlockJUnit4ClassRunner.class)
 public class SIGN_UP extends SeleniumBase{
 	long timestamp = new Date().getTime();
 

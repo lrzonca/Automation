@@ -71,10 +71,11 @@ public class SeleniumBase extends Common{
 
 
 	@AfterMethod
-	  @Parameters({ "xBrowser"})
+	  @Parameters({"xBrowser"})
 	  public void quitDriver(String xBrowser, ITestResult _result, Method method) throws IOException {
 		if (!_result.isSuccess()){
 			System.out.println("TestCase " + this.getClass().getName() + "__" + method.getName() + " was Failed!!!");
+			System.out.println("Last URL was " + driver.getCurrentUrl());
 			Date date = new Date();
 			SimpleDateFormat formatter = new SimpleDateFormat("yyyy.MM.dd");
 			SimpleDateFormat formatter2 = new SimpleDateFormat("HH.mm");

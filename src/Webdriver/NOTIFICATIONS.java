@@ -2,10 +2,7 @@ package Webdriver;
 
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import org.junit.runners.BlockJUnit4ClassRunner;
-import org.junit.runner.RunWith;
 
-@RunWith(BlockJUnit4ClassRunner.class)
 public class NOTIFICATIONS extends SeleniumBase{
 
 //	Top bar - Notifications link - login a user, click "notifications" link from top bar, check url and controls if are present and correct tab is selected 

@@ -4,10 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import org.junit.runners.BlockJUnit4ClassRunner;
-import org.junit.runner.RunWith;
 
-@RunWith(BlockJUnit4ClassRunner.class)
 public class POPULAR_GAMES extends SeleniumBase{
 	  
 //	Popular Games - title -  click to popular games title, check url and if left navi popular games is selected 	
@@ -17,7 +14,7 @@ public class POPULAR_GAMES extends SeleniumBase{
 		System.out.println("Open URL");
 		driver.get(xUrl);				
 		clickElement(populargames.POPULAR_GAMES_TITLE);
-		sleep(3);
+		sleep(5);
 		assertTrue(driver.getCurrentUrl().contains("popular.html"));
 		assertTrue(findElement(leftNavi.POPULAR_GAMES).getAttribute("class").contains("currentOne"));		
 	}
@@ -31,7 +28,7 @@ public class POPULAR_GAMES extends SeleniumBase{
 		String gameUrl = findElement(populargames.POPULAR_GAMES_FIRST_GAME_LINK).getAttribute("href");
 		System.out.println(gameUrl);
 		clickElement(populargames.POPULAR_GAMES_FIRST_GAME_LINK);
-		sleep(3);
+		sleep(5);
 		System.out.println(driver.getCurrentUrl());
 		assertTrue(driver.getCurrentUrl().equals(gameUrl));
 	}	

@@ -2,12 +2,9 @@ package Webdriver;
 
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import org.junit.runners.BlockJUnit4ClassRunner;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.junit.runner.RunWith;
 
-@RunWith(BlockJUnit4ClassRunner.class)
 public class SUBCATEGORY_PAGE extends SeleniumBase{
 	  
 	@Test

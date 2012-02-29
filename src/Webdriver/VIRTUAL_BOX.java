@@ -3,10 +3,7 @@ package Webdriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import org.junit.runners.BlockJUnit4ClassRunner;
-import org.junit.runner.RunWith;
 
-@RunWith(BlockJUnit4ClassRunner.class)
 public class VIRTUAL_BOX extends SeleniumBase{
 	  
 //	Virtual Box - games - click first available game image in social games, check url if correct game was open, 
@@ -18,13 +15,17 @@ public class VIRTUAL_BOX extends SeleniumBase{
 		driver.get(xUrl);	
 		String gameUrl1 = findElement(virtualbox.VIRTUAL_BOX_FIRST_GAME_BOX).getAttribute("href");
 		String gameUrl2 = findElement(virtualbox.VIRTUAL_BOX_SECOND_GAME_BOX).getAttribute("href");
-		clickElement(virtualbox.VIRTUAL_BOX_FIRST_GAME_IMG);
+		clickElement(virtualbox.VIRTUAL_BOX_FIRST_GAME_TEXT_LINK);
 		sleep(5);
+		System.out.println("0 " + gameUrl1);
+		System.out.println("1 " + driver.getCurrentUrl());
 		assertTrue(driver.getCurrentUrl().equals(gameUrl1));
 		System.out.println("Open URL");
 		driver.get(xUrl);	
 		clickElement(virtualbox.VIRTUAL_BOX_SECOND_GAME_TEXT_LINK);
 		sleep(5);
+		System.out.println("0 " + gameUrl2);
+		System.out.println("1 " + driver.getCurrentUrl());
 		assertTrue(driver.getCurrentUrl().equals(gameUrl2));		
 	}
 	

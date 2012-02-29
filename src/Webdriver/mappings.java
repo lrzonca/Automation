@@ -350,6 +350,34 @@ class SelectorFactory {
 			public static final String DELETE_FRIEND_BUTTON = ".delete-friend-user-profile-button";
 			public static final String DELETE_FRIEND_YES_BUTTON = ".popup_bottom_button";
 			public static final String FRIEND_REQUEST_SENT_TEXT = ".dbtnRequestPending";
+			public static final String ACTIVITIES_BOX = ".activitiesBlock";
+			public static final String MY_FRIENDS_BOX = "#latestFriends";
+			public static final String MY_FAVE_GAMES_BOX = "#myFavGamesBox";
+			public static final String LAST_CREATIONS_BOX = "#lastImages";
+			public static final String MY_AWARDS_BOX = "#myAwardsBox";
+			public static final String HIGH_SCORES_BOX = "#myhighscores";
+			
+			public static final String ACTIVITIES_ICON = ".activitiesBlock span.icon";
+			public static final String ACTIVITIES_TITLE = ".activitiesBlock h2.fill-username";
+			public static final String ACTIVITIES_POST_TITLE = ".container h4";
+			public static final String ACTIVITIES_POST_TEXTFIELD_BOX = "#wall_post_new_message iframe#wall_post_txt";
+			public static final String ACTIVITIES_POST_ICONS_BOX = "#emoHolder";
+			public static final String ACTIVITIES_POST_BTN = ".buttons .dbtnSimple a";
+			public static final String ACTIVITIES_POST_LETTER_LEFT_TEXT = ".maxchars";
+			public static final String ACTIVITIES_POST_TEXT = ".frameBody";
+			
+			public static final String MY_FRIENDS_TITLE = ".tc-latestFriendsTitle";
+			public static final String MY_FRIENDS_NO_FRIENDS_BOX = ".friends_friendlist_nofriends";
+			public static final String MY_FRIENDS_NO_FRIENDS_BTN = ".friends_friendlist_nofriends div div div a";
+			public static final String MY_FRIENDS_FIRST_FRIENDS_BOX = ".friends_latest_list ul li:nth-child(1)";
+			public static final String MY_FRIENDS_FIRST_FRIENDS_AVATAR = ".friends_latest_list ul li:nth-child(1) a span.lf-avatar";
+			public static final String MY_FRIENDS_FIRST_FRIENDS_NAME = ".friends_latest_list ul li:nth-child(1) a span.lf-username";
+			public static final String MY_FRIENDS_SEE_ALL_FRIENDS_LINK = ".friends_latest_list div.total a";
+			
+			public static final String MY_FAVE_GAMES_TITLE = ".tc-favoriteTitle";
+			public static final String MY_FAVE_GAMES_FIRST_GAME_BOX = ".tc-favorites-list li:nth-child(1) a.profileGameItem";
+			public static final String MY_FAVE_GAMES_FIRST_GAME_DELETE_BTN = ".tc-favorites-list li:nth-child(1) a.gameDelete";
+			public static final String MY_FAVE_GAMES_SEE_ALL_FAVE_GAMES_LINK = "#privateMorelinkGame";
 		}
 		  
 		public interface notifications{
@@ -365,6 +393,7 @@ class SelectorFactory {
 		public interface favoriteGames{
 			public static final String TAB_FAVORITE_GAMES = "#tab_favorites";
 			public static final String FAVORITE_GAMES_TOP_LINK = "#un_mygames";
+			public static final String FAVORITE_GAMES_FIRST_GAME_BOX = "#favorite-list-myprofile li#mygame_0_1 a";
 		}		
 
 		public interface FRIENDS{
@@ -523,6 +552,7 @@ class SelectorFactory {
 			public static final String VIRTUAL_BOX_FIRST_GAME_BOX = ".virtualbox ul li:nth-child(1) div a";
 			public static final String VIRTUAL_BOX_SECOND_GAME_BOX = ".virtualbox ul li:nth-child(2) div a";
 			public static final String VIRTUAL_BOX_FIRST_GAME_IMG = ".virtualbox ul li:nth-child(1) div a img.thumb";
+			public static final String VIRTUAL_BOX_FIRST_GAME_TEXT_LINK = ".virtualbox ul li:nth-child(1) div a span.overflowElement span";
 			public static final String VIRTUAL_BOX_SECOND_GAME_TEXT_LINK = ".virtualbox ul li:nth-child(2) div a span.overflowElement span";
 			public static final String VIRTUAL_BOX_LEFT_TOOLTIP_BOX = "#tltleft";
 			public static final String VIRTUAL_BOX_LEFT_TOOLTIP_TEXT = "#tltleft div.tltcenter div span.dtooltipDescription";

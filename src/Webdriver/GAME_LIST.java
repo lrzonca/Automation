@@ -27,7 +27,7 @@ public class GAME_LIST extends SeleniumBase{
 		System.out.println("Open URL");
 		driver.get(xUrl);
 		clickElement(gamelist.GAME_LIST_MORE_NEW_GAMES_LINK);
-		sleep(3);
+		sleep(5);
 		assertTrue(driver.getCurrentUrl().contains("new,2.html"));
 	}		
 	

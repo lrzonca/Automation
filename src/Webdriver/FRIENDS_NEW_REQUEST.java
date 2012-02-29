@@ -3,12 +3,9 @@ package Webdriver;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import java.util.Date;
-import org.junit.runners.BlockJUnit4ClassRunner;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.junit.runner.RunWith;
 
-@RunWith(BlockJUnit4ClassRunner.class)
 public class FRIENDS_NEW_REQUEST extends SeleniumBase{
 	long timestamp = new Date().getTime();
 

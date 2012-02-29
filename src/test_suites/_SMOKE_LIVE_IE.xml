@@ -89,7 +89,7 @@
 			</class>
 			<class name="Webdriver.PROFILE_PAGE">
 				<methods>					
-					<include name="Profile1"></include>
+					<include name="Overview1"></include>
 				</methods>
 			</class>
 			<class name="Webdriver.FOOTER">

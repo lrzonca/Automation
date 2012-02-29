@@ -3,12 +3,9 @@
 	<test name="smoke_ie">		
 		<classes>
 			<parameter name="xBrowser" value="firefox"/>			
-			<class name="Webdriver.SOCIAL">			
+			<class name="Webdriver.PROFILE_PAGE">			
 				<methods>					
-					<include name="Social04"></include>
-					<include name="Social06"></include>
-					<include name="Social08"></include>
-					<include name="Social10"></include>
+					<include name="Overview16"></include>
 				</methods>
 			</class>				
 		</classes>		

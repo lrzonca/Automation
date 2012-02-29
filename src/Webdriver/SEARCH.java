@@ -2,10 +2,7 @@ package Webdriver;
 
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import org.junit.runners.BlockJUnit4ClassRunner;
-import org.junit.runner.RunWith;
 
-@RunWith(BlockJUnit4ClassRunner.class)
 public class SEARCH extends SeleniumBase{
 	  
 //	Search - search game "pet party", check controls if are present and if correct game is visible	

@@ -4,10 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import org.junit.runners.BlockJUnit4ClassRunner;
-import org.junit.runner.RunWith;
 
-@RunWith(BlockJUnit4ClassRunner.class)
 public class RECOMMENDED_GAMES extends SeleniumBase{
 	  
 //	Recommended Games - games - click first available game in recommended games, check url if correct game was open 	

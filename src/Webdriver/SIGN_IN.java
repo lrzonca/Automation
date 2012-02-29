@@ -3,16 +3,13 @@ package Webdriver;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import java.util.Date;
-import org.junit.runners.BlockJUnit4ClassRunner;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.junit.runner.RunWith;
 
-@RunWith(BlockJUnit4ClassRunner.class)
 public class SIGN_IN extends SeleniumBase{
 	long timestamp = new Date().getTime();
 
