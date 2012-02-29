@@ -7,8 +7,10 @@ import java.util.List;
 import org.browsermob.core.har.HarEntry;
 import org.browsermob.core.har.HarNameValuePair;
 import org.browsermob.proxy.ProxyServer;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
@@ -70,11 +72,16 @@ public class GoogleAnalitycs {
             ieExtraCaps.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
             ieExtraCaps.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
             return new InternetExplorerDriver(caps.merge(ieExtraCaps));
-        } else {
+        } else if (browser.equals("firefox")) {
             DesiredCapabilities ffExtraCaps = DesiredCapabilities.firefox();
             ffExtraCaps.setBrowserName("firefox");
             ffExtraCaps.setPlatform(org.openqa.selenium.Platform.ANY);
             return new FirefoxDriver(caps.merge(ffExtraCaps));
+        } else {
+            DesiredCapabilities chromeExtraCaps = DesiredCapabilities.firefox();
+            chromeExtraCaps.setBrowserName("chrome");
+            chromeExtraCaps.setPlatform(org.openqa.selenium.Platform.ANY);
+            return new ChromeDriver(caps.merge(chromeExtraCaps));
         }
     }
     
@@ -108,13 +115,6 @@ public class GoogleAnalitycs {
 //                {"#kids_link"}
         };
     }
-    
-    @DataProvider
-    public Object[][] tabLinks2() {
-        return new Object[][] {
-                { hyves.MULTIPLAYER_LINK, "Multiplayer"}
-        };
-    }
 
     @Test
     public void thereShouldBeCorrectParametersSentToGoogleOnHomePage() throws InterruptedException {
@@ -137,21 +137,50 @@ public class GoogleAnalitycs {
         assertNotEquals(ga_utmac.size(), 0);
     }
 
-/*
+
 	@Test(dataProvider =  "tabLinks")
-    public void thereShouldBeAnalitycsRequestsOnEachCategoryPage(String xCategorySelector) throws Exception {
+    public void thereShouldBeAnalitycsUtmeOnEachCategoryPage(String xCategorySelector) throws Exception {
         navigator.waitFor(xCategorySelector, 10);
         
-        server.newHar("hyves.nl");
-
-        assertUrlNotRequested("http://www.google-analytics.com/__utm.gif");
         server.newHar("hyves.nl");
         navigator.clickElement(xCategorySelector);
         navigator.wait(2);
         
-        assertUrlRequested("http://www.google-analytics.com/__utm.gif");
+        List<HarEntry> ga_utme = filterHarEntriesByQueryParamNameValue("utme", "categories", server.getHar().getLog().getEntries());
+        
+        assertNotEquals(ga_utme.size(), 0, "the event type for categories should be category and it's not present");
     }
-*/
+    
+    @Test
+    public void correctPageTypeShouldBeSentToGoogleAnalyticsOnGamePage() throws InterruptedException {
+        navigator.wait(2);
+        navigator.waitFor(hyves.SOCIAL_LINK, 10);
+        navigator.clickElement(hyves.SOCIAL_LINK);
+
+        server.newHar("hyves.nl");
+        navigator.waitFor(".game-item-link[title=Landleven]", 10);
+        navigator.findElement(".game-item-link[title=Landleven]").click();
+        navigator.wait(5);
+        
+        List<HarEntry> ga_utme = filterHarEntriesByQueryParamNameValue("utme", "games-150588", server.getHar().getLog().getEntries());
+        assertNotEquals(ga_utme, 0, "the event type for Landleven should be games-150588");
+    }
+    
+    @Test
+    public void correctEventsShouldBeSentWhenClickingFeatureGames() throws InterruptedException {
+        navigator.wait(2);
+        navigator.waitFor("#box_nieuwe-spellen", 10);
+        server.newHar("Hyves.nl");
+        navigator.wait(4);
+        navigator.clickElement("#box_nieuwe-spellen .game-item-link");
+        
+        List<HarEntry> ga_utmt = filterHarEntriesByQueryParamNameValue("utmt", "event", server.getHar().getLog().getEntries());
+        assertNotEquals(ga_utmt, 0, "the event type reported");
+        List<HarEntry> ga_utme = filterHarEntriesByQueryParamNameValue("utme", "FeaturedGames", server.getHar().getLog().getEntries());
+        assertNotEquals(ga_utme, 0, "the FeaturedGame click was not reported");
+        
+    }
+
     protected void assertUrlNotRequested(final String url) {
         assertEquals(with(server.getHar().getLog().getEntries()).retain(
             having(on(HarEntry.class).getRequest().getUrl(), containsString(url))
@@ -166,6 +195,7 @@ public class GoogleAnalitycs {
     //@Test(dataProvider = "tabLinks2")
     public void thereShouldBeUmtpTypeSentToGoogle(String xCategorySelector, String expectedUtmp) throws Exception {
         navigator.waitFor(xCategorySelector, 10);
+        navigator.wait(5);
         server.newHar("hyves.nl");
         navigator.clickElement(xCategorySelector);
         navigator.wait(1);
