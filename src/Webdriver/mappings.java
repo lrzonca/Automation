@@ -378,6 +378,20 @@ class SelectorFactory {
 			public static final String MY_FAVE_GAMES_FIRST_GAME_BOX = ".tc-favorites-list li:nth-child(1) a.profileGameItem";
 			public static final String MY_FAVE_GAMES_FIRST_GAME_DELETE_BTN = ".tc-favorites-list li:nth-child(1) a.gameDelete";
 			public static final String MY_FAVE_GAMES_SEE_ALL_FAVE_GAMES_LINK = "#privateMorelinkGame";
+			
+			public static final String MY_LATEST_CREATIONS_TITLE = ".tc-creationsTitle";
+			public static final String MY_LATEST_CREATIONS_FIRST_CREATION_BOX = ".tc-creations-list li:nth-child(1) div span a";
+			public static final String MY_LATEST_CREATIONS_FIRST_DELETE_BTN = ".tc-creations-list li:nth-child(1) a.imageDelete";
+			public static final String MY_LATEST_CREATIONS_VIEW_ALBUM_LINK = ".tc-morecreations-url";
+			
+			public static final String MY_AWARDS_TITLE = ".tc-awardsTitle";
+			public static final String MY_AWARDS_FIRST_AWARD_BOX = "#awards ul li:nth-child(1) span img";
+			public static final String MY_AWARDS_SEE_ALL_AWARDS_LINK = "#moreAwards a";			
+			
+			public static final String HIGH_SCORES_TITLE = "#myhighscores span.boxheader";
+			public static final String HIGH_SCORES_NO_HIGH_SCORES_BOX = "#myhighscores div.noresults";
+			public static final String HIGH_SCORES_HIGH_SCORES_BOX = "#userhighscores";
+			public static final String HIGH_SCORES_FIRST_HIGH_SCORES_BOX = "#userhighscores ul li:nth-child(1) div.gamedata div a";
 		}
 		  
 		public interface notifications{
@@ -394,7 +408,17 @@ class SelectorFactory {
 			public static final String TAB_FAVORITE_GAMES = "#tab_favorites";
 			public static final String FAVORITE_GAMES_TOP_LINK = "#un_mygames";
 			public static final String FAVORITE_GAMES_FIRST_GAME_BOX = "#favorite-list-myprofile li#mygame_0_1 a";
-		}		
+		}	
+		
+		public interface album{
+			public static final String TAB_ALBUM = "#tab_gallery";
+			public static final String ALBUM_FIRST_CREATION_BOX = ".gallery-items-list li:nth-child(1) div span a";
+		}
+		
+		public interface awards{
+			public static final String TAB_AWARDS = "#tab_awards";
+			public static final String AWARDS_FIRST_AWARD_BOX = ".results ul li:nth-child(1) span span.awardicon img";
+		}
 
 		public interface FRIENDS{
 			public static final String TAB_FRIENDS = "#tab_friends";
@@ -469,16 +493,16 @@ class SelectorFactory {
 		}
 		  
 		public interface HARVESTING{
-			public static final String EMAIL_TEXTBOX = "Email";
-			public static final String PASSWORD_TEXTBOX = "Passwd";
-			public static final String LOGIN_BUTTON = "signIn";
-			public static final String ALLOW_BUTTON = "allow";
+			public static final String EMAIL_TEXTBOX = "#Email";
+			public static final String PASSWORD_TEXTBOX = "#Passwd";
+			public static final String LOGIN_BUTTON = "#signIn";
+			public static final String ALLOW_BUTTON = "#allow";
 			public static final String LOGOUT_ARROW_MENU = ".gbma";
-			public static final String LOGOUT_BUTTON = "gb_71";
+			public static final String LOGOUT_BUTTON = "#gb_71";
 			public static final String HARVESTING_GET_STARTED_BUTTON = ".beginHarvest a.beginHarvest";
 			public static final String HARVESTING_GMAIL_BUTTON = ".gmail div";
 			public static final String HARVESTING_SIGN_IN_BUTTON = ".harvestLogin";
-			public static final String HARVESTING_SELECT_ALL_CHECKBOX = "markAllForHarvest";
+			public static final String HARVESTING_SELECT_ALL_CHECKBOX = "#markAllForHarvest";
 			public static final String HARVESTING_FIRST_FRINED_CHECKBOX= ".checkboxHolder input";
 			public static final String HARVESTING_SEND_INVITE_BUTTON = ".harvestSendEmailToNew div a.bluebutton";
 			public static final String HARVESTING_NO_CONTRACTS_TEXT = ".harvestNoFriendsRightSide div.dbtnBubbleExclamation span.left";

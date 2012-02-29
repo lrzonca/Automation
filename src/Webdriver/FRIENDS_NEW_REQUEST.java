@@ -433,7 +433,7 @@ public class FRIENDS_NEW_REQUEST extends SeleniumBase{
 		Login("cookietest", "123456");
 		Load_Harvesting_Contract(harvesting_mail, harvesting_password);
 		System.out.println("1");
-		WebElement SeleckAll = driver.findElement(By.id(Webdriver.mappings.HARVESTING.HARVESTING_SELECT_ALL_CHECKBOX));
+		WebElement SeleckAll = driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_SELECT_ALL_CHECKBOX));
 		System.out.println("2");
 		SeleckAll.click();
 		System.out.println("3");
@@ -464,7 +464,7 @@ public class FRIENDS_NEW_REQUEST extends SeleniumBase{
 		Login("cookietest", "123456");
 		Load_Harvesting_Contract(harvesting_mail, harvesting_password);
 		System.out.println("1");
-		WebElement SeleckAll = driver.findElement(By.id(Webdriver.mappings.HARVESTING.HARVESTING_SELECT_ALL_CHECKBOX));
+		WebElement SeleckAll = driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_SELECT_ALL_CHECKBOX));
 		System.out.println("2");
 		if (SeleckAll.isSelected()){
 			SeleckAll.click();
@@ -497,7 +497,7 @@ public class FRIENDS_NEW_REQUEST extends SeleniumBase{
 		Login("cookietest", "123456");
 		Load_Harvesting_Contract(harvesting_mail, harvesting_password);
 		System.out.println("1");
-		WebElement SeleckAll = driver.findElement(By.id(Webdriver.mappings.HARVESTING.HARVESTING_SELECT_ALL_CHECKBOX));
+		WebElement SeleckAll = driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_SELECT_ALL_CHECKBOX));
 		System.out.println("2");
 		if (!SeleckAll.isSelected()){
 			SeleckAll.click();
@@ -538,7 +538,7 @@ public class FRIENDS_NEW_REQUEST extends SeleniumBase{
 		System.out.println("4");
 		Thread.sleep(5000);	
 		System.out.println("5");
-		WebElement SeleckAll = driver.findElement(By.id(Webdriver.mappings.HARVESTING.HARVESTING_SELECT_ALL_CHECKBOX));
+		WebElement SeleckAll = driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.HARVESTING_SELECT_ALL_CHECKBOX));
 		System.out.println("6");
 		if (!SeleckAll.isSelected()){
 			System.out.println("7");

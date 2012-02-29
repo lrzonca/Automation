@@ -343,4 +343,153 @@ public class PROFILE_PAGE extends SeleniumBase{
 		clickElement(myProfile.MY_FAVE_GAMES_FIRST_GAME_BOX);				
 		assertTrue(driver.getCurrentUrl().equals(gameUrl));
 	}		
+	
+	@Test
+//	Profile page - Overview - My Latest Creations - login user without any Creations, click my profile and check controls,
+//	click "view album" and check url
+	@Parameters({"xUrl"})
+	public void Overview17(String xUrl) throws InterruptedException {		
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		Login("cookietest1", "123456");	
+		clickElement(topBar.MY_PROFILE_LINK);
+		sleep(10);
+		assertIsDisplayed(myProfile.MY_LATEST_CREATIONS_TITLE);
+		for (int i = 1; i <= 2 ; i++) {
+			assertIsDisplayed(".tc-creations-list li:nth-child(" + i + ")");
+			assertTrue(findElement(".tc-creations-list li:nth-child(" + i + ") div span a").getAttribute("href").contains("javascript:;"));
+		}
+		assertIsDisplayed(myProfile.MY_LATEST_CREATIONS_VIEW_ALBUM_LINK);
+		clickElement(myProfile.MY_LATEST_CREATIONS_VIEW_ALBUM_LINK);
+		assertTrue(driver.getCurrentUrl().contains("/myalbum.html"));
+		assertTrue(findElement(album.ALBUM_FIRST_CREATION_BOX).getAttribute("href").contains("javascript:;"));
+	}	
+	
+	@Test
+//	Profile page - Overview - My Latest Creations - login user with any Creations, click my profile and check controls
+//	click "view album" and check url
+	@Parameters({"xUrl"})
+	public void Overview18(String xUrl) throws InterruptedException {		
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		Login("cookietest2", "123456");	
+		clickElement(topBar.MY_PROFILE_LINK);
+		sleep(10);
+		assertIsDisplayed(myProfile.MY_LATEST_CREATIONS_TITLE);
+		assertIsDisplayed(myProfile.MY_LATEST_CREATIONS_FIRST_CREATION_BOX);
+		String creationUrl = findElement(myProfile.MY_LATEST_CREATIONS_FIRST_CREATION_BOX).getAttribute("href");		
+		assertIsDisplayed(myProfile.MY_LATEST_CREATIONS_VIEW_ALBUM_LINK);
+		clickElement(myProfile.MY_LATEST_CREATIONS_VIEW_ALBUM_LINK);
+		assertTrue(driver.getCurrentUrl().contains("/myalbum.html"));
+		assertTrue(findElement(album.ALBUM_FIRST_CREATION_BOX).getAttribute("href").equals(creationUrl));
+	}		
+	
+	@Test
+//	Profile page - Overview - My Latest Creations - login user with Creations, click first creation and check url
+	@Parameters({"xUrl"})
+	public void Overview19(String xUrl) throws InterruptedException {		
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		Login("cookietest2", "123456");	
+		clickElement(topBar.MY_PROFILE_LINK);
+		sleep(10);
+		String creationUrl = findElement(myProfile.MY_LATEST_CREATIONS_FIRST_CREATION_BOX).getAttribute("href");	
+		clickElement(myProfile.MY_LATEST_CREATIONS_FIRST_CREATION_BOX);				
+		assertTrue(driver.getCurrentUrl().equals(creationUrl));
+	}
+	
+	@Test
+//	Profile page - Overview - My Awards - login user without any awards, click my profile and check controls,
+//	click "see all awards" and check url
+	@Parameters({"xUrl"})
+	public void Overview20(String xUrl) throws InterruptedException {		
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		Login("cookietest1", "123456");	
+		clickElement(topBar.MY_PROFILE_LINK);
+		sleep(10);
+		assertIsDisplayed(myProfile.MY_AWARDS_TITLE);
+		for (int i = 1; i <= 3 ; i++) {
+			assertIsDisplayed("#awards ul li:nth-child(" + i + ")");
+			assertTrue(findElement("#awards ul li:nth-child(" + i + ") span img").getAttribute("src").contains("/spacer.gif"));
+		}
+		assertIsDisplayed(myProfile.MY_AWARDS_SEE_ALL_AWARDS_LINK);
+		clickElement(myProfile.MY_AWARDS_SEE_ALL_AWARDS_LINK);
+		assertTrue(driver.getCurrentUrl().contains("/myawards.html"));
+		assertTrue(findElement(awards.AWARDS_FIRST_AWARD_BOX).getAttribute("src").contains("/empty.jpg"));
+	}	
+	
+	@Test
+//	Profile page - Overview - My Awards - login user with any awards, click my profile and check controls
+//	click "see all awards" and check url
+	@Parameters({"xUrl"})
+	public void Overview21(String xUrl) throws InterruptedException {		
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		Login("cookietest2", "123456");	
+		clickElement(topBar.MY_PROFILE_LINK);
+		sleep(10);
+		assertIsDisplayed(myProfile.MY_AWARDS_TITLE);
+		assertIsDisplayed(myProfile.MY_AWARDS_FIRST_AWARD_BOX);
+		String creationUrl = findElement(myProfile.MY_AWARDS_FIRST_AWARD_BOX).getAttribute("src");		
+		assertIsDisplayed(myProfile.MY_AWARDS_SEE_ALL_AWARDS_LINK);
+		clickElement(myProfile.MY_AWARDS_SEE_ALL_AWARDS_LINK);
+		sleep(5);
+		assertTrue(driver.getCurrentUrl().contains("/myawards.html"));
+		System.out.println(findElement(awards.AWARDS_FIRST_AWARD_BOX).getAttribute("src"));
+		System.out.println(creationUrl);
+		assertTrue(findElement(awards.AWARDS_FIRST_AWARD_BOX).getAttribute("src").contains(creationUrl));
+	}		
+	
+	@Test
+//	Profile page - Overview - My Awards - login user with awards, click first award and check url
+	@Parameters({"xUrl"})
+	public void Overview22(String xUrl) throws InterruptedException {		
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		Login("cookietest2", "123456");	
+		clickElement(topBar.MY_PROFILE_LINK);
+		sleep(10);
+		String creationUrl = findElement(myProfile.MY_AWARDS_FIRST_AWARD_BOX).getAttribute("src");	
+		clickElement(myProfile.MY_AWARDS_FIRST_AWARD_BOX);				
+		assertTrue(driver.getCurrentUrl().equals(creationUrl));
+	}	
+	
+	@Test
+//	Profile page - Overview - High Scores - login user without any high scores, click my profile and check controls
+	@Parameters({"xUrl"})
+	public void Overview23(String xUrl) throws InterruptedException {		
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		Login("cookietest1", "123456");	
+		clickElement(topBar.MY_PROFILE_LINK);
+		sleep(10);
+		assertIsDisplayed(myProfile.HIGH_SCORES_NO_HIGH_SCORES_BOX);
+	}		
+	
+	@Test
+//	Profile page - Overview - High Scores - login user with any high scores, click my profile and check controls
+	@Parameters({"xUrl"})
+	public void Overview24(String xUrl) throws InterruptedException {		
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		Login("cookietest2", "123456");	
+		clickElement(topBar.MY_PROFILE_LINK);
+		sleep(10);
+		assertIsDisplayed(myProfile.HIGH_SCORES_HIGH_SCORES_BOX);
+		assertIsDisplayed(myProfile.HIGH_SCORES_FIRST_HIGH_SCORES_BOX);
+		String gameUrl = findElement(myProfile.HIGH_SCORES_FIRST_HIGH_SCORES_BOX).getAttribute("href");
+		clickElement(myProfile.HIGH_SCORES_FIRST_HIGH_SCORES_BOX);
+		sleep(5);
+		assertTrue(driver.getCurrentUrl().contains(gameUrl));
+		
+	}		
 }

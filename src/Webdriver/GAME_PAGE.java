@@ -20,7 +20,7 @@ public class GAME_PAGE extends SeleniumBase{
 	}
 	
 	@Test
-	/* Jave - check if game was open correctly 
+	/* Java - check if game was open correctly 
 	 */	
 	@Parameters({"xUrl"})
 	public void GamePage2(String xUrl) throws InterruptedException {

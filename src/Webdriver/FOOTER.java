@@ -222,7 +222,7 @@ public class FOOTER extends SeleniumBase{
 		assertTrue(driver.getCurrentUrl().equals(url));		
 	}
 	
-//	Footer Country - 
+//	Footer Country - check all controls
 	@Test
 	@Parameters({"xUrl"})
 	public void Country01(String xUrl) throws InterruptedException {
@@ -248,7 +248,7 @@ public class FOOTER extends SeleniumBase{
 		}				
 	}	
 	
-//	Footer Country - Argentina
+//	Footer Country - Argentina - click flag and check url
 	@Test
 	@Parameters({"xUrl"})
 	public void Country02(String xUrl) throws InterruptedException {
@@ -261,7 +261,7 @@ public class FOOTER extends SeleniumBase{
 		assertTrue(driver.getCurrentUrl().equals(siteUrl));
 	}
 	
-//	Footer Country - Brasil
+//	Footer Country - Brasil - click flag and check url
 	@Test
 	@Parameters({"xUrl"})
 	public void Country03(String xUrl) throws InterruptedException {
@@ -274,7 +274,7 @@ public class FOOTER extends SeleniumBase{
 		assertTrue(driver.getCurrentUrl().equals(siteUrl));
 	}	
 	
-//	Footer Country - Chile
+//	Footer Country - Chile - click flag and check url
 	@Test
 	@Parameters({"xUrl"})
 	public void Country04(String xUrl) throws InterruptedException {
@@ -287,7 +287,7 @@ public class FOOTER extends SeleniumBase{
 		assertTrue(driver.getCurrentUrl().equals(siteUrl));
 	}	
 	
-//	Footer Country - Colombia
+//	Footer Country - Colombia - click flag and check url
 	@Test
 	@Parameters({"xUrl"})
 	public void Country05(String xUrl) throws InterruptedException {
@@ -300,7 +300,7 @@ public class FOOTER extends SeleniumBase{
 		assertTrue(driver.getCurrentUrl().equals(siteUrl));
 	}	
 	
-//	Footer Country - Deutschland
+//	Footer Country - Deutschland - click flag and check url
 	@Test
 	@Parameters({"xUrl"})
 	public void Country06(String xUrl) throws InterruptedException {
@@ -313,7 +313,7 @@ public class FOOTER extends SeleniumBase{
 		assertTrue(driver.getCurrentUrl().equals(siteUrl));
 	}	
 	
-//	Footer Country - Espana
+//	Footer Country - Espana - click flag and check url
 	@Test
 	@Parameters({"xUrl"})
 	public void Country07(String xUrl) throws InterruptedException {
@@ -326,7 +326,7 @@ public class FOOTER extends SeleniumBase{
 		assertTrue(driver.getCurrentUrl().equals(siteUrl));
 	}	
 	
-//	Footer Country - France
+//	Footer Country - France - click flag and check url
 	@Test
 	@Parameters({"xUrl"})
 	public void Country08(String xUrl) throws InterruptedException {
@@ -339,7 +339,7 @@ public class FOOTER extends SeleniumBase{
 		assertTrue(driver.getCurrentUrl().equals(siteUrl));
 	}	
 	
-//	Footer Country - Indonesia
+//	Footer Country - Indonesia - click flag and check url
 	@Test
 	@Parameters({"xUrl"})
 	public void Country09(String xUrl) throws InterruptedException {
@@ -352,7 +352,7 @@ public class FOOTER extends SeleniumBase{
 		assertTrue(driver.getCurrentUrl().equals(siteUrl));
 	}	
 	
-//	Footer Country - Italia
+//	Footer Country - Italia - click flag and check url
 	@Test
 	@Parameters({"xUrl"})
 	public void Country10(String xUrl) throws InterruptedException {
@@ -365,7 +365,7 @@ public class FOOTER extends SeleniumBase{
 		assertTrue(driver.getCurrentUrl().equals(siteUrl));
 	}	
 	
-//	Footer Country - Mexico
+//	Footer Country - Mexico - click flag and check url
 	@Test
 	@Parameters({"xUrl"})
 	public void Country11(String xUrl) throws InterruptedException {
@@ -378,7 +378,7 @@ public class FOOTER extends SeleniumBase{
 		assertTrue(driver.getCurrentUrl().equals(siteUrl));
 	}	
 	
-//	Footer Country - Nederland
+//	Footer Country - Nederland - click flag and check url
 	@Test
 	@Parameters({"xUrl"})
 	public void Country12(String xUrl) throws InterruptedException {
@@ -391,7 +391,7 @@ public class FOOTER extends SeleniumBase{
 		assertTrue(driver.getCurrentUrl().equals(siteUrl));
 	}	
 	
-//	Footer Country - Polska
+//	Footer Country - Polska - click flag and check url
 	@Test
 	@Parameters({"xUrl"})
 	public void Country13(String xUrl) throws InterruptedException {
@@ -404,7 +404,7 @@ public class FOOTER extends SeleniumBase{
 		assertTrue(driver.getCurrentUrl().equals(siteUrl));
 	}	
 	
-//	Footer Country - Russia
+//	Footer Country - Russia - click flag and check url
 	@Test
 	@Parameters({"xUrl"})
 	public void Country14(String xUrl) throws InterruptedException {
@@ -417,7 +417,7 @@ public class FOOTER extends SeleniumBase{
 		assertTrue(driver.getCurrentUrl().equals(siteUrl));
 	}	
 	
-//	Footer Country - Sverige
+//	Footer Country - Sverige - click flag and check url
 	@Test
 	@Parameters({"xUrl"})
 	public void Country15(String xUrl) throws InterruptedException {
@@ -430,7 +430,7 @@ public class FOOTER extends SeleniumBase{
 		assertTrue(driver.getCurrentUrl().equals(siteUrl));
 	}	
 	
-//	Footer Country - Turkiye
+//	Footer Country - Turkiye - click flag and check url
 	@Test
 	@Parameters({"xUrl"})
 	public void Country16(String xUrl) throws InterruptedException {
@@ -443,7 +443,7 @@ public class FOOTER extends SeleniumBase{
 		assertTrue(driver.getCurrentUrl().equals(siteUrl));
 	}	
 	
-//	Footer Country - UK
+//	Footer Country - UK - click flag and check url
 	@Test
 	@Parameters({"xUrl"})
 	public void Country17(String xUrl) throws InterruptedException {
@@ -456,7 +456,7 @@ public class FOOTER extends SeleniumBase{
 		assertTrue(driver.getCurrentUrl().equals(siteUrl));
 	}	
 	
-//	Footer Country - USA
+//	Footer Country - USA - click flag and check url
 	@Test
 	@Parameters({"xUrl"})
 	public void Country18(String xUrl) throws InterruptedException {
@@ -469,7 +469,7 @@ public class FOOTER extends SeleniumBase{
 		assertTrue(driver.getCurrentUrl().equals(siteUrl));
 	}	
 	
-//	Footer Country - Venezuela
+//	Footer Country - Venezuela - click flag and check url
 	@Test
 	@Parameters({"xUrl"})
 	public void Country19(String xUrl) throws InterruptedException {

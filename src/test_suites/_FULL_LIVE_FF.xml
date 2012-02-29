@@ -12,7 +12,7 @@
 					<include name="TC_01"></include>
 				</methods>
 			</class>
-			<class name="WEBSERVICE.CONFIGAR">
+			<class name="WEBSERVICE.BABBLAR">
 				<methods>
 					<include name="TC_01"></include>
 				</methods>
@@ -67,6 +67,20 @@
 	<test name="live_ff">		
 		<classes>
 			<parameter name="xBrowser" value="firefox"/>
+			<class name="Webdriver.ACTIVE_BOX">
+				<methods>					
+					<include name="Active01"></include>
+					<include name="Active03"></include>
+					<include name="Active04"></include>
+					<include name="Active05"></include>
+					<include name="Active06"></include>
+					<include name="Active07"></include>
+					<include name="Active09"></include>
+					<include name="Active10"></include>
+					<include name="Active11"></include>
+					<include name="Active12"></include>
+				</methods>
+			</class>
 			<class name="Webdriver.AVATAR">
 				<methods>					
 					<include name="Avatar1"></include>
@@ -119,6 +133,14 @@
 					<include name="Overview14"></include>
 					<include name="Overview15"></include>
 					<include name="Overview16"></include>
+					<include name="Overview17"></include>
+					<include name="Overview18"></include>
+					<include name="Overview19"></include>
+					<include name="Overview20"></include>
+					<include name="Overview21"></include>
+					<include name="Overview22"></include>
+					<include name="Overview23"></include>
+					<include name="Overview24"></include>
 				</methods>
 			</class>
 			<class name="Webdriver.SIGN_IN">
@@ -260,8 +282,18 @@
 					<include name="Country17"></include>	
 					<include name="Country18"></include>
 					<include name="Country19"></include>															
+				</methods>				
+			</class>		
+			<class name="Webdriver.FAVORITE_GAMES">			
+				<methods>					
+					<include name="Favorite1"></include>
 				</methods>
-			</class>																					
+			</class>	
+			<class name="Webdriver.NOTIFICATIONS">			
+				<methods>					
+					<include name="Notifications1"></include>
+				</methods>
+			</class>																								
 		</classes>		
 	</test>
 </suite>

@@ -331,38 +331,50 @@ public class Common extends TestCase implements mappings {
 	/* Description
 	 */
 	public void Load_Harvesting_Contract(String email, String password) throws InterruptedException {
-		WebElement MyProfile = driver.findElement(By.cssSelector(Webdriver.mappings.topBar.MY_PROFILE_LINK));
-	    MyProfile.click();
-	    Thread.sleep(5000);
-		WebElement TabFriend = driver.findElement(By.id(Webdriver.mappings.FRIENDS.TAB_FRIENDS));
-		TabFriend.click();
-	    Thread.sleep(5000);
-		WebElement HarvGetStart = driver.findElement(By.cssSelector(Webdriver.mappings.FRIENDS.HARVESTING_GET_STARTED_BUTTON));
-		HarvGetStart.click();
-	    Thread.sleep(2000);
-		WebElement HarvGmailBtn = driver.findElement(By.cssSelector(Webdriver.mappings.FRIENDS.HARVESTING_GMAIL_BUTTON));
-		HarvGmailBtn.click();
-		WebElement HarvSignIn = driver.findElement(By.cssSelector(Webdriver.mappings.FRIENDS.HARVESTING_SIGN_IN_BUTTON));
-		HarvSignIn.click();
-	    Thread.sleep(15000);	    
+//		WebElement MyProfile = driver.findElement(By.cssSelector(Webdriver.mappings.topBar.MY_PROFILE_LINK));
+//	    MyProfile.click();
+//	    Thread.sleep(5000);
+	    clickElement(topBar.MY_PROFILE_LINK);
+//		WebElement TabFriend = driver.findElement(By.cssSelector(Webdriver.mappings.FRIENDS.TAB_FRIENDS));
+//		TabFriend.click();
+//	    Thread.sleep(5000);
+	    clickElement(FRIENDS.TAB_FRIENDS);
+//		WebElement HarvGetStart = driver.findElement(By.cssSelector(Webdriver.mappings.FRIENDS.HARVESTING_GET_STARTED_BUTTON));
+//		HarvGetStart.click();
+//	    Thread.sleep(2000);
+	    clickElement(FRIENDS.HARVESTING_GET_STARTED_BUTTON);
+//		WebElement HarvGmailBtn = driver.findElement(By.cssSelector(Webdriver.mappings.FRIENDS.HARVESTING_GMAIL_BUTTON));
+//		HarvGmailBtn.click();
+		clickElement(FRIENDS.HARVESTING_GMAIL_BUTTON);
+//		WebElement HarvSignIn = driver.findElement(By.cssSelector(Webdriver.mappings.FRIENDS.HARVESTING_SIGN_IN_BUTTON));
+//		HarvSignIn.click();
+		clickElement(FRIENDS.HARVESTING_SIGN_IN_BUTTON);
+//	    Thread.sleep(15000);	    
+		sleep(15);
 	    System.out.println(driver.getWindowHandles().toString());
 	    for (String handle : driver.getWindowHandles()) {
-	    	  driver.switchTo().window(handle);
-	    	}	    
-	    WebElement HarvMail = driver.findElement(By.id(Webdriver.mappings.HARVESTING.EMAIL_TEXTBOX));
-	    HarvMail.click();
-	    HarvMail.sendKeys(email);
-	    WebElement HarvPass = driver.findElement(By.id(Webdriver.mappings.HARVESTING.PASSWORD_TEXTBOX));
-	    HarvPass.click();
-	    HarvPass.sendKeys(password);	   
-	    WebElement HarvLogin = driver.findElement(By.id(Webdriver.mappings.HARVESTING.LOGIN_BUTTON));
-	    HarvLogin.click();
-	    WebElement HarvAllow = driver.findElement(By.id(Webdriver.mappings.HARVESTING.ALLOW_BUTTON));
-	    HarvAllow.click();
+	    	driver.switchTo().window(handle);
+	    }	    
+//	    WebElement HarvMail = driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.EMAIL_TEXTBOX));
+//	    HarvMail.click();
+//	    HarvMail.sendKeys(email);
+	    insertData(HARVESTING.EMAIL_TEXTBOX, email);
+//	    WebElement HarvPass = driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.PASSWORD_TEXTBOX));
+//	    HarvPass.click();
+//	    HarvPass.sendKeys(password);	   
+	    insertData(HARVESTING.PASSWORD_TEXTBOX, password);
+//	    WebElement HarvLogin = driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.LOGIN_BUTTON));
+//	    HarvLogin.click();
+//	    sleep(5);
+	    clickElement(HARVESTING.LOGIN_BUTTON);
+	    sleep(5);
+//	    WebElement HarvAllow = driver.findElement(By.cssSelector(Webdriver.mappings.HARVESTING.ALLOW_BUTTON));
+//	    HarvAllow.click();
+	    clickElement(HARVESTING.ALLOW_BUTTON);
 	    Thread.sleep(10000);
 	    for (String handle : driver.getWindowHandles()) {
-	    	  driver.switchTo().window(handle);
-	    	}	    
+	    	driver.switchTo().window(handle);
+	    }	    
 	}
 	
 	
