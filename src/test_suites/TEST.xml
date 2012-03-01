@@ -2,20 +2,10 @@
 	<parameter name="xUrl" value="http://www.girlsgogames.com"/>	
 	<test name="smoke_ie">		
 		<classes>
-			<parameter name="xBrowser" value="firefox"/>			
-			<class name="Webdriver.FRIENDS_NEW_REQUEST">			
+			<parameter name="xBrowser" value="iexplore"/>			
+			<class name="Webdriver.SUBCATEGORY_PAGE">			
 				<methods>					
-					<include name="Friend11"></include>
-					<include name="Friend12"></include>
-					<include name="Friend13"></include>
-					<include name="Friend14"></include>
-					<include name="Friend15"></include>
-					<include name="Friend16"></include>
-					<include name="Friend17"></include>
-					<include name="Friend18"></include>
-					<include name="Friend19"></include>
-					<include name="Friend20"></include>
-					<include name="Friend21"></include>					
+					<include name="Subcategory1"></include>			
 				</methods>
 			</class>				
 		</classes>		

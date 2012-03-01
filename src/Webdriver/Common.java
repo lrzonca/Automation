@@ -155,18 +155,16 @@ public class Common extends TestCase implements mappings {
 
 	public void Sign_Up2(String e_1, String u_1, String p_1, String p2_1, String a_1, String a_2, String a_3) throws InterruptedException {
 		Sign_Up_TEST2(e_1, u_1, p_1, a_1, a_2, a_3);
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_EMAIL_VALID)).isDisplayed());
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_USERNAME_VALID)).isDisplayed());
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_PASSWORD_VALID)).isDisplayed());
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_DOB_VALID)).isDisplayed());
-		WebElement signMeIn = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_SIGNMEUP));
-		signMeIn.click();
+		assertIsDisplayed(signUp.REGISTER_EMAIL_VALID);
+		assertIsDisplayed(signUp.REGISTER_USERNAME_VALID);
+		assertIsDisplayed(signUp.REGISTER_PASSWORD_VALID);
+		assertIsDisplayed(signUp.REGISTER_DOB_VALID);
+		clickElement(signUp.REGISTER_SIGNMEUP);
 		Thread.sleep(5000);
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_WELCOME_TEXT)).isDisplayed());
-		WebElement welcomeClose = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_WELCOME_CLOSE_BTN));
-		welcomeClose.click();
+		assertIsDisplayed(signUp.REGISTER_WELCOME_TEXT);
+		clickElement(signUp.REGISTER_WELCOME_CLOSE_BTN);
 		Thread.sleep(10000);
-		assertEquals(this.u, driver.findElement(By.cssSelector(Webdriver.mappings.topBar.USERNAME_LINK)).getText());
+		assertEquals(this.u, findElement(topBar.USERNAME_LINK).getText());
 	}	
 	
 	
