@@ -386,6 +386,7 @@ class SelectorFactory {
 			
 			public static final String MY_AWARDS_TITLE = ".tc-awardsTitle";
 			public static final String MY_AWARDS_FIRST_AWARD_BOX = "#awards ul li:nth-child(1) span img";
+			public static final String MY_AWARDS_FIRST_AWARD_LINK = "#awards ul li:nth-child(1) a";
 			public static final String MY_AWARDS_SEE_ALL_AWARDS_LINK = "#moreAwards a";			
 			
 			public static final String HIGH_SCORES_TITLE = "#myhighscores span.boxheader";
@@ -402,6 +403,14 @@ class SelectorFactory {
 			public static final String REMOVE_MESSAGE = ".links div:nth-child(2) div a";
 			public static final String CLOUD_BOX = ".cloud";
 			public static final String NOTIFICATIONS_TOP_LINK = "#un_mynotifications";
+			public static final String NOTIFICATIONS_TOP_INFO_TEXT = ".user-alert-functional-2 div.noMessagesNotice";
+			public static final String NOTIFICATIONS_NO_NOTIFICATIONS_BOX = "#inboxLayout div.main div.content div:nth-child(2) div.noMessagesNotice";
+			public static final String NOTIFICATIONS_NOTIFICATIONS_BOX = "#inboxLayout div.main div.content div:nth-child(2) ul.messages";
+			public static final String NOTIFICATIONS_ALL_BTN = ".//*[@id='inboxLayout']/div/div/div[2]/div[1]/a[1]/span";
+			public static final String NOTIFICATIONS_FRIEND_REQUESTS_BTN = ".//*[@id='inboxLayout']/div/div/div[2]/div[1]/a[2]/span";
+			public static final String NOTIFICATIONS_GIRLSGOGAMES_BTN = ".//*[@id='inboxLayout']/div/div/div[2]/div[1]/a[3]/span";
+			public static final String NOTIFICATIONS_FRIEND_REQUEST_ACCEPTED_MSG_BOX = ".messages li.friendrequestaccepted";
+			public static final String NOTIFICATIONS_WELCOME_MSG_BOX = ".messages li.welcome";
 		}
 		
 		public interface favoriteGames{
@@ -417,7 +426,8 @@ class SelectorFactory {
 		
 		public interface awards{
 			public static final String TAB_AWARDS = "#tab_awards";
-			public static final String AWARDS_FIRST_AWARD_BOX = ".results ul li:nth-child(1) span span.awardicon img";
+			public static final String AWARDS_FIRST_AWARD_BOX = ".results ul li:nth-child(1) span a span.awardicon img";
+			public static final String AWARDS_FIRST_EMPTY_AWARD_BOX = ".noresults ul li:nth-child(1) span span.awardicon img";
 		}
 
 		public interface FRIENDS{

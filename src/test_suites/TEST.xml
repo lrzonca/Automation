@@ -2,10 +2,10 @@
 	<parameter name="xUrl" value="http://www.girlsgogames.com"/>	
 	<test name="smoke_ie">		
 		<classes>
-			<parameter name="xBrowser" value="iexplore"/>			
-			<class name="Webdriver.SUBCATEGORY_PAGE">			
+			<parameter name="xBrowser" value="firefox"/>			
+			<class name="Webdriver.NOTIFICATIONS">			
 				<methods>					
-					<include name="Subcategory1"></include>			
+					<include name="Notifications3"></include>					
 				</methods>
 			</class>				
 		</classes>		

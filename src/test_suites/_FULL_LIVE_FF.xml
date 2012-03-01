@@ -292,6 +292,8 @@
 			<class name="Webdriver.NOTIFICATIONS">			
 				<methods>					
 					<include name="Notifications1"></include>
+					<include name="Notifications2"></include>
+					<include name="Notifications3"></include>
 				</methods>
 			</class>
 			<class name="Webdriver.FRIENDS_NEW_REQUEST">			
@@ -306,7 +308,14 @@
 					<include name="Friend18"></include>
 					<include name="Friend19"></include>
 					<include name="Friend20"></include>
-					<include name="Friend21"></include>					
+					<include name="Friend21"></include>
+					<include name="Friend22"></include>
+					<include name="Friend23"></include>
+					<include name="Friend24"></include>
+					<include name="Friend25"></include>
+					<include name="Friend26"></include>
+					<include name="Friend27"></include>
+					<include name="Friend28"></include>					
 				</methods>
 			</class>																											
 		</classes>		

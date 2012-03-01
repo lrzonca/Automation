@@ -169,7 +169,7 @@ public class PROFILE_PAGE extends SeleniumBase{
 //	Profile page - Overview - Latest Activities - click own avatar and check url
 	@Parameters({"xUrl"})
 	public void Overview7(String xUrl) throws InterruptedException {
-		String userUrl = "userUrl";
+		String userUrl = "cookietest1";
 		System.out.println("Open URL");
 		driver.get(xUrl);
 		sleep(5);
@@ -419,8 +419,9 @@ public class PROFILE_PAGE extends SeleniumBase{
 		}
 		assertIsDisplayed(myProfile.MY_AWARDS_SEE_ALL_AWARDS_LINK);
 		clickElement(myProfile.MY_AWARDS_SEE_ALL_AWARDS_LINK);
+		sleep(5);
 		assertTrue(driver.getCurrentUrl().contains("/myawards.html"));
-		assertTrue(findElement(awards.AWARDS_FIRST_AWARD_BOX).getAttribute("src").contains("/empty.jpg"));
+		assertTrue(findElement(awards.AWARDS_FIRST_EMPTY_AWARD_BOX).getAttribute("src").contains("/empty.jpg"));
 	}	
 	
 	@Test
@@ -456,8 +457,8 @@ public class PROFILE_PAGE extends SeleniumBase{
 		Login("cookietest2", "123456");	
 		clickElement(topBar.MY_PROFILE_LINK);
 		sleep(10);
-		String creationUrl = findElement(myProfile.MY_AWARDS_FIRST_AWARD_BOX).getAttribute("src");	
-		clickElement(myProfile.MY_AWARDS_FIRST_AWARD_BOX);				
+		String creationUrl = findElement(myProfile.MY_AWARDS_FIRST_AWARD_LINK).getAttribute("href");	
+		clickElement(myProfile.MY_AWARDS_FIRST_AWARD_BOX);			
 		assertTrue(driver.getCurrentUrl().equals(creationUrl));
 	}	
 	
