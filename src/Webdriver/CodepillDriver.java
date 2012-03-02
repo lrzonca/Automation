@@ -45,8 +45,12 @@ public class CodepillDriver implements WebDriver {
         return driver.findElement(By.cssSelector(selector));
     }
     
-    public void wait(int secs) throws InterruptedException {
-        Thread.sleep(secs * 1000);
+    public void wait(int secs) {
+        try {
+            Thread.sleep(secs * 1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
     
     //delegates to original driver object
