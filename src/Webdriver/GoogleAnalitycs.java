@@ -187,7 +187,15 @@ public class GoogleAnalitycs {
         
     }
     
+    @Test
+    public void correctEventsShouldBeSentWhenClickingGameFromFeature() throws InterruptedException {
+        driver.waitFor("#box_nieuwe-spellen", 10);
+        server.newHar("Hyves.nl");
+        driver.clickElement("#box_nieue-spellen .game-item-link");
+        //ref=featured-games
         
+        List<HarEntry> ga_utmt = filterHarEntriesByQueryParamNameValue("utmp", "ref=featured-games", server.getHar().getLog().getEntries());
+        assertNotEquals(ga_utmt.size(), 0, "the event type reported");
     }
 
     protected void assertUrlNotRequested(final String url) {
