@@ -38,7 +38,7 @@ public class GoogleAnalitycs {
 
     public WebDriver driver;
     private ProxyServer server;
-    private HyvesNavigator navigator;
+    private CodepillDriver navigator;
     private int proxyPort = 9090;
 
     @Parameters({"xProxyPort"})
@@ -62,7 +62,7 @@ public class GoogleAnalitycs {
     private void setupNavigator(String browser) throws UnknownHostException, MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(CapabilityType.PROXY, server.seleniumProxy());
-        navigator = new HyvesNavigator(getBrowserDriver(browser, capabilities));
+        navigator = new CodepillDriver(getBrowserDriver(browser, capabilities));
     }
     private WebDriver getBrowserDriver(String browser, DesiredCapabilities caps) throws UnknownHostException, MalformedURLException {
         if (browser.equals("iexplore")) {

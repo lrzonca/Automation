@@ -12,9 +12,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Webdriver.mappings.hyves;
 
-public class HyvesNavigator implements WebDriver {
+public class CodepillDriver implements WebDriver {
     WebDriver driver;
-    HyvesNavigator(WebDriver driver) {
+    CodepillDriver(WebDriver driver) {
         this.driver = driver;
     }
     

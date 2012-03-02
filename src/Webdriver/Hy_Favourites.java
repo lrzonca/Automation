@@ -10,7 +10,7 @@ import org.testng.annotations.Parameters;
 
 
 public class Hy_Favourites extends SeleniumBase{
-	private HyvesNavigator navigator;
+	private CodepillDriver navigator;
 	String RemoveFavText = "Uit favorieten verwijderen";
 	String RemoveFavPopupText = "Het spel is verwijderd van de favorietenlijst.";
 	String EmptySpace = " ";
