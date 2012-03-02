@@ -10,12 +10,15 @@ import org.browsermob.proxy.ProxyServer;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 import static org.testng.Assert.*;
@@ -101,10 +104,6 @@ public class GoogleAnalitycs {
     public void afterTest() {
         server.endPage();
     }
-    @Test
-    public void dummy() throws InterruptedException{
-        driver.wait(2);
-    }
     
     @DataProvider
     public Object[][] tabLinks() {
@@ -121,7 +120,6 @@ public class GoogleAnalitycs {
 //                {"#kids_link"}
         };
     }
-
     @Test
     public void thereShouldBeCorrectParametersSentToGoogleOnHomePage() throws InterruptedException {
         driver.wait(4);
@@ -134,10 +132,10 @@ public class GoogleAnalitycs {
     }
     
     @Test
-    public void utmacShouldReferenceCorrectUACode() throws InterruptedException {
-        navigator.wait(4);
+    public void utmacShouldReferenceCorrectUACode() {
+        driver.wait(4);
         server.endPage();
-        String uacode =(String) ((JavascriptExecutor) navigator.driver).executeScript("return g_oSocialnetwork.UACode");
+        String uacode =(String) ((JavascriptExecutor) driver.driver).executeScript("return g_oSocialnetwork.UACode");
         List<HarEntry> ga_utmac = filterHarEntriesByQueryParamNameValue("utmac", uacode, server.getHar().getLog().getEntries());
         
         assertNotEquals(ga_utmac.size(), 0);
@@ -179,25 +177,33 @@ public class GoogleAnalitycs {
         server.newHar("Hyves.nl");
         driver.wait(4);
         driver.clickElement("#box_nieuwe-spellen .game-item-link");
-        
+        driver.wait(13);
         List<HarEntry> ga_utmt = filterHarEntriesByQueryParamNameValue("utmt", "event", server.getHar().getLog().getEntries());
         assertNotEquals(ga_utmt.size(), 0, "the event type reported");
         List<HarEntry> ga_utme = filterHarEntriesByQueryParamNameValue("utme", "FeaturedGames", server.getHar().getLog().getEntries());
         assertNotEquals(ga_utme.size(), 0, "the FeaturedGame click was not reported");
         
     }
-    
     @Test
-    public void correctEventsShouldBeSentWhenClickingGameFromFeature() throws InterruptedException {
-        driver.waitFor("#box_nieuwe-spellen", 10);
-        server.newHar("Hyves.nl");
-        driver.clickElement("#box_nieue-spellen .game-item-link");
-        //ref=featured-games
+    public void correctEventsShouldBeSentWhenClickingGameFromFeature() {
+        driver.sleep(10).until(new ExpectedCondition<WebElement>() {
+            public WebElement apply(WebDriver d) {
+                WebElement el = d.findElement(By.cssSelector("#box_nieuwe-spellen .game-item-link"));
+                if (null != el && el.isDisplayed()) {
+                    return el;
+                }
+                return null;
+            }
+        });
         
+        server.newHar("Hyves.nl");
+        driver.clickElement("#box_nieuwe-spellen a.game-item-link");
+        driver.clickElement("#box_nieuwe-spellen a.game-item-link");
+        //ref=featured-games
+        driver.wait(15);
         List<HarEntry> ga_utmt = filterHarEntriesByQueryParamNameValue("utmp", "ref=featured-games", server.getHar().getLog().getEntries());
         assertNotEquals(ga_utmt.size(), 0, "the event type reported");
     }
-
     protected void assertUrlNotRequested(final String url) {
         assertEquals(with(server.getHar().getLog().getEntries()).retain(
             having(on(HarEntry.class).getRequest().getUrl(), containsString(url))
@@ -227,8 +233,7 @@ public class GoogleAnalitycs {
     public void thereShouldBeUnbounceEventSent(String xCategorySelector) throws Exception {
         driver.waitFor(xCategorySelector, 10);
         driver.clickElement(xCategorySelector);
-        navigator.wait(62);
-        List<HarEntry> unbounceEntries = filterHarEntriesByQueryParamNameValue("utme", "unbounce", server.getHar().getLog().getEntries());
+        driver.wait(62);
         assertNotEquals(
             filterHarEntriesByQueryParamValue(
                 "event",
@@ -244,7 +249,6 @@ public class GoogleAnalitycs {
         );
     }
     
-
     private List<HarEntry> filterHarEntriesByUrl(String url, List<HarEntry> entries) {
         return with(entries).retain(
             having(on(HarEntry.class).getRequest().getUrl(), containsString(url))
@@ -305,7 +309,7 @@ public class GoogleAnalitycs {
     } 
     @AfterClass
     public void afterClass() throws Exception {
-        navigator.logout();
+        //navigator.logout();
         server.stop();
         driver.quit();
     }
