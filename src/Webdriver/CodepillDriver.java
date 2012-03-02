@@ -18,17 +18,6 @@ public class CodepillDriver implements WebDriver {
         this.driver = driver;
     }
     
-    public void login(String username, String password) {
-        
-        waitFor(hyves.USERNAME_FIELD, 20);
-        clickElement(hyves.USERNAME_FIELD);
-        insertData(hyves.USERNAME_FIELD, username);
-        clickElement(hyves.PASSWORD_FIELD);
-        insertData(hyves.PASSWORD_FIELD, password);
-        
-        clickElement(hyves.LOGIN_BUTTON);
-
-    }
     public WebDriverWait sleep(int secs) {
         return new WebDriverWait(driver, secs);
     }

@@ -12,6 +12,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -24,6 +25,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.ExpectedExceptions;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import static org.hamcrest.Matchers.*;
@@ -36,9 +38,10 @@ import Webdriver.mappings.hyves;
 
 public class GoogleAnalitycs {
 
-    public WebDriver driver;
+    //public WebDriver driver;
     private ProxyServer server;
-    private CodepillDriver navigator;
+    private CodepillDriver driver;
+    private HyvesNavigator navigator;
     private int proxyPort = 9090;
 
     @Parameters({"xProxyPort"})
@@ -50,7 +53,7 @@ public class GoogleAnalitycs {
     public void beforeClass(String xUrl, String xUsername, String xPass, String xBrowser) throws Exception {
         setupProxyServer();
         setupNavigator(xBrowser);
-        navigator.get(xUrl);
+        navigator.goToUrl(xUrl);
         navigator.login(xUsername, xPass);
     }
     
@@ -62,7 +65,8 @@ public class GoogleAnalitycs {
     private void setupNavigator(String browser) throws UnknownHostException, MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(CapabilityType.PROXY, server.seleniumProxy());
-        navigator = new CodepillDriver(getBrowserDriver(browser, capabilities));
+        driver = new CodepillDriver(getBrowserDriver(browser, capabilities));
+        navigator = new HyvesNavigator(driver);
     }
     private WebDriver getBrowserDriver(String browser, DesiredCapabilities caps) throws UnknownHostException, MalformedURLException {
         if (browser.equals("iexplore")) {
@@ -89,15 +93,17 @@ public class GoogleAnalitycs {
     @Parameters({"xUrl"})
     public void beforeTest(String xUrl) throws Exception {
         server.newHar("hyves.nl");
-        navigator.get(xUrl);
-        navigator.waitFor("iframe[name=\"remote_iframe_-1\"]", 10);
-        navigator.switchTo().frame("remote_iframe_-1");
-        navigator.switchTo().activeElement();
+        navigator.goToUrl(xUrl);
+        navigator.switchToGameIFrame();
     }
     
     @AfterMethod
     public void afterTest() {
         server.endPage();
+    }
+    @Test
+    public void dummy() throws InterruptedException{
+        driver.wait(2);
     }
     
     @DataProvider
@@ -118,7 +124,7 @@ public class GoogleAnalitycs {
 
     @Test
     public void thereShouldBeCorrectParametersSentToGoogleOnHomePage() throws InterruptedException {
-        navigator.wait(4);
+        driver.wait(4);
         server.endPage();
         List<HarEntry> ga_utmp = filterHarEntriesByQueryParamNameValue("utmp", "/Home/lang/nl_NL", server.getHar().getLog().getEntries());
         List<HarEntry> ga_utme_value = filterHarEntriesByQueryParamNameValue("utme", "homepage", server.getHar().getLog().getEntries());
@@ -140,11 +146,11 @@ public class GoogleAnalitycs {
 
 	@Test(dataProvider =  "tabLinks")
     public void thereShouldBeAnalitycsUtmeOnEachCategoryPage(String xCategorySelector) throws Exception {
-        navigator.waitFor(xCategorySelector, 10);
+        driver.waitFor(xCategorySelector, 10);
         
         server.newHar("hyves.nl");
-        navigator.clickElement(xCategorySelector);
-        navigator.wait(2);
+        driver.clickElement(xCategorySelector);
+        driver.wait(2);
         
         List<HarEntry> ga_utme = filterHarEntriesByQueryParamNameValue("utme", "categories", server.getHar().getLog().getEntries());
         
@@ -153,31 +159,34 @@ public class GoogleAnalitycs {
     
     @Test
     public void correctPageTypeShouldBeSentToGoogleAnalyticsOnGamePage() throws InterruptedException {
-        navigator.wait(2);
-        navigator.waitFor(hyves.SOCIAL_LINK, 10);
-        navigator.clickElement(hyves.SOCIAL_LINK);
+        driver.wait(2);
+        driver.waitFor(hyves.SOCIAL_LINK, 10);
+        driver.clickElement(hyves.SOCIAL_LINK);
 
         server.newHar("hyves.nl");
-        navigator.waitFor(".game-item-link[title=Landleven]", 10);
-        navigator.findElement(".game-item-link[title=Landleven]").click();
-        navigator.wait(5);
+        driver.waitFor(".game-item-link[title=Landleven]", 10);
+        driver.findElement(".game-item-link[title=Landleven]").click();
+        driver.wait(5);
         
         List<HarEntry> ga_utme = filterHarEntriesByQueryParamNameValue("utme", "games-150588", server.getHar().getLog().getEntries());
-        assertNotEquals(ga_utme, 0, "the event type for Landleven should be games-150588");
+        assertNotEquals(ga_utme.size(), 0, "the event type for Landleven should be games-150588");
     }
     
     @Test
     public void correctEventsShouldBeSentWhenClickingFeatureGames() throws InterruptedException {
-        navigator.wait(2);
-        navigator.waitFor("#box_nieuwe-spellen", 10);
+        driver.wait(2);
+        driver.waitFor("#box_nieuwe-spellen", 10);
         server.newHar("Hyves.nl");
-        navigator.wait(4);
-        navigator.clickElement("#box_nieuwe-spellen .game-item-link");
+        driver.wait(4);
+        driver.clickElement("#box_nieuwe-spellen .game-item-link");
         
         List<HarEntry> ga_utmt = filterHarEntriesByQueryParamNameValue("utmt", "event", server.getHar().getLog().getEntries());
-        assertNotEquals(ga_utmt, 0, "the event type reported");
+        assertNotEquals(ga_utmt.size(), 0, "the event type reported");
         List<HarEntry> ga_utme = filterHarEntriesByQueryParamNameValue("utme", "FeaturedGames", server.getHar().getLog().getEntries());
-        assertNotEquals(ga_utme, 0, "the FeaturedGame click was not reported");
+        assertNotEquals(ga_utme.size(), 0, "the FeaturedGame click was not reported");
+        
+    }
+    
         
     }
 
@@ -194,11 +203,11 @@ public class GoogleAnalitycs {
 
     //@Test(dataProvider = "tabLinks2")
     public void thereShouldBeUmtpTypeSentToGoogle(String xCategorySelector, String expectedUtmp) throws Exception {
-        navigator.waitFor(xCategorySelector, 10);
-        navigator.wait(5);
+        driver.waitFor(xCategorySelector, 10);
+        driver.wait(5);
         server.newHar("hyves.nl");
-        navigator.clickElement(xCategorySelector);
-        navigator.wait(1);
+        driver.clickElement(xCategorySelector);
+        driver.wait(1);
 
         List<HarEntry> analitycsEntries = filterHarEntriesByUrl("http://www.google-analytics.com/__utm.gif", server.getHar().getLog().getEntries());
        
@@ -208,8 +217,8 @@ public class GoogleAnalitycs {
     
     @Test(dataProvider = "tabLinks")
     public void thereShouldBeUnbounceEventSent(String xCategorySelector) throws Exception {
-        navigator.waitFor(xCategorySelector, 10);
-        navigator.clickElement(xCategorySelector);
+        driver.waitFor(xCategorySelector, 10);
+        driver.clickElement(xCategorySelector);
         navigator.wait(62);
         List<HarEntry> unbounceEntries = filterHarEntriesByQueryParamNameValue("utme", "unbounce", server.getHar().getLog().getEntries());
         assertNotEquals(
@@ -286,10 +295,10 @@ public class GoogleAnalitycs {
                 }
         }, entries);
     } 
-    
     @AfterClass
     public void afterClass() throws Exception {
+        navigator.logout();
         server.stop();
-        navigator.quit();
+        driver.quit();
     }
 }
