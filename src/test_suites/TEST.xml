@@ -3,9 +3,9 @@
 	<test name="smoke_ie">		
 		<classes>
 			<parameter name="xBrowser" value="firefox"/>			
-			<class name="Webdriver.NOTIFICATIONS">			
+			<class name="Webdriver.POPULAR_GAMES">			
 				<methods>					
-					<include name="Notifications3"></include>					
+					<include name="Popular3"></include>					
 				</methods>
 			</class>				
 		</classes>		

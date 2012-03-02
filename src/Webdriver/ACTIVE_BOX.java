@@ -11,7 +11,7 @@ public class ACTIVE_BOX extends SeleniumBase{
 	public void Active01(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
 		driver.get(xUrl);
-		sleep(3);
+		sleep(5);
 		assertIsDisplayed(activebox.ACTIVE_BOX_BOX);
 		assertIsDisplayed(activebox.ACTIVE_BOX_TITLE);
 		assertIsDisplayed(activebox.ACTIVE_BOX_EVERYONE_TAB_BOX);
@@ -39,7 +39,7 @@ public class ACTIVE_BOX extends SeleniumBase{
 	public void Active02(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
 		driver.get(xUrl);
-		sleep(3);
+		sleep(5);
 		clickElement(activebox.ACTIVE_BOX_TITLE);
 		assertIsDisplayed(signUp.SIGN_UP_POPUP);
 	}		
@@ -50,7 +50,7 @@ public class ACTIVE_BOX extends SeleniumBase{
 	public void Active03(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
 		driver.get(xUrl);
-		sleep(3);
+		sleep(5);
 		clickElement(activebox.ACTIVE_BOX_FRIENDS_TAB_BOX);
 		assertIsDisplayed(signUp.SIGN_UP_POPUP);
 	}	
@@ -61,7 +61,7 @@ public class ACTIVE_BOX extends SeleniumBase{
 	public void Active04(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
 		driver.get(xUrl);
-		sleep(3);
+		sleep(5);
 		clickElement(activebox.ACTIVE_BOX_UNLOGGED_SIGNUP_BTN);
 		assertIsDisplayed(signUp.SIGN_UP_POPUP);
 	}	
@@ -72,7 +72,7 @@ public class ACTIVE_BOX extends SeleniumBase{
 	public void Active05(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
 		driver.get(xUrl);
-		sleep(3);
+		sleep(5);
 		clickElement(activebox.ACTIVE_BOX_UNLOGGED_LOGIN_LINK);
 		assertIsDisplayed(signIn.SIGN_IN_POPUP);
 	}	
@@ -83,7 +83,7 @@ public class ACTIVE_BOX extends SeleniumBase{
 	public void Active06(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
 		driver.get(xUrl);
-		sleep(3);
+		sleep(5);
 		clickElement(activebox.ACTIVE_BOX_UNLOGGED_JOIN_US_LINK);
 		assertIsDisplayed(signUp.SIGN_UP_POPUP);
 	}		
@@ -94,7 +94,7 @@ public class ACTIVE_BOX extends SeleniumBase{
 	public void Active07(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
 		driver.get(xUrl);
-		sleep(3);
+		sleep(5);
 		Login("cookietest", "123456");	
 		sleep(5);
 		assertIsDisplayed(activebox.ACTIVE_BOX_BOX);
@@ -123,7 +123,7 @@ public class ACTIVE_BOX extends SeleniumBase{
 	public void Active08(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
 		driver.get(xUrl);
-		sleep(3);
+		sleep(5);
 		Login("cookietest", "123456");	
 		sleep(5);
 		clickElement(activebox.ACTIVE_BOX_TITLE);
@@ -137,7 +137,7 @@ public class ACTIVE_BOX extends SeleniumBase{
 	public void Active09(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
 		driver.get(xUrl);
-		sleep(3);
+		sleep(5);
 		Login("cookietest", "123456");	
 		sleep(5);
 		clickElement(activebox.ACTIVE_BOX_LOGGED_VISIT_YOUR_PROFILE_LINK);
@@ -151,7 +151,7 @@ public class ACTIVE_BOX extends SeleniumBase{
 	public void Active10(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
 		driver.get(xUrl);
-		sleep(3);
+		sleep(5);
 		Login("cookietest", "123456");	
 		sleep(5);
 		assertIsDisplayed(activebox.ACTIVE_BOX_LOGGED_NO_FRIENDS_BOX);
@@ -167,7 +167,7 @@ public class ACTIVE_BOX extends SeleniumBase{
 	public void Active11(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
 		driver.get(xUrl);
-		sleep(3);
+		sleep(5);
 		Login("cookietest", "123456");	
 		sleep(5);		
 		clickElement(activebox.ACTIVE_BOX_EVERYONE_TAB_BOX);
@@ -183,7 +183,7 @@ public class ACTIVE_BOX extends SeleniumBase{
 	public void Active12(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
 		driver.get(xUrl);
-		sleep(3);
+		sleep(5);
 		Login("mptest", "123456");	
 		assertIsDisplayed(activebox.ACTIVE_BOX_LOGGED_FRIENDS_MOVING_MSG_BOX);
 		assertIsDisplayed(activebox.ACTIVE_BOX_LOGGED_FRIENDS_MOVING_FIRST_MSG_BOX);

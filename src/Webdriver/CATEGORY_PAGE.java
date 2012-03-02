@@ -27,8 +27,8 @@ public class CATEGORY_PAGE extends SeleniumBase{
 	public void Category2(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
 		driver.get(xUrl);
-		System.out.println("Sleep 2 sek");
-		Thread.sleep(2000);
+		System.out.println("Sleep 5 sek");
+		Thread.sleep(5000);
 		System.out.println("Find Element ADVENTURE_GAMES");
 		WebElement AdventureGame = driver.findElement(By.cssSelector(Webdriver.mappings.leftNavi.ADVENTURE_GAMES));
 		System.out.println("Click Element ADVENTURE_GAMES");
@@ -79,8 +79,8 @@ public class CATEGORY_PAGE extends SeleniumBase{
 	public void Category3(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
 		driver.get(xUrl);
-		System.out.println("Sleep 2 sek");
-		Thread.sleep(2000);
+		System.out.println("Sleep 5 sek");
+		Thread.sleep(5000);
 		System.out.println("Find Element ADVENTURE_GAMES");
 		WebElement AdventureGame = driver.findElement(By.cssSelector(Webdriver.mappings.leftNavi.ADVENTURE_GAMES));
 		System.out.println("Click Element ADVENTURE_GAMES");
@@ -119,8 +119,8 @@ public class CATEGORY_PAGE extends SeleniumBase{
 	public void Category4(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
 		driver.get(xUrl);
-		System.out.println("Sleep 2 sek");
-		Thread.sleep(2000);
+		System.out.println("Sleep 5 sek");
+		Thread.sleep(5000);
 		System.out.println("Find Element ADVENTURE_GAMES");
 		WebElement AdventureGame = driver.findElement(By.cssSelector(Webdriver.mappings.leftNavi.ADVENTURE_GAMES));
 		System.out.println("Click Element ADVENTURE_GAMES");

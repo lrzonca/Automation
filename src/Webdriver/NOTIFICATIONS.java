@@ -32,7 +32,8 @@ public class NOTIFICATIONS extends SeleniumBase{
 		Login("cookietest1", "123456");	
 		clickElement(topBar.MY_PROFILE_LINK);
 		sleep(5);
-		clickElement(notifications.TAB_NOTIFICATIONS);		
+		clickElement(notifications.TAB_NOTIFICATIONS);	
+		sleep(5);
 		assertTrue(driver.getCurrentUrl().contains("inbox.html"));
 		WebElement a = driver.findElement(By.xpath(notifications.NOTIFICATIONS_ALL_BTN));
 		a.click();
@@ -65,6 +66,7 @@ public class NOTIFICATIONS extends SeleniumBase{
 		clickElement(topBar.MY_PROFILE_LINK);
 		sleep(5);
 		clickElement(notifications.TAB_NOTIFICATIONS);		
+		sleep(5);
 		assertTrue(driver.getCurrentUrl().contains("inbox.html"));
 		WebElement a = driver.findElement(By.xpath(notifications.NOTIFICATIONS_ALL_BTN));
 		a.click();
@@ -89,4 +91,43 @@ public class NOTIFICATIONS extends SeleniumBase{
 		assertIsDisplayed(notifications.NOTIFICATIONS_NOTIFICATIONS_BOX);
 		assertIsDisplayed(notifications.NOTIFICATIONS_WELCOME_MSG_BOX);
 	}		
+	
+	
+//	Top bar - My profile - Notifications Tab - login a user with notification, click "my profile", click "notifications" tab, click user avatar and check url 
+	@Test
+	@Parameters({"xUrl"})
+	public void Notifications4(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		Login("cookietest", "123456");	
+		clickElement(topBar.MY_PROFILE_LINK);
+		sleep(5);
+		clickElement(notifications.TAB_NOTIFICATIONS);		
+		sleep(5);
+		String userUrl = findElement(notifications.NOTIFICATIONS_FIRST_AVATAR_LINK).getAttribute("href");
+		clickElement(notifications.NOTIFICATIONS_FIRST_AVATAR_LINK);
+		sleep(3);
+		assertTrue(driver.getCurrentUrl().contains(userUrl));
+	}			
+	
+//	Top bar - My profile - Notifications Tab - login a user with a lot notification, click "my profile", click "notifications" tab, 
+//	click paging-next-btn and check if first messages are different   
+	@Test
+	@Parameters({"xUrl"})
+	public void Notifications5(String xUrl) throws InterruptedException {
+		System.out.println("Open URL");
+		driver.get(xUrl);
+		sleep(5);
+		Login("mptest", "123456");	
+		clickElement(topBar.MY_PROFILE_LINK);
+		sleep(5);
+		clickElement(notifications.TAB_NOTIFICATIONS);	
+		sleep(5);
+		String firstMsg = findElement(notifications.NOTIFICATION_FIRST_MESSAGE_BOX).getAttribute("innerHTML");
+		System.out.println(firstMsg);
+		clickElement(notifications.NOTIFICATIONS_NEXT_BTN);
+		sleep(5);
+		assertFalse(findElement(notifications.NOTIFICATION_FIRST_MESSAGE_BOX).getAttribute("innerHTML").equals(firstMsg));
+	}				
 }

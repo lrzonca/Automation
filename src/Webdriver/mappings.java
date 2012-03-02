@@ -400,8 +400,10 @@ class SelectorFactory {
 			public static final String ACCEPT_FRIEND_REQUEST_BUTTON = ".accept";
 			public static final String REJECT_FRIEND_REQUEST_BUTTON = ".reject";
 			public static final String REJECTED_MESSAGE = ".rejected";
-			public static final String REMOVE_MESSAGE = ".links div:nth-child(2) div a";
+			public static final String REMOVE_MESSAGE = ".friendrequestaccepted div div.cloud div a";
 			public static final String CLOUD_BOX = ".cloud";
+			public static final String NOTIFICATION_FIRST_MESSAGE_BOX = ".messages li:nth-child(1) div div.cloud";
+			public static final String NOTIFICATIONS_FIRST_AVATAR_LINK = ".messages li:nth-child(1) div.message div.avatar-container a";
 			public static final String NOTIFICATIONS_TOP_LINK = "#un_mynotifications";
 			public static final String NOTIFICATIONS_TOP_INFO_TEXT = ".user-alert-functional-2 div.noMessagesNotice";
 			public static final String NOTIFICATIONS_NO_NOTIFICATIONS_BOX = "#inboxLayout div.main div.content div:nth-child(2) div.noMessagesNotice";
@@ -411,6 +413,7 @@ class SelectorFactory {
 			public static final String NOTIFICATIONS_GIRLSGOGAMES_BTN = ".//*[@id='inboxLayout']/div/div/div[2]/div[1]/a[3]/span";
 			public static final String NOTIFICATIONS_FRIEND_REQUEST_ACCEPTED_MSG_BOX = ".messages li.friendrequestaccepted";
 			public static final String NOTIFICATIONS_WELCOME_MSG_BOX = ".messages li.welcome";
+			public static final String NOTIFICATIONS_NEXT_BTN = ".pagers div:nth-child(1) div ul.pager li.next";
 		}
 		
 		public interface favoriteGames{
@@ -481,18 +484,18 @@ class SelectorFactory {
 		}
 
 		public interface avatar {
-			public static final String TAB_AVATAR = "tab_avatar";
-			public static final String ANY_AVATAR_BOX = "avatar_"; // add parameter on end
+			public static final String TAB_AVATAR = "#tab_avatar";
+			public static final String ANY_AVATAR_BOX = "#avatar_"; // add parameter on end
 			public static final String FIRST_AVATAR_BOX = "#avatar_0";
 			public static final String SECOND_AVATAR_BOX = "#avatar_1";
 			public static final String FIRST_AVATAR_ICO = "#avatar_0 a.avatar img";
 			public static final String SECOND_AVATAR_ICO = "#avatar_1 a.avatar img";
 			public static final String FIRST_AVATAR_WANT_IT_BUTTON = "#avatar_0 a.avatar div.button_group";
 			public static final String SECOND_AVATAR_WANT_IT_BUTTON = "#avatar_1 a.avatar div.button_group";
-			public static final String AVATAR_TITLE_TEXT = "picker_top_left";
-			public static final String CREATE_AVATAR_GIRL_ICO = "picker_girl";
-			public static final String CREATE_AVATAR_HEADER_TEXT = "picker_more_fun";
-			public static final String CREATE_AVATAR_BUTTON = "picker_build_button";
+			public static final String AVATAR_TITLE_TEXT = "#picker_top_left";
+			public static final String CREATE_AVATAR_GIRL_ICO = "#picker_girl";
+			public static final String CREATE_AVATAR_HEADER_TEXT = "#picker_more_fun";
+			public static final String CREATE_AVATAR_BUTTON = "#picker_build_button";
 		}
 		  
 		public interface flatPage {

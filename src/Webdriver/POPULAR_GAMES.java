@@ -12,7 +12,8 @@ public class POPULAR_GAMES extends SeleniumBase{
 	@Parameters({"xUrl"})
 	public void Popular1(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
-		driver.get(xUrl);				
+		driver.get(xUrl);	
+		sleep(5);
 		clickElement(populargames.POPULAR_GAMES_TITLE);
 		sleep(5);
 		assertTrue(driver.getCurrentUrl().contains("popular.html"));
@@ -24,7 +25,8 @@ public class POPULAR_GAMES extends SeleniumBase{
 	@Parameters({"xUrl"})
 	public void Popular2(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
-		driver.get(xUrl);				
+		driver.get(xUrl);	
+		sleep(5);
 		String gameUrl = findElement(populargames.POPULAR_GAMES_FIRST_GAME_LINK).getAttribute("href");
 		System.out.println(gameUrl);
 		clickElement(populargames.POPULAR_GAMES_FIRST_GAME_LINK);
@@ -38,7 +40,8 @@ public class POPULAR_GAMES extends SeleniumBase{
 	@Parameters({"xUrl"})
 	public void Popular3(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
-		driver.get(xUrl);				
+		driver.get(xUrl);	
+		sleep(5);
 		Actions builder = new Actions(driver); 
 		for (int i = 1; i <= 10; i++){
 			WebElement game = findElement(".popularbox ul li:nth-child("+ i +")");

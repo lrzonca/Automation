@@ -12,6 +12,7 @@ public class GAME_LIST extends SeleniumBase{
 	public void GameList1(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
 		driver.get(xUrl);
+		sleep(3);
 		assertIsDisplayed(gamelist.GAME_LIST_BOX);
 		assertIsDisplayed(gamelist.GAME_LIST_TITLE);
 		assertIsDisplayed(gamelist.GAME_LIST_MORE_NEW_GAMES_LINK);
@@ -26,6 +27,7 @@ public class GAME_LIST extends SeleniumBase{
 	public void GameList2(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
 		driver.get(xUrl);
+		sleep(3);
 		clickElement(gamelist.GAME_LIST_MORE_NEW_GAMES_LINK);
 		sleep(5);
 		assertTrue(driver.getCurrentUrl().contains("new,2.html"));
@@ -37,6 +39,7 @@ public class GAME_LIST extends SeleniumBase{
 	public void GameList3(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
 		driver.get(xUrl);
+		sleep(3);
 		Actions builder = new Actions(driver); 
 		for (int i = 1; i <= 25; i++){
 			String tooltip = findElement(".indexFirstColumn ul li:nth-child(" + i + ") div.gameThumb span.description").getAttribute("innerHTML");

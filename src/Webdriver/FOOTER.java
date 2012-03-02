@@ -219,6 +219,8 @@ public class FOOTER extends SeleniumBase{
 		String url = findElement(footer.PARTNERS_LINKS_FIRST_LINK_LINK).getAttribute("href");
 		clickElement(footer.PARTNERS_LINKS_FIRST_LINK_LINK);
 		sleep(5);
+		System.out.println(driver.getCurrentUrl());
+		System.out.println(url);
 		assertTrue(driver.getCurrentUrl().equals(url));		
 	}
 	

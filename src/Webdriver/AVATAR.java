@@ -27,19 +27,19 @@ public class AVATAR extends SeleniumBase{
 	    System.out.println("Sleep 5 sek");
 	    Thread.sleep(5000);
 	    System.out.println("Find Element TAB_AVATAR");
-	    WebElement AvatarTab = driver.findElement(By.id(Webdriver.mappings.avatar.TAB_AVATAR));
+	    WebElement AvatarTab = driver.findElement(By.cssSelector(Webdriver.mappings.avatar.TAB_AVATAR));
 	    System.out.println("Click Element TAB_AVATAR");
 	    AvatarTab.click();
 	    System.out.println("Sleep 3 sek");
 	    Thread.sleep(3000);
 	    System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.id(Webdriver.mappings.avatar.AVATAR_TITLE_TEXT)).isDisplayed());
+		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.avatar.AVATAR_TITLE_TEXT)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.id(Webdriver.mappings.avatar.CREATE_AVATAR_BUTTON)).isDisplayed());
+		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.avatar.CREATE_AVATAR_BUTTON)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.id(Webdriver.mappings.avatar.CREATE_AVATAR_GIRL_ICO)).isDisplayed());
+		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.avatar.CREATE_AVATAR_GIRL_ICO)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.id(Webdriver.mappings.avatar.CREATE_AVATAR_HEADER_TEXT)).isDisplayed());
+		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.avatar.CREATE_AVATAR_HEADER_TEXT)).isDisplayed());
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.avatar.FIRST_AVATAR_BOX)).isDisplayed());
 		System.out.println("Assertion");
@@ -76,13 +76,13 @@ public class AVATAR extends SeleniumBase{
 	    System.out.println("Sleep 5 sek");
 	    Thread.sleep(5000);	
 	    System.out.println("Find Element TAB_AVATAR");
-	    WebElement AvatarTab = driver.findElement(By.id(Webdriver.mappings.avatar.TAB_AVATAR));
+	    WebElement AvatarTab = driver.findElement(By.cssSelector(Webdriver.mappings.avatar.TAB_AVATAR));
 	    System.out.println("Click Element TAB_AVATAR");
 	    AvatarTab.click();
 	    System.out.println("Sleep 3 sek");
 	    Thread.sleep(3000);
 		String avatar_active = "active", AvatarToCheck = "";
-		String old_avatar = driver.findElement(By.id(Webdriver.mappings.myProfile.AVATAR_ICO)).getAttribute("src");
+		String old_avatar = driver.findElement(By.cssSelector(Webdriver.mappings.myProfile.AVATAR_ICO)).getAttribute("src");
 		System.out.println("Find Element AVATAR_ICO and take Attribute");
 		if (avatar_active.equals(driver.findElement(By.cssSelector(Webdriver.mappings.avatar.FIRST_AVATAR_BOX)).getAttribute("class"))){
 			System.out.println("Find Element AVATAR_ICO and take Attribute");
@@ -103,12 +103,12 @@ public class AVATAR extends SeleniumBase{
 		Thread.sleep(3000);
 		String[] q = AvatarToCheck.split("/");
 		System.out.println("Find Element AVATAR_ICO and take Attribute");
-		String ab = driver.findElement(By.id(Webdriver.mappings.myProfile.AVATAR_ICO)).getAttribute("src");
+		String ab = driver.findElement(By.cssSelector(Webdriver.mappings.myProfile.AVATAR_ICO)).getAttribute("src");
 		System.out.println("Find Element AVATAR_ICO and take Attribute");
-		String ac = driver.findElement(By.id(Webdriver.mappings.topBar.AVATAR_ICO)).getAttribute("src");
+		String ac = driver.findElement(By.cssSelector(Webdriver.mappings.topBar.AVATAR_ICO)).getAttribute("src");
 		ab.contains(q[8]);
 		ac.contains(q[8]);
 		System.out.println("Assertion");
-		assertNotSame(old_avatar, driver.findElement(By.id(Webdriver.mappings.myProfile.AVATAR_ICO)).getAttribute("src"));
+		assertNotSame(old_avatar, driver.findElement(By.cssSelector(Webdriver.mappings.myProfile.AVATAR_ICO)).getAttribute("src"));
 	} 	
 }
