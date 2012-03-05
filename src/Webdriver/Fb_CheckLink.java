@@ -65,9 +65,23 @@ public class Fb_CheckLink {
 	@DataProvider
 	public Object[][] languages() {
 		return new Object [][] {
-				{"Polski","gry Zapapa - Zagraj w gry ze swoimi przyjaci�mi!"},
+				//{"العربية","ألعاب ظابابا - العب مع أصدقائك!"},
+				{"Deutsch","Spiele von Zapapa - Spiele zusammen mit deinen Freunden!"},
+				{"English (UK)","Zapapa Games - Play with your friends!"},
+				{"Bahasa Indonesia","Game Zapapa - Mainkan game dengan temanmu!"},
 				{"English (US)","Zapapa Games - Play with your friends!"},
-				{"Deutsch","Spiele von Zapapa - Spiele zusammen mit deinen Freunden!"}
+				{"Español (España)","Juegos Zapapa - ¡Juega con tus amigos!"},
+				{"Español","Juegos Zapapa - ¡Juega con tus amigos!"},
+				{"Français (Canada)","Jeux Zapapa - Amuse-toi en jouant avec tes amis!"},
+				{"Français (France)","Jeux Zapapa - Amuse-toi en jouant avec tes amis!"},
+				{"Italiano","Giochi Zapapa - Gioca con i tuoi amici!"},
+				{"Nederlands","Zapapa Games - Spelletjes spelen met en tegen je vrienden!"},
+				{"Polski","gry Zapapa - Zagraj w gry ze swoimi przyjaciółmi!"},
+				{"Português (Brasil)","Jogos Zapapa - Joga com os teus amigos!"},
+				{"Português (Portugal)","Jogos Zapapa - Joga com os teus amigos!"},
+				{"Русский","Zapapa Games - Play with your friends!"},
+				{"Svenska","Zapapa-spel - Spela spel med dina vänner!"},
+				{"Türkçe","Zapapa Games - Arkadaşlarınızla oyun oynayın!"}
 		};
 	}
 	
@@ -87,11 +101,14 @@ public class Fb_CheckLink {
 		  driver.findElement(By.linkText(xLanguage)).click();
 	  }
 	  Thread.sleep(4000);
-	  driver.findElement(By.linkText("Zapapa games")).click();
+	  driver.findElement(By.linkText("Zapapa Games QA")).click();
 	  Thread.sleep(4000);
 	  driver.switchTo().frame("iframe_canvas");
-	  WebElement UpperLink = driver.findElement(By.cssSelector(Webdriver.mappings.facebook.UPPER_LINK));
-	  assertEquals(xString, UpperLink.getText());	  
+//	  WebElement UpperLink = driver.findElement(By.cssSelector(Webdriver.mappings.facebook.UPPER_LINK));
+//	  assertEquals(xString, UpperLink.getText());
+	  
+	  WebElement UpperLink = driver.findElement(By.cssSelector(Webdriver.mappings.facebook.CATBOX_BAR_TEXT));
+	  assertEquals(xString, UpperLink.getText());
   }
   
   @AfterClass
