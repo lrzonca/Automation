@@ -294,6 +294,8 @@
 					<include name="Notifications1"></include>
 					<include name="Notifications2"></include>
 					<include name="Notifications3"></include>
+					<include name="Notifications4"></include>
+					<include name="Notifications5"></include>
 				</methods>
 			</class>
 			<class name="Webdriver.FRIENDS_NEW_REQUEST">			
