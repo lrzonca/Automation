@@ -51,7 +51,7 @@ public class HyvesNavigator {
         
     }
     
-    public void logout() throws InterruptedException {
+    public void logout() {
         switchToHyvesFrame();
         driver.wait(3);
         Actions webbuilder = new Actions(driver.driver);
