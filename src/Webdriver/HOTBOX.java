@@ -14,22 +14,17 @@ public class HOTBOX extends SeleniumBase{
 		String[] table = new String[5];
 		for (int i = 1; i < 4; i++){
 			table[i] = findElement(hotbox.HOTBOX_ROTATOR).getAttribute("style");
-			System.out.println(table[i]);
 			sleep(5);
 		}		
-		System.out.println("Assertion");
 		assertFalse(table[1].equals(table[2]));
-		System.out.println("Assertion");
 		assertFalse(table[1].equals(table[3]));
-		System.out.println("Assertion");
 		assertFalse(table[2].equals(table[3]));		
 		clickElement(hotbox.HOTBOX_THIRD_BUTTON);		
 		assertTrue(findElement(hotbox.HOTBOX_ROTATOR).getAttribute("style").equals(table[3]));
 		clickElement(hotbox.HOTBOX_FIRST_BUTTON);
-		System.out.println("Assertion");
 		assertTrue(findElement(hotbox.HOTBOX_ROTATOR).getAttribute("style").equals(table[1]));
 		clickElement(hotbox.HOTBOX_SECOND_BUTTON);
-		System.out.println("Assertion");
+		sleep(5);
 		assertTrue(findElement(hotbox.HOTBOX_ROTATOR).getAttribute("style").equals(table[2]));
 	}			
 	
@@ -43,6 +38,7 @@ public class HOTBOX extends SeleniumBase{
 		clickElement(hotbox.HOTBOX_SECOND_BUTTON);
 		String gameUrl = findElement(hotbox.HOTBOX_ROTATOR_SECOND_GAME + " a").getAttribute("href");
 		clickElement(hotbox.HOTBOX_ROTATOR_SECOND_GAME);
+		sleep(5);
 		assertTrue(driver.getCurrentUrl().equals(gameUrl));
 	}			
 	
@@ -56,6 +52,7 @@ public class HOTBOX extends SeleniumBase{
 		clickElement(hotbox.HOTBOX_SECOND_BUTTON);
 		String gameUrl = findElement(hotbox.HOTBOX_ROTATOR_SECOND_GAME + " a").getAttribute("href");
 		clickElement(hotbox.HOTBOX_PLAYNOW_BUTTON);
+		sleep(5);
 		assertTrue(driver.getCurrentUrl().equals(gameUrl));
 	}		
 }

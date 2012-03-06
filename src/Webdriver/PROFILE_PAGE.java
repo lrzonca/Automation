@@ -340,7 +340,8 @@ public class PROFILE_PAGE extends SeleniumBase{
 		clickElement(topBar.MY_PROFILE_LINK);
 		sleep(10);
 		String gameUrl = findElement(myProfile.MY_FAVE_GAMES_FIRST_GAME_BOX).getAttribute("href");	
-		clickElement(myProfile.MY_FAVE_GAMES_FIRST_GAME_BOX);				
+		clickElement(myProfile.MY_FAVE_GAMES_FIRST_GAME_BOX);	
+		sleep(5);
 		assertTrue(driver.getCurrentUrl().equals(gameUrl));
 	}		
 	
@@ -362,6 +363,7 @@ public class PROFILE_PAGE extends SeleniumBase{
 		}
 		assertIsDisplayed(myProfile.MY_LATEST_CREATIONS_VIEW_ALBUM_LINK);
 		clickElement(myProfile.MY_LATEST_CREATIONS_VIEW_ALBUM_LINK);
+		sleep(5);
 		assertTrue(driver.getCurrentUrl().contains("/myalbum.html"));
 		assertTrue(findElement(album.ALBUM_FIRST_CREATION_BOX).getAttribute("href").contains("javascript:;"));
 	}	
@@ -382,6 +384,7 @@ public class PROFILE_PAGE extends SeleniumBase{
 		String creationUrl = findElement(myProfile.MY_LATEST_CREATIONS_FIRST_CREATION_BOX).getAttribute("href");		
 		assertIsDisplayed(myProfile.MY_LATEST_CREATIONS_VIEW_ALBUM_LINK);
 		clickElement(myProfile.MY_LATEST_CREATIONS_VIEW_ALBUM_LINK);
+		sleep(5);
 		assertTrue(driver.getCurrentUrl().contains("/myalbum.html"));
 		assertTrue(findElement(album.ALBUM_FIRST_CREATION_BOX).getAttribute("href").equals(creationUrl));
 	}		
@@ -397,7 +400,8 @@ public class PROFILE_PAGE extends SeleniumBase{
 		clickElement(topBar.MY_PROFILE_LINK);
 		sleep(10);
 		String creationUrl = findElement(myProfile.MY_LATEST_CREATIONS_FIRST_CREATION_BOX).getAttribute("href");	
-		clickElement(myProfile.MY_LATEST_CREATIONS_FIRST_CREATION_BOX);				
+		clickElement(myProfile.MY_LATEST_CREATIONS_FIRST_CREATION_BOX);			
+		sleep(5);
 		assertTrue(driver.getCurrentUrl().equals(creationUrl));
 	}
 	
@@ -458,7 +462,8 @@ public class PROFILE_PAGE extends SeleniumBase{
 		clickElement(topBar.MY_PROFILE_LINK);
 		sleep(10);
 		String creationUrl = findElement(myProfile.MY_AWARDS_FIRST_AWARD_LINK).getAttribute("href");	
-		clickElement(myProfile.MY_AWARDS_FIRST_AWARD_BOX);			
+		clickElement(myProfile.MY_AWARDS_FIRST_AWARD_BOX);		
+		sleep(5);
 		assertTrue(driver.getCurrentUrl().equals(creationUrl));
 	}	
 	
