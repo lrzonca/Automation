@@ -1,5 +1,6 @@
 package Webdriver;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
@@ -55,7 +56,11 @@ public class HyvesNavigator {
     }
     
     public void searchGame(String game) {
-        
+        driver.waitFor(hyves.SEARCH_FIELD, 10);
+        driver.clickElement(hyves.SEARCH_FIELD);
+        driver.insertData(hyves.SEARCH_FIELD, game);
+        driver.insertData(hyves.SEARCH_FIELD, Keys.ENTER.toString());
+        new Actions(driver.driver).moveToElement(driver.findElement(hyves.SEARCH_BUTTON)).click().perform();
     }
     
     public void logout() {

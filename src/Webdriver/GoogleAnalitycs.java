@@ -209,6 +209,7 @@ public class GoogleAnalitycs {
     @Parameters({"xUrl"})
     public void gameOpensWhenGoingDirectlyToTheGameWithRefTagAttached(String xUrl) {
         driver.get(xUrl + "/Pacman/ref/search-fallback");
+        navigator.switchToGameIFrame();
         driver.sleep(10).until(new ExpectedCondition<WebElement>() {
             public WebElement apply(WebDriver d) {
                 
@@ -221,9 +222,30 @@ public class GoogleAnalitycs {
         });
         driver.wait(15);
         
-        List<HarEntry> ga_utmp = filterHarEntriesByQueryParamNameValue("utmp", "ref=featured-games", server.getHar().getLog().getEntries());
+        List<HarEntry> ga_utmp = filterHarEntriesByQueryParamNameValue("utmp", "ref=search-fallback", server.getHar().getLog().getEntries());
         assertNotEquals(ga_utmp.size(), 0, "the event type is not reported");
     }
+    
+    @Test
+    @Parameters({"xUrl"})
+    public void whenVisitingGamepageFromClickingOnTheUrlFromFallback(String xUrl) {
+        navigator.searchGame("notexistinggamexy1z");
+        driver.wait(5);
+        driver.waitFor(".game-title", 10);
+        WebElement el = driver.findElement("#catboxWrapper .game-title");
+        assertTrue(el.getAttribute("href").contains("/ref/search-fallback"), "Links in the fallback resultset should contain reftag: search-fallback");
+    }
+    
+    @Test
+    @Parameters({"xUrl"})
+    public void whenVisitingGamepageFromClickingOnTheUrlFromSearchResult(String xUrl) {
+        navigator.searchGame("pacman");
+        driver.wait(5);
+        driver.waitFor(".game-title", 10);
+        WebElement el = driver.findElement("#catboxWrapper .game-title");
+        assertTrue(el.getAttribute("href").contains("/ref/search"), "Link to a gamepage in the resultset should contain reftag: search");
+    }
+    
     protected void assertUrlNotRequested(final String url) {
         assertEquals(with(server.getHar().getLog().getEntries()).retain(
             having(on(HarEntry.class).getRequest().getUrl(), containsString(url))
