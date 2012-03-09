@@ -411,4 +411,13 @@ public interface mappings {
 	  public static final String GAME_PAGE_FAV_POPUP_OK = "#closeInContent";
 	  public static final String FAV_COUNTER_HP = "#myFavouritesListBoxCounter";
   }
+  
+  public interface facebook {
+	  public static final String USERNAME_FIELD = "#email";
+	  public static final String PASSWORD_FIELD = "#pass";
+	  public static final String LOGIN_BUTTON = "#loginbutton";
+	  public static final String PAGE_LOGO = " #pageLogo";
+	  public static final String UPPER_LINK = "#slogan";
+	  public static final String FB_LANG = "div.lfloat div.fcg a";	  
+  }
 }

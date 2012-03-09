@@ -1,0 +1,15 @@
+<suite name="Hyves test" verbose="3" thread-count="4">
+	<parameter name="xUrl" value="http://www.facebook.com/"/>
+	<parameter name="xUsername" value="mariola.bialy.eight@dev.spilgames.eu"/>
+	<parameter name="xPass" value="123456"/>
+	<test name="Facebook_checkLink - Firefox">
+		<parameter name="xBrowser" value="firefox"/>
+		<classes>
+			<class name="Webdriver.Fb_CheckLink">	
+				<methods>
+					<include name="CheckLink"></include>	
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>
