@@ -213,7 +213,7 @@ public class GoogleAnalitycs {
         driver.sleep(10).until(new ExpectedCondition<WebElement>() {
             public WebElement apply(WebDriver d) {
                 
-                WebElement el = driver.findElement(By.id("flashobj_mc"));
+                WebElement el = driver.findElement(By.id("gameContainer"));
                 if (null != el && el.isDisplayed()) {
                     return el;
                 }
@@ -231,7 +231,7 @@ public class GoogleAnalitycs {
     public void whenVisitingGamepageFromClickingOnTheUrlFromFallback(String xUrl) {
         navigator.searchGame("notexistinggamexy1z");
         driver.wait(5);
-        driver.waitFor(".game-title", 10);
+        driver.waitFor("#catboxWrapper .game-title", 10);
         WebElement el = driver.findElement("#catboxWrapper .game-title");
         assertTrue(el.getAttribute("href").contains("/ref/search-fallback"), "Links in the fallback resultset should contain reftag: search-fallback");
     }
@@ -241,7 +241,7 @@ public class GoogleAnalitycs {
     public void whenVisitingGamepageFromClickingOnTheUrlFromSearchResult(String xUrl) {
         navigator.searchGame("pacman");
         driver.wait(5);
-        driver.waitFor(".game-title", 10);
+        driver.waitFor("#catboxWrapper .game-title", 10);
         WebElement el = driver.findElement("#catboxWrapper .game-title");
         assertTrue(el.getAttribute("href").contains("/ref/search"), "Link to a gamepage in the resultset should contain reftag: search");
     }
