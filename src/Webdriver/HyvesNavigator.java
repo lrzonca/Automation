@@ -16,6 +16,7 @@ public class HyvesNavigator {
     public void login(String username, String password) {
         
         driver.waitFor(hyves.USERNAME_FIELD, 20);
+        new Actions(driver.driver).moveToElement(driver.findElement("#logo")).perform();
         driver.clickElement(hyves.USERNAME_FIELD);
         driver.insertData(hyves.USERNAME_FIELD, username);
         driver.clickElement(hyves.PASSWORD_FIELD);
