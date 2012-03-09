@@ -164,7 +164,7 @@ public class GoogleAnalitycs {
         server.newHar("hyves.nl");
         driver.waitFor(".game-item-link[title=Landleven]", 10);
         driver.findElement(".game-item-link[title=Landleven]").click();
-        driver.wait(5);
+        driver.wait(10);
         
         List<HarEntry> ga_utme = filterHarEntriesByQueryParamNameValue("utme", "games-150588", server.getHar().getLog().getEntries());
         assertNotEquals(ga_utme.size(), 0, "the event type for Landleven should be games-150588");
@@ -203,6 +203,26 @@ public class GoogleAnalitycs {
         driver.wait(15);
         List<HarEntry> ga_utmt = filterHarEntriesByQueryParamNameValue("utmp", "ref=featured-games", server.getHar().getLog().getEntries());
         assertNotEquals(ga_utmt.size(), 0, "the event type reported");
+    }
+    
+    @Test
+    @Parameters({"xUrl"})
+    public void gameOpensWhenGoingDirectlyToTheGameWithRefTagAttached(String xUrl) {
+        driver.get(xUrl + "/Pacman/ref/search-fallback");
+        driver.sleep(10).until(new ExpectedCondition<WebElement>() {
+            public WebElement apply(WebDriver d) {
+                
+                WebElement el = driver.findElement(By.id("flashobj_mc"));
+                if (null != el && el.isDisplayed()) {
+                    return el;
+                }
+                return null;
+            }
+        });
+        driver.wait(15);
+        
+        List<HarEntry> ga_utmp = filterHarEntriesByQueryParamNameValue("utmp", "ref=featured-games", server.getHar().getLog().getEntries());
+        assertNotEquals(ga_utmp.size(), 0, "the event type is not reported");
     }
     protected void assertUrlNotRequested(final String url) {
         assertEquals(with(server.getHar().getLog().getEntries()).retain(

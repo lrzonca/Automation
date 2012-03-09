@@ -1,5 +1,6 @@
 package Webdriver;
 
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import Webdriver.mappings.hyves;
@@ -29,6 +30,12 @@ public class HyvesNavigator {
         driver.switchTo().activeElement();
     }
     
+    public void switchToGadgetsIFrame() {
+        driver.waitFor("iframe[class=\"gadgets-gadget\"]", 10);
+        WebElement iframe = driver.findElement("iframe[class=\"gadgets-gadget\"]");
+        driver.switchTo().frame(iframe.getAttribute("name"));
+        driver.switchTo().activeElement();
+    }
     public void switchToHyvesFrame() {
         driver.switchTo().defaultContent();
     }
