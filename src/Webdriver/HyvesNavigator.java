@@ -8,8 +8,8 @@ import Webdriver.mappings.hyves;
 
 public class HyvesNavigator {
 
-    CodepillDriver driver;
-    HyvesNavigator(CodepillDriver driver) {
+    PandaDriver driver;
+    HyvesNavigator(PandaDriver driver) {
         this.driver = driver;
     }
     
@@ -26,7 +26,8 @@ public class HyvesNavigator {
     
     
     public void switchToGameIFrame() {
-        driver.waitFor("iframe[name=\"remote_iframe_-1\"]", 10);
+        driver.waitFor(hyves.GAME_IFRAME, 10);
+        new Actions(driver.driver).moveToElement(driver.findElement(hyves.GAME_IFRAME)).perform();
         driver.switchTo().frame("remote_iframe_-1");
         driver.switchTo().activeElement();
     }
@@ -57,10 +58,11 @@ public class HyvesNavigator {
     
     public void searchGame(String game) {
         driver.waitFor(hyves.SEARCH_FIELD, 10);
+        new Actions(driver.driver).moveToElement(driver.findElement(hyves.PARENT_ADVICE)).perform();
         driver.clickElement(hyves.SEARCH_FIELD);
-        driver.insertData(hyves.SEARCH_FIELD, game);
-        driver.insertData(hyves.SEARCH_FIELD, Keys.ENTER.toString());
+        driver.insertData(hyves.SEARCH_FIELD, game + Keys.ENTER.toString());
         new Actions(driver.driver).moveToElement(driver.findElement(hyves.SEARCH_BUTTON)).click().perform();
+        driver.wait(1);
     }
     
     public void logout() {

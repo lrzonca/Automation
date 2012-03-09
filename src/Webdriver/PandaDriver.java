@@ -10,9 +10,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class CodepillDriver implements WebDriver {
+public class PandaDriver implements WebDriver {
     WebDriver driver;
-    CodepillDriver(WebDriver driver) {
+    PandaDriver(WebDriver driver) {
         this.driver = driver;
     }
     
