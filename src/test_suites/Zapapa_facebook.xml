@@ -4,7 +4,7 @@
 	<parameter name="xPass" value="123456"/>
 	<parameter name="xAppName" value="Zapapa-Staging"/>
 	<test name="Facebook_checkLink - Firefox">
-		<parameter name="xBrowser" value="chrome"/>
+		<parameter name="xBrowser" value="firefox"/>
 		<classes>
 			<class name="Webdriver.Fb_CheckLink">	
 				<methods>

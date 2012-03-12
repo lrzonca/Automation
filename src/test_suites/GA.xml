@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="GA test" verbose="3" parallel="tests" thread-count="4">
-    <parameter name="xUrl" value="http://www.hyves.nl/games_dev_06"/>
+    <parameter name="xUrl" value="http://www.hyves.nl/games"/>
     <parameter name="xUsername" value="mptest"/>
     <parameter name="xPass" value="mptest123"/>
-<!-- 
-    <test name="GA">
+    <!-- <test name="GA">
         <parameter name="xBrowser" value="firefox" />
         <parameter name="xProxyPort" value="9090" />
         <classes>
             <class name="Webdriver.GoogleAnalitycs"></class>
         </classes>
-    </test> -->
+    </test>-->
     <test name="GA on IE">
         <parameter name="xBrowser" value="iexplore" />
         <parameter name="xProxyPort" value="9091" />
@@ -18,7 +17,8 @@
             <class name="Webdriver.GoogleAnalitycs"></class>
         </classes>
     </test>
-    <!-- <test name="GA on Chrome">
+    <!--
+    <test name="GA on Chrome">
         <parameter name="xBrowser" value="chrome"/>
         <classes>
             <class name="Webdriver.GoogleAnalitycs"></class>
