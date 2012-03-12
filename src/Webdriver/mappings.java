@@ -419,6 +419,7 @@ public interface mappings {
 	  public static final String PAGE_LOGO = " #pageLogo";
 	  public static final String UPPER_LINK = "#slogan";
 	  public static final String CATBOX_BAR_TEXT = "#catbox h1 span";
-	  public static final String FB_LANG = "div.lfloat div.fcg a";	  
+	  public static final String FB_LANG = "div.lfloat div.fcg a";
+	  public static final String FANPAGE_LINK = "#fanpage_link";
   }
 }

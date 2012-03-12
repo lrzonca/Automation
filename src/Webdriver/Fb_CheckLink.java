@@ -1,5 +1,6 @@
 package Webdriver;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
@@ -26,10 +27,9 @@ public class Fb_CheckLink {
 	public WebDriver driver;
 	public static ChromeDriverService service;
 	DesiredCapabilities capability=null;
+	String FanPageUrl = "http://www.facebook.com/pages/Zapapa-games/210288149066461";
 	
-	String xUrl = "http://www.facebook.com/";
-	String xUsername = "mariola.bialy.seven@dev.spilgames.eu";
-	String xPass = "123456";
+	String xAppName = "Zapapa-Staging";
 	
 	@BeforeClass
 	@Parameters({"xBrowser", "xUrl", "xUsername", "xPass"})
@@ -43,6 +43,14 @@ public class Fb_CheckLink {
 			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
 			
 		} else if (xBrowser.contains("chrome")) {
+				 service = new ChromeDriverService.Builder()
+			        .usingChromeDriverExecutable(new File(".\\lib\\chromedriver.exe"))
+			        .usingAnyFreePort()
+			        .build();
+				  	
+			    service.start();
+		
+			
 			capability= DesiredCapabilities.chrome();
 			driver = new RemoteWebDriver(service.getUrl(), capability);
 			        
@@ -88,6 +96,45 @@ public class Fb_CheckLink {
 	
   @Test(dataProvider = "languages")
   public void CheckLink(String xLanguage, String xString) throws InterruptedException {
+	  NavigateToZapapa(xLanguage);
+//	  WebElement UpperLink = driver.findElement(By.cssSelector(Webdriver.mappings.facebook.UPPER_LINK));
+//	  assertEquals(xString, UpperLink.getText());
+	  
+	  WebElement UpperLink = driver.findElement(By.cssSelector(Webdriver.mappings.facebook.CATBOX_BAR_TEXT));
+	  assertEquals(xString, UpperLink.getText());
+  }
+  
+  @Test(dataProvider = "languages")
+  public void CheckFanPageLink (String xLanguage, String xString) throws InterruptedException{
+	  NavigateToZapapa(xLanguage);
+	  WebElement FanPageL = driver.findElement(By.cssSelector(Webdriver.mappings.facebook.FANPAGE_LINK));
+	  String windowMain = driver.getWindowHandle();
+	  System.out.println(windowMain);
+	  FanPageL.click();
+	  Thread.sleep(1500);
+	  for (String handle : driver.getWindowHandles()) {
+	      driver.switchTo().window(handle);
+	  }
+	  String currentUrl = driver.getCurrentUrl();
+	  System.out.println(currentUrl);
+	  assertEquals(FanPageUrl, currentUrl);
+	  
+	  for (String handle : driver.getWindowHandles()) {
+	      driver.switchTo().window(handle);
+	  }
+  }
+  
+  @AfterClass
+  @Parameters({ "xBrowser"})
+  public void quitDriver(String xBrowser) {
+	  driver.quit();
+	  if (xBrowser.contains("chrome")) {
+			 service.stop();
+	  } 
+  }
+  
+  //Common functions section
+  public void NavigateToZapapa(String xLanguage)throws InterruptedException{
 	  driver.switchTo().defaultContent();
 	  driver.findElement(By.cssSelector(Webdriver.mappings.facebook.PAGE_LOGO)).click();
 	  Thread.sleep(2000);
@@ -102,18 +149,8 @@ public class Fb_CheckLink {
 	  }
 	  Thread.sleep(4000);
 	  driver.findElement(By.linkText("Zapapa Games QA")).click();
+//	  driver.findElement(By.linkText(xAppName)).click();
 	  Thread.sleep(4000);
-	  driver.switchTo().frame("iframe_canvas");
-//	  WebElement UpperLink = driver.findElement(By.cssSelector(Webdriver.mappings.facebook.UPPER_LINK));
-//	  assertEquals(xString, UpperLink.getText());
-	  
-	  WebElement UpperLink = driver.findElement(By.cssSelector(Webdriver.mappings.facebook.CATBOX_BAR_TEXT));
-	  assertEquals(xString, UpperLink.getText());
-  }
-  
-  @AfterClass
-  @Parameters({ "xBrowser"})
-  public void quitDriver(String xBrowser) {
-	  driver.quit();
+	  driver.switchTo().frame("iframe_canvas"); 
   }
 }
