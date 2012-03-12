@@ -91,12 +91,12 @@ public class SeleniumBase extends Common{
 			SimpleDateFormat formatter2 = new SimpleDateFormat("HH.mm");
 			String sDate = formatter.format(date);
 			String sTime = formatter2.format(date);
-			try{
-			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-			FileUtils.copyFile(scrFile, new File("C:\\tmp\\WebDriverLog\\FAILED_" + xBrowser + "_TC_" + this.getClass().getName() + "__" + method.getName() + "__" + sDate + "_" + sTime + "__" + ".png"));
-		} catch (Exception e){
-			e.printStackTrace();
-		}
+//			try{
+//			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+//			FileUtils.copyFile(scrFile, new File("C:\\tmp\\WebDriverLog\\FAILED_" + xBrowser + "_TC_" + this.getClass().getName() + "__" + method.getName() + "__" + sDate + "_" + sTime + "__" + ".png"));
+//		} catch (Exception e){
+//			e.printStackTrace();
+//		}
 		} else {
 			System.out.println("TestCase " + this.getClass().getName() + "__" + method.getName() + " was Passed!!!");
 		}

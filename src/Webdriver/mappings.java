@@ -410,6 +410,8 @@ public interface mappings {
 //	  public static final String GAME_PAGE_FAV_POPUP_OK = ".rte_submit_button favourites_ok";
 	  public static final String GAME_PAGE_FAV_POPUP_OK = "#closeInContent";
 	  public static final String FAV_COUNTER_HP = "#myFavouritesListBoxCounter";
+	  public static final String PARENT_ADVICE = "#hyves-parentaladvice";
+	  public static final String GAME_IFRAME = "iframe[name=\"remote_iframe_-1\"]";
   }
   
   public interface facebook {
