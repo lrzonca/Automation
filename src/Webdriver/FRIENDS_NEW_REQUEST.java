@@ -6,8 +6,6 @@ import java.util.Date;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import Webdriver.mappings.FRIENDS;
-
 public class FRIENDS_NEW_REQUEST extends SeleniumBase{
 	long timestamp = new Date().getTime();
 
