@@ -36,6 +36,7 @@ import static ch.lambdaj.Lambda.*;
 import ch.lambdaj.function.matcher.Predicate;
 import static ch.lambdaj.collection.LambdaCollections.*;
 
+public class GoogleAnalitycs {
 
 import Webdriver.mappings.hyves;
 

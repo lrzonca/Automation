@@ -20,7 +20,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
-import org.openqa.selenium.TakesScreenshot;
 
 
 public class SeleniumBase extends Common{
@@ -78,11 +77,11 @@ public class SeleniumBase extends Common{
 		if (!_result.isSuccess()){
 			System.out.println("TestCase " + this.getClass().getName() + "__" + method.getName() + " was Failed!!!");
 			System.out.println("Last URL was " + driver.getCurrentUrl());
-			Date date = new Date();
-			SimpleDateFormat formatter = new SimpleDateFormat("yyyy.MM.dd");
-			SimpleDateFormat formatter2 = new SimpleDateFormat("HH.mm");
-			String sDate = formatter.format(date);
-			String sTime = formatter2.format(date);
+//			Date date = new Date();
+//			SimpleDateFormat formatter = new SimpleDateFormat("yyyy.MM.dd");
+//			SimpleDateFormat formatter2 = new SimpleDateFormat("HH.mm");
+//			String sDate = formatter.format(date);
+//			String sTime = formatter2.format(date);
 //			try{
 //			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 //			FileUtils.copyFile(scrFile, new File("C:\\tmp\\WebDriverLog\\FAILED_" + xBrowser + "_TC_" + this.getClass().getName() + "__" + method.getName() + "__" + sDate + "_" + sTime + "__" + ".png"));
