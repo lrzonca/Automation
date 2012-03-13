@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class POPULAR_GAMES extends SeleniumBase{
 	  
-//	Popular Games - title -  click to popular games title, check url and if left navi popular games is selected 	
+	/** Popular Games - title -  click to popular games title, check url and if left navi popular games is selected**/ 	
 	@Test
 	@Parameters({"xUrl"})
 	public void Popular1(String xUrl) throws InterruptedException {
@@ -20,7 +20,7 @@ public class POPULAR_GAMES extends SeleniumBase{
 		assertTrue(findElement(leftNavi.POPULAR_GAMES).getAttribute("class").contains("currentOne"));		
 	}
 	
-//	Popular Games - games - click first available game in popular games, check url if correct game was open 	
+	/**Popular Games - games - click first available game in popular games, check url if correct game was open**/ 	
 	@Test
 	@Parameters({"xUrl"})
 	public void Popular2(String xUrl) throws InterruptedException {
@@ -35,7 +35,7 @@ public class POPULAR_GAMES extends SeleniumBase{
 		assertTrue(driver.getCurrentUrl().equals(gameUrl));
 	}	
 	
-//	Popular Games - hover - move mouse over all popular games and check if popup with correct game image and title is showing
+	/**Popular Games - hover - move mouse over all popular games and check if popup with correct game image and title is showing **/
 	@Test
 	@Parameters({"xUrl"})
 	public void Popular3(String xUrl) throws InterruptedException {

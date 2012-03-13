@@ -7,10 +7,10 @@ import org.openqa.selenium.WebElement;
 
 public class AVATAR extends SeleniumBase{
 
-	/* Avatar - check all controls
+	/** Avatar - check all controls
 	* 
 	* environment: live and stg
-	*/
+	**/
 	@Test
 	@Parameters({"xUrl"})
 	public void Avatar1(String xUrl) throws InterruptedException {
@@ -56,10 +56,10 @@ public class AVATAR extends SeleniumBase{
 	
 	
 	
-	/* Avatar - change avatar and check if in my profile top bar is visible correct avatar 
+	/** Avatar - change avatar and check if in my profile top bar is visible correct avatar 
 	 * 
 	 * environment: live and stg
-    */
+    **/
 	@Test
 	@Parameters({"xUrl"})	
 	public void Avatar2(String xUrl) throws InterruptedException {

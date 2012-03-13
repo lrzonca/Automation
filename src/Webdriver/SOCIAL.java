@@ -131,8 +131,8 @@ public class SOCIAL extends SeleniumBase{
 	}
 	
 	
-	/* Pet Party - on site - invite friends
-	 */
+	/** Pet Party - on site - invite friends
+	 **/
 	@Test
 	@Parameters({"xUrl"})
 	public void Social03(String xUrl) throws InterruptedException {//NOT OK
@@ -175,8 +175,8 @@ public class SOCIAL extends SeleniumBase{
 	}
 	
 	
-	/* Pet Party - Sign Up - user is not logged in, click invite and check all controls, close sign up popup and open it again, after reopen check again all controls 
-	 */
+	/** Pet Party - Sign Up - user is not logged in, click invite and check all controls, close sign up popup and open it again, after reopen check again all controls 
+	 **/
 	@Test
 	@Parameters({"xUrl"})
 	public void Social04(String xUrl) throws InterruptedException { //ok
@@ -284,9 +284,9 @@ public class SOCIAL extends SeleniumBase{
 	}
 	
 	
-	/* Pet Party - Sign Up - user is not logged in, click invite next click SIGN me Up button without filling any data,
+	/** Pet Party - Sign Up - user is not logged in, click invite next click SIGN me Up button without filling any data,
 	 * check all controls and all errors which shown, close sign up popup and open it again, after reopen check again all controls with errors 
-	 */
+	 **/
 	@Test
 	@Parameters({"xUrl"})
 	public void Social05(String xUrl) throws InterruptedException {
@@ -349,9 +349,9 @@ public class SOCIAL extends SeleniumBase{
 	}
 	
 
-	/* Pet Party - Sign Up - user is not logged in, click invite next click close button after writing a wrong data in email e.g. 123,
+	/** Pet Party - Sign Up - user is not logged in, click invite next click close button after writing a wrong data in email e.g. 123,
 	 * check all controls and email error which shown, close sign up popup and open it again, after reopen check again all controls with error 
-	 */
+	 **/
 	@Test
 	@Parameters({"xUrl"})
 	public void Social06(String xUrl) throws InterruptedException {
@@ -419,9 +419,9 @@ public class SOCIAL extends SeleniumBase{
 	}
 	
 	
-	/* Pet Party - Sign Up - user is not logged in, click invite next click close button after writing a wrong data in email e.g. 123,
+	/** Pet Party - Sign Up - user is not logged in, click invite next click close button after writing a wrong data in email e.g. 123,
 	 * check all controls and email error which shown, close sign up popup and open it again, after reopen check again all controls with error 
-	 */
+	 **/
 	@Test
 	@Parameters({"xUrl"})
 	public void Social07(String xUrl) throws InterruptedException {
@@ -489,9 +489,9 @@ public class SOCIAL extends SeleniumBase{
 	}			
 	
 	
-	/* Pet Party - Sign Up - user is not logged in, click invite next click close button after writing a wrong data in email e.g. 123,
+	/** Pet Party - Sign Up - user is not logged in, click invite next click close button after writing a wrong data in email e.g. 123,
 	 * check all controls and email error which shown, close sign up popup and open it again, after reopen check again all controls with error 
-	 */
+	 **/
 	@Test
 	@Parameters({"xUrl"})
 	public void Social08(String xUrl) throws InterruptedException {
@@ -560,9 +560,9 @@ public class SOCIAL extends SeleniumBase{
 	}
 	
 	
-	/* Pet Party - Sign Up - user is not logged in, click invite next click close button after writing a wrong data in email e.g. 123,
+	/** Pet Party - Sign Up - user is not logged in, click invite next click close button after writing a wrong data in email e.g. 123,
 	 * check all controls and email error which shown, close sign up popup and open it again, after reopen check again all controls with error 
-	 */
+	 **/
 	@Test
 	@Parameters({"xUrl"})
 	public void Social09(String xUrl) throws InterruptedException {
@@ -630,9 +630,9 @@ public class SOCIAL extends SeleniumBase{
 	}
 	
 	
-	/* Pet Party - Sign Up - user is not logged in, click invite next click close button after writing a wrong data in email e.g. 123,
+	/** Pet Party - Sign Up - user is not logged in, click invite next click close button after writing a wrong data in email e.g. 123,
 	 * check all controls and email error which shown, close sign up popup and open it again, after reopen check again all controls with error 
-	 */
+	 **/
 	@Test
 	@Parameters({"xUrl"})
 	public void Social10(String xUrl) throws InterruptedException {
@@ -700,9 +700,9 @@ public class SOCIAL extends SeleniumBase{
 	}	
 	
 	
-	/* Pet Party - Sign Up - user is not logged in, click invite next click close button after writing a username which is banned word e.g. fuck,
+	/** Pet Party - Sign Up - user is not logged in, click invite next click close button after writing a username which is banned word e.g. fuck,
 	 * check all controls and username error which shown, close sign up popup and open it again, after reopen check again all controls with error 
-	 */
+	 **/
 	@Test
 	@Parameters({"xUrl"})
 	public void Social11(String xUrl) throws InterruptedException {
@@ -772,9 +772,9 @@ public class SOCIAL extends SeleniumBase{
 	}
 	
 	
-	/* Pet Party - Sign Up - user is not logged in, click invite next click close button after writing a too short password e.g. 123,
+	/** Pet Party - Sign Up - user is not logged in, click invite next click close button after writing a too short password e.g. 123,
 	 * check all controls and password error which shown, close sign up popup and open it again, after reopen check again all controls with error 
-	 */
+	 **/
 	@Test
 	@Parameters({"xUrl"})
 	public void Social12(String xUrl) throws InterruptedException {
@@ -843,11 +843,11 @@ public class SOCIAL extends SeleniumBase{
 	}		
 	
 	
-	/* Pet Party - Sign Up - user is not logged in, click invite next click close button after writing a "%" in age field,
+	/** Pet Party - Sign Up - user is not logged in, click invite next click close button after writing a "%" in age field,
 	 * check all controls and password error which shown, close sign up popup and open it again, after reopen check again all controls with error 
 	 * 
 	 * not valid in current DOB version
-	 */
+	 **/
 	@Test
 	@Parameters({"xUrl"})
 	public void Social13(String xUrl) throws InterruptedException {
@@ -916,9 +916,9 @@ public class SOCIAL extends SeleniumBase{
 	}			
 	
 	
-	/* Pet Party - Sign Up - user is not logged in, click invite next click close button after writing a too young user e.g. 1 year,
+	/** Pet Party - Sign Up - user is not logged in, click invite next click close button after writing a too young user e.g. 1 year,
 	 * check all controls and password error which shown, close sign up popup and open it again, after reopen check again all controls with error 
-	 */
+	 **/
 	@Test
 	@Parameters({"xUrl"})
 	public void Social14(String xUrl) throws InterruptedException {
@@ -988,9 +988,9 @@ public class SOCIAL extends SeleniumBase{
 	}			
 	
 	
-	/* Pet Party - Sign Up - user is not logged in, click invite next click close button after writing a too young user e.g. 5, and chcck if parrent controls are visible 
+	/** Pet Party - Sign Up - user is not logged in, click invite next click close button after writing a too young user e.g. 5, and chcck if parrent controls are visible 
 	 * check all controls and password error which shown, close sign up popup and open it again, after reopen check again all controls with error 
-	 */
+	 **/
 	@Test
 	@Parameters({"xUrl"})
 	public void Social15(String xUrl) throws InterruptedException {
@@ -1083,11 +1083,11 @@ public class SOCIAL extends SeleniumBase{
 	}				
 	
 	
-	/* Pet Party - Sign Up - user is not logged in, click invite next click close button after writing a young age. 5,
+	/** Pet Party - Sign Up - user is not logged in, click invite next click close button after writing a young age. 5,
 	 * check all controls old and new ones for parents email and how old are you correct icon, enter wrong parents email e.g. wrong_parents_mail and check error 
 	 * close sign up popup and open it again, 
 	 * after reopen check again all controls with icons and errors 
-	 */
+	 **/
 	@Test
 	@Parameters({"xUrl"})
 	public void Social16(String xUrl) throws InterruptedException {
@@ -1173,13 +1173,13 @@ public class SOCIAL extends SeleniumBase{
 	}
 	
 	
-	/* Pet Party - Sign Up - user is not logged in, click invite next click SIGN me Up button after writing correct data (user age e.g. 20)
+	/** Pet Party - Sign Up - user is not logged in, click invite next click SIGN me Up button after writing correct data (user age e.g. 20)
 	 * check all controls old and all correct icons 
 	 * after reopen check again all controls with icons and errors
 	 * 
 	 *  
 	 * STG only
-	 */
+	 **/
 	@Test
 	@Parameters({"xUrl"})
 	public void Social17(String xUrl) throws InterruptedException {
@@ -1271,10 +1271,10 @@ public class SOCIAL extends SeleniumBase{
 	}							
 	
 	
-	/* Pet Party - Sign Up - user is not logged in, click invite next click SIGN me Up button after writing correct data (user age e.g. 5)
+	/** Pet Party - Sign Up - user is not logged in, click invite next click SIGN me Up button after writing correct data (user age e.g. 5)
 	 * check all controls old and all correct icons 
 	 * after reopen check again all controls with icons and errors 
-	 */
+	 **/
 	@Test
 	@Parameters({"xUrl"})
 	public void Social18(String xUrl) throws InterruptedException {

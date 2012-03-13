@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 
 public class PROFILE_PAGE extends SeleniumBase{	
 	@Test
-//	Profile page - default - login, click my profile, logout and check if url contains "/user/{username}" 
+	/**Profile page - default - login, click my profile, logout and check if url contains "/user/{username}" **/
 	@Parameters({"xUrl"})
 	public void Profile1(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
@@ -22,7 +22,7 @@ public class PROFILE_PAGE extends SeleniumBase{
 	}		
 	
 	@Test
-//	Profile page - Overview - check messages on wall in all three tabs -- Smoke
+	/**Profile page - Overview - check messages on wall in all three tabs -- Smoke**/
 	@Parameters({"xUrl"})
 	public void Overview1(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
@@ -64,7 +64,7 @@ public class PROFILE_PAGE extends SeleniumBase{
 	}
 	
 	@Test
-//	Profile page - Overview - check if all components are visible
+	/**Profile page - Overview - check if all components are visible**/
 	@Parameters({"xUrl"})
 	public void Overview2(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
@@ -82,7 +82,7 @@ public class PROFILE_PAGE extends SeleniumBase{
 	}
 	
 	@Test
-//	Profile page - Overview - Latest Activities - check if all controls are visible
+	/**Profile page - Overview - Latest Activities - check if all controls are visible**/
 	@Parameters({"xUrl"})
 	public void Overview3(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
@@ -104,7 +104,7 @@ public class PROFILE_PAGE extends SeleniumBase{
 	}	
 	
 	@Test
-//	Profile page - Overview - Latest Activities - post a message and check if messages tab is active and is visible posted text
+	/**Profile page - Overview - Latest Activities - post a message and check if messages tab is active and is visible posted text**/
 	@Parameters({"xUrl"})
 	public void Overview4(String xUrl) throws InterruptedException {
 		long timestamp = new Date().getTime();
@@ -124,7 +124,7 @@ public class PROFILE_PAGE extends SeleniumBase{
 	}	
 	
 	@Test
-//	Profile page - Overview - Latest Activities - click friend avatar and check url
+	/**Profile page - Overview - Latest Activities - click friend avatar and check url**/
 	@Parameters({"xUrl"})
 	public void Overview5(String xUrl) throws InterruptedException {
 		String userUrl = "TestUser_A";
@@ -145,7 +145,7 @@ public class PROFILE_PAGE extends SeleniumBase{
 	}		
 	
 	@Test
-//	Profile page - Overview - Latest Activities - click friend username and check url
+	/**Profile page - Overview - Latest Activities - click friend username and check url**/
 	@Parameters({"xUrl"})
 	public void Overview6(String xUrl) throws InterruptedException {
 		String userUrl = "TestUser_A";
@@ -166,7 +166,7 @@ public class PROFILE_PAGE extends SeleniumBase{
 	}		
 
 	@Test
-//	Profile page - Overview - Latest Activities - click own avatar and check url
+	/**Profile page - Overview - Latest Activities - click own avatar and check url**/
 	@Parameters({"xUrl"})
 	public void Overview7(String xUrl) throws InterruptedException {
 		String userUrl = "cookietest1";
@@ -187,7 +187,7 @@ public class PROFILE_PAGE extends SeleniumBase{
 	}		
 	
 	@Test
-//	Profile page - Overview - Latest Activities - click friend own and check url
+	/**Profile page - Overview - Latest Activities - click friend own and check url**/
 	@Parameters({"xUrl"})
 	public void Overview8(String xUrl) throws InterruptedException {
 		String userUrl = "cookietest1";
@@ -209,7 +209,7 @@ public class PROFILE_PAGE extends SeleniumBase{
 	}		
 	
 	@Test
-//	Profile page - Overview - My Friends - login user without friends, click my profile and check controls, click friends btn and check url
+	/**Profile page - Overview - My Friends - login user without friends, click my profile and check controls, click friends btn and check url**/
 	@Parameters({"xUrl"})
 	public void Overview9(String xUrl) throws InterruptedException {		
 		System.out.println("Open URL");
@@ -226,7 +226,7 @@ public class PROFILE_PAGE extends SeleniumBase{
 	}		
 	
 	@Test
-//	Profile page - Overview - My Friends - login user with friends, click my profile and check controls
+	/**Profile page - Overview - My Friends - login user with friends, click my profile and check controls**/
 	@Parameters({"xUrl"})
 	public void Overview10(String xUrl) throws InterruptedException {		
 		System.out.println("Open URL");
@@ -243,7 +243,7 @@ public class PROFILE_PAGE extends SeleniumBase{
 	}		
 	
 	@Test
-//	Profile page - Overview - My Friends - login user with friends, click my profile, click first avatar from my friends and check url
+	/**Profile page - Overview - My Friends - login user with friends, click my profile, click first avatar from my friends and check url**/
 	@Parameters({"xUrl"})
 	public void Overview11(String xUrl) throws InterruptedException {		
 		System.out.println("Open URL");
@@ -258,7 +258,7 @@ public class PROFILE_PAGE extends SeleniumBase{
 	}		
 
 	@Test
-//	Profile page - Overview - My Friends - login user with friends, click my profile, click first name from my friends and check url
+	/**Profile page - Overview - My Friends - login user with friends, click my profile, click first name from my friends and check url**/
 	@Parameters({"xUrl"})
 	public void Overview12(String xUrl) throws InterruptedException {		
 		System.out.println("Open URL");
@@ -273,7 +273,7 @@ public class PROFILE_PAGE extends SeleniumBase{
 	}	
 	
 	@Test
-//	Profile page - Overview - My Friends - login user with friends, click my profile, click "see all friends" link
+	/**Profile page - Overview - My Friends - login user with friends, click my profile, click "see all friends" link**/
 	@Parameters({"xUrl"})
 	public void Overview13(String xUrl) throws InterruptedException {		
 		System.out.println("Open URL");
@@ -287,8 +287,8 @@ public class PROFILE_PAGE extends SeleniumBase{
 	}	
 
 	@Test
-//	Profile page - Overview - Fave Games - login user without fave games, click my profile and check controls,
-//	click "See all fave games" and check url
+	/**Profile page - Overview - Fave Games - login user without fave games, click my profile and check controls,
+	click "See all fave games" and check url**/
 	@Parameters({"xUrl"})
 	public void Overview14(String xUrl) throws InterruptedException {		
 		System.out.println("Open URL");
@@ -309,8 +309,8 @@ public class PROFILE_PAGE extends SeleniumBase{
 	}	
 	
 	@Test
-//	Profile page - Overview - Fave Games - login user with fave games, click my profile and check controls
-//	click "See all fave games" and check url
+	/**Profile page - Overview - Fave Games - login user with fave games, click my profile and check controls
+	click "See all fave games" and check url**/
 	@Parameters({"xUrl"})
 	public void Overview15(String xUrl) throws InterruptedException {		
 		System.out.println("Open URL");
@@ -330,7 +330,7 @@ public class PROFILE_PAGE extends SeleniumBase{
 	}		
 	
 	@Test
-//	Profile page - Overview - Fave Games - login user with fave games, click first fave game and check url
+	/**Profile page - Overview - Fave Games - login user with fave games, click first fave game and check url**/
 	@Parameters({"xUrl"})
 	public void Overview16(String xUrl) throws InterruptedException {		
 		System.out.println("Open URL");
@@ -346,8 +346,8 @@ public class PROFILE_PAGE extends SeleniumBase{
 	}		
 	
 	@Test
-//	Profile page - Overview - My Latest Creations - login user without any Creations, click my profile and check controls,
-//	click "view album" and check url
+	/**Profile page - Overview - My Latest Creations - login user without any Creations, click my profile and check controls,
+	click "view album" and check url**/
 	@Parameters({"xUrl"})
 	public void Overview17(String xUrl) throws InterruptedException {		
 		System.out.println("Open URL");
@@ -369,8 +369,8 @@ public class PROFILE_PAGE extends SeleniumBase{
 	}	
 	
 	@Test
-//	Profile page - Overview - My Latest Creations - login user with any Creations, click my profile and check controls
-//	click "view album" and check url
+	/**Profile page - Overview - My Latest Creations - login user with any Creations, click my profile and check controls
+	click "view album" and check url**/
 	@Parameters({"xUrl"})
 	public void Overview18(String xUrl) throws InterruptedException {		
 		System.out.println("Open URL");
@@ -390,7 +390,7 @@ public class PROFILE_PAGE extends SeleniumBase{
 	}		
 	
 	@Test
-//	Profile page - Overview - My Latest Creations - login user with Creations, click first creation and check url
+	/**Profile page - Overview - My Latest Creations - login user with Creations, click first creation and check url**/
 	@Parameters({"xUrl"})
 	public void Overview19(String xUrl) throws InterruptedException {		
 		System.out.println("Open URL");
@@ -406,8 +406,8 @@ public class PROFILE_PAGE extends SeleniumBase{
 	}
 	
 	@Test
-//	Profile page - Overview - My Awards - login user without any awards, click my profile and check controls,
-//	click "see all awards" and check url
+	/**Profile page - Overview - My Awards - login user without any awards, click my profile and check controls,
+	click "see all awards" and check url**/
 	@Parameters({"xUrl"})
 	public void Overview20(String xUrl) throws InterruptedException {		
 		System.out.println("Open URL");
@@ -429,8 +429,8 @@ public class PROFILE_PAGE extends SeleniumBase{
 	}	
 	
 	@Test
-//	Profile page - Overview - My Awards - login user with any awards, click my profile and check controls
-//	click "see all awards" and check url
+	/**Profile page - Overview - My Awards - login user with any awards, click my profile and check controls
+	click "see all awards" and check url**/
 	@Parameters({"xUrl"})
 	public void Overview21(String xUrl) throws InterruptedException {		
 		System.out.println("Open URL");
@@ -452,7 +452,7 @@ public class PROFILE_PAGE extends SeleniumBase{
 	}		
 	
 	@Test
-//	Profile page - Overview - My Awards - login user with awards, click first award and check url
+	/**Profile page - Overview - My Awards - login user with awards, click first award and check url**/
 	@Parameters({"xUrl"})
 	public void Overview22(String xUrl) throws InterruptedException {		
 		System.out.println("Open URL");
@@ -468,7 +468,7 @@ public class PROFILE_PAGE extends SeleniumBase{
 	}	
 	
 	@Test
-//	Profile page - Overview - High Scores - login user without any high scores, click my profile and check controls
+	/**Profile page - Overview - High Scores - login user without any high scores, click my profile and check controls**/
 	@Parameters({"xUrl"})
 	public void Overview23(String xUrl) throws InterruptedException {		
 		System.out.println("Open URL");
@@ -481,7 +481,7 @@ public class PROFILE_PAGE extends SeleniumBase{
 	}		
 	
 	@Test
-//	Profile page - Overview - High Scores - login user with any high scores, click my profile and check controls
+	/**Profile page - Overview - High Scores - login user with any high scores, click my profile and check controls**/
 	@Parameters({"xUrl"})
 	public void Overview24(String xUrl) throws InterruptedException {		
 		System.out.println("Open URL");

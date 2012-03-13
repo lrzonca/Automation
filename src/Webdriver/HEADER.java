@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class HEADER extends SeleniumBase{
 
-//	Site logo - click on any link in left navi, click header logo, check url and controls if page return to home page
+	/** Site logo - click on any link in left navi, click header logo, check url and controls if page return to home page **/
 	@Test
 	@Parameters({"xUrl"})
 	public void Header1(String xUrl) throws InterruptedException {
@@ -22,7 +22,7 @@ public class HEADER extends SeleniumBase{
 		assertIsDisplayed(homepage.GAME_LIST);
 	}
 	
-//	Slogan - click on any link in left navi, click header slogan, check url and controls if page return to home page
+	/** Slogan - click on any link in left navi, click header slogan, check url and controls if page return to home page **/
 	@Test
 	@Parameters({"xUrl"})
 	public void Header2(String xUrl) throws InterruptedException {
@@ -37,7 +37,7 @@ public class HEADER extends SeleniumBase{
 		assertIsDisplayed(homepage.GAME_LIST);
 	}	
 
-//	GGG tab - click on any link in left navi, click header ggg tab, check url and controls if page return to home page
+	/** GGG tab - click on any link in left navi, click header ggg tab, check url and controls if page return to home page **/
 	@Test
 	@Parameters({"xUrl"})
 	public void Header3(String xUrl) throws InterruptedException {

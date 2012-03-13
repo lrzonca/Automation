@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class FAVORITE_GAMES extends SeleniumBase{
 
-//	Top bar - Favorite games link - login a user, click "favorite games" link from top bar, check url and controls if are present and correct tab is selected
+	/** Top bar - Favorite games link - login a user, click "favorite games" link from top bar, check url and controls if are present and correct tab is selected **/
 	@Test
 	@Parameters({"xUrl"})
 	public void Favorite1(String xUrl) throws InterruptedException {

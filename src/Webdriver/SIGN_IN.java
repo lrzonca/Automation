@@ -13,7 +13,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 public class SIGN_IN extends SeleniumBase{
 	long timestamp = new Date().getTime();
 
-//	Sign in (successfully)
+	/**Sign in (successfully)**/
 	@Test
 	@Parameters({"xUrl"})
 	public void SignIn1(String xUrl) throws InterruptedException {
@@ -25,7 +25,7 @@ public class SIGN_IN extends SeleniumBase{
 	    assertEquals("cookietest", findElement(signIn.LOGGED_USERNAME).getText());
 	}
 	
-//	Sign in unsuccessfully (wrong password)	
+	/**Sign in unsuccessfully (wrong password)	**/
 	@Test
 	@Parameters({"xUrl"})
 	public void SignIn2(String xUrl) throws InterruptedException {
@@ -33,13 +33,13 @@ public class SIGN_IN extends SeleniumBase{
 		driver.get(xUrl);
 		sleep(2);
 		Login("cookietest", "123456" + "wrong");	
-//		assertTrue(findElement(signIn.WHOLE_POPUP).isDisplayed());
-//		assertTrue(findElement(signIn.ERROR_MESSAGE).isDisplayed());
+	//	assertTrue(findElement(signIn.WHOLE_POPUP).isDisplayed());
+	//	assertTrue(findElement(signIn.ERROR_MESSAGE).isDisplayed());
 		assertIsDisplayed(signIn.SIGN_IN_POPUP);
 		assertIsDisplayed(signIn.ERROR_MESSAGE);
 	}	
 	
-//	Sign in unsuccessfully (empty values)
+	/**Sign in unsuccessfully (empty values)**/
 	@Test
 	@Parameters({"xUrl"})
 	public void SignIn3(String xUrl) throws InterruptedException {
@@ -47,16 +47,16 @@ public class SIGN_IN extends SeleniumBase{
 		driver.get(xUrl);
 		sleep(2);
 		Login("", "");	
-//		System.out.println("Find Element WHOLE_POPUP");
-//		driver.findElement(By.id(Webdriver.mappings.signIn.WHOLE_POPUP)).isDisplayed();
-//		System.out.println("Find Element ERROR_MESSAGE");
-//		assertTrue(findElement(signIn.ERROR_MESSAGE).isDisplayed());
+	//	System.out.println("Find Element WHOLE_POPUP");
+	//	driver.findElement(By.id(Webdriver.mappings.signIn.WHOLE_POPUP)).isDisplayed();
+	//	System.out.println("Find Element ERROR_MESSAGE");
+	//	assertTrue(findElement(signIn.ERROR_MESSAGE).isDisplayed());
 		assertIsDisplayed(signIn.SIGN_IN_POPUP);
 		assertIsDisplayed(signIn.ERROR_MESSAGE);
 	}		
 	
-//	Sign in successfully (keep me signed in on)
-//	not working, problem with removing cookies 
+	/**Sign in successfully (keep me signed in on)
+	not working, problem with removing cookies **/
 	@Test
 	@Parameters({"xBrowser", "xUrl"})
 	public void SignIn4(String xBrowser, String xUrl) throws InterruptedException {
@@ -97,7 +97,7 @@ public class SIGN_IN extends SeleniumBase{
 		assertEquals("cookietest", findElement(signIn.LOGGED_USERNAME).getText());
 	}		
 	
-//	Sign in successfully (keep me signed in off)
+	/**Sign in successfully (keep me signed in off)**/
 	@Test
 	@Parameters({"xBrowser", "xUrl"})
 	public void SignIn5(String xBrowser, String xUrl) throws InterruptedException {
@@ -142,7 +142,7 @@ public class SIGN_IN extends SeleniumBase{
 	}
 	
 	
-//	Forgot your password link - click "sign in" button , click "forgot your password" link, check url and controls if are present
+	/**Forgot your password link - click "sign in" button , click "forgot your password" link, check url and controls if are present**/
 	@Test
 	@Parameters({"xUrl"})
 	public void SignIn6(String xUrl) throws InterruptedException {
@@ -163,7 +163,7 @@ public class SIGN_IN extends SeleniumBase{
 	}	
 	
 	
-//	Forgot your password link - click "sign in" button , click "become a member" link, check url and controls if are present
+	/**Forgot your password link - click "sign in" button , click "become a member" link, check url and controls if are present**/
 	@Test
 	@Parameters({"xUrl"})
 	public void SignIn7(String xUrl) throws InterruptedException {
@@ -180,7 +180,7 @@ public class SIGN_IN extends SeleniumBase{
 	}	
 	
 	
-//	Sign Up for free link - click "sign in" button , click "sign up for free" link, check controls if are present
+	/**Sign Up for free link - click "sign in" button , click "sign up for free" link, check controls if are present**/
 	@Test
 	@Parameters({"xUrl"})
 	public void SignIn8(String xUrl) throws InterruptedException {
@@ -196,7 +196,7 @@ public class SIGN_IN extends SeleniumBase{
 	}
 	
 	
-//	Sign Out link - login a user, click "sign out" link, check controls if are present
+	/**Sign Out link - login a user, click "sign out" link, check controls if are present**/
 	@Test
 	@Parameters({"xUrl"})
 	public void SignOut1(String xUrl) throws InterruptedException {

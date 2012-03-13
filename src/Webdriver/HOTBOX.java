@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class HOTBOX extends SeleniumBase{
 	  
-//	Hotbox - check if after 5 sek game was changed, next click button 1,2,3 and check if games are changed	
+	/** Hotbox - check if after 5 sek game was changed, next click button 1,2,3 and check if games are changed**/	
 	@Test
 	@Parameters({"xUrl"})
 	public void HotBox1(String xUrl) throws InterruptedException {
@@ -28,7 +28,7 @@ public class HOTBOX extends SeleniumBase{
 		assertTrue(findElement(hotbox.HOTBOX_ROTATOR).getAttribute("style").equals(table[2]));
 	}			
 	
-//	Hotbox - button 2, check which game should be open and next click game image, check url if correct game was open	
+	/** Hotbox - button 2, check which game should be open and next click game image, check url if correct game was open**/	
 	@Test
 	@Parameters({"xUrl"})
 	public void HotBox2(String xUrl) throws InterruptedException {
@@ -42,7 +42,7 @@ public class HOTBOX extends SeleniumBase{
 		assertTrue(driver.getCurrentUrl().equals(gameUrl));
 	}			
 	
-//	Hotbox - button 2, check which game should be open and next click play now button, check url if correct game was open	
+	/**Hotbox - button 2, check which game should be open and next click play now button, check url if correct game was open**/	
 	@Test
 	@Parameters({"xUrl"})
 	public void HotBox3(String xUrl) throws InterruptedException {

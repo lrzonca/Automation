@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class SEARCH extends SeleniumBase{
 	  
-//	Search - search game "pet party", check controls if are present and if correct game is visible	
+	/**Search - search game "pet party", check controls if are present and if correct game is visible	**/
 	@Test
 	@Parameters({"xUrl"})
 	public void Search1(String xUrl) throws InterruptedException {
@@ -21,8 +21,8 @@ public class SEARCH extends SeleniumBase{
 		assertTrue(findElement(searchpage.SEARCH_LIST).getAttribute("innerHTML").contains(search));
 	}	
 	
-//	Search - search "cat", check if search text is present, store first game name, click next and compare if first game from current page is different then from previous
-//	continue action till next btn is available, and next do the same actions for previous btn	
+	/**Search - search "cat", check if search text is present, store first game name, click next and compare if first game from current page is different then from previous
+	continue action till next btn is available, and next do the same actions for previous btn	**/
 	@Test
 	@Parameters({"xUrl"})
 	public void Search2(String xUrl) throws InterruptedException {
@@ -61,7 +61,7 @@ public class SEARCH extends SeleniumBase{
 		}		
 	}
 	
-//	Search - search "asgyiedhnasjkem", check controls if are present and if nothing was founded	
+	/** Search - search "asgyiedhnasjkem", check controls if are present and if nothing was founded	**/
 	@Test
 	@Parameters({"xUrl"})
 	public void Search3(String xUrl) throws InterruptedException {

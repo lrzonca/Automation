@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class ACTIVE_BOX extends SeleniumBase{
 	  
-//	Active Box - user not logged in - check controls and if Everyone tab is selected 	
+	/**	Active Box - user not logged in - check controls and if Everyone tab is selected **/ 	
 	@Test
 	@Parameters({"xUrl"})
 	public void Active01(String xUrl) throws InterruptedException {
@@ -32,8 +32,8 @@ public class ACTIVE_BOX extends SeleniumBase{
 		assertIsNotDisplayed(activebox.ACTIVE_BOX_LOGGED_VISIT_YOUR_PROFILE_LINK);
 	}	
 	
-//	Active Box - user not logged in - click "what happening" title, check if sign up popup is visible 
-//	DEFECT
+	/** Active Box - user not logged in - click "what happening" title, check if sign up popup is visible **/ 
+	/** DEFECT **/
 	@Test
 	@Parameters({"xUrl"})
 	public void Active02(String xUrl) throws InterruptedException {
@@ -44,7 +44,7 @@ public class ACTIVE_BOX extends SeleniumBase{
 		assertIsDisplayed(signUp.SIGN_UP_POPUP);
 	}		
 	
-//	Active Box - user not logged in - click "friends" tab, check if sign up popup is visible  	
+	/** Active Box - user not logged in - click "friends" tab, check if sign up popup is visible **/  	
 	@Test
 	@Parameters({"xUrl"})
 	public void Active03(String xUrl) throws InterruptedException {
@@ -55,7 +55,7 @@ public class ACTIVE_BOX extends SeleniumBase{
 		assertIsDisplayed(signUp.SIGN_UP_POPUP);
 	}	
 	
-//	Active Box - user not logged in - click "sign up" btn, check if sign up popup is visible  	
+	/** Active Box - user not logged in - click "sign up" btn, check if sign up popup is visible **/  	
 	@Test
 	@Parameters({"xUrl"})
 	public void Active04(String xUrl) throws InterruptedException {
@@ -66,7 +66,7 @@ public class ACTIVE_BOX extends SeleniumBase{
 		assertIsDisplayed(signUp.SIGN_UP_POPUP);
 	}	
 	
-//	Active Box - user not logged in - click "log in" link, check if sign in popup is visible  	
+	/** Active Box - user not logged in - click "log in" link, check if sign in popup is visible **/  	
 	@Test
 	@Parameters({"xUrl"})
 	public void Active05(String xUrl) throws InterruptedException {
@@ -77,7 +77,7 @@ public class ACTIVE_BOX extends SeleniumBase{
 		assertIsDisplayed(signIn.SIGN_IN_POPUP);
 	}	
 	
-//	Active Box - user not logged in - click "Join us!" link, check if sign up popup is visible  	
+	/** Active Box - user not logged in - click "Join us!" link, check if sign up popup is visible **/  	
 	@Test
 	@Parameters({"xUrl"})
 	public void Active06(String xUrl) throws InterruptedException {
@@ -88,7 +88,7 @@ public class ACTIVE_BOX extends SeleniumBase{
 		assertIsDisplayed(signUp.SIGN_UP_POPUP);
 	}		
 
-//	Active Box - user logged in - check controls and if Friends tab is selected 	
+	/** Active Box - user logged in - check controls and if Friends tab is selected **/ 	
 	@Test
 	@Parameters({"xUrl"})
 	public void Active07(String xUrl) throws InterruptedException {
@@ -116,8 +116,8 @@ public class ACTIVE_BOX extends SeleniumBase{
 		assertIsNotDisplayed(activebox.ACTIVE_BOX_UNLOGGED_JOIN_US_LINK);
 	}	
 
-//	Active Box - user logged in - click "what happening" title, check if profile page was open
-//	DEFECT
+	/** Active Box - user logged in - click "what happening" title, check if profile page was open **/
+	/** DEFECT **/
 	@Test
 	@Parameters({"xUrl"})
 	public void Active08(String xUrl) throws InterruptedException {
@@ -131,7 +131,7 @@ public class ACTIVE_BOX extends SeleniumBase{
 		assertTrue(driver.getCurrentUrl().contains("profile.html"));
 	}		
 	
-//	Active Box - user logged in - click "visit your profile" title, check if profile page was open
+	/** Active Box - user logged in - click "visit your profile" title, check if profile page was open**/
 	@Test
 	@Parameters({"xUrl"})
 	public void Active09(String xUrl) throws InterruptedException {
@@ -145,7 +145,7 @@ public class ACTIVE_BOX extends SeleniumBase{
 		assertTrue(driver.getCurrentUrl().contains("profile.html"));
 	}	
 	
-//	Active Box - user logged in without friends - check invite friends controls, click invite friends btn and check if My profile - my friends page was open
+	/**Active Box - user logged in without friends - check invite friends controls, click invite friends btn and check if My profile - my friends page was open**/
 	@Test
 	@Parameters({"xUrl"})
 	public void Active10(String xUrl) throws InterruptedException {
@@ -161,7 +161,7 @@ public class ACTIVE_BOX extends SeleniumBase{
 		assertTrue(driver.getCurrentUrl().contains("myfriends.html"));
 	}	
 	
-//	Active Box - user logged in without friends - click "Everyone" tab and check if messages are visible
+	/**Active Box - user logged in without friends - click "Everyone" tab and check if messages are visible**/
 	@Test
 	@Parameters({"xUrl"})
 	public void Active11(String xUrl) throws InterruptedException {
@@ -176,8 +176,8 @@ public class ACTIVE_BOX extends SeleniumBase{
 		assertIsDisplayed(activebox.ACTIVE_BOX_LOGGED_EVERYONE_MOVING_FIRST_MSG_BOX);
 	}
 	
-//	Active Box - user logged in with friends - check if on "Friends" tab messages are visible,
-//	click "Everyone" tab and check if messages are visible and are different than on "Friends" tab  
+	/**Active Box - user logged in with friends - check if on "Friends" tab messages are visible,**/
+	/**click "Everyone" tab and check if messages are visible and are different than on "Friends" tab  **/
 	@Test
 	@Parameters({"xUrl"})
 	public void Active12(String xUrl) throws InterruptedException {

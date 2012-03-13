@@ -6,8 +6,8 @@ import org.testng.annotations.Test;
 
 public class VIRTUAL_BOX extends SeleniumBase{
 	  
-//	Virtual Box - games - click first available game image in social games, check url if correct game was open, 
-//	click back and click second available game name in social games, check url if correct game was open 	
+	/**	Virtual Box - games - click first available game image in social games, check url if correct game was open, 
+	click back and click second available game name in social games, check url if correct game was open 	**/
 	@Test
 	@Parameters({"xUrl"})
 	public void VirtualBox1(String xUrl) throws InterruptedException {
@@ -29,8 +29,8 @@ public class VIRTUAL_BOX extends SeleniumBase{
 		assertTrue(driver.getCurrentUrl().equals(gameUrl2));		
 	}
 	
-//	Virtual Box - games - move mouse over all game images and check if is showing correct tooltip,
-//	and next move mouse over all game names and check if is showing correct tooltip  
+	/**	Virtual Box - games - move mouse over all game images and check if is showing correct tooltip,
+	and next move mouse over all game names and check if is showing correct tooltip  **/
 	@Test
 	@Parameters({"xUrl"})
 	public void VirtualBox2(String xUrl) throws InterruptedException {

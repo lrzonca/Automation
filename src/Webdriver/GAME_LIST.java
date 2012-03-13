@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class GAME_LIST extends SeleniumBase{
 	  
-//	GameList - check if all controls are visible	
+	/**	GameList - check if all controls are visible **/	
 	@Test
 	@Parameters({"xUrl"})
 	public void GameList1(String xUrl) throws InterruptedException {
@@ -21,7 +21,7 @@ public class GAME_LIST extends SeleniumBase{
 		}		
 	}		
 	
-//	GameList - click "More New Games" link, check if 2 page of New Games was open 
+	/** GameList - click "More New Games" link, check if 2 page of New Games was open **/ 
 	@Test
 	@Parameters({"xUrl"})
 	public void GameList2(String xUrl) throws InterruptedException {
@@ -33,7 +33,7 @@ public class GAME_LIST extends SeleniumBase{
 		assertTrue(driver.getCurrentUrl().contains("new,2.html"));
 	}		
 	
-//	GameList - move mouse over each game and check if correct tooltip is visible 
+	/** GameList - move mouse over each game and check if correct tooltip is visible **/ 
 	@Test
 	@Parameters({"xUrl"})
 	public void GameList3(String xUrl) throws InterruptedException {

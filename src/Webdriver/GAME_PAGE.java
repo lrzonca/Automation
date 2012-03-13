@@ -9,8 +9,8 @@ public class GAME_PAGE extends SeleniumBase{
 	long timestamp = new Date().getTime();
 	  
 	@Test
-	/* Flash - shockwave - check if game was open correctly 
-	 */	
+	/** Flash - shockwave - check if game was open correctly 
+	 **/	
 	@Parameters({"xUrl"})
 	public void GamePage1(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
@@ -20,8 +20,8 @@ public class GAME_PAGE extends SeleniumBase{
 	}
 	
 	@Test
-	/* Java - check if game was open correctly 
-	 */	
+	/** Java - check if game was open correctly 
+	 **/	
 	@Parameters({"xUrl"})
 	public void GamePage2(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
@@ -34,8 +34,8 @@ public class GAME_PAGE extends SeleniumBase{
 	}
 	
 	@Test
-	/* Iframe - check if game was open correctly 
-	 */	
+	/** Iframe - check if game was open correctly 
+	 **/	
 	@Parameters({"xUrl"})
 	public void GamePage3(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
@@ -48,8 +48,8 @@ public class GAME_PAGE extends SeleniumBase{
 	}
 		
 	@Test
-	/* Game Active - check if game is visible on page when is marked as a active in cms
-	*/ 	
+	/** Game Active - check if game is visible on page when is marked as a active in cms
+	**/ 	
 	@Parameters({"xUrl"})
 	public void GamePage4(String xUrl) throws InterruptedException {
 		String SQL_select = "SELECT * FROM `games` g INNER JOIN `biglinks` b ON g.`id` = b.`game_id` WHERE g.`language_id` LIKE 'en-US' AND g.`active` = 1 LIMIT 1";
@@ -60,8 +60,8 @@ public class GAME_PAGE extends SeleniumBase{
 		assertTrue(pageTitle.contains(Game_game_name));
 	}		
 
-	/* Game Not Active - check if game is not visible on page when is not marked as a active in cms
-	*/	
+	/** Game Not Active - check if game is not visible on page when is not marked as a active in cms
+	**/	
 	@Test
 	@Parameters({"xUrl"})
 	public void GamePage5(String xUrl) throws InterruptedException {
@@ -73,8 +73,8 @@ public class GAME_PAGE extends SeleniumBase{
 		assertFalse(pageTitle.contains(Game_game_name));
 	}		
 
-	/* Scalable Active - check if scalable bar is visible on page when is marked as a active in cms
-	*/	
+	/** Scalable Active - check if scalable bar is visible on page when is marked as a active in cms
+	**/	
 	@Test
 	@Parameters({"xUrl"})
 	public void GamePage6(String xUrl) throws InterruptedException {
@@ -89,8 +89,8 @@ public class GAME_PAGE extends SeleniumBase{
 		assertIsDisplayed(gamepage.ZOOM_RESET_LINK);
 	}		
 	
-	/* Scalable Not Active - check if scalable bar is not visible on page when is not marked as a active in cms
-	*/	
+	/** Scalable Not Active - check if scalable bar is not visible on page when is not marked as a active in cms
+	**/	
 	@Test
 	@Parameters({"xUrl"})
 	public void GamePage7(String xUrl) throws InterruptedException { // not working for now, assertisNotDisplayed is not working

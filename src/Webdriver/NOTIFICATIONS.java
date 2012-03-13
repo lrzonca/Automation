@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class NOTIFICATIONS extends SeleniumBase{
 
-//	Top bar - Notifications link - login a user, click "notifications" link from top bar, check url and controls if are present and correct tab is selected 
+	/**Top bar - Notifications link - login a user, click "notifications" link from top bar, check url and controls if are present and correct tab is selected**/ 
 	@Test
 	@Parameters({"xUrl"})
 	public void Notifications1(String xUrl) throws InterruptedException {
@@ -22,7 +22,7 @@ public class NOTIFICATIONS extends SeleniumBase{
 		assertTrue(findElement(myProfile.TOP_TITLE).getText().equals("Notifications"));
 	}
 	
-//	Top bar - My profile - Notifications Tab - login a user without notification, click "my profile", click "notifications" tab, check url and controls on all tabs
+	/**Top bar - My profile - Notifications Tab - login a user without notification, click "my profile", click "notifications" tab, check url and controls on all tabs**/
 	@Test
 	@Parameters({"xUrl"})
 	public void Notifications2(String xUrl) throws InterruptedException {
@@ -55,7 +55,7 @@ public class NOTIFICATIONS extends SeleniumBase{
 		assertIsNotDisplayed(notifications.NOTIFICATIONS_NOTIFICATIONS_BOX);
 	}	
 	
-//	Top bar - My profile - Notifications Tab - login a user with notification, click "my profile", click "notifications" tab, check url and controls on all tabs 
+	/**Top bar - My profile - Notifications Tab - login a user with notification, click "my profile", click "notifications" tab, check url and controls on all tabs**/ 
 	@Test
 	@Parameters({"xUrl"})
 	public void Notifications3(String xUrl) throws InterruptedException {
@@ -93,7 +93,7 @@ public class NOTIFICATIONS extends SeleniumBase{
 	}		
 	
 	
-//	Top bar - My profile - Notifications Tab - login a user with notification, click "my profile", click "notifications" tab, click user avatar and check url 
+	/**Top bar - My profile - Notifications Tab - login a user with notification, click "my profile", click "notifications" tab, click user avatar and check url**/ 
 	@Test
 	@Parameters({"xUrl"})
 	public void Notifications4(String xUrl) throws InterruptedException {
@@ -111,8 +111,8 @@ public class NOTIFICATIONS extends SeleniumBase{
 		assertTrue(driver.getCurrentUrl().contains(userUrl));
 	}			
 	
-//	Top bar - My profile - Notifications Tab - login a user with a lot notification, click "my profile", click "notifications" tab, 
-//	click paging-next-btn and check if first messages are different   
+	/**Top bar - My profile - Notifications Tab - login a user with a lot notification, click "my profile", click "notifications" tab, 
+	click paging-next-btn and check if first messages are different **/   
 	@Test
 	@Parameters({"xUrl"})
 	public void Notifications5(String xUrl) throws InterruptedException {

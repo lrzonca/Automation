@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class RECOMMENDED_GAMES extends SeleniumBase{
 	  
-//	Recommended Games - games - click first available game in recommended games, check url if correct game was open 	
+	/**Recommended Games - games - click first available game in recommended games, check url if correct game was open**/ 	
 	@Test
 	@Parameters({"xUrl"})
 	public void Recommended1(String xUrl) throws InterruptedException {
@@ -21,7 +21,7 @@ public class RECOMMENDED_GAMES extends SeleniumBase{
 		assertTrue(driver.getCurrentUrl().equals(gameUrl));
 	}	
 	
-//	Recommended Games - hover - move mouse over all recommended games and check if popup with correct game image and title is showing
+	/**Recommended Games - hover - move mouse over all recommended games and check if popup with correct game image and title is showing**/
 	@Test
 	@Parameters({"xUrl"})
 	public void Recommended2(String xUrl) throws InterruptedException {
