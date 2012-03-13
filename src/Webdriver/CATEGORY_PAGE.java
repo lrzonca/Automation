@@ -2,12 +2,9 @@ package Webdriver;
 
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import org.junit.runners.BlockJUnit4ClassRunner;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.junit.runner.RunWith;
 
-@RunWith(BlockJUnit4ClassRunner.class)
 public class CATEGORY_PAGE extends SeleniumBase{
 	  
 	@Test
@@ -15,24 +12,13 @@ public class CATEGORY_PAGE extends SeleniumBase{
 	public void Category1(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
 		driver.get(xUrl);
-		System.out.println("Sleep 2 sek");
-		Thread.sleep(2000);
-		System.out.println("Find Element ADVENTURE_GAMES");
-		WebElement AdventureGame = driver.findElement(By.cssSelector(Webdriver.mappings.leftNavi.ADVENTURE_GAMES));
-		System.out.println("Click Element ADVENTURE_GAMES");
-		AdventureGame.click();	
-		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.id(Webdriver.mappings.categoryPage.SUBCATEGORY_GAME_LIST)).isDisplayed());
-		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.categoryPage.FIRST_AVAILABLE_SUBCATEGORY_LINK)).isDisplayed());
-		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.categoryPage.TOP_HOME_PAGE_LINK)).isDisplayed());
-		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.categoryPage.TOP_HOME_PAGE_LINK)).isDisplayed());
-		System.out.println("Assertion");
-		assertTrue(driver.findElements(By.cssSelector(Webdriver.mappings.categoryPage.TOP_CATEGORY_LINK)).size() == 0);
-		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.categoryPage.TOP_ACTIVE_PAGE)).isDisplayed());
+		sleep(5);
+		clickElement(leftNavi.ADVENTURE_GAMES);
+		sleep(5);
+		assertIsDisplayed(categoryPage.SUBCATEGORY_GAME_LIST);
+		assertIsDisplayed(categoryPage.FIRST_AVAILABLE_SUBCATEGORY_LINK);
+		assertIsDisplayed(categoryPage.TOP_ACTIVE_PAGE);
+		assertTrue(findElement(leftNavi.ADVENTURE_GAMES).getAttribute("class").contains("currentOne"));
 	}
 	
 	
@@ -41,14 +27,15 @@ public class CATEGORY_PAGE extends SeleniumBase{
 	public void Category2(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
 		driver.get(xUrl);
-		System.out.println("Sleep 2 sek");
-		Thread.sleep(2000);
+		System.out.println("Sleep 5 sek");
+		Thread.sleep(5000);
 		System.out.println("Find Element ADVENTURE_GAMES");
 		WebElement AdventureGame = driver.findElement(By.cssSelector(Webdriver.mappings.leftNavi.ADVENTURE_GAMES));
 		System.out.println("Click Element ADVENTURE_GAMES");
 		AdventureGame.click();		
+		sleep(5);
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.id(Webdriver.mappings.categoryPage.SUBCATEGORY_GAME_LIST)).isDisplayed());
+		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.categoryPage.SUBCATEGORY_GAME_LIST)).isDisplayed());
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.categoryPage.FIRST_AVAILABLE_SUBCATEGORY_LINK)).isDisplayed());
 		System.out.println("Assertion");
@@ -65,6 +52,7 @@ public class CATEGORY_PAGE extends SeleniumBase{
 		WebElement Subcategory = driver.findElement(By.cssSelector(Webdriver.mappings.categoryPage.FIRST_AVAILABLE_SUBCATEGORY_LINK));
 		System.out.println("Click Element FIRST_AVAILABLE_SUBCATEGORY_LINK");
 		Subcategory.click();
+		sleep(5);
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.subcategoryPage.FIRST_AVAILABLE_GAME_LINK)).isDisplayed());
 		System.out.println("Get Url");
@@ -75,12 +63,13 @@ public class CATEGORY_PAGE extends SeleniumBase{
 			WebElement GameLink = driver.findElement(By.cssSelector(Webdriver.mappings.categoryPage.FIRST_AVAILABLE_GAME_LINK));
 			System.out.println("Click Element FIRST_AVAILABLE_GAME_LINK");
 			GameLink.click();
+			sleep(10);
 			System.out.println("Assertion");
 			AssertTrue(driver.findElements(By.cssSelector(Webdriver.mappings.categoryPage.FIRST_AVAILABLE_SUBCATEGORY_LINK)).size() == 0);
 			System.out.println("Assertion");
 			AssertTrue(driver.findElements(By.cssSelector(Webdriver.mappings.categoryPage.FIRST_AVAILABLE_GAME_LINK)).size() == 0);
 			System.out.println("Assertion");
-			AssertTrue(driver.findElement(By.id(Webdriver.mappings.gamepage.ALL_COMMENTS_BOX)).isDisplayed());
+			AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.gamepage.ALL_COMMENTS_BOX)).isDisplayed());
 		   }			
 	}	
 	
@@ -90,14 +79,14 @@ public class CATEGORY_PAGE extends SeleniumBase{
 	public void Category3(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
 		driver.get(xUrl);
-		System.out.println("Sleep 2 sek");
-		Thread.sleep(2000);
+		System.out.println("Sleep 5 sek");
+		Thread.sleep(5000);
 		System.out.println("Find Element ADVENTURE_GAMES");
 		WebElement AdventureGame = driver.findElement(By.cssSelector(Webdriver.mappings.leftNavi.ADVENTURE_GAMES));
 		System.out.println("Click Element ADVENTURE_GAMES");
 		AdventureGame.click();
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.popularGames.POPULAR_GAMES_TITLE_CATEGORY_PAGE)).isDisplayed());  		   
+		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.populargames.POPULAR_GAMES_TITLE_CATEGORY_PAGE)).isDisplayed());  		   
 		int iterTry = 1;
 		while (driver.findElement(By.cssSelector(".BoxList li:nth-child(" + iterTry + ")")).isDisplayed()){			
 			if (iterTry % 2 == 1){
@@ -130,16 +119,17 @@ public class CATEGORY_PAGE extends SeleniumBase{
 	public void Category4(String xUrl) throws InterruptedException {
 		System.out.println("Open URL");
 		driver.get(xUrl);
-		System.out.println("Sleep 2 sek");
-		Thread.sleep(2000);
+		System.out.println("Sleep 5 sek");
+		Thread.sleep(5000);
 		System.out.println("Find Element ADVENTURE_GAMES");
 		WebElement AdventureGame = driver.findElement(By.cssSelector(Webdriver.mappings.leftNavi.ADVENTURE_GAMES));
 		System.out.println("Click Element ADVENTURE_GAMES");
 		AdventureGame.click();
+		sleep(5);
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.id(Webdriver.mappings.categoryPage.CATEGORY_TAG_BOX)).isDisplayed());
+		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.categoryPage.CATEGORY_TAG_BOX)).isDisplayed());
 		System.out.println("Assertion");
-		AssertTrue(driver.findElement(By.id(Webdriver.mappings.categoryPage.CATEGORY_TAG_GIRLS_IMG)).isDisplayed());
+		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.categoryPage.CATEGORY_TAG_GIRLS_IMG)).isDisplayed());
 		System.out.println("Assertion");
 		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.categoryPage.CATEGORY_TAG_TITLE)).isDisplayed());
 		System.out.println("Assertion");

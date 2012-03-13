@@ -7,18 +7,14 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import org.apache.commons.io.FileUtils;
 import java.util.Date;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
-import org.openqa.selenium.server.commands.CaptureNetworkTrafficCommand.Entry;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -28,7 +24,6 @@ import org.openqa.selenium.TakesScreenshot;
 
 
 public class SeleniumBase extends Common{
-//	private static final Entry TrafficResult = null;
 	DesiredCapabilities capability=null;
 	
 	 @BeforeClass
@@ -38,8 +33,7 @@ public class SeleniumBase extends Common{
 			 service = new ChromeDriverService.Builder()
 		        .usingChromeDriverExecutable(new File(".\\lib\\chromedriver.exe"))
 		        .usingAnyFreePort()
-		        .build();
-			  	
+		        .build();			  	
 		    service.start();
 		 }
 	  }
@@ -59,14 +53,11 @@ public class SeleniumBase extends Common{
 			System.out.println("firefox");
 			capability= DesiredCapabilities.firefox();
 			capability.setBrowserName("firefox");
-			capability.setPlatform(org.openqa.selenium.Platform.ANY);
-			//WebDriverBackedSelenium(CaptureNetworkTrafficCommand.capture(TrafficResult));
-			
+			capability.setPlatform(org.openqa.selenium.Platform.ANY);	
 			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
 		} else if (xBrowser.contains("chrome")) {
 			capability= DesiredCapabilities.chrome();
-			driver = new RemoteWebDriver(service.getUrl(), capability);
-			        
+			driver = new RemoteWebDriver(service.getUrl(), capability);			
 		} else if (xBrowser.contains("iexplore")) {
 			System.out.println("iexplore");
 			capability= DesiredCapabilities.internetExplorer();
@@ -76,16 +67,17 @@ public class SeleniumBase extends Common{
 			capability.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
 			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
 		}
-		//driver.manage().deleteAllCookies();
+		driver.manage().deleteAllCookies();
 		//driver.manage().window().setSize(new Dimension(1024, 768));
 	  }
 
 
 	@AfterMethod
-	  @Parameters({ "xBrowser"})
+	  @Parameters({"xBrowser"})
 	  public void quitDriver(String xBrowser, ITestResult _result, Method method) throws IOException {
 		if (!_result.isSuccess()){
 			System.out.println("TestCase " + this.getClass().getName() + "__" + method.getName() + " was Failed!!!");
+			System.out.println("Last URL was " + driver.getCurrentUrl());
 			Date date = new Date();
 			SimpleDateFormat formatter = new SimpleDateFormat("yyyy.MM.dd");
 			SimpleDateFormat formatter2 = new SimpleDateFormat("HH.mm");
@@ -100,7 +92,7 @@ public class SeleniumBase extends Common{
 		} else {
 			System.out.println("TestCase " + this.getClass().getName() + "__" + method.getName() + " was Passed!!!");
 		}
-		  //driver.manage().deleteAllCookies();
+		  driver.manage().deleteAllCookies();
 		  driver.quit();
 	  }
 }

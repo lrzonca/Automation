@@ -21,7 +21,7 @@ import junit.framework.TestCase;
 public class Common extends TestCase implements mappings {
 	public WebDriver driver;
 	public static ChromeDriverService service;
-	public String e, u, p, a;
+	public String e, u, p, a, d, m, y;
 	public String UN1 = "qwerty_friend_1";
 	public String UP = "123456";
 	public String UN2 = "qwerty_friend_3";	
@@ -44,60 +44,31 @@ public class Common extends TestCase implements mappings {
     	return driver.findElement(By.cssSelector(selector.toString()));        
     }
      
-    
-    public void clickElement(String selector) {
+    public void clickElement(String selector) throws InterruptedException {
     	System.out.println("Find and Click Element " + selector.toString());
 		findElement(selector).click();
+		sleep(2);
     } 
-    
-    public void clickElement(CssSelector selector) {
-    	System.out.println("Find and Click Element " + selector.toString());
-		findElement(selector).click();
-    } 
-    
-    public void insertData(String selector, String data) {
-    	clickElement(selector);
-    	System.out.println("Insert data into Element " + selector.toString());
-    	findElement(selector).sendKeys(data);
-    } 
-    
-    public void insertData(CssSelector selector, String data) {
+
+    public void insertData(String selector, String data) throws InterruptedException {
     	clickElement(selector);
     	System.out.println("Insert data into Element " + selector.toString());
     	findElement(selector).sendKeys(data);
     }     
-    
-    public void assertIsDisplayed(CssSelector selector) throws InterruptedException {
-    	System.out.println("Assert if " + selector.toString() + " is Displayed");
-    	assertTrue(findElement(selector).isDisplayed());
-    }   
-    
+         
     public void assertIsDisplayed(String selector) throws InterruptedException {
     	System.out.println("Assert if " + selector.toString() + " is Displayed");
     	assertTrue(findElement(selector).isDisplayed());
-    }   
-    
-    public void assertIsNotDisplayed(CssSelector selector) throws InterruptedException {
-    	System.out.println("Assert if " + selector.toString() + " is Not Displayed");
-    	boolean check;
-    	try {
-    		findElement(selector).isDisplayed();
-    	    	check = true;
-    	} catch (Throwable e) {
-    		check = false;
-    	}    	    	
-    	assertFalse(check);
-    }   
+    }     
     
     public void assertIsNotDisplayed(String selector) throws InterruptedException {
     	System.out.println("Assert if " + selector.toString() + " is Not Displayed");
     	boolean check;
-    	try {
-    		findElement(selector).isDisplayed();
-    		check = true;
-    	} catch (Throwable e) {
-    		check = false;
-    	}    	
+    	if(findElement(selector).isDisplayed()){
+    		check = true;	
+    	} else {
+    		check = false;	
+		}    		    	
     	assertFalse(check);
     }    
     
@@ -125,6 +96,7 @@ public class Common extends TestCase implements mappings {
 	}
 	
 	void Login (String UserName, String Password) throws InterruptedException{
+		Logout();
 		sleep(2);
 		clickElement(signIn.SIGN_IN_LINK);
 		insertData(signIn.USERNAME, UserName);
@@ -135,23 +107,23 @@ public class Common extends TestCase implements mappings {
 	}
 	
 	void AssertTrue(Boolean Object) throws InterruptedException{
-//	    try{
+	    try{
 	    	assertTrue(Object);
-//	    }
-//	    catch (Throwable e)
-//	    {
-//	    	e.printStackTrace();
-//	    	fail();
-//	    }		
+	    }
+	    catch (Throwable e)
+	    {
+	    	e.printStackTrace();
+	    	fail();
+	    }		
 	}
 
 	
 	public void Sign_Up(String e_1, String u_1, String p_1, String p2_1, String a_1) throws InterruptedException {
 		Sign_Up_TEST(e_1, u_1, p_1, a_1);
-		AssertTrue(driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_EMAIL_VALID)).isDisplayed());
-		AssertTrue(driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_USERNAME_VALID)).isDisplayed());
-		AssertTrue(driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_PASSWORD_VALID)).isDisplayed());
-		AssertTrue(driver.findElement(By.id(Webdriver.mappings.signUp.REGISTER_AGE_VALID)).isDisplayed());
+		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_EMAIL_VALID)).isDisplayed());
+		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_USERNAME_VALID)).isDisplayed());
+		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_PASSWORD_VALID)).isDisplayed());
+		AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_AGE_VALID)).isDisplayed());
 		WebElement signMeIn = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_SIGNMEUP));
 		signMeIn.click();
 		Thread.sleep(5000);
@@ -160,7 +132,22 @@ public class Common extends TestCase implements mappings {
 		welcomeClose.click();
 		Thread.sleep(10000);
 		assertEquals(this.u, driver.findElement(By.cssSelector(Webdriver.mappings.topBar.USERNAME_LINK)).getText());
+	}
+
+	public void Sign_Up2(String e_1, String u_1, String p_1, String p2_1, String a_1, String a_2, String a_3) throws InterruptedException {
+		Sign_Up_TEST2(e_1, u_1, p_1, a_1, a_2, a_3);
+		assertIsDisplayed(signUp.REGISTER_EMAIL_VALID);
+		assertIsDisplayed(signUp.REGISTER_USERNAME_VALID);
+		assertIsDisplayed(signUp.REGISTER_PASSWORD_VALID);
+		assertIsDisplayed(signUp.REGISTER_DOB_VALID);
+		clickElement(signUp.REGISTER_SIGNMEUP);
+		Thread.sleep(5000);
+		assertIsDisplayed(signUp.REGISTER_WELCOME_TEXT);
+		clickElement(signUp.REGISTER_WELCOME_CLOSE_BTN);
+		Thread.sleep(10000);
+		assertEquals(this.u, findElement(topBar.USERNAME_LINK).getText());
 	}	
+	
 	
 	/* Description
 	 * this sequence is filling data for user creation, user can be created with parameter e_1 - email, u_1 - username, p_1 - password, p2_1 - retype password, 
@@ -211,7 +198,66 @@ public class Common extends TestCase implements mappings {
 		age.sendKeys(a);
 		WebElement AgeText = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.HOW_OLD_ARE_YOU));
 		AgeText.click();
-	}		
+	}
+	
+	
+	public void Sign_Up_TEST2(String e_1, String u_1, String p_1, String a_1, String a_2, String a_3) throws InterruptedException {
+		Thread.sleep(8000);
+		Logout();
+		long timestamp = new Date().getTime();		
+		if (e_1.isEmpty()){
+			e = timestamp + "@google.com";
+		} else {;
+			if (e_1.contains("@")){
+				e = e_1;
+			} else {
+				e = e_1 + timestamp + "@google.com";
+			}
+		}
+		if (u_1.isEmpty()){
+			u = "User" + timestamp;
+		} else {
+			if (u_1.equals("none")){
+				u = "";
+			} else {
+				u = u_1;
+			}			
+		}	
+		if (p_1.isEmpty()){
+			p = "123456";
+		} else { 
+			p = p_1;
+		}
+		if (a_1.isEmpty()){
+			m = "1";
+		} else {
+			m = a_1;
+		}
+		if (a_2.isEmpty()){
+			d = "20";
+		} else {
+			d = a_2;
+		}
+		if (a_3.isEmpty()){
+			y = "1950";
+		} else {
+			y = a_3;
+		}			
+		WebElement JoinNow = findElement(Webdriver.mappings.signUp.JOIN_NOW_LINK);
+		JoinNow.click();
+		WebElement email = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_EMAIL));
+		email.sendKeys(e);
+		WebElement name = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_USERNAME));
+		name.sendKeys(u);
+		WebElement password = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_PASSWORD));
+		password.sendKeys(p);
+		WebElement month = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_DOB_MONTH));
+		month.findElement(By.cssSelector("option[value='"+ m + "']")).click();		
+		WebElement day = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_DOB_DAY));
+		day.findElement(By.cssSelector("option[value='"+ d + "']")).click();
+		WebElement year = driver.findElement(By.cssSelector(Webdriver.mappings.signUp.REGISTER_DOB_YEAR));
+		year.findElement(By.cssSelector("option[value='"+ y + "']")).click();	
+	}	
 
 	
 	/* Description
@@ -240,22 +286,23 @@ public class Common extends TestCase implements mappings {
 			WebElement Yes = driver.findElement(By.cssSelector(Webdriver.mappings.myProfile.DELETE_FRIEND_YES_BUTTON));
 			Yes.click();
 			Thread.sleep(2000);
-		}		
-		if (driver.findElement(By.cssSelector(Webdriver.mappings.myProfile.FRIEND_REQUEST_SENT_TEXT)).isDisplayed()){
-			Logout();
-			Login(UN2, UP);
-		    WebElement MyProfile = driver.findElement(By.cssSelector(Webdriver.mappings.topBar.MY_PROFILE_LINK));
-		    MyProfile.click();
-		    Thread.sleep(5000);
-		    WebElement Notification = driver.findElement(By.id(Webdriver.mappings.NOTIFICATIONS.TAB_NOTIFICATIONS));
-		    Notification.click();
-		    Thread.sleep(5000);
-		    WebElement Reject = driver.findElement(By.cssSelector(Webdriver.mappings.NOTIFICATIONS.REJECT_FRIEND_REQUEST_BUTTON));
-		    Reject.click();
-		    Thread.sleep(3000);
-		    AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.NOTIFICATIONS.REJECTED_MESSAGE)).isDisplayed());
-			Logout();
-			Login(UN1, UP);			
+		} else {
+			if (driver.findElement(By.cssSelector(Webdriver.mappings.myProfile.FRIEND_REQUEST_SENT_TEXT)).isDisplayed()){
+				Logout();
+				Login(UN2, UP);
+			    WebElement MyProfile = driver.findElement(By.cssSelector(Webdriver.mappings.topBar.MY_PROFILE_LINK));
+			    MyProfile.click();
+			    Thread.sleep(5000);
+			    WebElement Notification = driver.findElement(By.cssSelector(Webdriver.mappings.notifications.TAB_NOTIFICATIONS));
+			    Notification.click();
+			    Thread.sleep(5000);
+			    WebElement Reject = driver.findElement(By.cssSelector(Webdriver.mappings.notifications.REJECT_FRIEND_REQUEST_BUTTON));
+			    Reject.click();
+			    Thread.sleep(3000);
+			    AssertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.notifications.REJECTED_MESSAGE)).isDisplayed());
+				Logout();
+				Login(UN1, UP);			
+			}
 		}
 	}
 	
@@ -263,38 +310,25 @@ public class Common extends TestCase implements mappings {
 	/* Description
 	 */
 	public void Load_Harvesting_Contract(String email, String password) throws InterruptedException {
-		WebElement MyProfile = driver.findElement(By.cssSelector(Webdriver.mappings.topBar.MY_PROFILE_LINK));
-	    MyProfile.click();
-	    Thread.sleep(5000);
-		WebElement TabFriend = driver.findElement(By.id(Webdriver.mappings.FRIENDS.TAB_FRIENDS));
-		TabFriend.click();
-	    Thread.sleep(5000);
-		WebElement HarvGetStart = driver.findElement(By.cssSelector(Webdriver.mappings.FRIENDS.HARVESTING_GET_STARTED_BUTTON));
-		HarvGetStart.click();
-	    Thread.sleep(2000);
-		WebElement HarvGmailBtn = driver.findElement(By.cssSelector(Webdriver.mappings.FRIENDS.HARVESTING_GMAIL_BUTTON));
-		HarvGmailBtn.click();
-		WebElement HarvSignIn = driver.findElement(By.cssSelector(Webdriver.mappings.FRIENDS.HARVESTING_SIGN_IN_BUTTON));
-		HarvSignIn.click();
-	    Thread.sleep(15000);	    
+	    clickElement(topBar.MY_PROFILE_LINK);
+	    clickElement(FRIENDS.TAB_FRIENDS);
+	    clickElement(FRIENDS.HARVESTING_GET_STARTED_BUTTON);
+		clickElement(FRIENDS.HARVESTING_GMAIL_BUTTON);
+		clickElement(FRIENDS.HARVESTING_SIGN_IN_BUTTON);	    
+		sleep(15);
 	    System.out.println(driver.getWindowHandles().toString());
 	    for (String handle : driver.getWindowHandles()) {
-	    	  driver.switchTo().window(handle);
-	    	}	    
-	    WebElement HarvMail = driver.findElement(By.id(Webdriver.mappings.HARVESTING.EMAIL_TEXTBOX));
-	    HarvMail.click();
-	    HarvMail.sendKeys(email);
-	    WebElement HarvPass = driver.findElement(By.id(Webdriver.mappings.HARVESTING.PASSWORD_TEXTBOX));
-	    HarvPass.click();
-	    HarvPass.sendKeys(password);	   
-	    WebElement HarvLogin = driver.findElement(By.id(Webdriver.mappings.HARVESTING.LOGIN_BUTTON));
-	    HarvLogin.click();
-	    WebElement HarvAllow = driver.findElement(By.id(Webdriver.mappings.HARVESTING.ALLOW_BUTTON));
-	    HarvAllow.click();
-	    Thread.sleep(10000);
+	    	driver.switchTo().window(handle);
+	    }	    
+	    insertData(HARVESTING.EMAIL_TEXTBOX, email);	   
+	    insertData(HARVESTING.PASSWORD_TEXTBOX, password);
+	    clickElement(HARVESTING.LOGIN_BUTTON);
+	    sleep(5);
+	    clickElement(HARVESTING.ALLOW_BUTTON);
+	    sleep(10);
 	    for (String handle : driver.getWindowHandles()) {
-	    	  driver.switchTo().window(handle);
-	    	}	    
+	    	driver.switchTo().window(handle);
+	    }	    
 	}
 	
 	
@@ -303,37 +337,27 @@ public class Common extends TestCase implements mappings {
 	@Parameters({"xUrl"})
 	public void Load_Harvesting_Contract_From_Pet_Party(String xUrl, String email, String password) throws InterruptedException {
 		driver.get(xUrl + "/game/pet_party.html?socialgames");
-		Thread.sleep(5000);
-		driver.switchTo().frame(Webdriver.mappings.social.SOCIAL_GAME_BOX);		
-		WebElement Invite = driver.findElement(By.id(Webdriver.mappings.social.SOCIAL_GAME_INVITE_BUTTON));
-		Invite.click();
+		sleep(5);
+		driver.switchTo().frame(social.SOCIAL_GAME_BOX);		
+		clickElement(social.SOCIAL_GAME_INVITE_BUTTON);
 		driver.switchTo().defaultContent();
-		Thread.sleep(5000);
-
-		WebElement EmailTab = driver.findElement(By.id(Webdriver.mappings.social.FROM_EMAIL_TAB));
-		EmailTab.click();
-	    Thread.sleep(2000);
-		WebElement GmailBtn = driver.findElement(By.cssSelector(Webdriver.mappings.social.FROM_EMAIL_GMAIL_BUTTON));
-		GmailBtn.click();		
-	    Thread.sleep(15000);	    
+		sleep(10);
+	    clickElement(social.FROM_EMAIL_TAB);
+		clickElement(social.FROM_EMAIL_GMAIL_BUTTON);
+		sleep(15);	    
 	    System.out.println(driver.getWindowHandles().toString());
 	    for (String handle : driver.getWindowHandles()) {
-	    	  driver.switchTo().window(handle);
-	    	}	    
-	    WebElement HarvMail = driver.findElement(By.id(Webdriver.mappings.HARVESTING.EMAIL_TEXTBOX));
-	    HarvMail.click();
-	    HarvMail.sendKeys(email);
-	    WebElement HarvPass = driver.findElement(By.id(Webdriver.mappings.HARVESTING.PASSWORD_TEXTBOX));
-	    HarvPass.click();
-	    HarvPass.sendKeys(password);	   
-	    WebElement HarvLogin = driver.findElement(By.id(Webdriver.mappings.HARVESTING.LOGIN_BUTTON));
-	    HarvLogin.click();
-	    WebElement HarvAllow = driver.findElement(By.id(Webdriver.mappings.HARVESTING.ALLOW_BUTTON));
-	    HarvAllow.click();
-	    Thread.sleep(10000);
+	    	driver.switchTo().window(handle);
+	    }	    
+	    insertData(HARVESTING.EMAIL_TEXTBOX, email);	   
+	    insertData(HARVESTING.PASSWORD_TEXTBOX, password);
+	    clickElement(HARVESTING.LOGIN_BUTTON);
+	    sleep(5);
+	    clickElement(HARVESTING.ALLOW_BUTTON);
+	    sleep(10);
 	    for (String handle : driver.getWindowHandles()) {
-	    	  driver.switchTo().window(handle);
-	    	}	    
+	    	driver.switchTo().window(handle);
+	    }	    
 	}
 	
 	void Connect_DB(){
@@ -413,7 +437,7 @@ public class Common extends TestCase implements mappings {
 			System.out.println("Sleep 2 sek");
 			Thread.sleep(2000);
 			System.out.println("Find Element TERMS_OF_USE");
-			WebElement TermsOfUse = driver.findElement(By.cssSelector(Webdriver.mappings.footer.TERMS_OF_USE));
+			WebElement TermsOfUse = findElement(footer.TERMS_OF_USE);
 			System.out.println("Click Element TERMS_OF_USE");
 			TermsOfUse.click();	
 			System.out.println("Sleep 2 sek");
@@ -521,7 +545,7 @@ public class Common extends TestCase implements mappings {
 			System.out.println("Sleep 2 sek");
 			Thread.sleep(2000);
 			System.out.println("Find Element POPULAR_GAMES_NAVI_LINK");
-			WebElement PopularGames = driver.findElement(By.cssSelector(Webdriver.mappings.leftNavi.POPULAR_GAMES_NAVI_LINK));
+			WebElement PopularGames = driver.findElement(By.cssSelector(Webdriver.mappings.leftNavi.POPULAR_GAMES));
 			System.out.println("Click Element POPULAR_GAMES_NAVI_LINK");
 			PopularGames.click();	
 			System.out.println("Sleep 2 sek");
@@ -702,6 +726,65 @@ public class Common extends TestCase implements mappings {
 			}
 		}
 	}	
+	
+	/* Description
+	 */
+	void SitesUrl(String site_id) throws InterruptedException {	 
+		if (site_id.equals("es-ar")){
+			siteUrl = "http://www.juegosdechicas.com/";
+		}
+		if (site_id.equals("pt-br")){
+			siteUrl = "http://www.girlsgogames.com.br/";
+		}
+		if (site_id.equals("es-cl")){
+			siteUrl = "http://www.juegosdechicas.com/";
+		}
+		if (site_id.equals("es-co")){
+			siteUrl = "http://www.juegosdechicas.com/";
+		}
+		if (site_id.equals("de-de")){
+			siteUrl = "http://www.girlsgogames.de/";
+		}
+		if (site_id.equals("es-es")){
+			siteUrl = "http://www.juegosdechicas.com/";
+		}
+		if (site_id.equals("fr-fr")){
+			siteUrl = "http://www.girlsgogames.fr/";
+		}
+		if (site_id.equals("en-id")){
+			siteUrl = "http://www.girlsgogames.co.id/";
+		}
+		if (site_id.equals("it-it")){
+			siteUrl = "http://www.girlsgogames.it/";
+		}
+		if (site_id.equals("es-mx")){
+			siteUrl = "http://www.juegosdechicas.com/";
+		}
+		if (site_id.equals("nl-nl")){
+			siteUrl = "http://www.girlsgogames.nl/";
+		}
+		if (site_id.equals("pl-pl")){
+			siteUrl = "http://www.girlsgogames.pl/";
+		}
+		if (site_id.equals("ru-ru")){
+			siteUrl = "http://www.girlsgogames.ru/";
+		}
+		if (site_id.equals("sv-se")){
+			siteUrl = "http://www.girlsgogames.se/";
+		}
+		if (site_id.equals("tr-tr")){
+			siteUrl = "http://www.girlsgogames.com.tr/";
+		}
+		if (site_id.equals("en-gb")){
+			siteUrl = "http://www.girlsgogames.co.uk/";
+		}
+		if (site_id.equals("en-us")){
+			siteUrl = "http://www.girlsgogames.com/";
+		}
+		if (site_id.equals("es-ve")){
+			siteUrl = "http://www.juegosdechicas.com/";
+		}		
+	}		
 	
 	
 	// =====================================
