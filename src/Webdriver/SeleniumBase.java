@@ -33,7 +33,7 @@ public class SeleniumBase extends Common{
 	
 	 @BeforeClass
 	 @Parameters({ "xBrowser"})
-	  public void createAndStartService(String xBrowser, String xUrl, String xUsername, String xPass) throws IOException, InterruptedException {
+	  public void createAndStartService(String xBrowser) throws IOException, InterruptedException {
 		 if (xBrowser.contains("chrome")) {
 			 service = new ChromeDriverService.Builder()
 		        .usingChromeDriverExecutable(new File(".\\lib\\chromedriver.exe"))
