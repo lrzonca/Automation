@@ -16,6 +16,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -29,7 +30,9 @@ public class Fb_CheckLink {
 	DesiredCapabilities capability=null;
 	String FanPageUrl = "http://www.facebook.com/pages/Zapapa-games/210288149066461";
 	
-	String xAppName = "Zapapa-Staging";
+	//String xAppName = "Zapapa-Staging";
+	//String xAppName = "Zapapa Games QA";
+	String xAppName = "Zapapa games";
 	
 	@BeforeClass
 	@Parameters({"xBrowser", "xUrl", "xUsername", "xPass"})
@@ -64,9 +67,15 @@ public class Fb_CheckLink {
 			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
 		}
 		driver.get(xUrl);
-		  driver.findElement(By.cssSelector(Webdriver.mappings.facebook.USERNAME_FIELD)).sendKeys(xUsername);
+		
+		  WebElement UsernameF = driver.findElement(By.cssSelector(Webdriver.mappings.facebook.USERNAME_FIELD));
+		  UsernameF.clear();
+		  Thread.sleep(500);
+		  UsernameF.sendKeys(xUsername);
 		  driver.findElement(By.cssSelector(Webdriver.mappings.facebook.PASSWORD_FIELD)).sendKeys(xPass);
-		  driver.findElement(By.cssSelector(Webdriver.mappings.facebook.LOGIN_BUTTON)).click();
+		  WebElement FbButton = driver.findElement(By.cssSelector(Webdriver.mappings.facebook.LOGIN_BUTTON));
+		  //new Actions(driver).moveToElement(FbButton).click().perform();
+		  FbButton.click();
 		  Thread.sleep(2000);
 	}
 	
