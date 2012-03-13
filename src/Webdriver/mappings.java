@@ -342,6 +342,10 @@ class SelectorFactory {
 		  
 		public interface myProfile {
 			public static final String TOP_TITLE = ".topTitle";
+			public static final String USER_FRIENDS_NUMBER_TEXT = ".friends_insert_number";
+			public static final String USER_POINTS_NUMBER_TEXT = ".points_insert_number";
+			public static final String USER_AWARDS_NUMBER_TEXT = ".awards_insert_number";
+			public static final String USER_CREATIONS_NUMBER_TEXT = ".generatedcontent_insert_number";
 			public static final String LATEST_ACTIVITIES_BUTTONS_FIRST_BUTTON = ".tc_all_activities";
 			public static final String LATEST_ACTIVITIES_BUTTONS_SECOND_BUTTON = ".tc_my_activities";
 			public static final String LATEST_ACTIVITIES_BUTTONS_THIRD_BUTTON = ".tc_wall_messages";
@@ -437,6 +441,9 @@ class SelectorFactory {
 			public static final String TAB_FRIENDS = "#tab_friends";
 			public static final String SEARCH_FRIEND_TEXTBOX = ".friends_search_username";
 			public static final String SEARCH_BUTTON = ".friends_search_bottom_holder tbody tr td div a.submit";
+			public static final String SEARCH_ERROR = ".friends_search_bottom_holder tbody tr td div.friends_search_uname_error";
+			public static final String SEARCH_NO_RESULTS_BOX = ".friends_search_no_results";
+			public static final String SEARCH_RESULTS_BOX = ".friends_search_results";
 			public static final String FIRST_SEARCHED_FRIEND_NAME_TEXT = ".friends_search_item_holder p.usernameHolder a";
 			public static final String FIRST_SEARCHED_FRIEND_AVATAR_ICO = ".friends_search_item_holder div.avatar a";
 			public static final String FIRST_SEARCHED_FRIEND_SEND_REQUEST_BUTTON = ".friends_search_item_holder div a.friends_search_result_action";
@@ -455,6 +462,8 @@ class SelectorFactory {
 			public static final String FRIEND_REQUEST_POPUP_CLOSE_BUTTON = ".popup_blue_button";
 			public static final String HARVESTING_GET_STARTED_BUTTON = ".beginHarvest a.beginHarvest";
 			public static final String HARVESTING_GMAIL_BUTTON = ".gmail div";
+			public static final String HARVESTING_WINDOWS_LIVE_BUTTON = ".live div";
+			public static final String HARVESTING_YAHOO_BUTTON = ".yahoo div";
 			public static final String HARVESTING_SIGN_IN_BUTTON = ".harvestLogin";
 			public static final String HARVESTING_SELECT_ALL_CHECKBOX = "markAllForHarvest";
 			public static final String HARVESTING_FIRST_FRINED_CHECKBOX= ".checkboxHolder input";
@@ -479,8 +488,33 @@ class SelectorFactory {
 			public static final String FRIENDS_HEADER_TEXT = ".my_friends_total_holder";
 			public static final String FRIENDS_HEADER_FRIENDS_NUMBER_TEXT = ".tc-friends-counter";
 			public static final String FRIENDS_SORTING_BY_USERNAME_BUTTON = ".friends-sort-by-username";
+			public static final String FRIENDS_SORTING_BY_USERNAME_ARROW_BTN = ".friends-sort-by-username strong";
 			public static final String FRIENDS_SORTING_BY_LAST_VISIT_BUTTON = ".friends-sort-by-lastvisit";
-			public static final String FRIENDS_AVATAR_TOOLTIP_ICO = "tlt-avatar";
+			public static final String FRIENDS_SORTING_BY_LAST_VISIT_ARROW_BTN = ".friends-sort-by-lastvisit strong";
+			public static final String FRIENDS_AVATAR_TOOLTIP_ICO = "#tlt-avatar";
+			
+			public static final String FRIENDS_SEARCH_BOX = "#middlePinkBox div:nth-child(1).friends_search_searchholder";
+			public static final String FRIENDS_CONNECT_BOX = "#middlePinkBox div:nth-child(3).friends_search_searchholder";
+			public static final String FRIENDS_MY_FRIENDS_SEARCH_BOX = ".myFriendsSearch";
+			public static final String FRIENDS_MY_FRIENDS_SEARCH_NO_FRIENDS_BOX = ".my_friends_no_friends";
+			public static final String FRIENDS_MY_FRIENDS_SEARCH_NO_FRIENDS_COUNTER_TEXT = ".my_friends_no_friends div span.tc-friends-counter";
+			public static final String FRIENDS_MY_FRIENDS_SEARCH_NO_FRIENDS_DESCRIPTION_TEXT = ".my_friends_no_friends_description";
+			public static final String FRIENDS_MY_FRIENDS_SEARCH_NO_FRIENDS_FIND_BTN = ".my_friends_no_friends div a.beginHarvest";
+			
+			public static final String FRIENDS_MY_FRIENDS_SEARCH_FRIENDS_BOX = ".my_friends_results_holder";
+			public static final String FRIENDS_MY_FRIENDS_SEARCH_FRIENDS_COUNTER_TEXT = ".my_friends_results_holder div span.tc-friends-counter";
+			public static final String FRIENDS_MY_FRIENDS_SEARCH_FRIENDS_FIRST_FRIEND_AVATAR_BOX = ".my_friends_results_holder ul li:nth-child(1) div div.avatar a img";
+			public static final String FRIENDS_MY_FRIENDS_SEARCH_FRIENDS_FIRST_FRIEND_NAME_BOX = ".my_friends_results_holder ul li:nth-child(1) div p:nth-child(2) a";
+			public static final String FRIENDS_MY_FRIENDS_SEARCH_FRIENDS_SECOND_FRIEND_NAME_BOX = ".my_friends_results_holder ul li:nth-child(2) div p:nth-child(2) a";
+			public static final String FRIENDS_MY_FRIENDS_SEARCH_FRIENDS_FIRST_FRIEND_AGE_BOX = ".my_friends_results_holder ul li:nth-child(1) div p:nth-child(3)";
+			public static final String FRIENDS_MY_FRIENDS_SEARCH_FRIENDS_FIRST_FRIEND_GENDER_BOX = ".my_friends_results_holder ul li:nth-child(1) div p:nth-child(4)";
+			public static final String FRIENDS_MY_FRIENDS_SEARCH_FRIENDS_FIRST_FRIEND_ICON_BOX = ".my_friends_results_holder ul li:nth-child(1) div p:nth-child(5)";
+			public static final String FRIENDS_MY_FRIENDS_SEARCH_FRIENDS_FIRST_FRIEND_POINTS_TEXT = ".my_friends_results_holder ul li:nth-child(1) div p:nth-child(5) span.friends_points";
+			public static final String FRIENDS_MY_FRIENDS_SEARCH_FRIENDS_FIRST_FRIEND_GALERY_TEXT = ".my_friends_results_holder ul li:nth-child(1) div p:nth-child(5) span.friends_galery";
+			public static final String FRIENDS_MY_FRIENDS_SEARCH_FRIENDS_FIRST_FRIEND_AWARDS_TEXT = ".my_friends_results_holder ul li:nth-child(1) div p:nth-child(5) span.friends_awards";
+			public static final String FRIENDS_MY_FRIENDS_SEARCH_FRIENDS_FIRST_FRIEND_FRIENDS_TEXT = ".my_friends_results_holder ul li:nth-child(1) div p:nth-child(5) span.friends_friends";
+			public static final String FRIENDS_MY_FRIENDS_SEARCH_FRIENDS_FIRST_FRIEND_ACTION_BOX = ".my_friends_results_holder ul li:nth-child(1) div p.userActionLink";
+			
 		}
 
 		public interface avatar {

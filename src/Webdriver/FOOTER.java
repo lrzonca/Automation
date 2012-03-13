@@ -216,7 +216,8 @@ public class FOOTER extends SeleniumBase{
 				assertFalse(findElement(".footer-top div.bottomLinks:nth-child(3) ul li:nth-child(" + i + ") a").getAttribute("href").equals(findElement(".footer-top div.bottomLinks:nth-child(3) ul li:nth-child(" + j + ") a").getAttribute("href")));				
 			}
 		}
-		String url = findElement(footer.PARTNERS_LINKS_FIRST_LINK_LINK).getAttribute("href");
+//		String url = findElement(footer.PARTNERS_LINKS_FIRST_LINK_LINK).getAttribute("href"); // from mobile device
+		String url = "/games/mobile_games/mobile_games.html"; // from browser pc
 		clickElement(footer.PARTNERS_LINKS_FIRST_LINK_LINK);
 		sleep(5);
 		System.out.println(driver.getCurrentUrl());
