@@ -3,7 +3,6 @@ package Webdriver;
 import java.net.MalformedURLException;
 import java.net.UnknownHostException;
 import java.util.List;
-
 import org.browsermob.core.har.HarEntry;
 import org.browsermob.core.har.HarNameValuePair;
 import org.browsermob.proxy.ProxyServer;
@@ -13,30 +12,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-
 import static org.testng.Assert.*;
-
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.ExpectedExceptions;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import static org.hamcrest.Matchers.*;
 import static ch.lambdaj.Lambda.*;
 import ch.lambdaj.function.matcher.Predicate;
 import static ch.lambdaj.collection.LambdaCollections.*;
-
-
 import Webdriver.mappings.hyves;
 
 public class GoogleAnalitycs {

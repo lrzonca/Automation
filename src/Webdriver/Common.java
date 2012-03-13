@@ -13,9 +13,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.testng.annotations.Parameters;
-
-import Webdriver.mappings.hyves;
-
 import junit.framework.TestCase;
 
 public class Common extends TestCase implements mappings {
@@ -27,6 +24,7 @@ public class Common extends TestCase implements mappings {
 	public String UN2 = "qwerty_friend_3";	
 	public Connection c, c_stg, c_event;	
 	public String Game_id, Game_gid, Game_gamename_lid, Game_language_id, Game_url, Game_game_name, Game_game_description, Game_game_manual, Game_thumbnaill, Game_thumbnail2, Game_thumbnail3, Game_thumbnail_login, Game_gametype_id, Game_developer_id, Game_width, Game_height, Game_direct_on_frontpage, Game_direct_on_catpage, Game_direct_on_subcatpage, Game_downloadable, Game_highscore, Game_embedded, Game_overlay_add, Game_initial_rating, Game_active, Game_created, Game_modified, Game_onsite, Game_nice_name, Game_require_translation, Game_promotext, Game_translated_by, Game_translated_date, Game_achievements, Game_gallery, Game_using_service, Game_payments_enabled, Game_allow_links, Game_excluded, Game_scalable, Game_game_login_welcome_title, Game_login_welcome_description, Game_thumbnail_coins, Game_thumbnail_coins_show, Game_similar_box, Game_sign_in_popup_interval;
+	public String siteUrl;
 	
 	//HYVES VARIABLES
 	String AddFavText = "Aan favorieten toevoegen";
