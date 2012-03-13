@@ -1,0 +1,39 @@
+<suite name="Hyves test" verbose="3" thread-count="4">
+	<parameter name="xUrl" value="http://www.hyves.nl/games_dev_staging" />
+	<parameter name="xGameTitle" value="Sevens" />
+	<parameter name="xUsername" value="mptest14" />
+	<parameter name="xPass" value="mptest123" />
+	<test name="Hyves_fav_firefox">
+		<parameter name="xBrowser" value="firefox"/>
+		<classes>
+			<class name="Webdriver.Hy_Favourites">	
+				<methods>
+					<include name="addGameToFav"></include>
+					<include name="RemoveGameFromFav"></include>
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Hyves_fav_IE">
+	<parameter name="xBrowser" value="iexplore"/>
+		<classes>
+			<class name="Webdriver.Hy_Favourites">
+				<methods>
+					<include name="addGameToFav"></include>
+					<include name="RemoveGameFromFav"></include>
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Hyves_fav_Chrome">
+	<parameter name="xBrowser" value="chrome"/>
+		<classes>
+			<class name="Webdriver.Hy_Favourites">
+				<methods>
+					<include name="addGameToFav"></include>
+					<include name="RemoveGameFromFav"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

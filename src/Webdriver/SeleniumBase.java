@@ -7,6 +7,7 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import org.apache.commons.io.FileUtils;
 import java.util.Date;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -27,7 +28,7 @@ public class SeleniumBase extends Common{
 	
 	 @BeforeClass
 	 @Parameters({ "xBrowser"})
-	  public static void createAndStartService(String xBrowser) throws IOException {
+	  public void createAndStartService(String xBrowser, String xUrl, String xUsername, String xPass) throws IOException, InterruptedException {
 		 if (xBrowser.contains("chrome")) {
 			 service = new ChromeDriverService.Builder()
 		        .usingChromeDriverExecutable(new File(".\\lib\\chromedriver.exe"))
@@ -67,6 +68,7 @@ public class SeleniumBase extends Common{
 			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
 		}
 		driver.manage().deleteAllCookies();
+		//driver.manage().window().setSize(new Dimension(1024, 768));
 	  }
 
 
@@ -81,12 +83,12 @@ public class SeleniumBase extends Common{
 			SimpleDateFormat formatter2 = new SimpleDateFormat("HH.mm");
 			String sDate = formatter.format(date);
 			String sTime = formatter2.format(date);
-			try{
-				File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-				FileUtils.copyFile(scrFile, new File("C:\\tmp\\WebDriverLog\\FAILED_" + xBrowser + "_TC_" + this.getClass().getName() + "__" + method.getName() + "__" + sDate + "_" + sTime + "__" + ".png"));
-			} catch (Exception e){
-				e.printStackTrace();
-			}
+//			try{
+//			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+//			FileUtils.copyFile(scrFile, new File("C:\\tmp\\WebDriverLog\\FAILED_" + xBrowser + "_TC_" + this.getClass().getName() + "__" + method.getName() + "__" + sDate + "_" + sTime + "__" + ".png"));
+//		} catch (Exception e){
+//			e.printStackTrace();
+//		}
 		} else {
 			System.out.println("TestCase " + this.getClass().getName() + "__" + method.getName() + " was Passed!!!");
 		}

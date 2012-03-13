@@ -8,10 +8,13 @@ import java.sql.Statement;
 import java.util.Date;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.testng.annotations.Parameters;
+
+import Webdriver.mappings.hyves;
 
 import junit.framework.TestCase;
 
@@ -23,9 +26,21 @@ public class Common extends TestCase implements mappings {
 	public String UP = "123456";
 	public String UN2 = "qwerty_friend_3";	
 	public Connection c, c_stg, c_event;	
-	public String Game_id, Game_gid, Game_gamename_lid, Game_language_id, Game_url, Game_game_name, Game_game_description, Game_game_manual, Game_thumbnaill, Game_thumbnail2, Game_thumbnail3, Game_thumbnail_login, Game_gametype_id, Game_developer_id, Game_width, Game_height, Game_direct_on_frontpage, Game_direct_on_catpage, Game_direct_on_subcatpage, Game_downloadable, Game_highscore, Game_embedded, Game_overlay_add, Game_initial_rating, Game_active, Game_created, Game_modified, Game_onsite, Game_nice_name, Game_require_translation, Game_promotext, Game_translated_by, Game_translated_date, Game_achievements, Game_gallery, Game_using_service, Game_payments_enabled, Game_allow_links, Game_excluded, Game_scalable, Game_game_login_welcome_title, Game_login_welcome_description, Game_thumbnail_coins, Game_thumbnail_coins_show, Game_similar_box, Game_sign_in_popup_interval, siteUrl;
-
-    public WebElement findElement(String selector) throws InterruptedException {
+	public String Game_id, Game_gid, Game_gamename_lid, Game_language_id, Game_url, Game_game_name, Game_game_description, Game_game_manual, Game_thumbnaill, Game_thumbnail2, Game_thumbnail3, Game_thumbnail_login, Game_gametype_id, Game_developer_id, Game_width, Game_height, Game_direct_on_frontpage, Game_direct_on_catpage, Game_direct_on_subcatpage, Game_downloadable, Game_highscore, Game_embedded, Game_overlay_add, Game_initial_rating, Game_active, Game_created, Game_modified, Game_onsite, Game_nice_name, Game_require_translation, Game_promotext, Game_translated_by, Game_translated_date, Game_achievements, Game_gallery, Game_using_service, Game_payments_enabled, Game_allow_links, Game_excluded, Game_scalable, Game_game_login_welcome_title, Game_login_welcome_description, Game_thumbnail_coins, Game_thumbnail_coins_show, Game_similar_box, Game_sign_in_popup_interval;
+	
+	//HYVES VARIABLES
+	String AddFavText = "Aan favorieten toevoegen";
+	String FavPopupText = "Het spel is toegevoegd aan de favorietenlijst.";
+	String GamesNumber;
+	String[] FavAdded;
+	String Separator = "/";
+	public int FavNumber;
+	
+	public WebElement findElement(String selector) {
+		return driver.findElement(By.id(selector));
+    }
+    
+    public WebElement findElement(CssSelector selector) {
     	return driver.findElement(By.cssSelector(selector.toString()));        
     }
      
@@ -777,7 +792,7 @@ public class Common extends TestCase implements mappings {
 	//======================================
 	
 	@Parameters({"xUrl", "xUsername", "xPass"})
-	public void NavigateToGamePage(String xUrl, String xUsername, String xPass) throws Exception{
+	public void LoginAndNavigateToGamePage(String xUrl, String xUsername, String xPass) throws Exception{
 		driver.get(xUrl);
 	    Thread.sleep(3000);
 	    WebElement UsernameF = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.USERNAME_FIELD));
@@ -786,10 +801,56 @@ public class Common extends TestCase implements mappings {
 	    PasswordF.sendKeys(xPass);
 	    WebElement LoginB = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.LOGIN_BUTTON));
 	    LoginB.click();
-	    Thread.sleep(5000);
+	    Thread.sleep(10000);
 	    if (xUrl.contains("dev")){
 	    	driver.get(xUrl);
+	    	Thread.sleep(7000);
+	    	System.out.println("enter url again");
 	    }
 	    driver.switchTo().frame("remote_iframe_-1");
+	}
+	
+	@Parameters({"xGameTitle"})
+	public void SearchGame(String xGameTitle)throws Exception{
+		WebElement SearchF = driver.findElement(By.cssSelector(hyves.SEARCH_FIELD)); 
+		Thread.sleep(2000);
+		SearchF.sendKeys("");
+		SearchF.click();
+		SearchF.clear();
+		SearchF.sendKeys(xGameTitle);
+		SearchF.sendKeys(Keys.ENTER);
+		Thread.sleep(5000); 
+		assertTrue(driver.findElement(By.cssSelector(Webdriver.mappings.hyves.SEARCH_BOX_TITLE)).isDisplayed());
+	}
+	
+	@Parameters({"xGameTitle"})
+	public void AddGameToFav(String xGameTitle)throws Exception{
+	SearchGame(xGameTitle);
+  	WebElement GameL = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.SEARCH_GAME_LINK + xGameTitle + "]"));
+  	GameL.sendKeys("");
+  	GameL.click();
+  	Thread.sleep(2000);
+  	WebElement FavL = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.GAME_PAGE_FAV_LINK));
+  	assertEqualsCaseInsensitive(AddFavText, FavL.getText());
+  	FavL.click();
+  	Thread.sleep(2000);
+  	WebElement FavPopupT = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.GAME_PAGE_FAV_POPUP_BODY));
+  	assertEqualsCaseInsensitive(FavPopupText, FavPopupT.getText());
+  	WebElement FavOK = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.GAME_PAGE_FAV_POPUP_OK));
+  	FavOK.click();
+  	Thread.sleep(4000);
+	}
+	// JAVA METHODS
+	
+	public void FavGameSplit(){
+		WebElement FavCounter = driver.findElement(By.cssSelector(Webdriver.mappings.hyves.FAV_COUNTER_HP));
+		GamesNumber = FavCounter.getText();
+		System.out.println("GamesNumber variable value:" + GamesNumber);
+		GamesNumber = GamesNumber.replace('(', ' ');
+	    GamesNumber = GamesNumber.replace(')', ' ');
+	    GamesNumber = GamesNumber.trim();
+	    FavAdded = GamesNumber.split(Separator);
+	    System.out.println("FavAdded variable value:" + FavAdded[0]);
+	    FavNumber = Integer.parseInt(FavAdded[0]);
 	}
 }
