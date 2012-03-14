@@ -34,11 +34,8 @@ public class Common extends TestCase implements mappings {
 	String Separator = "/";
 	public int FavNumber;
 	
-	public WebElement findElement(String selector) {
-		return driver.findElement(By.id(selector));
-    }
     
-    public WebElement findElement(CssSelector selector) {
+    public WebElement findElement(String selector) {
     	return driver.findElement(By.cssSelector(selector.toString()));        
     }
      

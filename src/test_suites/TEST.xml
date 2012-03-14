@@ -2,32 +2,12 @@
 	<parameter name="xUrl" value="http://www.girlsgogames.com"/>	
 	<test name="smoke_ff">		
 		<classes>
-			<parameter name="xBrowser" value="firefox"/>
-			<class name="Webdriver.SIGN_IN">
-				<methods>					
-					<include name="SignIn1"></include>
-				</methods>
-			</class>	
-		</classes>		
-	</test>		
-	<test name="smoke_ie">		
-		<classes>
 			<parameter name="xBrowser" value="iexplore"/>
-			<class name="Webdriver.SIGN_IN">
+			<class name="Webdriver.FRIENDS_NEW_REQUEST">
 				<methods>					
-					<include name="SignIn1"></include>
+					<include name="Friend13"></include>
 				</methods>
 			</class>	
 		</classes>		
-	</test>				
-	<test name="smoke_chrome">		
-		<classes>
-			<parameter name="xBrowser" value="chrome"/>
-			<class name="Webdriver.SIGN_IN">
-				<methods>					
-					<include name="SignIn1"></include>
-				</methods>
-			</class>	
-		</classes>		
-	</test>								
+	</test>									
 </suite>

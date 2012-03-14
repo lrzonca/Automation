@@ -1,4 +1,4 @@
-set seleniumGrid=C:\Users\Mirek\workspace\WebDriver\lib\selenium-2.18.0
+set seleniumGrid=C:\Users\CP27\Automation\lib\selenium-2.18.0
 set seleniumVersion=2.18.0
 ECHO Load GitHub
 
