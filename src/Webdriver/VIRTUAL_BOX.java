@@ -19,7 +19,7 @@ public class VIRTUAL_BOX extends SeleniumBase{
 		sleep(5);
 		System.out.println("0 " + gameUrl1);
 		System.out.println("1 " + driver.getCurrentUrl());
-		assertTrue(driver.getCurrentUrl().equals(gameUrl1));
+		assertTrue(driver.getCurrentUrl().equals(gameUrl1)); 
 		System.out.println("Open URL");
 		driver.get(xUrl);	
 		clickElement(virtualbox.VIRTUAL_BOX_SECOND_GAME_TEXT_LINK);
